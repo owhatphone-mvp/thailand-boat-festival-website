@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Sand — Thailand Boat Festival 2027</title>
+    <meta name="description" content="Ask Sand, your AI Concierge for Thailand Boat Festival 2027. Get instant answers about exhibitors, VIP programs, schedules, and more.">
+    <link rel="icon" type="image/png" href="https://thailandboatfestival.com/wp-content/uploads/2025/06/cropped-log-01-90x56.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg:         #080f1e;
+            --bg2:        #0d1f3a;
+            --navy:       #0a1628;
+            --ocean:      #1a5276;
+            --gold:       #c9a84c;
+            --gold-light: #e8d48b;
+            --glass:      rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.10);
+            --text:       #e8e8e8;
+            --text-muted: rgba(255,255,255,0.42);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'Inter', -apple-system, sans-serif;
+        }
+
+        html, body { height: 100%; }
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);
+            color: var(--text);
+            display: flex; flex-direction: column;
+            min-height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0; pointer-events: none; z-index: 0;
+            background:
+                radial-gradient(ellipse at 15% 55%, rgba(26,82,118,0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 15%, rgba(201,168,76,0.06) 0%, transparent 50%);
+        }
+
+        /* ─── HEADER ─── */
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.75rem 1.5rem;
+            background: rgba(8,15,30,0.75);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .header-left { display: flex; align-items: center; gap: 0.75rem; }
+        .back-btn {
+            width: 34px; height: 34px; border-radius: 50%;
+            border: 1px solid var(--glass-border); background: var(--glass);
+            cursor: pointer; color: var(--text-muted); font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+
+        /* Sand orb avatar */
+        .header-avatar {
+            width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+            background: radial-gradient(circle at 35% 35%, #2980b9 0%, #0a1628 75%);
+            border: 1.5px solid rgba(201,168,76,0.45);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light); font-weight: 700; font-size: 0.8rem;
+            font-family: var(--font-display);
+            position: relative;
+            box-shadow: 0 0 12px rgba(201,168,76,0.15);
+        }
+        .header-avatar::after {
+            content: '';
+            position: absolute; inset: -4px; border-radius: 50%;
+            border: 1px solid rgba(201,168,76,0.18);
+            animation: orb-ring 3s ease-in-out infinite;
+        }
+        @keyframes orb-ring {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.1); }
+        }
+
+        .header-info h1 { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+        .header-info p  { font-size: 0.72rem; color: var(--text-muted); }
+
+        .header-right { display: flex; align-items: center; gap: 0.5rem; }
+        .lang-btn {
+            padding: 0.28rem 0.65rem; border-radius: 6px;
+            border: 1px solid var(--glass-border); background: transparent;
+            font-size: 0.73rem; font-weight: 600; color: var(--text-muted);
+            cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
+        }
+        .lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+        .event-badge {
+            font-size: 0.72rem; color: var(--text-muted);
+            border: 1px solid var(--glass-border); border-radius: 20px;
+            padding: 0.28rem 0.75rem; white-space: nowrap;
+            background: var(--glass);
+        }
+
+        /* ─── LAYOUT ─── */
+        .main {
+            flex: 1; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 2rem 1.5rem;
+            max-width: 720px; margin: 0 auto; width: 100%;
+            position: relative; z-index: 1;
+        }
+
+        /* ─── WELCOME STATE ─── */
+        .welcome { text-align: center; width: 100%; }
+        .welcome-avatar {
+            width: 84px; height: 84px; border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, #2e86c1 0%, #0a1628 70%);
+            border: 2px solid rgba(201,168,76,0.4);
+            box-shadow: 0 0 30px rgba(201,168,76,0.12), 0 0 60px rgba(26,82,118,0.25), 0 0 0 8px rgba(201,168,76,0.05);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.6rem;
+            color: var(--gold-light); font-weight: 700; font-size: 1.6rem;
+            font-family: var(--font-display); font-style: italic;
+            animation: orb-float 4s ease-in-out infinite;
+        }
+        @keyframes orb-float {
+            0%, 100% { transform: translateY(0); box-shadow: 0 0 30px rgba(201,168,76,0.12), 0 0 60px rgba(26,82,118,0.25), 0 0 0 8px rgba(201,168,76,0.05); }
+            50%       { transform: translateY(-6px); box-shadow: 0 10px 40px rgba(201,168,76,0.18), 0 0 80px rgba(26,82,118,0.35), 0 0 0 12px rgba(201,168,76,0.04); }
+        }
+
+        .welcome h2 {
+            font-family: var(--font-display);
+            font-size: 1.7rem; font-weight: 600; color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .welcome p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+        /* ─── INPUT ─── */
+        .input-area { width: 100%; max-width: 600px; margin: 0 auto; }
+        .input-wrapper {
+            display: flex; align-items: center;
+            border: 1px solid var(--glass-border);
+            border-radius: 14px; padding: 0.2rem 0.3rem 0.2rem 1rem;
+            background: var(--glass);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .input-wrapper:focus-within {
+            border-color: rgba(201,168,76,0.5);
+            box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+        }
+        .chat-input {
+            flex: 1; border: none; outline: none;
+            font-size: 0.95rem; font-family: var(--font-body);
+            padding: 0.75rem 0; color: var(--text);
+            background: transparent;
+        }
+        .chat-input::placeholder { color: rgba(255,255,255,0.28); }
+
+        /* mic button */
+        .mic-btn {
+            width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
+            border: none; cursor: pointer;
+            display: none; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.06); color: var(--text-muted);
+            margin-right: 2px; transition: all 0.2s;
+        }
+        .mic-btn:hover { background: rgba(255,255,255,0.12); color: var(--text); }
+        .mic-btn.recording {
+            background: rgba(239,68,68,0.18); color: #f87171;
+            animation: mic-pulse 1.1s ease-in-out infinite;
+        }
+        @keyframes mic-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.35); }
+            50%       { box-shadow: 0 0 0 7px rgba(239,68,68,0); }
+        }
+
+        /* send button */
+        .send-btn {
+            width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+            border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; transition: all 0.2s;
+        }
+        .send-btn.inactive { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.25); cursor: default; }
+        .send-btn.active   { background: var(--gold); color: var(--navy); }
+        .send-btn.active:hover { background: var(--gold-light); }
+
+        /* ─── QUICK CARDS ─── */
+        .quick-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 0.6rem; margin-top: 1.2rem;
+            width: 100%; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .quick-btn {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 14px; background: var(--glass);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            cursor: pointer; text-align: left; font-family: var(--font-body);
+            transition: all 0.25s;
+        }
+        .quick-btn:hover {
+            border-color: rgba(201,168,76,0.4);
+            background: rgba(201,168,76,0.06);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        .quick-icon { font-size: 1.25rem; flex-shrink: 0; line-height: 1; }
+        .quick-text { display: flex; flex-direction: column; gap: 2px; }
+        .quick-main { font-size: 0.83rem; color: var(--text); font-weight: 500; }
+        .quick-sub  { font-size: 0.7rem; color: var(--text-muted); }
+
+        /* ─── CHAT AREA ─── */
+        .chat-area {
+            display: none; flex-direction: column;
+            width: 100%; max-width: 720px; margin: 0 auto;
+            flex: 1; overflow: hidden;
+        }
+        .chat-area.active { display: flex; }
+        .welcome.hidden   { display: none; }
+
+        .messages { flex: 1; overflow-y: auto; padding: 1.5rem 0; }
+        .messages::-webkit-scrollbar { width: 4px; }
+        .messages::-webkit-scrollbar-track { background: transparent; }
+        .messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
+
+        .msg {
+            margin-bottom: 1.1rem; display: flex; gap: 0.55rem;
+            animation: msg-in 0.28s ease-out;
+        }
+        @keyframes msg-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .msg.user { justify-content: flex-end; }
+
+        .msg-avatar {
+            width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+            background: radial-gradient(circle at 35% 35%, #2980b9 0%, #0a1628 75%);
+            border: 1px solid rgba(201,168,76,0.35);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light); font-size: 0.68rem; font-weight: 700;
+            font-family: var(--font-display); font-style: italic;
+        }
+
+        .msg-bubble {
+            max-width: 80%; padding: 0.75rem 1rem;
+            border-radius: 14px; font-size: 0.9rem; line-height: 1.65;
+        }
+        .msg.bot .msg-bubble {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text); border-bottom-left-radius: 4px;
+        }
+        .msg.user .msg-bubble {
+            background: rgba(201,168,76,0.14);
+            border: 1px solid rgba(201,168,76,0.28);
+            color: #f5f0e8; border-bottom-right-radius: 4px;
+        }
+
+        /* typing dots */
+        .typing-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
+        .typing-dots span {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: rgba(255,255,255,0.35);
+            animation: dot-pulse 1.4s infinite;
+        }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dot-pulse {
+            0%, 80%, 100% { opacity: 0.3; transform: scale(0.75); }
+            40%           { opacity: 1;   transform: scale(1); }
+        }
+
+        /* cursor blink during streaming */
+        .msg-bubble.streaming::after {
+            content: '▋';
+            color: var(--gold);
+            animation: blink 0.7s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* ─── BOTTOM INPUT ─── */
+        .bottom-input {
+            padding: 0.75rem 0;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(8,15,30,0.5);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* ─── LEAD CARD ─── */
+        .lead-card {
+            background: rgba(8,15,30,0.92);
+            border: 1.5px solid var(--gold);
+            border-radius: 14px; padding: 1.4rem 1.4rem 1.1rem;
+            margin-top: 0.3rem; max-width: 340px;
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        }
+        .lead-card-title {
+            font-size: 0.68rem; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1rem; font-weight: 600;
+        }
+        .lead-card-row {
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            margin-bottom: 0.65rem; font-size: 0.875rem;
+            color: #e8e8e8; line-height: 1.4;
+        }
+        .lead-card-icon  { width: 18px; flex-shrink: 0; opacity: 0.75; }
+        .lead-card-label {
+            font-size: 0.67rem; color: rgba(255,255,255,0.38);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            margin-right: 0.3rem; white-space: nowrap;
+        }
+        .lead-card-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 1rem 0 0.9rem; }
+        .lead-card-btns { display: flex; gap: 0.6rem; }
+        .lead-confirm-btn {
+            flex: 1; padding: 0.65rem 0;
+            background: var(--gold); color: var(--navy);
+            border: none; border-radius: 8px;
+            font-size: 0.85rem; font-weight: 700;
+            cursor: pointer; font-family: inherit; transition: background 0.2s;
+        }
+        .lead-confirm-btn:hover { background: var(--gold-light); }
+        .lead-edit-btn {
+            padding: 0.65rem 1rem; background: transparent;
+            color: rgba(255,255,255,0.45);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 8px; font-size: 0.85rem;
+            cursor: pointer; font-family: inherit; transition: all 0.2s;
+        }
+        .lead-edit-btn:hover { color: #fff; border-color: rgba(255,255,255,0.38); }
+        .lead-card.sent .lead-card-btns { display: none; }
+        .lead-sent-msg {
+            display: none; text-align: center;
+            font-size: 0.82rem; color: #6fcf97; padding-top: 0.3rem;
+        }
+        .lead-card.sent .lead-sent-msg { display: block; }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            text-align: center; padding: 0.75rem;
+            font-size: 0.7rem; color: rgba(255,255,255,0.2);
+            position: relative; z-index: 1;
+        }
+        .footer a { color: rgba(255,255,255,0.2); text-decoration: none; }
+        .footer a:hover { color: var(--gold); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 600px) {
+            .quick-grid { grid-template-columns: 1fr; }
+            .event-badge { display: none; }
+            .main { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-left">
+        <button class="back-btn" onclick="window.location.href='/'" title="Back">←</button>
+        <div class="header-avatar">S</div>
+        <div class="header-info">
+            <h1>Sand AI</h1>
+            <p>Thailand Boat Festival 2027</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn"        data-lang="th" onclick="setLang('th')">TH</button>
+        <span class="event-badge">Jan 2027 · Boat Lagoon, Phuket</span>
+    </div>
+</div>
+
+<!-- WELCOME STATE -->
+<div class="main" id="mainArea">
+    <div class="welcome" id="welcomeState">
+        <div class="welcome-avatar">S</div>
+        <h2 id="greetingTitle">Hi, I'm Sand.</h2>
+        <p id="greetingSub">Tell me a bit about yourself — are you planning to visit, or interested in showcasing your brand?</p>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" class="chat-input" id="welcomeInput"
+                       placeholder="Ask Sand anything..."
+                       onkeydown="if(event.key==='Enter') startChat()"
+                       oninput="updateSendBtn()">
+                <button class="mic-btn" id="welcomeMicBtn" onclick="toggleVoice()" title="Voice input">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8"  y1="23" x2="16" y2="23"/>
+                    </svg>
+                </button>
+                <button class="send-btn inactive" id="welcomeSendBtn" onclick="startChat()">↑</button>
+            </div>
+        </div>
+
+        <div class="quick-grid" id="quickGrid"></div>
+    </div>
+
+    <!-- CHAT STATE -->
+    <div class="chat-area" id="chatArea">
+        <div class="messages" id="messages"></div>
+        <div class="bottom-input">
+            <div class="input-wrapper">
+                <input type="text" class="chat-input" id="chatInput"
+                       placeholder="Ask Sand anything..."
+                       onkeydown="if(event.key==='Enter' && !isWaiting) sendMessage()">
+                <button class="mic-btn" id="chatMicBtn" onclick="toggleVoice()" title="Voice input">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                        <line x1="12" y1="19" x2="12" y2="23"/>
+                        <line x1="8"  y1="23" x2="16" y2="23"/>
+                    </svg>
+                </button>
+                <button class="send-btn inactive" id="chatSendBtn" onclick="sendMessage()">↑</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    Powered by <a href="https://www.anthropic.com" target="_blank">Claude</a> · <a href="https://mvisioncorp.com" target="_blank">M Vision PCL</a>
+</div>
+
+<script>
+/* ─── STATE ─── */
+let isWaiting  = false;
+let chatHistory = [];
+let currentLang = 'en';
+
+/* ─── COPY ─── */
+const greetings = {
+    en: {
+        title: "Hi, I'm Sand.",
+        sub:   "Tell me a bit about yourself — are you planning to visit, or interested in showcasing your brand?",
+        placeholder: "Ask Sand anything..."
+    },
+    th: {
+        title: "สวัสดีค่ะ ฉันชื่อทราย",
+        sub:   "อยากรู้จักคุณมากขึ้นค่ะ — กำลังวางแผนมาเที่ยวงาน หรือสนใจออกบูธ / เป็นสปอนเซอร์?",
+        placeholder: "ถามทรายได้เลยค่ะ..."
+    }
+};
+
+const quickBtns = {
+    en: [
+        { icon: '⛵', main: "I'm planning to visit",       sub: "Yachts, experiences & lifestyle",   full: "I'm planning to visit the festival" },
+        { icon: '🛥️', main: "Showcase my yacht / brand",  sub: "Exhibitor & berth options",         full: "I want to showcase my yacht / brand" },
+        { icon: '✨', main: "Sponsorship opportunities",   sub: "Visibility & partner packages",     full: "I'm interested in sponsorship" },
+        { icon: '🔍', main: "Just exploring",              sub: "Tell me about the festival",        full: "Just exploring — tell me more" }
+    ],
+    th: [
+        { icon: '⛵', main: "สนใจมาเที่ยวชมงาน",         sub: "เรือยอชท์ ประสบการณ์ ไลฟ์สไตล์",  full: "สนใจมาเที่ยวชมงาน" },
+        { icon: '🛥️', main: "อยากออกบูธ / นำเรือมาแสดง", sub: "ตัวเลือกบูธและท่าเทียบเรือ",       full: "อยากออกบูธ / นำเรือมาแสดง" },
+        { icon: '✨', main: "สนใจเป็นสปอนเซอร์",          sub: "แพ็กเกจสปอนเซอร์และพาร์ทเนอร์",   full: "สนใจเป็นสปอนเซอร์" },
+        { icon: '🔍', main: "แค่อยากรู้จักงานนี้ก่อน",   sub: "เล่าให้ฟังเรื่องงานนี้หน่อย",     full: "แค่อยากรู้จักงานนี้ก่อน" }
+    ]
+};
+
+/* ─── LANG ─── */
+function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+
+    const g = greetings[lang];
+    document.getElementById('greetingTitle').textContent  = g.title;
+    document.getElementById('greetingSub').textContent    = g.sub;
+    document.getElementById('welcomeInput').placeholder   = g.placeholder;
+    document.getElementById('chatInput').placeholder      = g.placeholder;
+
+    renderQuickBtns(lang);
+
+    // Update recognition language if active
+    if (recognition) recognition.lang = lang === 'th' ? 'th-TH' : 'en-US';
+}
+
+function renderQuickBtns(lang) {
+    const grid = document.getElementById('quickGrid');
+    grid.innerHTML = quickBtns[lang].map(b =>
+        `<button class="quick-btn" onclick="startChatWith('${b.full.replace(/'/g, "\\'")}')">
+            <span class="quick-icon">${b.icon}</span>
+            <span class="quick-text">
+                <span class="quick-main">${b.main}</span>
+                <span class="quick-sub">${b.sub}</span>
+            </span>
+        </button>`
+    ).join('');
+}
+
+/* ─── SEND BUTTONS ─── */
+function updateSendBtn() {
+    const val = document.getElementById('welcomeInput').value.trim();
+    document.getElementById('welcomeSendBtn').className = val ? 'send-btn active' : 'send-btn inactive';
+}
+
+/* ─── CHAT START ─── */
+function startChat() {
+    const input = document.getElementById('welcomeInput');
+    const text  = input.value.trim();
+    if (!text) return;
+    startChatWith(text);
+}
+
+function startChatWith(text) {
+    document.getElementById('welcomeState').classList.add('hidden');
+    document.getElementById('chatArea').classList.add('active');
+    addMsg(text, 'user');
+    chatHistory.push({ role: 'user', content: text });
+    getReply();
+}
+
+function sendMessage() {
+    if (isWaiting) return;
+    const input = document.getElementById('chatInput');
+    const text  = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    chatHistory.push({ role: 'user', content: text });
+    input.value = '';
+    document.getElementById('chatSendBtn').className = 'send-btn inactive';
+    getReply();
+}
+
+/* ─── MESSAGES ─── */
+function addMsg(text, type) {
+    const container = document.getElementById('messages');
+    const msg = document.createElement('div');
+    msg.className = `msg ${type}`;
+
+    if (type === 'bot') {
+        const leadMatch = text.match(/\[LEAD_CARD\]([\s\S]*?)\[\/LEAD_CARD\]/);
+        if (leadMatch) {
+            const before = text.slice(0, text.indexOf('[LEAD_CARD]')).trim();
+            let leadData = {};
+            try { leadData = JSON.parse(leadMatch[1]); } catch(e) {}
+            let html = '';
+            if (before) html += `<div class="msg-bubble" style="margin-bottom:0.5rem">${before.replace(/\n/g,'<br>')}</div>`;
+            html += renderLeadCard(leadData);
+            msg.innerHTML = `<div class="msg-avatar">S</div><div>${html}</div>`;
+            container.appendChild(msg);
+        } else {
+            // Stream the text
+            const avatar = document.createElement('div');
+            avatar.className = 'msg-avatar';
+            avatar.textContent = 'S';
+            const bubble = document.createElement('div');
+            bubble.className = 'msg-bubble streaming';
+            msg.appendChild(avatar);
+            msg.appendChild(bubble);
+            container.appendChild(msg);
+            streamText(bubble, text, container);
+            return;
+        }
+    } else {
+        msg.innerHTML = `<div class="msg-bubble">${text}</div>`;
+        container.appendChild(msg);
+    }
+    container.scrollTop = container.scrollHeight;
+}
+
+async function streamText(bubble, htmlText, container) {
+    // Stream plain text word by word, then swap to HTML
+    const plain = htmlText
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<strong>(.*?)<\/strong>/gi, '$1')
+        .replace(/<[^>]+>/g, '');
+    const tokens = plain.split(/(\s+)/);
+    let out = '';
+    const delay = Math.max(12, Math.min(30, 2000 / tokens.length));
+    for (const tok of tokens) {
+        out += tok;
+        bubble.textContent = out;
+        container.scrollTop = container.scrollHeight;
+        if (tok.trim()) await new Promise(r => setTimeout(r, delay));
+    }
+    // Final rich render
+    bubble.innerHTML = htmlText.replace(/\n/g, '<br>');
+    bubble.classList.remove('streaming');
+    container.scrollTop = container.scrollHeight;
+}
+
+/* ─── LEAD CARD ─── */
+function renderLeadCard(d) {
+    const rows = [
+        { icon: '👤', label: 'Name',     val: d.name },
+        d.company ? { icon: '🏢', label: 'Company', val: d.company } : null,
+        { icon: '📧', label: 'Email',    val: d.email },
+        { icon: '🎯', label: 'Interest', val: d.interest },
+        d.note ? { icon: '💬', label: 'Note', val: d.note } : null,
+    ].filter(Boolean);
+
+    const rowsHtml = rows.map(r =>
+        `<div class="lead-card-row">
+            <span class="lead-card-icon">${r.icon}</span>
+            <span><span class="lead-card-label">${r.label}</span>${r.val}</span>
+        </div>`
+    ).join('');
+
+    const dataStr = encodeURIComponent(JSON.stringify(d));
+    return `<div class="lead-card" id="lead-card">
+        <div class="lead-card-title">📋 Registration Summary</div>
+        ${rowsHtml}
+        <hr class="lead-card-divider">
+        <div class="lead-card-btns">
+            <button class="lead-confirm-btn" onclick="confirmLead('${dataStr}')">✓ &nbsp;Yes, send my details</button>
+            <button class="lead-edit-btn"    onclick="editLead()">✎ Edit</button>
+        </div>
+        <div class="lead-sent-msg">✅ Sent! Our team will be in touch soon.</div>
+    </div>`;
+}
+
+async function confirmLead(dataStr) {
+    const card = document.getElementById('lead-card');
+    if (!card) return;
+    card.classList.add('sent');
+    const data = JSON.parse(decodeURIComponent(dataStr));
+    try {
+        await fetch('/.netlify/functions/send-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+    } catch(e) { /* silent */ }
+    const confirmMsg = 'Yes, that looks correct!';
+    addMsg(confirmMsg, 'user');
+    chatHistory.push({ role: 'user', content: confirmMsg });
+    getReply();
+}
+
+function editLead() {
+    const input = document.getElementById('chatInput');
+    input.value = '';
+    input.placeholder = 'What would you like to correct?';
+    input.focus();
+}
+
+/* ─── TYPING INDICATOR ─── */
+function showTyping() {
+    const container = document.getElementById('messages');
+    const msg = document.createElement('div');
+    msg.className = 'msg bot'; msg.id = 'typing';
+    msg.innerHTML = `<div class="msg-avatar">S</div><div class="msg-bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+    container.appendChild(msg);
+    container.scrollTop = container.scrollHeight;
+}
+function removeTyping() {
+    const el = document.getElementById('typing');
+    if (el) el.remove();
+}
+
+/* ─── API CALL ─── */
+async function getReply() {
+    isWaiting = true;
+    showTyping();
+    try {
+        const res  = await fetch('/.netlify/functions/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: chatHistory })
+        });
+        const data = await res.json();
+        if (data.reply && !data.fallback) {
+            removeTyping();
+            const replyText = data.reply.includes('[LEAD_CARD]')
+                ? data.reply
+                : data.reply.replace(/\n/g, '<br>');
+            addMsg(replyText, 'bot');
+            chatHistory.push({ role: 'assistant', content: data.reply });
+            isWaiting = false;
+            return;
+        }
+    } catch(e) { /* fall through */ }
+
+    removeTyping();
+    const lastQ = chatHistory[chatHistory.length - 1].content.toLowerCase();
+    const reply = getFallbackReply(lastQ);
+    addMsg(reply, 'bot');
+    chatHistory.push({ role: 'assistant', content: reply.replace(/<[^>]*>/g,'') });
+    isWaiting = false;
+}
+
+/* ─── FALLBACK ─── */
+function getFallbackReply(q) {
+    const th = currentLang === 'th';
+    if (q.includes('when') || q.includes('where') || q.includes('date') || q.includes('เมื่อไหร่') || q.includes('ที่ไหน') || q.includes('วันไหน')) {
+        return th
+            ? '<strong>Thailand Boat Festival 2027</strong> จัดขึ้นในเดือน <strong>มกราคม 2570</strong> (4 วัน) ที่ <strong>Boat Lagoon Marina, ภูเก็ต</strong> ค่ะ วันที่แน่นอนจะประกาศเร็วๆ นี้ 📅'
+            : '<strong>Thailand Boat Festival 2027</strong> takes place in <strong>January 2027</strong> (4 days) at <strong>Boat Lagoon Marina, Phuket</strong>. Exact dates announced soon! 📅';
+    }
+    if (q.includes('exhibitor') || q.includes('booth') || q.includes('บูธ') || q.includes('ออกบูธ')) {
+        return th
+            ? 'สนใจออกบูธเหรอคะ ดีมากเลย 🚤<br><br>มีโซนทั้ง On Water, On Land, Lifestyle และ Automotive ค่ะ เล่าให้ฟังหน่อยได้ไหมว่าจะนำอะไรมาแสดง'
+            : 'Interested in exhibiting? We have On Water, On Land, Lifestyle, and Automotive zones. 🚤<br><br>What are you planning to showcase?';
+    }
+    if (q.includes('vip') || q.includes('windward')) {
+        return th
+            ? '<strong>Windward VIP Program</strong> 🥂 รวมถึง Gala Dinner · VIP Lounge · Private Yacht Viewings · Sunset Champagne Cruise · Test Drives · Helicopter Tour over Phang Nga Bay'
+            : '<strong>Windward VIP Program</strong> 🥂 includes Gala Dinner · VIP Lounge · Private Yacht Viewings · Sunset Champagne Cruise · Test Drives · Helicopter Tour over Phang Nga Bay';
+    }
+    if (q.includes('award') || q.includes('รางวัล')) {
+        return th
+            ? '<strong>Thailand Boating Award 2027</strong> ร่วมกับ Asia-Pacific Boating Magazine 🏆 — 7 สาขา: Best Yacht Display, Best New Model, Best Innovation, Best Lifestyle Exhibitor, Best Sustainable Initiative, People\'s Choice, Lifetime Achievement'
+            : '<strong>Thailand Boating Award 2027</strong> with Asia-Pacific Boating Magazine 🏆 — 7 categories including Best Yacht Display, Best New Model, Best Innovation, People\'s Choice & Lifetime Achievement.';
+    }
+    if (q.includes('yacht') || q.includes('boat') || q.includes('เรือ')) {
+        return th
+            ? 'TBF 2027 ตั้งเป้า <strong>60+ ลำ</strong> 🛥️ แบรนด์ในงานที่ผ่านมาอย่าง Azimut, Sunseeker, Princess, Sanlorenzo, Wally, Axopar, SAXDOR, Chris-Craft และอีกมากมาย!'
+            : 'TBF 2027 targets <strong>60+ yachts</strong>! 🛥️ Previous brands include Azimut, Sunseeker, Princess, Sanlorenzo, Wally, Axopar, SAXDOR, Chris-Craft and many more.';
+    }
+    return th
+        ? 'ขอบคุณที่ถามนะคะ 😊 ทรายกำลังเรียนรู้เพิ่มเติมอยู่ค่ะ สำหรับข้อมูลเฉพาะเจาะจง ทีมงานยินดีตอบที่ 📧 <strong>info@thailandboatfestival.com</strong>'
+        : 'Good question! 😊 For anything specific our team is happy to help at 📧 <strong>info@thailandboatfestival.com</strong>';
+}
+
+/* ─── VOICE INPUT ─── */
+let recognition = null;
+let isRecording  = false;
+
+(function initVoice() {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return;
+    recognition = new SR();
+    recognition.continuous    = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = function(e) {
+        const transcript = e.results[0][0].transcript;
+        const inChat = document.getElementById('chatArea').classList.contains('active');
+        const inputEl = document.getElementById(inChat ? 'chatInput' : 'welcomeInput');
+        inputEl.value = transcript;
+        inputEl.dispatchEvent(new Event('input'));
+        if (!inChat) updateSendBtn();
+        stopRecording();
+    };
+    recognition.onerror = stopRecording;
+    recognition.onend   = stopRecording;
+
+    // Show mic buttons
+    document.querySelectorAll('.mic-btn').forEach(b => b.style.display = 'flex');
+})();
+
+function toggleVoice() {
+    if (!recognition) return;
+    if (isRecording) {
+        recognition.stop();
+    } else {
+        recognition.lang = currentLang === 'th' ? 'th-TH' : 'en-US';
+        try { recognition.start(); } catch(e) { return; }
+        isRecording = true;
+        document.querySelectorAll('.mic-btn').forEach(b => b.classList.add('recording'));
+    }
+}
+function stopRecording() {
+    isRecording = false;
+    document.querySelectorAll('.mic-btn').forEach(b => b.classList.remove('recording'));
+}
+
+/* ─── CHAT INPUT SEND BTN ─── */
+document.getElementById('chatInput').addEventListener('input', function() {
+    document.getElementById('chatSendBtn').className = this.value.trim() ? 'send-btn active' : 'send-btn inactive';
+});
+
+/* ─── INIT ─── */
+renderQuickBtns('en');
+</script>
+</body>
+</html>

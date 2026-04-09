@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand Boat Festival 2027 — Where the Global Marine Industry Meets Island Lifestyle</title>
+    <meta name="description" content="Thailand Boat Festival 2027 — Southeast Asia's premier marine lifestyle event. January 2027, Boat Lagoon Marina, Phuket. 60+ yachts, luxury exhibitors, VIP experiences.">
+    <meta property="og:title" content="Thailand Boat Festival 2027">
+    <meta property="og:description" content="Where the Global Marine Industry Meets the Island Lifestyle. January 2027, Phuket.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thailandboatfestival.com">
+    <meta property="og:image" content="https://thailandboatfestival.com/wp-content/uploads/2026/03/1-1.jpg">
+    <link rel="icon" type="image/png" href="https://thailandboatfestival.com/wp-content/uploads/2025/06/cropped-log-01-90x56.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0a1628;
+            --deep-blue: #0d2847;
+            --ocean: #1a5276;
+            --gold: #c9a84c;
+            --gold-light: #e8d48b;
+            --sand: #f5f0e8;
+            --white: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-600: #6c757d;
+            --gray-800: #343a40;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAVIGATION ─── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+        nav.scrolled {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 0.6rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 0.5rem;
+            color: var(--white); font-size: 1.2rem; font-weight: 700;
+            text-decoration: none; letter-spacing: 0.5px;
+        }
+        .nav-logo img { height: 36px; width: auto; }
+        .nav-logo span { color: var(--gold); font-family: var(--font-display); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: rgba(255,255,255,0.85); text-decoration: none;
+            font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px;
+            text-transform: uppercase; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-cta {
+            background: var(--gold); color: var(--navy) !important;
+            padding: 0.5rem 1.2rem; border-radius: 4px;
+            font-weight: 600 !important;
+        }
+        .nav-cta:hover { background: var(--gold-light) !important; }
+        .hamburger { display: none; cursor: pointer; color: white; font-size: 1.5rem; background: none; border: none; }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(13,40,71,0.75) 40%, rgba(26,82,118,0.7) 100%),
+                        url('https://thailandboatfestival.com/wp-content/uploads/2026/03/1-1.jpg') center/cover no-repeat;
+            overflow: hidden; text-align: center; color: var(--white);
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.03)" d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,234.7C672,245,768,235,864,208C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/></svg>') no-repeat bottom center;
+            background-size: cover; opacity: 0.5;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 2rem; }
+        .hero-edition {
+            display: inline-block;
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); border: 1px solid var(--gold);
+            padding: 0.4rem 1.5rem; border-radius: 30px; margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700; line-height: 1.15; margin-bottom: 1rem;
+        }
+        .hero h1 em {
+            font-style: normal; color: var(--gold);
+            display: block; font-size: 0.5em; margin-top: 0.3em;
+        }
+        .hero-sub {
+            font-size: 1.15rem; font-weight: 300; color: rgba(255,255,255,0.8);
+            max-width: 600px; margin: 0 auto 1rem;
+        }
+        .hero-date {
+            font-size: 1rem; font-weight: 600; color: var(--gold-light);
+            letter-spacing: 1px; margin-bottom: 2rem;
+        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block; padding: 0.85rem 2rem;
+            font-size: 0.9rem; font-weight: 600; text-decoration: none;
+            border-radius: 4px; letter-spacing: 0.5px; transition: all 0.3s;
+            text-transform: uppercase; cursor: pointer; border: none;
+        }
+        .btn-gold { background: var(--gold); color: var(--navy); }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.5); color: var(--white); background: transparent; }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+        .hero-scroll {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            color: rgba(255,255,255,0.5); font-size: 0.75rem; text-align: center;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ─── STATS BAR (removed) ─── */
+        .stat-item p {
+            font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 1.5px; color: rgba(255,255,255,0.6); margin-top: 0.3rem;
+        }
+
+        /* ─── SECTIONS ─── */
+        section { padding: 5rem 2rem; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--navy); margin-bottom: 0.5rem;
+        }
+        .section-header .accent-line {
+            display: block; width: 60px; height: 3px;
+            background: var(--gold); margin: 1rem auto;
+        }
+        .section-header p { color: var(--gray-600); font-size: 1.05rem; }
+
+        /* ─── ABOUT ─── */
+        .about { background: var(--sand); }
+        .about-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+        }
+        .about-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem; color: var(--navy); margin-bottom: 1rem;
+        }
+        .about-text p { margin-bottom: 1rem; color: var(--gray-600); }
+        .about-image {
+            border-radius: 12px; height: 400px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .about-image img {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+        }
+        .edition-badges {
+            display: flex; gap: 1rem; margin-top: 1.5rem;
+        }
+        .badge {
+            background: var(--white); border-radius: 8px; padding: 0.8rem 1.2rem;
+            text-align: center; flex: 1; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .badge strong { display: block; color: var(--gold); font-size: 1.1rem; }
+        .badge span { font-size: 0.75rem; color: var(--gray-600); }
+
+        /* ─── WHY TBF ─── */
+        .why-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .why-card {
+            background: var(--white); border-radius: 12px; padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid transparent;
+        }
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-top-color: var(--gold);
+        }
+        .why-card .icon {
+            font-size: 2.5rem; margin-bottom: 1rem;
+        }
+        .why-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem; color: var(--navy); margin-bottom: 0.8rem;
+        }
+        .why-card p { font-size: 0.9rem; color: var(--gray-600); }
+
+        /* ─── EXHIBITORS ─── */
+        .exhibitors { background: var(--navy); color: var(--white); }
+        .exhibitors .section-header h2 { color: var(--white); }
+        .exhibitors .section-header p { color: rgba(255,255,255,0.6); }
+        .exhibitor-categories {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+        }
+        .ex-cat {
+            background: rgba(255,255,255,0.05); border-radius: 12px; padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .ex-cat h4 {
+            color: var(--gold); font-size: 1rem;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .ex-cat ul { list-style: none; }
+        .ex-cat ul li {
+            padding: 0.35rem 0; font-size: 0.9rem;
+            color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .exhibitor-cta {
+            text-align: center; margin-top: 3rem;
+        }
+
+        .exhibitor-perks {
+            max-width: 800px; margin: 2rem auto 0;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center;
+        }
+        .perk { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+        .perk .perk-icon { font-size: 1.5rem; display: block; margin-bottom: 0.3rem; }
+
+        /* ─── VIP ─── */
+        .vip { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: var(--white); }
+        .vip .section-header h2 { color: var(--gold-light); }
+        .vip .section-header p { color: rgba(255,255,255,0.6); }
+        .vip-grid {
+            max-width: 1000px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .vip-card {
+            background: rgba(255,255,255,0.05); border-radius: 12px; padding: 2rem;
+            border: 1px solid rgba(201,168,76,0.2); text-align: center;
+            transition: border-color 0.3s;
+        }
+        .vip-card:hover { border-color: var(--gold); }
+        .vip-card .vip-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+        .vip-card h4 { font-size: 0.95rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .vip-card p { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+        /* ─── BOATING AWARD ─── */
+        .award { background: var(--sand); }
+        .award-content {
+            max-width: 1000px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .award-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem; color: var(--navy); margin-bottom: 0.8rem;
+        }
+        .award-info p { color: var(--gray-600); margin-bottom: 1.5rem; }
+        .award-list { list-style: none; }
+        .award-list li {
+            padding: 0.5rem 0; font-size: 0.9rem; color: var(--gray-800);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .award-list li::before { content: '🏆'; font-size: 0.8rem; }
+        .award-visual {
+            border-radius: 12px; height: 350px; overflow: hidden;
+        }
+        .award-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ─── GALLERY ─── */
+        .gallery-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;
+        }
+        .gallery-item {
+            aspect-ratio: 1; border-radius: 8px; overflow: hidden;
+            background: var(--deep-blue);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .gallery-item:hover { transform: scale(1.03); }
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .gallery-note {
+            text-align: center; margin-top: 2rem;
+            color: var(--gray-600); font-size: 0.9rem;
+        }
+
+        /* ─── VENUE ─── */
+        .venue { background: var(--gray-100); }
+        .venue-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+        }
+        .venue-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem; color: var(--navy); margin-bottom: 0.8rem;
+        }
+        .venue-info p { color: var(--gray-600); margin-bottom: 0.5rem; }
+        .venue-details {
+            margin-top: 1.5rem;
+        }
+        .venue-detail {
+            display: flex; align-items: flex-start; gap: 0.8rem;
+            padding: 0.6rem 0; font-size: 0.9rem;
+        }
+        .venue-detail .vd-icon { font-size: 1.2rem; flex-shrink: 0; }
+        .venue-map {
+            border-radius: 12px; overflow: hidden; height: 400px;
+            background: var(--deep-blue);
+        }
+        .venue-map iframe { width: 100%; height: 100%; border: 0; }
+
+        /* ─── ACTIVITIES ─── */
+        .activities-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+        }
+        .act-card {
+            background: var(--white); border-radius: 12px; padding: 1.8rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .act-card:hover { transform: translateY(-3px); }
+        .act-card .act-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+        .act-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .act-card p { font-size: 0.85rem; color: var(--gray-600); }
+
+        /* ─── PARTNERS ─── */
+        .partners { background: var(--sand); }
+        .partners-grid {
+            max-width: 900px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+            text-align: center;
+        }
+        .partner-item {
+            background: var(--white); border-radius: 12px; padding: 1.5rem;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            min-height: 120px;
+        }
+        .partner-item strong { font-size: 0.85rem; color: var(--navy); margin-bottom: 0.3rem; }
+        .partner-item span { font-size: 0.75rem; color: var(--gray-600); }
+
+        /* ─── CONTACT / FOOTER ─── */
+        .contact {
+            background: linear-gradient(135deg, var(--navy), var(--deep-blue));
+            color: var(--white); text-align: center;
+        }
+        .contact .section-header h2 { color: var(--white); }
+        .contact-grid {
+            max-width: 800px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .contact-item .ci-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .contact-item h4 { font-size: 0.85rem; color: var(--gold); margin-bottom: 0.3rem; }
+        .contact-item p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+        .contact-item a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .contact-item a:hover { color: var(--gold); }
+
+        footer {
+            background: #060d18; color: rgba(255,255,255,0.4);
+            text-align: center; padding: 1.5rem 2rem; font-size: 0.8rem;
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+
+        /* ─── ASK SAND AI BUTTON ─── */
+        .ask-sand-btn {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999;
+            display: flex; align-items: center; gap: 0.6rem;
+            background: linear-gradient(135deg, var(--gold), #b8942e);
+            border: none; border-radius: 50px; cursor: pointer;
+            padding: 0.85rem 1.4rem 0.85rem 1rem;
+            box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .ask-sand-btn:hover { transform: scale(1.05); box-shadow: 0 6px 25px rgba(201,168,76,0.5); }
+        .ask-sand-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--navy); display: flex; align-items: center; justify-content: center;
+            font-size: 0.95rem; color: var(--gold); font-weight: 700;
+            flex-shrink: 0;
+        }
+        .ask-sand-label {
+            font-family: var(--font-heading); font-size: 0.95rem;
+            font-weight: 700; color: var(--navy); white-space: nowrap;
+        }
+        .ask-sand-sub {
+            font-family: var(--font-body); font-size: 0.65rem;
+            color: rgba(10,22,40,0.6); margin-top: 0.05rem;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--navy); padding: 1rem 2rem;
+                gap: 1rem;
+            }
+            .about-grid, .award-content, .venue-grid { grid-template-columns: 1fr; }
+            .exhibitor-categories { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .vip-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .partners-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .ask-sand-btn { bottom: 1rem; right: 1rem; padding: 0.7rem 1.1rem 0.7rem 0.8rem; }
+        }
+        @media (max-width: 600px) {
+            .vip-grid { grid-template-columns: 1fr; }
+            .edition-badges { flex-direction: column; }
+            .exhibitor-perks { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo"><img src="https://thailandboatfestival.com/wp-content/uploads/2025/06/cropped-log-01.png" alt="TBF Logo"> <span>2027</span></a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#exhibitors">Exhibitors</a></li>
+            <li><a href="#vip">VIP</a></li>
+            <li><a href="#award">Award</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#register" class="nav-cta">Register</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-edition">3rd Edition</div>
+        <h1>Thailand Boat Festival
+            <em>Where the Global Marine Industry Meets Island Lifestyle</em>
+        </h1>
+        <p class="hero-sub">Southeast Asia's premier marine lifestyle event returns to its spiritual home — Phuket's legendary Boat Lagoon Marina.</p>
+        <p class="hero-date">📍 Boat Lagoon Marina, Phuket &nbsp;|&nbsp; 🗓 January 2027</p>
+        <div class="hero-buttons">
+            <a href="#register" class="btn btn-gold">Register Now</a>
+            <a href="#exhibitors" class="btn btn-outline">Become an Exhibitor</a>
+        </div>
+    </div>
+    <div class="hero-scroll">Scroll to explore ↓</div>
+</section>
+
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about">
+    <div class="about-grid">
+        <div class="about-text">
+            <h3>Back to Where It All Began</h3>
+            <p>Thailand Boat Festival is more than a boat show — it's a catalyst for Thailand's Festival Economy strategy, positioning the kingdom as the <strong>Yacht Hub of Asia</strong>.</p>
+            <p>Now in its 3rd edition, TBF 2027 brings together world-class yacht brands, luxury lifestyle exhibitors, supercars, and high-net-worth individuals from across Asia-Pacific and beyond.</p>
+            <p>From sea trials and sunset champagne cruises to the brand-new Boating Award ceremony — this is where deals are made and dreams set sail.</p>
+            <div class="edition-badges">
+                <div class="badge">
+                    <strong>2024</strong>
+                    <span>Yacht Haven Marina — 1st Edition</span>
+                </div>
+                <div class="badge">
+                    <strong>2026</strong>
+                    <span>Boat Lagoon — 44 Yachts, Fully Booked</span>
+                </div>
+                <div class="badge">
+                    <strong>2027</strong>
+                    <span>Boat Lagoon — Target 60+ Yachts</span>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/2-1.jpg" alt="Thailand Boat Festival 2026 at Boat Lagoon Marina" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- ─── WHY TBF ─── -->
+<section class="why" id="why">
+    <div class="section-header">
+        <h2>Why Thailand Boat Festival</h2>
+        <span class="accent-line"></span>
+        <p>A unique convergence of marine industry, island lifestyle, and luxury experiences.</p>
+    </div>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="icon">🌊</div>
+            <h4>Integrated Land & Water Display</h4>
+            <p>The only event in Southeast Asia combining on-water yacht displays with on-land marine, luxury, and lifestyle exhibitions in a single venue.</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">🎯</div>
+            <h4>Direct Access to HNWI Buyers</h4>
+            <p>Curated VIP programs attract high-net-worth individuals from Thailand, Singapore, Hong Kong, China, India, Europe, and Australia.</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">☀️</div>
+            <h4>Peak Phuket Luxury Season</h4>
+            <p>January timing captures peak tourist season, maximizing exposure to affluent travelers and yacht enthusiasts visiting Phuket.</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">⚓</div>
+            <h4>Sea Trial Capability</h4>
+            <p>Direct marina access allows exhibitors to offer real sea trials — the ultimate sales tool for yacht brands and marine equipment companies.</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">📡</div>
+            <h4>Regional Media Exposure</h4>
+            <p>Partnership with Asia-Pacific Boating Magazine, TAT co-promotion, and international media coverage across APAC markets.</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">🤝</div>
+            <h4>Cross-Category Lifestyle</h4>
+            <p>From supercars to luxury real estate, from gourmet dining to wellness — TBF creates a lifestyle ecosystem that attracts diverse premium audiences.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ─── EXHIBITORS ─── -->
+<section class="exhibitors" id="exhibitors">
+    <div class="section-header">
+        <h2>Exhibitors & Brands</h2>
+        <span class="accent-line"></span>
+        <p>90+ exhibitors across yachts, marine, luxury, automotive, and lifestyle categories.</p>
+    </div>
+    <div class="exhibitor-categories">
+        <div class="ex-cat">
+            <h4>🚤 On Water — Yacht Brands</h4>
+            <ul>
+                <li>Azimut Yachts &bull; Sunseeker &bull; Princess Yachts</li>
+                <li>Sanlorenzo &bull; Jeanneau &bull; Wally Yachts</li>
+                <li>De Antonio &bull; Axopar &bull; Greenline &bull; SAXDOR</li>
+                <li>Asia Yachting &bull; Boat Lagoon Yachting</li>
+                <li>Chris-Craft &bull; Alpha Rivati &bull; Zodiac &amp; more</li>
+            </ul>
+        </div>
+        <div class="ex-cat">
+            <h4>🏗️ On Land — Marine Industry</h4>
+            <ul>
+                <li>DCH Marine &bull; East Marine Asia &bull; Thai Marine</li>
+                <li>Boero YachtCoatings &bull; SEABOB</li>
+                <li>Keehin Marine &bull; Octopus Marine</li>
+                <li>Alpha Tech &bull; Intergrate Marine &amp; more</li>
+            </ul>
+        </div>
+        <div class="ex-cat">
+            <h4>🏎️ Premier Automotive</h4>
+            <ul>
+                <li>Aston Martin DBX707</li>
+                <li>Maserati GranTurismo</li>
+                <li>BMW &bull; MINI Full Range</li>
+                <li>XPeng Smart EV</li>
+            </ul>
+        </div>
+        <div class="ex-cat">
+            <h4>✨ Luxury & Lifestyle</h4>
+            <ul>
+                <li>HondaJet — Private Aviation</li>
+                <li>Annara &bull; Boat Pattana — Coastal Real Estate</li>
+                <li>Kynlife — Wellness Living</li>
+                <li>Zuula — Wine Dining from Chiang Rai</li>
+                <li>Patra Yachtwear &bull; Rika Linen &amp; more</li>
+            </ul>
+        </div>
+    </div>
+    <div class="exhibitor-perks">
+        <div class="perk"><span class="perk-icon">🎯</span>Qualified Buyers</div>
+        <div class="perk"><span class="perk-icon">🚤</span>Sea Trial Access</div>
+        <div class="perk"><span class="perk-icon">📺</span>Media Coverage</div>
+        <div class="perk"><span class="perk-icon">🥂</span>VIP Networking</div>
+    </div>
+    <div class="exhibitor-cta">
+        <a href="#register" class="btn btn-gold">Apply as Exhibitor</a>
+    </div>
+</section>
+
+<!-- ─── VIP WINDWARD ─── -->
+<section class="vip" id="vip">
+    <div class="section-header">
+        <h2>Windward VIP Program</h2>
+        <span class="accent-line"></span>
+        <p>An exclusive experience designed for distinguished guests and high-net-worth individuals.</p>
+    </div>
+    <div class="vip-grid">
+        <div class="vip-card">
+            <div class="vip-icon">🥂</div>
+            <h4>Captain's Welcome Gala</h4>
+            <p>Exclusive opening gala dinner with networking, fine dining, and entertainment for 150–200 VIP guests.</p>
+        </div>
+        <div class="vip-card">
+            <div class="vip-icon">🛋️</div>
+            <h4>VIP Lounge & Business Hub</h4>
+            <p>Private lounge with premium F&B, meeting rooms, and dedicated concierge service throughout the festival.</p>
+        </div>
+        <div class="vip-card">
+            <div class="vip-icon">🛥️</div>
+            <h4>Private Yacht Viewings</h4>
+            <p>Exclusive access to luxury yachts with one-on-one sessions with brand executives by appointment.</p>
+        </div>
+        <div class="vip-card">
+            <div class="vip-icon">🌅</div>
+            <h4>Sunset Champagne Cruise</h4>
+            <p>Intimate sunset cruises around Phuket with champagne and canapés. Limited to 30–50 guests per sailing.</p>
+        </div>
+        <div class="vip-card">
+            <div class="vip-icon">🏎️</div>
+            <h4>Sea & Land Test Drives</h4>
+            <p>Test-drive supercars and yachts by appointment. Experience the Aston Martin, Maserati, and top yacht brands.</p>
+        </div>
+        <div class="vip-card">
+            <div class="vip-icon">🚁</div>
+            <h4>Helicopter Tour</h4>
+            <p>Scenic helicopter flights over Phang Nga Bay in partnership with Skydance. Extremely limited availability.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ─── BOATING AWARD ─── -->
+<section class="award" id="award">
+    <div class="section-header">
+        <h2>Thailand Boating Award 2027</h2>
+        <span class="accent-line"></span>
+        <p>New for 2027 — in partnership with Asia-Pacific Boating Magazine.</p>
+    </div>
+    <div class="award-content">
+        <div class="award-info">
+            <h3>Celebrating Excellence in the Marine Industry</h3>
+            <p>The inaugural Thailand Boating Award recognizes outstanding achievements in yachting, marine services, and maritime innovation across Southeast Asia.</p>
+            <ul class="award-list">
+                <li>Best Yacht Display — On Water</li>
+                <li>Best New Model Premiere</li>
+                <li>Best Marine Innovation</li>
+                <li>Best Luxury Lifestyle Exhibitor</li>
+                <li>Best Sustainable Marine Initiative</li>
+                <li>People's Choice Award</li>
+                <li>Lifetime Achievement in Asian Yachting</li>
+            </ul>
+        </div>
+        <div class="award-visual">
+            <img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/3.jpg" alt="Thailand Boating Award 2027" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- ─── ACTIVITIES ─── -->
+<section class="activities" id="activities">
+    <div class="section-header">
+        <h2>Festival Activities</h2>
+        <span class="accent-line"></span>
+        <p>Four days of marine industry, entertainment, culture, and networking.</p>
+    </div>
+    <div class="activities-grid">
+        <div class="act-card"><div class="act-icon">🛥️</div><h4>Creative Boat Exhibition</h4><p>60+ yachts on water and on land, including electric/hybrid vessels and sea trial demonstrations.</p></div>
+        <div class="act-card"><div class="act-icon">🎤</div><h4>Marine Industry Forum</h4><p>CEO-level seminars on marine tourism, fractional ownership, and Thailand's yacht hub strategy.</p></div>
+        <div class="act-card"><div class="act-icon">🎵</div><h4>Marina Music Stage</h4><p>Live jazz, acoustic, and traditional music with 12+ bands performing across all four evenings.</p></div>
+        <div class="act-card"><div class="act-icon">👗</div><h4>Gala Evening & Fashion</h4><p>Red carpet opening gala with fashion show, cocktails, and VIP networking.</p></div>
+        <div class="act-card"><div class="act-icon">🦐</div><h4>Seafood & Local Market</h4><p>60+ booths featuring Phuket's finest seafood, local products, and artisan crafts.</p></div>
+        <div class="act-card"><div class="act-icon">🎨</div><h4>Marine Art Zone</h4><p>Ocean-themed art installations, workshops, and local artist showcases.</p></div>
+        <div class="act-card"><div class="act-icon">👨‍👩‍👧‍👦</div><h4>Family Marine Zone</h4><p>DIY activities, marine conservation education, and fun experiences for kids and families.</p></div>
+        <div class="act-card"><div class="act-icon">🌿</div><h4>CSR — Coral Planting</h4><p>Post-event coral reef restoration (300+ units) and beach cleanup with the local community.</p></div>
+    </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section class="gallery-section" id="gallery">
+    <div class="section-header">
+        <h2>Gallery</h2>
+        <span class="accent-line"></span>
+        <p>Highlights from Thailand Boat Festival 2026.</p>
+    </div>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/1-1.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/3-1.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/4.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/5.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/6.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/7.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/8.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/9.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://thailandboatfestival.com/wp-content/uploads/2026/03/10.jpg" alt="TBF 2026 Gallery" loading="lazy"></div>
+    </div>
+    <p class="gallery-note">📹 <a href="https://www.youtube.com/@ThailandBoatFestival" target="_blank" style="color: var(--gold);">Watch highlight videos on YouTube</a></p>
+</section>
+
+<!-- ─── VENUE ─── -->
+<section class="venue" id="venue">
+    <div class="section-header">
+        <h2>Venue</h2>
+        <span class="accent-line"></span>
+    </div>
+    <div class="venue-grid">
+        <div class="venue-info">
+            <h3>Boat Lagoon Marina, Phuket</h3>
+            <p>Phuket's iconic marina with over 20 years of heritage — the spiritual home of Thailand's marine industry.</p>
+            <div class="venue-details">
+                <div class="venue-detail">
+                    <span class="vd-icon">📍</span>
+                    <div>22/1 Moo 2, Thepkrasattri Rd, Koh Kaew, Muang, Phuket 83000</div>
+                </div>
+                <div class="venue-detail">
+                    <span class="vd-icon">✈️</span>
+                    <div>20 minutes from Phuket International Airport</div>
+                </div>
+                <div class="venue-detail">
+                    <span class="vd-icon">🏨</span>
+                    <div>5 minutes from Boat Lagoon resort hotels</div>
+                </div>
+                <div class="venue-detail">
+                    <span class="vd-icon">🅿️</span>
+                    <div>On-site parking available for all guests</div>
+                </div>
+            </div>
+        </div>
+        <div class="venue-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.2!2d98.395!3d7.955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305031e2c5ee4e63%3A0x402fd04cc805ef0!2sPhuket%20Boat%20Lagoon!5e0!3m2!1sen!2sth!4v1" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── PARTNERS ─── -->
+<section class="partners" id="partners">
+    <div class="section-header">
+        <h2>Partners</h2>
+        <span class="accent-line"></span>
+    </div>
+    <div class="partners-grid">
+        <div class="partner-item">
+            <strong>Asia-Pacific Boating</strong>
+            <span>Official Media Partner</span>
+        </div>
+        <div class="partner-item">
+            <strong>Bangkok Hospital Phuket</strong>
+            <span>Healthcare Partner</span>
+        </div>
+        <div class="partner-item">
+            <strong>Boat Lagoon Marina</strong>
+            <span>Official Venue Host</span>
+        </div>
+        <div class="partner-item">
+            <strong>TAT</strong>
+            <span>Government Partner</span>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+    <div class="section-header">
+        <h2>Get In Touch</h2>
+        <span class="accent-line"></span>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-item">
+            <div class="ci-icon">📧</div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@thailandboatfestival.com">info@thailandboatfestival.com</a></p>
+        </div>
+        <div class="contact-item">
+            <div class="ci-icon">💬</div>
+            <h4>Social</h4>
+            <p>
+                <a href="https://www.facebook.com/thailandboatfestival" target="_blank">Facebook</a> &bull;
+                <a href="https://www.youtube.com/@ThailandBoatFestival" target="_blank">YouTube</a> &bull;
+                <a href="https://line.me/ti/p/~omobileexpo" target="_blank">LINE</a>
+            </p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="#register" class="btn btn-gold">Register Your Interest</a>
+    </div>
+</section>
+
+<!-- ─── REGISTER ─── -->
+<section id="register" style="background:var(--navy);padding:6rem 2rem;">
+    <div style="max-width:560px;margin:0 auto;text-align:center;">
+        <p style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;">Reserve Your Place</p>
+        <h2 style="font-family:var(--font-display);font-size:2.2rem;color:#fff;font-weight:600;margin-bottom:0.75rem;">Be the First to Know</h2>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.95rem;margin-bottom:2.5rem;line-height:1.7;">
+            Register your interest now and receive first access to exhibitor announcements,<br>VIP program details, and early registration when they open.
+        </p>
+
+        <form id="registerForm" name="register-tbf" data-netlify="true" onsubmit="submitRegister(event)" style="text-align:left;">
+            <input type="hidden" name="form-name" value="register-tbf">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                <div>
+                    <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">First Name *</label>
+                    <input type="text" id="reg-firstname" name="firstname" required placeholder="e.g. James"
+                        style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
+                        onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+                </div>
+                <div>
+                    <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">Last Name *</label>
+                    <input type="text" id="reg-lastname" name="lastname" required placeholder="e.g. Cooper"
+                        style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
+                        onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+                </div>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+                <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">Email Address *</label>
+                <input type="email" id="reg-email" name="email" required placeholder="you@example.com"
+                    style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
+                    onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+            </div>
+
+            <div style="margin-bottom:1rem;">
+                <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">I am interested as a…  *</label>
+                <select id="reg-interest" name="interest" required
+                    style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;appearance:none;cursor:pointer;transition:border-color 0.2s;"
+                    onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+                    <option value="" disabled selected style="background:#0a1628;">— Select one —</option>
+                    <option value="Visitor"  style="background:#0a1628;">⛵ Visitor — I'd like to attend</option>
+                    <option value="Exhibitor" style="background:#0a1628;">🛥️ Exhibitor — I want to showcase my brand / boat</option>
+                    <option value="Sponsor"  style="background:#0a1628;">✨ Sponsor / Partner — I'm interested in partnership</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom:2rem;">
+                <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">Phone <span style="color:rgba(255,255,255,0.25);font-size:0.65rem;text-transform:none;">(optional)</span></label>
+                <input type="tel" id="reg-phone" name="phone" placeholder="+66 or international format"
+                    style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
+                    onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+            </div>
+
+            <button type="submit" id="reg-submit"
+                style="width:100%;padding:1rem;border-radius:12px;border:none;background:var(--gold);color:var(--navy);font-size:0.95rem;font-weight:700;font-family:var(--font-body);cursor:pointer;letter-spacing:0.04em;transition:all 0.2s;">
+                Register My Interest →
+            </button>
+
+            <p style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;">
+                No spam. We respect your privacy and will only send relevant updates about TBF 2027.
+            </p>
+        </form>
+
+        <!-- Success state -->
+        <div id="reg-success" style="display:none;padding:2.5rem 2rem;border:1.5px solid rgba(201,168,76,0.4);border-radius:16px;background:rgba(201,168,76,0.06);">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">⚓</div>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--gold-light);margin-bottom:0.75rem;">You're on the list.</h3>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;">
+                A confirmation has been sent to your inbox. We'll be in touch with updates as the festival takes shape — see you in Phuket.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+async function submitRegister(e) {
+    e.preventDefault();
+    const btn = document.getElementById('reg-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+
+    const formData = new FormData(e.target);
+
+    try {
+        await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        });
+    } catch(err) { /* silent — show success regardless */ }
+
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('reg-success').style.display  = 'block';
+}
+</script>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <p>&copy; 2027 Thailand Boat Festival — Organized by <a href="https://mvisioncorp.com" target="_blank">M Vision Public Company Limited</a></p>
+    <p style="margin-top: 0.3rem;">11/1 Soi Ramkhamhaeng 121, Huamak, Bangkapi, Bangkok 10240</p>
+</footer>
+
+<!-- ─── ASK SAND AI BUTTON ─── -->
+<a href="/ask-sand" class="ask-sand-btn" aria-label="Ask Sand AI Concierge">
+    <div class="ask-sand-avatar">S</div>
+    <div>
+        <div class="ask-sand-label">Ask Sand</div>
+        <div class="ask-sand-sub">AI Concierge</div>
+    </div>
+</a>
+
+<script>
+// ─── NAV SCROLL ───
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+
+// ─── HAMBURGER MENU ───
+document.querySelector('.hamburger')?.addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>

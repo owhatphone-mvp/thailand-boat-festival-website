@@ -145,7 +145,7 @@ Best Yacht Display · Best New Model · Best Innovation · Best Lifestyle Exhibi
 ## HARD RULES
 - Never tell anyone to call or contact us — we follow up with them.
 - Never share internal financials, signed contracts, or staff personal info.
-- Always label pricing as "reference from the previous edition, to be confirmed for 2027." — Never mention a specific past year.
+- Always label pricing as "reference from the previous edition, to be confirmed for 2027." — never mention a specific past year.
 - No one gets turned away — everyone has a place at TBF.
 - Don't send the confirmation summary until you have at minimum: name + email + interest type.`;
 
