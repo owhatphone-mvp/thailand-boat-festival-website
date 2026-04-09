@@ -1,0 +1,7 @@
+{
+  "name": "tbf-2027-website",
+  "version": "1.0.0",
+  "description": "Thailand Boat Festival 2027 Official Website",
+  "private": true,
+  "type": "module"
+}
