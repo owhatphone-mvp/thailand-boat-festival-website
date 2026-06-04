@@ -1,9 +1,22 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+  edge_functions = "netlify/edge-functions"
+
+[build.environment]
+  # Sand source has no hard-coded secrets — all keys come from process.env.*.
+  # Disable scanner because it tripped on Google Apps Script URL pattern.
+  SECRETS_SCAN_ENABLED = "false"
 
 [functions]
   node_bundler = "esbuild"
+
+# Edge function — HTTP Basic Auth gate for the admin dashboard.
+# Matches every request; the function decides whether to enforce auth based on
+# hostname (admin.*) and path (/admin, /sand-admin, /api/admin-conversations).
+[[edge_functions]]
+  function = "admin-auth"
+  path     = "/*"
 
 [[headers]]
   for = "/*"
@@ -11,6 +24,27 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Disable HTML caching so users see new deploys immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/ask-sand"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/admin"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[redirects]]
   from = "/api/chat"
@@ -23,8 +57,28 @@
   status = 200
 
 [[redirects]]
+  from = "/api/admin-conversations"
+  to = "/.netlify/functions/admin-conversations"
+  status = 200
+
+[[redirects]]
+  from = "/api/get-conversation"
+  to = "/.netlify/functions/get-conversation"
+  status = 200
+
+[[redirects]]
   from = "/ask-sand"
   to = "/ask-sand.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/sand-admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/sand-admin"
+  to = "/sand-admin.html"
   status = 200
 
 [[redirects]]

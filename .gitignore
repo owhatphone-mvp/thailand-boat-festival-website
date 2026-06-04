@@ -1,0 +1,10 @@
+node_modules/
+.netlify/
+.DS_Store
+*.log
+.git-credentials*
+push-to-github.sh
+*.zip
+images/LINE_ALBUM*
+* - Copy.*
+**/*\ -\ Copy.*

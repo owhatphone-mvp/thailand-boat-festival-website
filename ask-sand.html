@@ -661,11 +661,18 @@ function removeTyping() {
 async function getReply() {
     isWaiting = true;
     showTyping();
+    // Conversation ID per browser session — required for admin dashboard to log conversation
+    let _convId = sessionStorage.getItem('sand_conv_id');
+    if (!_convId) {
+        _convId = (crypto.randomUUID && crypto.randomUUID()) ||
+                  ('c-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10));
+        sessionStorage.setItem('sand_conv_id', _convId);
+    }
     try {
         const res  = await fetch('/.netlify/functions/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: chatHistory })
+            body: JSON.stringify({ messages: chatHistory, conversationId: _convId })
         });
         const data = await res.json();
         if (data.reply && !data.fallback) {

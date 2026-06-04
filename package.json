@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "Thailand Boat Festival 2027 Official Website",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
 }

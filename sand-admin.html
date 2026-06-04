@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sand Admin · TBF Conversations</title>
+<style>
+:root {
+    --navy: #0a1628;
+    --navy-2: #122236;
+    --gold: #c9a84c;
+    --gold-light: #d8bd6a;
+    --text: #e6e6e6;
+    --text-muted: #888;
+    --green: #4ade80;
+    --orange: #fb923c;
+    --blue: #60a5fa;
+    --red: #f87171;
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(201,168,76,0.15);
+    --font: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--navy); color: var(--text); min-height: 100vh; }
+
+/* ─── HEADER ─── */
+.bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(10,22,40,0.95); backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 10;
+}
+.bar h1 { color: var(--gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 0.04em; }
+.bar h1 span { color: var(--text-muted); font-weight: 400; margin-left: 0.5rem; }
+.bar-right { display: flex; gap: 0.6rem; align-items: center; }
+.btn {
+    padding: 0.45rem 0.9rem; border-radius: 6px;
+    border: 1px solid var(--glass-border); background: var(--glass);
+    color: var(--text); font-size: 0.78rem; cursor: pointer; transition: all 0.15s;
+    font-family: var(--font);
+}
+.btn:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+.btn.primary { background: var(--gold); color: var(--navy); border-color: var(--gold); font-weight: 600; }
+
+/* ─── LOGIN ─── */
+.login-overlay {
+    position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: var(--navy); z-index: 100;
+}
+.login-box {
+    background: var(--navy-2); border: 1px solid var(--glass-border);
+    padding: 2.2rem; border-radius: 12px; text-align: center; min-width: 320px;
+}
+.login-box h2 { color: var(--gold); margin-bottom: 1.2rem; font-weight: 600; }
+.login-box input {
+    width: 100%; padding: 0.7rem 1rem; border-radius: 6px;
+    border: 1px solid var(--glass-border); background: rgba(0,0,0,0.3);
+    color: var(--text); font-size: 1rem; margin-bottom: 1rem; font-family: var(--font);
+}
+.login-box input:focus { outline: 1px solid var(--gold); border-color: var(--gold); }
+.login-error { color: var(--red); font-size: 0.85rem; margin-top: 0.5rem; min-height: 1rem; }
+
+/* ─── STATS ─── */
+.main { padding: 1.5rem; max-width: 1400px; margin: 0 auto; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.9rem; margin-bottom: 1.4rem; }
+.stat-card {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: 10px; padding: 1.1rem 1.2rem;
+}
+.stat-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+.stat-value { font-size: 1.8rem; font-weight: 700; color: var(--gold); }
+.stat-card.green .stat-value { color: var(--green); }
+.stat-card.red    .stat-value { color: var(--red); }
+.stat-card.orange .stat-value { color: var(--orange); }
+.stat-card.blue   .stat-value { color: var(--blue); }
+
+/* ─── FILTERS ─── */
+.filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.filter-btn {
+    padding: 0.45rem 0.95rem; border-radius: 6px;
+    border: 1px solid var(--glass-border); background: var(--glass);
+    color: var(--text-muted); font-size: 0.78rem; cursor: pointer;
+    transition: all 0.15s; font-family: var(--font);
+}
+.filter-btn:hover { color: var(--text); }
+.filter-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); font-weight: 600; }
+
+/* ─── TABLE ─── */
+.table-wrap {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: 10px; overflow: hidden;
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th { text-align: left; padding: 0.85rem 1rem; color: var(--text-muted); font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--glass-border); }
+td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+tr.row { cursor: pointer; transition: background 0.1s; }
+tr.row:hover { background: rgba(201,168,76,0.06); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 0.45rem; vertical-align: middle; }
+.dot.green { background: var(--green); box-shadow: 0 0 8px rgba(74,222,128,0.6); animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.badge {
+    display: inline-block; padding: 0.18rem 0.55rem; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.badge.ready    { background: rgba(74,222,128,0.15); color: var(--green); }
+.badge.negotiating, .badge.followup { background: rgba(251,146,60,0.15); color: var(--orange); }
+.badge.exploring, .badge.visitor    { background: rgba(96,165,250,0.15); color: var(--blue); }
+.badge.active   { background: rgba(201,168,76,0.15); color: var(--gold); }
+.empty { text-align: center; padding: 3rem; color: var(--text-muted); }
+.preview { color: var(--text-muted); max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ─── MODAL ─── */
+.modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: none; z-index: 50; align-items: center; justify-content: center; padding: 2rem; }
+.modal-bg.active { display: flex; }
+.modal {
+    background: var(--navy-2); border: 1px solid var(--glass-border);
+    border-radius: 12px; max-width: 800px; width: 100%; max-height: 88vh;
+    display: flex; flex-direction: column;
+}
+.modal-head { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.modal-title { color: var(--gold); font-weight: 600; }
+.modal-meta  { color: var(--text-muted); font-size: 0.78rem; margin-top: 0.3rem; }
+.modal-close { background: none; border: 0; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 0; line-height: 1; }
+.modal-close:hover { color: var(--text); }
+.modal-body { padding: 1.5rem; overflow-y: auto; flex: 1; }
+.msg { margin-bottom: 1rem; }
+.msg-role { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+.msg-content { background: rgba(0,0,0,0.25); padding: 0.8rem 1rem; border-radius: 8px; line-height: 1.55; white-space: pre-wrap; }
+.msg.user .msg-content     { border-left: 2px solid var(--blue); }
+.msg.assistant .msg-content { border-left: 2px solid var(--gold); }
+.lead-block {
+    margin-top: 1.5rem; padding: 1rem 1.2rem;
+    background: rgba(201,168,76,0.08); border: 1px solid var(--glass-border);
+    border-radius: 8px;
+}
+.lead-block h3 { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.7rem; letter-spacing: 0.05em; }
+.lead-block pre { background: rgba(0,0,0,0.4); padding: 0.85rem; border-radius: 6px; font-size: 0.78rem; overflow-x: auto; color: var(--gold-light); }
+.modal-foot { padding: 0.9rem 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: flex-end; gap: 0.6rem; }
+.btn.danger { color: var(--red); border-color: rgba(248,113,113,0.3); }
+.btn.danger:hover { background: rgba(248,113,113,0.1); border-color: var(--red); }
+
+@media (max-width: 720px) {
+    th.hide-mobile, td.hide-mobile { display: none; }
+    .stat-value { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="bar" id="bar">
+    <h1>🛥️ Sand Conversations <span id="lastUpdated"></span></h1>
+    <div class="bar-right">
+        <button class="btn" onclick="loadData()">↻ Refresh</button>
+        <button class="btn" onclick="signOut()">Sign out</button>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="main">
+    <div class="stats">
+        <div class="stat-card green"><div class="stat-label">Active (1 min)</div><div class="stat-value" id="statActive">—</div></div>
+        <div class="stat-card red"><div class="stat-label">🔥 Hot Leads</div><div class="stat-value" id="statHot">—</div></div>
+        <div class="stat-card orange"><div class="stat-label">🟡 Follow-up</div><div class="stat-value" id="statFollowup">—</div></div>
+        <div class="stat-card blue"><div class="stat-label">❄️ Cold / Visitor</div><div class="stat-value" id="statCold">—</div></div>
+        <div class="stat-card"><div class="stat-label">Total (90d)</div><div class="stat-value" id="statTotal">—</div></div>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all"      onclick="setFilter('all')">All</button>
+        <button class="filter-btn"        data-filter="active"   onclick="setFilter('active')">🟢 Active</button>
+        <button class="filter-btn"        data-filter="hot"      onclick="setFilter('hot')">🔥 Hot</button>
+        <button class="filter-btn"        data-filter="followup" onclick="setFilter('followup')">🟡 Follow-up</button>
+        <button class="filter-btn"        data-filter="cold"     onclick="setFilter('cold')">❄️ Cold</button>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Last Activity</th>
+                    <th>Name</th>
+                    <th class="hide-mobile">Company</th>
+                    <th>Status</th>
+                    <th class="hide-mobile">Msgs</th>
+                    <th class="hide-mobile">First Message</th>
+                    <th>Lang</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"><tr><td colspan="7" class="empty">Loading…</td></tr></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg" onclick="if (event.target.id === 'modalBg') closeModal();">
+    <div class="modal">
+        <div class="modal-head">
+            <div>
+                <div class="modal-title" id="mTitle">—</div>
+                <div class="modal-meta" id="mMeta">—</div>
+            </div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="mBody"></div>
+        <div class="modal-foot">
+            <button class="btn" id="bCopyLead" onclick="copyLead()">📋 Copy LEAD</button>
+            <button class="btn" id="bCopyFull" onclick="copyFull()">📜 Copy Full</button>
+            <button class="btn" onclick="downloadMd()">💾 Download .md</button>
+            <button class="btn" onclick="emailLead()">✉️ Email</button>
+            <button class="btn danger" id="mDelete" onclick="deleteCurrent()">Delete</button>
+            <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const ACTIVE_MS = 60 * 1000;
+let allConvs = [];
+let currentFilter = 'all';
+let currentId = null;
+
+// Auth is handled at the edge by HTTP Basic Auth (admin-auth edge function).
+// The browser sends Authorization: Basic ... automatically once the user has
+// signed in via the native dialog, so this page just calls the API normally.
+
+// ─── DATA ───
+async function loadData() {
+    try {
+        const r = await fetch('/api/admin-conversations?action=list', {
+            credentials: 'include'
+        });
+        if (r.status === 401) { signOut(); return; }
+        const d = await r.json();
+        allConvs = d.conversations || [];
+        renderStats();
+        renderTable();
+        document.getElementById('lastUpdated').textContent = '· updated ' + new Date().toLocaleTimeString();
+    } catch (err) {
+        console.error('loadData', err);
+    }
+}
+
+// "Sign out" of HTTP Basic Auth is messy in browsers. Easiest clean sign-out:
+// hit the API with bogus creds → server 401 → browser drops cached creds → reload.
+function signOut() {
+    fetch('/api/admin-conversations?action=list', {
+        headers: { 'Authorization': 'Basic ' + btoa('logout:logout' + Date.now()) }
+    })
+    .catch(() => {})
+    .finally(() => { sessionStorage.clear(); location.reload(); });
+}
+
+function isActive(c) { return Date.now() - new Date(c.lastActivity).getTime() < ACTIVE_MS; }
+function isHot(c)    { return c.status === 'ready-to-buy' || c.status === 'negotiating'; }
+function isFollow(c) { return c.status === 'interested-followup'; }
+function isCold(c)   { return c.status === 'exploring' || c.status === 'visitor-meetup' || c.status === 'visitor-only'; }
+
+function renderStats() {
+    document.getElementById('statActive').textContent   = allConvs.filter(isActive).length;
+    document.getElementById('statHot').textContent      = allConvs.filter(isHot).length;
+    document.getElementById('statFollowup').textContent = allConvs.filter(isFollow).length;
+    document.getElementById('statCold').textContent     = allConvs.filter(isCold).length;
+    document.getElementById('statTotal').textContent    = allConvs.length;
+}
+
+function setFilter(f) {
+    currentFilter = f;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+    renderTable();
+}
+
+function applyFilter() {
+    if (currentFilter === 'all')      return allConvs;
+    if (currentFilter === 'active')   return allConvs.filter(isActive);
+    if (currentFilter === 'hot')      return allConvs.filter(isHot);
+    if (currentFilter === 'followup') return allConvs.filter(isFollow);
+    if (currentFilter === 'cold')     return allConvs.filter(isCold);
+    return allConvs;
+}
+
+function statusBadgeClass(s) {
+    if (s === 'ready-to-buy') return 'ready';
+    if (s === 'negotiating' || s === 'interested-followup') return 'negotiating';
+    if (s === 'exploring' || s === 'visitor-meetup' || s === 'visitor-only') return 'exploring';
+    return 'active';
+}
+
+function renderTable() {
+    const list = applyFilter();
+    const tb = document.getElementById('tbody');
+    if (!list.length) { tb.innerHTML = '<tr><td colspan="7" class="empty">No conversations.</td></tr>'; return; }
+    tb.innerHTML = list.map(c => {
+        const active = isActive(c);
+        const ts = new Date(c.lastActivity).toLocaleString();
+        const status = c.status || 'active';
+        return `<tr class="row" onclick="openConv('${c.id}')">
+            <td>${active ? '<span class="dot green"></span>' : ''}${escapeHtml(ts)}</td>
+            <td>${escapeHtml(c.name || '—')}</td>
+            <td class="hide-mobile">${escapeHtml(c.company || '—')}</td>
+            <td><span class="badge ${statusBadgeClass(status)}">${escapeHtml(status)}</span></td>
+            <td class="hide-mobile">${c.messageCount || 0}</td>
+            <td class="hide-mobile preview">${escapeHtml(c.firstMessage || '')}</td>
+            <td>${escapeHtml(c.lang || '—')}</td>
+        </tr>`;
+    }).join('');
+}
+
+function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+        ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// ─── MODAL ───
+async function openConv(id) {
+    currentId = id;
+    const r = await fetch('/api/admin-conversations?action=get&id=' + encodeURIComponent(id), {
+        credentials: 'include'
+    });
+    if (!r.ok) return;
+    const c = await r.json();
+    currentConv = c; // for export button helpers
+
+    document.getElementById('mTitle').textContent =
+        (c.lead?.name || 'Anonymous') + (c.lead?.company ? ' · ' + c.lead.company : '');
+    document.getElementById('mMeta').textContent =
+        `${new Date(c.lastActivity).toLocaleString()} · ${c.status || 'active'} · ${c.lang || '—'} · ${c.messageCount || 0} msgs`;
+
+    let body = '';
+    for (const m of (c.messages || [])) {
+        const role = m.role === 'user' ? 'Visitor' : 'Sand';
+        body += `<div class="msg ${m.role}">
+            <div class="msg-role">${role}</div>
+            <div class="msg-content">${escapeHtml(m.content || '')}</div>
+        </div>`;
+    }
+    if (c.lead) {
+        body += `<div class="lead-block">
+            <h3>📋 LEAD CARD</h3>
+            <pre>${escapeHtml(JSON.stringify(c.lead, null, 2))}</pre>
+        </div>`;
+    }
+    document.getElementById('mBody').innerHTML = body || '<p class="empty">No messages.</p>';
+    document.getElementById('modalBg').classList.add('active');
+}
+
+function closeModal() {
+    document.getElementById('modalBg').classList.remove('active');
+    currentId = null;
+}
+
+// ─── EXPORT HELPERS (modal action buttons) ───
+let currentConv = null; // populated by openConv()
+
+function buildLeadSummary(c) {
+    if (!c) return '';
+    const lead = c.lead || {};
+    const lines = [
+        `🛥️ Sand Lead — ${new Date(c.lastActivity).toLocaleString()}`,
+        `Name:     ${lead.name || '—'}`,
+        `Company:  ${lead.company || '—'}`,
+        `Email:    ${lead.email || '—'}`,
+        `Interest: ${lead.interest || '—'}`,
+        `Status:   ${c.status || '—'}`
+    ];
+    if (lead.package)      lines.push(`Package:  ${lead.package}`);
+    if (lead.cash)         lines.push(`Cash:     THB ${lead.cash}`);
+    if (lead.barter)       lines.push(`Barter:   ${lead.barter}${lead.barter_value ? ` (THB ${lead.barter_value}, ${lead.barter_pct || '?'}%)` : ''}`);
+    if (lead.note)         lines.push(`Note:     ${lead.note}`);
+    lines.push(`Lang:     ${c.lang || '—'} · Msgs: ${c.messageCount || 0}`);
+    return lines.join('\n');
+}
+
+function buildFullTranscript(c) {
+    if (!c) return '';
+    const head = buildLeadSummary(c);
+    const body = (c.messages || [])
+        .map(m => `[${m.role === 'user' ? 'Visitor' : 'Sand'}] ${m.content || ''}`)
+        .join('\n\n');
+    return head + '\n\n— — — — — Conversation — — — — —\n\n' + body;
+}
+
+async function copyToClipboard(text, btnId) {
+    try { await navigator.clipboard.writeText(text); }
+    catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    if (btnId) {
+        const b = document.getElementById(btnId);
+        const orig = b.textContent;
+        b.textContent = '✓ Copied!';
+        setTimeout(() => { b.textContent = orig; }, 2000);
+    }
+}
+function copyLead() { copyToClipboard(buildLeadSummary(currentConv), 'bCopyLead'); }
+function copyFull() { copyToClipboard(buildFullTranscript(currentConv), 'bCopyFull'); }
+
+function downloadMd() {
+    if (!currentConv) return;
+    const c = currentConv;
+    const lead = c.lead || {};
+    const date = new Date(c.lastActivity).toISOString().slice(0, 10);
+    const safeName = (lead.name || 'anon').replace(/[^A-Za-z0-9_-]/g, '_');
+    const md = '# Sand Lead — ' + (lead.name || 'Anonymous') + '\n\n' +
+        '```\n' + buildLeadSummary(c) + '\n```\n\n' +
+        '## Conversation\n\n' +
+        (c.messages || []).map(m =>
+            '**' + (m.role === 'user' ? 'Visitor' : 'Sand') + ':** ' + (m.content || '')
+        ).join('\n\n');
+    const blob = new Blob([md], { type: 'text/markdown' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'lead_' + date + '_' + safeName + '.md';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+function emailLead() {
+    if (!currentConv) return;
+    const c = currentConv;
+    const lead = c.lead || {};
+    const subject = '[TBF Lead] ' + (lead.interest || 'Conversation') + ' — ' + (lead.name || 'Anonymous') +
+                    (lead.company ? ' · ' + lead.company : '');
+    const body = buildFullTranscript(c);
+    location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+}
+
+async function deleteCurrent() {
+    if (!currentId) return;
+    if (!confirm('Delete this conversation permanently?')) return;
+    const r = await fetch('/api/admin-conversations?action=delete&id=' + encodeURIComponent(currentId), {
+        method: 'DELETE',
+        credentials: 'include'
+    });
+    if (r.ok) { closeModal(); loadData(); }
+    else alert('Delete failed.');
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && currentId) closeModal();
+});
+
+// ─── INIT ───
+loadData();
+setInterval(loadData, 60000);
+</script>
+</body>
+</html>
