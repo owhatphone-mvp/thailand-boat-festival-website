@@ -124,11 +124,25 @@ tr.row:hover { background: rgba(201,168,76,0.06); }
 .modal-close { background: none; border: 0; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 0; line-height: 1; }
 .modal-close:hover { color: var(--text); }
 .modal-body { padding: 1.5rem; overflow-y: auto; flex: 1; }
-.msg { margin-bottom: 1rem; }
+.msg { margin-bottom: 1rem; position: relative; }
 .msg-role { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
 .msg-content { background: rgba(0,0,0,0.25); padding: 0.8rem 1rem; border-radius: 8px; line-height: 1.55; white-space: pre-wrap; }
 .msg.user .msg-content     { border-left: 2px solid var(--blue); }
 .msg.assistant .msg-content { border-left: 2px solid var(--gold); }
+.flag-btn {
+    margin-top: 0.4rem;
+    padding: 0.32rem 0.7rem;
+    font-size: 0.72rem;
+    background: rgba(201, 48, 48, 0.12);
+    border: 1px solid rgba(201, 48, 48, 0.35);
+    color: #ff9c9c;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+}
+.flag-btn:hover { background: rgba(201, 48, 48, 0.22); color: #ffbcbc; }
+.flag-btn.flagged { background: rgba(45, 122, 79, 0.18); border-color: rgba(45, 122, 79, 0.4); color: #a0e0b5; cursor: default; }
 .lead-block {
     margin-top: 1.5rem; padding: 1rem 1.2rem;
     background: rgba(201,168,76,0.08); border: 1px solid var(--glass-border);
@@ -328,13 +342,17 @@ async function openConv(id) {
         `${new Date(c.lastActivity).toLocaleString()} · ${c.status || 'active'} · ${c.lang || '—'} · ${c.messageCount || 0} msgs`;
 
     let body = '';
-    for (const m of (c.messages || [])) {
+    (c.messages || []).forEach((m, idx) => {
         const role = m.role === 'user' ? 'Visitor' : 'Sand';
-        body += `<div class="msg ${m.role}">
+        const flagBtn = m.role === 'assistant'
+            ? `<button class="flag-btn" id="flag-${idx}" onclick="flagMessage(${idx})">🚩 Flag as wrong</button>`
+            : '';
+        body += `<div class="msg ${m.role}" data-idx="${idx}">
             <div class="msg-role">${role}</div>
             <div class="msg-content">${escapeHtml(m.content || '')}</div>
+            ${flagBtn}
         </div>`;
-    }
+    });
     if (c.lead) {
         body += `<div class="lead-block">
             <h3>📋 LEAD CARD</h3>
@@ -442,6 +460,54 @@ async function deleteCurrent() {
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && currentId) closeModal();
 });
+
+// ─── FLAG A WRONG SAND MESSAGE ───
+async function flagMessage(idx) {
+    if (!currentConv) return;
+    const msg = currentConv.messages[idx];
+    if (!msg || msg.role !== 'assistant') return;
+
+    const comment = prompt(
+        'What\'s wrong with this reply? (short note — e.g. "Lee Marine no longer Sunreef dealer")',
+        ''
+    );
+    if (comment === null) return; // cancelled
+    const correctAnswer = prompt(
+        'What\'s the correct answer? (optional — leave blank if unsure)',
+        ''
+    );
+
+    const btn = document.getElementById('flag-' + idx);
+    btn.disabled = true; btn.textContent = '… sending';
+
+    try {
+        const r = await fetch('/api/report-error', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({
+                conversationId: currentConv.id,
+                messageIndex: idx,
+                sandReply: msg.content || '',
+                comment: comment || '',
+                correctAnswer: correctAnswer || '',
+                reportedBy: 'admin'
+            })
+        });
+        if (r.ok) {
+            btn.textContent = '✓ Reported — team notified';
+            btn.classList.add('flagged');
+        } else {
+            btn.disabled = false;
+            btn.textContent = '🚩 Flag as wrong (retry)';
+            alert('Failed to send report. Please try again.');
+        }
+    } catch (err) {
+        btn.disabled = false;
+        btn.textContent = '🚩 Flag as wrong (retry)';
+        alert('Network error: ' + err.message);
+    }
+}
 
 // ─── INIT ───
 loadData();

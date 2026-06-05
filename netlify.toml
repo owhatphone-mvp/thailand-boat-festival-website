@@ -71,6 +71,11 @@
   status = 200
 
 [[redirects]]
+  from = "/api/report-error"
+  to = "/.netlify/functions/report-error"
+  status = 200
+
+[[redirects]]
   from = "/ask-sand"
   to = "/ask-sand.html"
   status = 200
