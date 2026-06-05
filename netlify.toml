@@ -11,6 +11,10 @@
 [functions]
   node_bundler = "esbuild"
 
+# Sand's knowledge base — bundle .md files alongside the chat function
+[functions.chat]
+  included_files = ["knowledge/**/*.md"]
+
 # Edge function — HTTP Basic Auth gate for the admin dashboard.
 # Matches every request; the function decides whether to enforce auth based on
 # hostname (admin.*) and path (/admin, /sand-admin, /api/admin-conversations).

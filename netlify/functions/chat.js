@@ -2,6 +2,132 @@
 // Uses Anthropic Claude API · stream:false · web_search (max_uses 4) · auto-retry
 // Auto-switches to Opus 4.7 on negotiation/barter turns, Sonnet 4 otherwise.
 // Saves every turn to Netlify Blobs store "sand-conversations" for admin dashboard
+// Smart-loads yacht knowledge from /knowledge/**/*.md based on keywords in user message
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+// ─── Keyword → knowledge-file map (case-insensitive substring match on recent messages)
+// Add brand keywords here when new .md files are written.
+const BRAND_KEYWORDS = {
+    // P1 — Top exhibitor brands (English + Thai transliteration)
+    'azimut':       'yachts/azimut.md',
+    'อาซิมุท':       'yachts/azimut.md',
+    'sunseeker':    'yachts/sunseeker.md',
+    'ซันซีกเกอร์':    'yachts/sunseeker.md',
+    'princess y':   'yachts/princess.md',
+    'princess v':   'yachts/princess.md',
+    'princess f':   'yachts/princess.md',
+    'princess x':   'yachts/princess.md',
+    'princess yacht': 'yachts/princess.md',
+    'sanlorenzo':   'yachts/sanlorenzo.md',
+    'san lorenzo':  'yachts/sanlorenzo.md',
+    'jeanneau':     'yachts/jeanneau.md',
+    'wally':        'yachts/wally.md',
+    'axopar':       'yachts/axopar.md',
+    'saxdor':       'yachts/saxdor.md',
+    'de antonio':   'yachts/de-antonio.md',
+    'chris-craft':  'yachts/chris-craft.md',
+    'chris craft':  'yachts/chris-craft.md',
+    // P3 — Brand depth
+    'ferretti':     'yachts/ferretti.md',
+    'pershing':     'yachts/pershing.md',
+    'riva':         'yachts/riva.md',
+    'benetti':      'yachts/benetti.md',
+    'beneteau':     'yachts/beneteau.md',
+    'lagoon catamaran': 'yachts/lagoon.md',
+    'lagoon 4':     'yachts/lagoon.md',
+    'lagoon 5':     'yachts/lagoon.md',
+    'fountaine pajot': 'yachts/fountaine-pajot.md',
+    'sunreef':      'yachts/sunreef.md',
+    'oyster':       'yachts/oyster.md',
+    'swan':         'yachts/swan.md',
+    'feadship':     'yachts/feadship.md',
+    'lurssen':      'yachts/lurssen.md',
+    'lürssen':      'yachts/lurssen.md',
+    'heesen':       'yachts/heesen.md',
+    'williams jet': 'yachts/williams-tenders.md',
+    'williams tender': 'yachts/williams-tenders.md',
+    'seabob':       'yachts/seabob.md',
+    // P2 — Thai market
+    'boat lagoon yachting': 'thai-market/boat-lagoon-yachting.md',
+    'asia yachting':        'thai-market/asia-yachting.md',
+    'east marine':          'thai-market/east-marine.md',
+    'thai marine':          'thai-market/thai-marine.md',
+    'dch marine':           'thai-market/dch-marine.md',
+    'simpson marine':       'thai-market/simpson-marine.md',
+    'phuket marina':        'thai-market/phuket-marinas.md',
+    'yacht haven':          'thai-market/phuket-marinas.md',
+    'ao po':                'thai-market/phuket-marinas.md',
+    'royal phuket marina':  'thai-market/phuket-marinas.md',
+    'boat import':          'thai-market/boat-import-thailand.md',
+    'import duty':          'thai-market/boat-import-thailand.md',
+    'นำเข้าเรือ':            'thai-market/boat-import-thailand.md',
+    // P4 — TBF history
+    'previous edition':     'tbf-history/edition-2-boat-lagoon.md',
+    'last edition':         'tbf-history/edition-2-boat-lagoon.md',
+    'previous show':        'tbf-history/edition-2-boat-lagoon.md',
+    // P5 — Events
+    'tibs':                 'events/tibs-context.md',
+    'singapore yacht':      'events/asia-circuit.md',
+    'hong kong yacht':      'events/asia-circuit.md',
+    'monaco yacht':         'events/european-circuit.md',
+    'cannes yacht':         'events/european-circuit.md',
+    "king's cup":           'events/regatta-season.md',
+    'kings cup':            'events/regatta-season.md',
+    // P6 — Technical
+    'sea trial':            'specs/sea-trial-protocol.md',
+    'charter thailand':     'specs/yacht-charter-thailand.md'
+};
+
+// Resolve knowledge dir across local / Netlify Lambda contexts
+const KNOWLEDGE_DIR_CANDIDATES = [
+    path.join(process.cwd(), 'knowledge'),
+    path.join(process.env.LAMBDA_TASK_ROOT || '', 'knowledge'),
+    path.resolve('./knowledge')
+];
+
+async function loadKnowledgeFile(relPath) {
+    for (const dir of KNOWLEDGE_DIR_CANDIDATES) {
+        if (!dir) continue;
+        try {
+            const fullPath = path.join(dir, relPath);
+            const content = await fs.readFile(fullPath, 'utf8');
+            return content;
+        } catch (_) { /* try next dir */ }
+    }
+    return null;
+}
+
+async function loadRelevantKnowledge(messages) {
+    // Scan last 4 messages so brand context carries through follow-ups
+    const recentText = (messages || [])
+        .slice(-4)
+        .map(m => typeof m.content === 'string' ? m.content : '')
+        .join(' ')
+        .toLowerCase();
+    if (!recentText) return '';
+
+    const matched = new Set();
+    for (const [kw, file] of Object.entries(BRAND_KEYWORDS)) {
+        if (recentText.includes(kw)) matched.add(file);
+        if (matched.size >= 5) break;  // cap at 5 files / call to control prompt size
+    }
+    if (!matched.size) return '';
+
+    const blocks = [];
+    for (const file of matched) {
+        const content = await loadKnowledgeFile(file);
+        if (content) {
+            const trimmed = content.length > 4000 ? content.slice(0, 4000) + '\n…[truncated]' : content;
+            blocks.push(`### Reference: ${file}\n\n${trimmed}`);
+        }
+    }
+    if (!blocks.length) return '';
+
+    console.log(`[Sand knowledge] loaded ${blocks.length} file(s): ${[...matched].join(', ')}`);
+    return `\n\n---\n\n## RELEVANT REFERENCE MATERIAL\n\nThe following files have been retrieved based on keywords in the user's current message. Use specific facts from them to inform your reply, but DO NOT recite verbatim — translate to Sand's concise refined voice. Cite only what's relevant to the immediate question.\n\n${blocks.join('\n\n')}\n\n---\n`;
+}
 
 // ─── Detect negotiation / barter / pricing context → switch model to Opus 4.7
 function detectNegotiationMode(messages) {
@@ -742,12 +868,17 @@ export async function handler(event) {
         const useOpus = detectNegotiationMode(safeMessages);
         const PRIMARY_MODEL   = useOpus ? 'claude-opus-4-7'   : 'claude-sonnet-4-20250514';
         const FALLBACK_MODEL  = useOpus ? 'claude-opus-4-6'   : 'claude-sonnet-4-20250514';
-        console.log(`[Sand] mode=${useOpus ? 'OPUS-negotiation' : 'SONNET-discovery'} model=${PRIMARY_MODEL}`);
+
+        // Smart-load yacht/topic knowledge based on keywords in last few messages
+        const knowledgeChunk = await loadRelevantKnowledge(safeMessages);
+        const finalSystem = SYSTEM_PROMPT + knowledgeChunk;
+
+        console.log(`[Sand] mode=${useOpus ? 'OPUS-negotiation' : 'SONNET-discovery'} model=${PRIMARY_MODEL} knowledgeChars=${knowledgeChunk.length}`);
 
         const baseRequest = {
             model: PRIMARY_MODEL,
             max_tokens: 8192,
-            system: SYSTEM_PROMPT,
+            system: finalSystem,
             messages: safeMessages
         };
 
