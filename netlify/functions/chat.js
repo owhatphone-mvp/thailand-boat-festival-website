@@ -1,6 +1,31 @@
 // Netlify Serverless Function — ทราย (Sand) AI Concierge for TBF 2027
-// Uses Anthropic Claude API · stream:false · web_search (max_uses 1) · auto-retry
+// Uses Anthropic Claude API · stream:false · web_search (max_uses 4) · auto-retry
+// Auto-switches to Opus 4.7 on negotiation/barter turns, Sonnet 4 otherwise.
 // Saves every turn to Netlify Blobs store "sand-conversations" for admin dashboard
+
+// ─── Detect negotiation / barter / pricing context → switch model to Opus 4.7
+function detectNegotiationMode(messages) {
+    const lower = (messages || [])
+        .map(m => (typeof m.content === 'string' ? m.content : ''))
+        .join(' \n ')
+        .toLowerCase();
+    const triggers = [
+        // English
+        'barter', 'discount', 'cheaper', 'lower price', 'budget', 'negotiate', 'negotiation',
+        'sponsor', 'sponsorship', 'package', 'pricing', 'thb ', 'baht', 'lower tier', 'tier',
+        'media value', 'in-kind',
+        // Thai
+        'บาร์เตอร์', 'แลกเปลี่ยน', 'แลกของ', 'ลดราคา', 'ราคาพิเศษ', 'งบ', 'ต่อรอง', 'ส่วนลด',
+        'สปอนเซอร์', 'แพ็คเก็จ', 'แพคเกจ', 'แพ็คเกจ', 'จ่าย', 'ราคา', 'บาท',
+        // Chinese
+        '价格', '折扣', '预算', '赞助', '套餐',
+        // Japanese
+        '価格', '予算', 'スポンサー', '割引', 'パッケージ',
+        // Korean
+        '가격', '예산', '스폰서', '할인', '패키지'
+    ];
+    return triggers.some(t => lower.includes(t));
+}
 
 // ─── Friendly fallback when Anthropic errors / returns empty (matches user's language)
 function friendlyFallback(messages) {
@@ -40,12 +65,14 @@ async function saveConversation(id, userMessages, assistantReply) {
     else if (/[Ѐ-ӿ]/.test(lastUserText)) lang = 'ru';
 
     let lead = null;
-    let visibleReply = assistantReply;
-    const leadMatch = (assistantReply || '').match(/\[LEAD_CARD\]([\s\S]*?)\[\/LEAD_CARD\]/);
+    let visibleReply = assistantReply || '';
+    const leadMatch = visibleReply.match(/\[LEAD_CARD\]([\s\S]*?)\[\/LEAD_CARD\]/);
     if (leadMatch) {
         try { lead = JSON.parse(leadMatch[1].trim()); } catch (_) { lead = null; }
-        visibleReply = (assistantReply || '').replace(/\[LEAD_CARD\][\s\S]*?\[\/LEAD_CARD\]/, '').trim();
+        visibleReply = visibleReply.replace(/\[LEAD_CARD\][\s\S]*?\[\/LEAD_CARD\]/, '').trim();
     }
+    // Strip NEXT_QUESTIONS tag — it's UI-only, not part of conversation transcript
+    visibleReply = visibleReply.replace(/\[NEXT_QUESTIONS\][\s\S]*?\[\/NEXT_QUESTIONS\]/, '').trim();
 
     const key = `conv:${id}`;
     let prior = null;
@@ -462,6 +489,31 @@ A: Electrical bookings will open soon — opening date and full rate table being
 
 ---
 
+## SUGGESTED FOLLOW-UPS (NEXT_QUESTIONS — append to almost every reply)
+
+After your main reply, append 2–3 short follow-up questions the user might naturally ask next, written from the USER'S point of view in their language.
+
+Format — on a fresh line at the very end of the reply, with NO text after the closing tag:
+
+[NEXT_QUESTIONS]["short question 1","short question 2","short question 3"][/NEXT_QUESTIONS]
+
+Rules:
+- 2–3 items max, each under 14 words
+- In the user's language and voice ("ทำไม…", "เล่าเรื่อง…", "Tell me…", "What about…")
+- Pick questions that move the conversation forward into Discovery → Synthesis → Close
+- Vary by phase:
+  • Early discovery → questions about TBF basics (zones, dates, audience, partners)
+  • Mid-discovery → questions about their specific path (packages, requirements, exhibitor logistics)
+  • Negotiation → questions about deal shapes (barter forms, multi-year, payment terms)
+  • Confirmation summary → DO NOT emit NEXT_QUESTIONS (let user just confirm)
+- DO NOT emit NEXT_QUESTIONS when the same reply already contains [LEAD_CARD]
+- DO NOT emit NEXT_QUESTIONS on the final goodbye turn
+- Examples (TH): ["มีโซนไหนบ้าง?","ค่าใช้จ่ายเริ่มต้นเท่าไหร่?","ทำไมเลือก Boat Lagoon?"]
+- Examples (EN): ["What zones are available?","Tell me about sponsorship","Who attends TBF?"]
+- Examples (negotiation TH): ["มีตัวเลือก barter แบบไหนบ้าง?","แบ่งจ่าย 2 ปีได้ไหม?","ขอราคา multi-boat ได้ไหม?"]
+
+---
+
 ## HARD RULES
 - Never tell anyone to call, email, or contact us — we follow up with them. Never share or mention any team email address (info@…, sales@…, anything@thailandboatfestival.com). The team's contact channels are internal — your job is to take their email, not give them ours.
 - Never end a conversation by sending the user away to email someone. Either ends with [LEAD_CARD] or polite goodbye — never "feel free to email us".
@@ -522,8 +574,13 @@ export async function handler(event) {
             content: typeof m.content === 'string' ? m.content.slice(0, 4000) : m.content
         }));
 
+        const useOpus = detectNegotiationMode(safeMessages);
+        const PRIMARY_MODEL   = useOpus ? 'claude-opus-4-7'   : 'claude-sonnet-4-20250514';
+        const FALLBACK_MODEL  = useOpus ? 'claude-opus-4-6'   : 'claude-sonnet-4-20250514';
+        console.log(`[Sand] mode=${useOpus ? 'OPUS-negotiation' : 'SONNET-discovery'} model=${PRIMARY_MODEL}`);
+
         const baseRequest = {
-            model: 'claude-sonnet-4-20250514',
+            model: PRIMARY_MODEL,
             max_tokens: 8192,
             system: SYSTEM_PROMPT,
             messages: safeMessages
@@ -531,7 +588,7 @@ export async function handler(event) {
 
         const requestWithTools = {
             ...baseRequest,
-            tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 1 }]
+            tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 4 }]
         };
 
         // Auto-retry on transient errors
@@ -565,8 +622,26 @@ export async function handler(event) {
 
         if (!response.ok) {
             const errText = await response.text();
-            const looksLikeToolError = /web[_\- ]?search|tool|not[_\- ]?supported|not[_\- ]?enabled|invalid_request_error/i.test(errText);
-            if (response.status === 400 && looksLikeToolError) {
+            const looksLikeModelError = /model|not[_\- ]?found|invalid[_\- ]?model|deprecated/i.test(errText) && /opus|sonnet|haiku|claude-/i.test(errText);
+            const looksLikeToolError  = /web[_\- ]?search|tool|not[_\- ]?supported|not[_\- ]?enabled/i.test(errText);
+
+            if (response.status === 400 && looksLikeModelError && PRIMARY_MODEL !== FALLBACK_MODEL) {
+                console.warn(`Model ${PRIMARY_MODEL} unavailable, falling back to ${FALLBACK_MODEL}:`, errText);
+                response = await callAnthropic({ ...requestWithTools, model: FALLBACK_MODEL });
+                if (!response.ok) {
+                    const errText2 = await response.text();
+                    if (response.status === 400 && /web[_\- ]?search|tool/i.test(errText2)) {
+                        console.warn('Fallback model also failed with tools, retrying without tools');
+                        response = await callAnthropic({ ...baseRequest, model: FALLBACK_MODEL });
+                    } else {
+                        console.error('Fallback model error:', errText2);
+                        return {
+                            statusCode: 502, headers,
+                            body: JSON.stringify({ reply: friendlyFallback(safeMessages), fallback: true })
+                        };
+                    }
+                }
+            } else if (response.status === 400 && looksLikeToolError) {
                 console.warn('web_search tool unavailable, retrying without tools:', errText);
                 response = await callAnthropic(baseRequest);
             } else {

@@ -49,6 +49,61 @@ body {
 :lang(th) .msg-bubble,
 .msg-bubble:lang(th) { line-height: 1.7; }
 
+/* ─── SPLASH (initial page-load welcome) ─── */
+.splash {
+    position: fixed; inset: 0; z-index: 100;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.45s ease-out;
+}
+.splash.hidden { opacity: 0; pointer-events: none; }
+.splash-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.splash-img {
+    width: 96px; height: 96px; border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-soft);
+    box-shadow: 0 6px 28px rgba(184,144,46,0.22), 0 0 0 6px rgba(184,144,46,0.05);
+    animation: splash-float 2.2s ease-in-out infinite;
+}
+.splash-label {
+    font-family: var(--font);
+    font-size: 0.82rem; color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    animation: splash-fade 1.6s ease-in-out infinite;
+}
+@keyframes splash-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+@keyframes splash-fade {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 0.9; }
+}
+
+/* ─── NEXT-QUESTION SUGGESTION CHIPS (after each bot reply) ─── */
+.suggestions {
+    display: flex; flex-wrap: wrap; gap: 0.45rem;
+    margin: 0.55rem 0 0.3rem;
+    padding-left: 38px;  /* aligns with bot bubble (avatar 30px + 8px gap) */
+}
+.suggest-chip {
+    padding: 0.5rem 0.9rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--font); font-size: 0.82rem; color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+    line-height: 1.35;
+}
+.suggest-chip:hover  { border-color: var(--gold-soft); background: var(--bg-soft); transform: translateY(-1px); }
+.suggest-chip:active { transform: translateY(0); }
+@media (max-width: 520px) {
+    .suggestions { padding-left: 0; }
+    .suggest-chip { font-size: 0.78rem; padding: 0.45rem 0.78rem; }
+}
+
 /* ─── HEADER ─── */
 .bar {
     display: flex; align-items: center; justify-content: space-between;
@@ -289,6 +344,14 @@ body {
 </head>
 <body>
 
+<!-- SPLASH (initial loading) -->
+<div class="splash" id="splash">
+    <div class="splash-inner">
+        <img src="images/sand_profile_pic.png" alt="" class="splash-img">
+        <div class="splash-label" id="splashLabel">ทราย กำลังเตรียมพร้อม…</div>
+    </div>
+</div>
+
 <!-- HEADER -->
 <div class="bar">
     <div class="bar-left">
@@ -354,6 +417,7 @@ const COPY = {
         wTagline: 'Ask Sand in any language',
         placeholder: 'Ask Sand…',
         typing: 'Sand is typing…', searching: '🔍 Searching the web…',
+        splash: 'Sand is getting ready…',
         brand: 'Sand · M Vision Public Company Limited',
         lead: { h: 'CONFIRM YOUR DETAILS', confirm: '✓  Confirm', edit: '✎  Edit', sent: '✓  Sent — our team will be in touch shortly.' },
         chips: [
@@ -369,6 +433,7 @@ const COPY = {
         wTagline: 'ถามทรายได้ทุกภาษาค่ะ',
         placeholder: 'ถามทรายได้เลยค่ะ…',
         typing: 'ทรายกำลังพิมพ์…', searching: '🔍 กำลังค้นหาข้อมูล…',
+        splash: 'ทรายกำลังเตรียมพร้อม…',
         brand: 'ทราย · บริษัท เอ็ม วิชั่น จำกัด (มหาชน)',
         lead: { h: 'ยืนยันข้อมูลของคุณ', confirm: '✓  ยืนยัน', edit: '✎  แก้ไข', sent: '✓  ส่งแล้ว — ทีมจะติดต่อกลับเร็วๆ นี้ค่ะ' },
         chips: [
@@ -384,6 +449,7 @@ const COPY = {
         wTagline: '用您的语言向小沙提问',
         placeholder: '向小沙提问…',
         typing: '小沙正在输入…', searching: '🔍 正在搜索资料…',
+        splash: '小沙正在准备…',
         brand: 'Sand · M Vision Public Company Limited',
         lead: { h: '请确认您的信息', confirm: '✓  确认', edit: '✎  修改', sent: '✓  已送出 — 我们的团队将尽快与您联系' },
         chips: [
@@ -399,6 +465,7 @@ const COPY = {
         wTagline: 'サンドにどんな言語でもお気軽にどうぞ',
         placeholder: 'サンドにご質問ください…',
         typing: 'サンドが入力中…', searching: '🔍 ウェブ検索中…',
+        splash: 'サンドが準備中…',
         brand: 'Sand · M Vision Public Company Limited',
         lead: { h: '内容のご確認', confirm: '✓  確定', edit: '✎  修正', sent: '✓  送信完了 — チームより折り返しご連絡いたします' },
         chips: [
@@ -414,6 +481,7 @@ const COPY = {
         wTagline: '어떤 언어로든 샌드에게 문의하세요',
         placeholder: '샌드에게 무엇이든 물어보세요…',
         typing: '샌드가 입력 중…', searching: '🔍 웹 검색 중…',
+        splash: '샌드가 준비 중…',
         brand: 'Sand · M Vision Public Company Limited',
         lead: { h: '입력 정보 확인', confirm: '✓  확인', edit: '✎  수정', sent: '✓  전송 완료 — 팀에서 곧 연락드릴게요' },
         chips: [
@@ -429,6 +497,7 @@ const COPY = {
         wTagline: 'Hỏi Sand bằng bất kỳ ngôn ngữ nào',
         placeholder: 'Hỏi Sand…',
         typing: 'Sand đang gõ…', searching: '🔍 Đang tìm trên web…',
+        splash: 'Sand đang chuẩn bị…',
         brand: 'Sand · M Vision Public Company Limited',
         lead: { h: 'XÁC NHẬN THÔNG TIN', confirm: '✓  Xác nhận', edit: '✎  Sửa', sent: '✓  Đã gửi — Đội ngũ sẽ liên hệ với bạn sớm.' },
         chips: [
@@ -444,6 +513,7 @@ const COPY = {
         wTagline: 'Спрашивайте Сэнд на любом языке',
         placeholder: 'Спросите Сэнд…',
         typing: 'Сэнд печатает…', searching: '🔍 Идёт поиск…',
+        splash: 'Сэнд готовится…',
         brand: 'Sand · M Vision Public Company Limited',
         lead: { h: 'ПОДТВЕРЖДЕНИЕ ДАННЫХ', confirm: '✓  Подтвердить', edit: '✎  Изменить', sent: '✓  Отправлено — команда скоро свяжется с вами.' },
         chips: [
@@ -498,6 +568,8 @@ function applyCopy() {
     document.getElementById('input').placeholder     = c.placeholder;
     document.getElementById('ftBrand').textContent   = c.brand;
     document.getElementById('langLabel').textContent = LANG_LABEL[langPref] || LANG_LABEL.auto;
+    const sl = document.getElementById('splashLabel');
+    if (sl && c.splash) sl.textContent = c.splash;
     document.documentElement.setAttribute('lang', currentLang);
     renderChips(c.chips);
 }
@@ -614,22 +686,36 @@ async function send() {
 
         const replyRaw = data.reply || '';
         const leadMatch = replyRaw.match(/\[LEAD_CARD\]([\s\S]*?)\[\/LEAD_CARD\]/);
+        const nextMatch = replyRaw.match(/\[NEXT_QUESTIONS\]([\s\S]*?)\[\/NEXT_QUESTIONS\]/);
+
+        // Strip both tags from the prose we display
+        const prose = replyRaw
+            .replace(/\[LEAD_CARD\][\s\S]*?\[\/LEAD_CARD\]/, '')
+            .replace(/\[NEXT_QUESTIONS\][\s\S]*?\[\/NEXT_QUESTIONS\]/, '')
+            .trim();
 
         if (leadMatch) {
-            const before = replyRaw.slice(0, replyRaw.indexOf('[LEAD_CARD]')).trim();
-            if (before) addMsg(before, 'bot');
+            if (prose) addMsg(prose, 'bot');
             try {
                 const lead = JSON.parse(leadMatch[1].trim());
                 addLeadCard(lead);
             } catch (_) {
-                addMsg(replyRaw, 'bot');
+                if (!prose) addMsg(replyRaw, 'bot');
             }
-        } else if (replyRaw) {
-            addMsg(replyRaw, 'bot');
+        } else if (prose) {
+            addMsg(prose, 'bot');
         }
 
-        // Track only the visible part in history (strip LEAD tag)
-        history.push({ role: 'assistant', content: replyRaw.replace(/\[LEAD_CARD\][\s\S]*?\[\/LEAD_CARD\]/, '').trim() });
+        // Render follow-up suggestion chips (only when NOT a lead-card turn)
+        if (nextMatch && !leadMatch) {
+            try {
+                const qs = JSON.parse(nextMatch[1].trim());
+                if (Array.isArray(qs) && qs.length) addSuggestions(qs);
+            } catch (_) { /* malformed JSON, skip */ }
+        }
+
+        // Track only the prose in history (strip tags)
+        history.push({ role: 'assistant', content: prose });
     } catch (err) {
         removeTyping();
         addMsg('⚠️  ' + (err.message || 'Connection error.'), 'bot');
@@ -694,11 +780,44 @@ function editLead() {
     inp.focus(); updateSend();
 }
 
+/* ─── SUGGESTION CHIPS (rendered after each bot reply) ─── */
+function addSuggestions(questions) {
+    if (!Array.isArray(questions) || !questions.length) return;
+    // Drop any existing suggestion row — only the latest reply gets chips
+    document.querySelectorAll('.suggestions').forEach(el => el.remove());
+    const cont = document.getElementById('messages');
+    const wrap = document.createElement('div');
+    wrap.className = 'suggestions';
+    wrap.innerHTML = questions.slice(0, 4).map(q => {
+        const safe = String(q).trim().slice(0, 140);
+        const attr = JSON.stringify(safe).replace(/"/g, '&quot;');
+        return `<button class="suggest-chip" type="button" onclick="quickAsk(${attr})">${escapeHtml(safe)}</button>`;
+    }).join('');
+    cont.appendChild(wrap);
+    cont.scrollTop = cont.scrollHeight;
+}
+// Strip existing suggestions when user types something new (so they don't pile up)
+document.getElementById('input').addEventListener('input', () => {
+    document.querySelectorAll('.suggestions').forEach(el => el.remove());
+}, { once: false });
+
+/* ─── SPLASH HIDE (after fonts ready + tiny grace period) ─── */
+async function hideSplash() {
+    const splash = document.getElementById('splash');
+    if (!splash) return;
+    try { await document.fonts.ready; } catch (_) {}
+    // Give portrait img a beat to load too
+    await new Promise(r => setTimeout(r, 250));
+    splash.classList.add('hidden');
+    setTimeout(() => splash.remove(), 600);
+}
+
 /* ─── INIT ─── */
 currentLang = effectiveLang();
 applyCopy();
 document.querySelectorAll('.lang-item').forEach(i => i.classList.toggle('active', i.dataset.lang === langPref));
 restoreChat();
+hideSplash();
 </script>
 </body>
 </html>
