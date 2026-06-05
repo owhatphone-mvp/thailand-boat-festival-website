@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bfdce6"/>
+      <stop offset="100%" stop-color="#e8f4f6"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5fa6c2"/>
+      <stop offset="100%" stop-color="#7cbbd4"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ead7a8"/>
+      <stop offset="100%" stop-color="#d4bd87"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="64" height="36" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="48" cy="17" r="6.5" fill="#f5d875"/>
+  <circle cx="48" cy="17" r="9" fill="#f5d875" opacity="0.25"/>
+  <!-- Sea -->
+  <rect y="32" width="64" height="20" fill="url(#sea)"/>
+  <!-- Sea waves -->
+  <path d="M 0 37 Q 12 34 24 37 T 48 37 T 72 37" stroke="#bfe1ee" stroke-width="0.8" fill="none" opacity="0.85"/>
+  <path d="M 0 42 Q 14 39 28 42 T 56 42 T 80 42" stroke="#bfe1ee" stroke-width="0.7" fill="none" opacity="0.6"/>
+  <path d="M 0 46 Q 16 44 32 46 T 64 46" stroke="#bfe1ee" stroke-width="0.6" fill="none" opacity="0.45"/>
+  <!-- Sun reflection on water -->
+  <ellipse cx="48" cy="35" rx="3" ry="0.6" fill="#fff3c2" opacity="0.7"/>
+  <ellipse cx="48" cy="39" rx="2.2" ry="0.45" fill="#fff3c2" opacity="0.5"/>
+  <!-- Sand -->
+  <rect y="50" width="64" height="14" fill="url(#sand)"/>
+  <!-- Wet sand line where sea meets shore -->
+  <path d="M 0 51 Q 16 49.5 32 51 T 64 51" stroke="#f5e6bb" stroke-width="0.8" fill="none" opacity="0.85"/>
+  <!-- Tiny sand texture dots -->
+  <circle cx="12" cy="57" r="0.5" fill="#c9aa70" opacity="0.6"/>
+  <circle cx="28" cy="60" r="0.4" fill="#c9aa70" opacity="0.6"/>
+  <circle cx="44" cy="56" r="0.5" fill="#c9aa70" opacity="0.6"/>
+  <circle cx="52" cy="62" r="0.4" fill="#c9aa70" opacity="0.6"/>
+  <circle cx="20" cy="61" r="0.35" fill="#c9aa70" opacity="0.5"/>
+</svg>

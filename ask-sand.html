@@ -166,23 +166,33 @@ body {
 }
 
 /* ─── MESSAGE ─── */
-.msg { display: flex; gap: 0.6rem; max-width: 100%; }
+.msg { display: flex; gap: 0.6rem; max-width: 100%; align-items: flex-end; }
 .msg.user { justify-content: flex-end; }
 .msg-av {
     width: 32px; height: 32px; border-radius: 50%;
     flex-shrink: 0; object-fit: cover;
     border: 1.5px solid var(--gold-soft);
-    align-self: flex-end; margin-bottom: 2px;
+    margin-bottom: 2px;
+}
+.user-stack {
+    display: flex; flex-direction: column; align-items: flex-end;
+    max-width: calc(100% - 50px);
+}
+.user-label {
+    font-size: 0.72rem; color: var(--ink-soft); font-weight: 500;
+    letter-spacing: 0.04em;
+    margin: 0 0.5rem 3px 0;
 }
 .bubble {
     padding: 0.75rem 1rem;
     font-size: 0.94rem;
-    max-width: calc(100% - 50px);
+    max-width: 100%;
     word-wrap: break-word;
     white-space: pre-wrap;
     border: 1px solid var(--line);
     box-shadow: var(--shadow-sm);
 }
+.msg.bot .bubble { max-width: calc(100% - 50px); }
 .msg.bot .bubble {
     background: var(--bot-bg); color: var(--bot-fg);
     border-radius: 18px 18px 18px 4px;
@@ -454,6 +464,7 @@ const COPY = {
         placeholder: 'Ask Sand…',
         typing: 'Sand is typing…',
         splash: 'Sand is getting ready…',
+        you: 'You',
         brand: 'Sand · M Vision Public Company Limited',
         welcome: "Good day. I'm Sand, the AI Concierge for Thailand Boat Festival 2027.\n\nI'm here to assist with attendance, exhibitor and yacht display arrangements, sponsorship, and event details. How may I help you today?",
         chips: [
@@ -469,6 +480,7 @@ const COPY = {
         placeholder: 'ถามทรายได้เลยค่ะ…',
         typing: 'ทรายกำลังพิมพ์…',
         splash: 'ทรายกำลังเตรียมพร้อม…',
+        you: 'คุณ',
         brand: 'ทราย · บริษัท เอ็ม วิชั่น จำกัด (มหาชน)',
         welcome: 'สวัสดีค่ะ ดิฉันชื่อทราย ทำหน้าที่ AI Concierge ของ Thailand Boat Festival 2027 ค่ะ\n\nดิฉันยินดีดูแลทุกเรื่อง ตั้งแต่การเข้าร่วมงาน การจัดแสดงแบรนด์หรือเรือ การเป็นสปอนเซอร์ ไปจนถึงรายละเอียดงานทั่วไป ไม่ทราบว่ามีเรื่องใดให้ดิฉันช่วยดูแลคะ',
         chips: [
@@ -484,6 +496,7 @@ const COPY = {
         placeholder: '向小沙提问…',
         typing: '小沙正在输入…',
         splash: '小沙正在准备…',
+        you: '您',
         brand: 'Sand · M Vision Public Company Limited',
         welcome: '您好。我是小沙,Thailand Boat Festival 2027 的 AI 礼宾员。\n\n关于参访安排、品牌或游艇展出、赞助合作以及活动详情,我都可以为您协助。请问今天有什么需要为您效劳的?',
         chips: [
@@ -499,6 +512,7 @@ const COPY = {
         placeholder: 'サンドにご質問ください…',
         typing: 'サンドが入力中…',
         splash: 'サンドが準備中…',
+        you: 'あなた',
         brand: 'Sand · M Vision Public Company Limited',
         welcome: 'ご機嫌よう。Thailand Boat Festival 2027 の AI コンシェルジュ、サンドと申します。\n\nご来場のご案内、ブランドおよびヨットの出展、スポンサーシップ、その他イベント詳細まで承っております。本日はいかがいたしましょうか。',
         chips: [
@@ -514,6 +528,7 @@ const COPY = {
         placeholder: '샌드에게 무엇이든 물어보세요…',
         typing: '샌드가 입력 중…',
         splash: '샌드가 준비 중…',
+        you: '나',
         brand: 'Sand · M Vision Public Company Limited',
         welcome: '안녕하십니까. Thailand Boat Festival 2027의 AI 컨시어지 샌드입니다.\n\n방문 안내, 브랜드 및 요트 전시, 스폰서십, 행사 세부 사항 등 무엇이든 도와드리겠습니다. 어떤 부분을 도와드릴까요?',
         chips: [
@@ -529,6 +544,7 @@ const COPY = {
         placeholder: 'Hỏi Sand…',
         typing: 'Sand đang gõ…',
         splash: 'Sand đang chuẩn bị…',
+        you: 'Bạn',
         brand: 'Sand · M Vision Public Company Limited',
         welcome: 'Xin chào. Tôi là Sand, AI Concierge của Thailand Boat Festival 2027.\n\nTôi có thể hỗ trợ về việc tham dự, trưng bày thương hiệu/du thuyền, tài trợ và các chi tiết sự kiện. Hôm nay tôi có thể giúp gì cho bạn?',
         chips: [
@@ -544,6 +560,7 @@ const COPY = {
         placeholder: 'Спросите Сэнд…',
         typing: 'Сэнд печатает…',
         splash: 'Сэнд готовится…',
+        you: 'Вы',
         brand: 'Sand · M Vision Public Company Limited',
         welcome: 'Добрый день. Я Сэнд, AI-консьерж Thailand Boat Festival 2027.\n\nГотова содействовать в вопросах посещения, представления бренда или яхты, спонсорства, а также по иным деталям мероприятия. Чем могу быть полезна сегодня?',
         chips: [
@@ -635,8 +652,19 @@ function addMsg(text, role) {
     const cont = document.getElementById('messages');
     const wrap = document.createElement('div');
     wrap.className = 'msg ' + role;
-    const av = role === 'bot' ? `<img src="images/sand_profile_pic.png" class="msg-av" alt="">` : '';
-    wrap.innerHTML = `${av}<div class="bubble">${escapeHtml(text)}</div>`;
+    if (role === 'bot') {
+        wrap.innerHTML = `<img src="images/sand_profile_pic.png" class="msg-av" alt="">
+                          <div class="bubble">${escapeHtml(text)}</div>`;
+    } else {
+        const c = COPY[currentLang] || COPY.en;
+        const youLabel = c.you || 'You';
+        wrap.innerHTML = `
+            <div class="user-stack">
+                <div class="user-label">${escapeHtml(youLabel)}</div>
+                <div class="bubble">${escapeHtml(text)}</div>
+            </div>
+            <img src="images/user_avatar_beach.svg" class="msg-av" alt="">`;
+    }
     cont.appendChild(wrap);
     cont.scrollTop = cont.scrollHeight;
     return wrap;
