@@ -192,8 +192,9 @@ body {
     border-radius: 18px 18px 4px 18px;
     border-color: transparent;
 }
-.typing-label { font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 0.35rem; }
-.dots { display: inline-flex; gap: 4px; }
+/* Typing bubble — compact single-line dots only */
+.msg.bot.typing-msg .bubble { padding: 0.55rem 0.85rem; }
+.dots { display: inline-flex; gap: 5px; align-items: center; line-height: 1; }
 .dots span {
     width: 6px; height: 6px; border-radius: 50%; background: var(--gold-soft);
     animation: dot-pulse 1.3s infinite;
@@ -556,7 +557,7 @@ const COPY = {
 const LANG_LABEL = { auto: '🌐 Auto', th: '🇹🇭 ไทย', en: '🇬🇧 EN', zh: '🇨🇳 中文', ja: '🇯🇵 日本語', ko: '🇰🇷 한국어', vi: '🇻🇳 VI', ru: '🇷🇺 RU' };
 
 /* ─── STATE ─── */
-let langPref = localStorage.getItem('sand_lang') || 'auto';
+let langPref = localStorage.getItem('sand_lang') || 'en';
 let currentLang = 'en';
 let history = [];
 let isWaiting = false;
@@ -641,15 +642,11 @@ function addMsg(text, role) {
     return wrap;
 }
 function showTyping() {
-    const c = COPY[currentLang] || COPY.en;
     const cont = document.getElementById('messages');
     const wrap = document.createElement('div');
-    wrap.className = 'msg bot'; wrap.id = 'typing';
+    wrap.className = 'msg bot typing-msg'; wrap.id = 'typing';
     wrap.innerHTML = `<img src="images/sand_profile_pic.png" class="msg-av" alt="">
-        <div class="bubble">
-            <div class="typing-label">${c.typing}</div>
-            <div class="dots"><span></span><span></span><span></span></div>
-        </div>`;
+        <div class="bubble"><div class="dots"><span></span><span></span><span></span></div></div>`;
     cont.appendChild(wrap);
     cont.scrollTop = cont.scrollHeight;
 }
@@ -834,12 +831,12 @@ function editLead() {
     inp.focus(); updateSend();
 }
 
-/* ─── SPLASH HIDE ─── */
+/* ─── SPLASH HIDE — linger ~2s so users see Sand's portrait first ─── */
 async function hideSplash() {
     const splash = document.getElementById('splash');
     if (!splash) return;
     try { await document.fonts.ready; } catch (_) {}
-    await new Promise(r => setTimeout(r, 250));
+    await new Promise(r => setTimeout(r, 2000));
     splash.classList.add('hidden');
     setTimeout(() => splash.remove(), 600);
 }
