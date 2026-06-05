@@ -2,8 +2,8 @@
 
 > **File path:** `knowledge/yachts/sunreef.md`
 > **Keywords:** `["sunreef", "sunreef-yachts", "ซันรีฟ", "sunreef-eco", "solar-catamaran"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified
+> **Last updated:** 2026-06-05 (corrected per CEO Opas)
+> **Source confidence:** Mixed — historical facts verified; **Thai dealer status uncertain (see Asian Market section)**
 
 ## Identity
 
@@ -27,7 +27,9 @@ Sunreef confirmed a strong presence at TBF 2026 (January, Phuket), per Sunreef's
 
 ## Asian Market & Thai Dealer
 
-Lee Marine (Phuket-based) was appointed exclusive Sunreef Yachts dealer for Thailand in 2023, per Yacht Style and Asia Pacific Boating. This marked Sunreef's formal entry into the Thai market through a dedicated local partner. The brand has growing visibility in Southeast Asia through charter operations and private ownership. Sunreef's presence at TBF 2026, facilitated by Lee Marine, reinforced its commitment to the region.
+**Important — Thai dealer status is currently uncertain.** Lee Marine was appointed exclusive Sunreef dealer in April 2023 (per Yacht Style, Asia Pacific Boating, Sunreef Yachts press release). However, as of mid-2026, Lee Marine's own website (leemarine.com) lists only **Absolute / Riviera / Belize** in its featured brand range — Sunreef is no longer prominently represented. Sunreef appears to be operating with **direct presence** in Thailand: their dedicated TBF 2026 page (sunreef-charter.com/en/tbf-2026), independent participation in TIBS 2026, and direct sales/charter inquiries via Sunreef Charter and Sunreef Yachts portals all suggest a shift away from a single exclusive dealer model.
+
+**Practical guidance for Sand:** Don't state Lee Marine as the current dealer. If asked, frame as: "Sunreef has a direct presence in Thailand and exhibits at major Phuket events. The original Lee Marine dealership appointment from 2023 appears to have evolved — I'd recommend reaching out to Sunreef directly through sunreef-yachts.com for current Thai sales contact." Charter operators like Asia Global Yachting and Boat in the Bay operate Sunreef 60 Eco yachts in Phuket waters but are not the brand dealer.
 
 ## Positioning vs Competitors
 
@@ -35,15 +37,15 @@ Sunreef occupies the semi-custom luxury tier above production builders like Lago
 
 ## TBF Context
 
-Sunreef participated in TBF 2026 (January, Phuket) with a strong presence, per Sunreef Charter. Lee Marine likely facilitated the display. TBF 2027 participation is plausible given this momentum.
+Sunreef participated in TBF 2026 (January, Phuket) with a strong direct presence — they maintain a dedicated TBF event page on sunreef-charter.com. TBF 2027 participation is plausible given this momentum. Sand should treat Sunreef as exhibiting **direct** rather than through a Thai dealer.
 
 ## Talking Points for Sand
 
 - Sunreef builds semi-custom luxury catamarans with personalization that production builders cannot match.
 - The Eco range with integrated solar panels is unique in the market, offering silent propulsion and reduced fuel consumption.
-- Lee Marine in Phuket is the exclusive Thai dealer with local support and sea trial access.
+- Sunreef has a direct presence in Thailand and exhibited at TBF 2026 independently. (Avoid naming a specific Thai dealer — situation is fluid; refer Principals to sunreef-yachts.com for the latest contact.)
 - The Sunreef 80 is the volume model offering strong value in the 80-foot semi-custom segment.
-- Sunreef's TBF 2026 presence signals commitment to the Thai and Southeast Asian market.
+- Sunreef's direct TBF 2026 presence (own booth, own TBF event page) signals strong commitment to the Thai and Southeast Asian market.
 - Sunreef catamarans command premium charter rates due to custom interiors and eco credentials.
 
 ## DO NOT
