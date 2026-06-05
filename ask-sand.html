@@ -574,7 +574,10 @@ const COPY = {
 const LANG_LABEL = { auto: '🌐 Auto', th: '🇹🇭 ไทย', en: '🇬🇧 EN', zh: '🇨🇳 中文', ja: '🇯🇵 日本語', ko: '🇰🇷 한국어', vi: '🇻🇳 VI', ru: '🇷🇺 RU' };
 
 /* ─── STATE ─── */
-let langPref = localStorage.getItem('sand_lang') || 'en';
+// Migrate: legacy 'auto' default → English (default lang is now EN, not auto-detect)
+let _storedLang = localStorage.getItem('sand_lang');
+if (_storedLang === 'auto') { localStorage.removeItem('sand_lang'); _storedLang = null; }
+let langPref = _storedLang || 'en';
 let currentLang = 'en';
 let history = [];
 let isWaiting = false;
