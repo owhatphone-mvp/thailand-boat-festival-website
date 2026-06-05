@@ -8,7 +8,7 @@
 <meta name="description" content="Sand · AI Concierge for Thailand Boat Festival 2027 at Boat Lagoon Marina, Phuket. Ask in any language.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg:         #fafbf7;
@@ -30,7 +30,7 @@
     --radius-sm:  10px;
     --radius-md:  16px;
     --radius-lg:  22px;
-    --font:       'Inter', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font:       'Inter', 'IBM Plex Sans Thai Looped', 'Sukhumvit Set', 'Leelawadee UI', 'Thonburi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; }
@@ -39,10 +39,15 @@ body {
     background: var(--bg);
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
-    line-height: 1.55;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
     display: flex; flex-direction: column;
     overflow-x: hidden;
 }
+/* Thai text gets a slightly more generous line-height for tone marks / loops */
+:lang(th) .msg-bubble,
+.msg-bubble:lang(th) { line-height: 1.7; }
 
 /* ─── HEADER ─── */
 .bar {
