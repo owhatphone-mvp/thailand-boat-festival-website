@@ -11,26 +11,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg:         #fafbf7;
-    --bg-card:    #ffffff;
-    --bg-soft:    #f4f0e6;
-    --ink:        #0b1220;
-    --ink-soft:   #5d6470;
-    --ink-faint:  #9ca3af;
-    --line:       #e8e6dc;
-    --line-strong:#d8d4c3;
-    --gold:       #b8902e;
-    --gold-soft:  #d9b558;
-    --user-bg:    #0b1220;
-    --user-fg:    #ffffff;
-    --bot-bg:     #ffffff;
-    --bot-fg:     #0b1220;
-    --shadow-sm:  0 1px 2px rgba(11,18,32,0.04), 0 1px 1px rgba(11,18,32,0.03);
-    --shadow-md:  0 4px 14px rgba(11,18,32,0.06), 0 1px 3px rgba(11,18,32,0.04);
-    --radius-sm:  10px;
-    --radius-md:  16px;
-    --radius-lg:  22px;
-    --font:       'Inter', 'IBM Plex Sans Thai Looped', 'Sukhumvit Set', 'Leelawadee UI', 'Thonburi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --bg:          #fafbf7;
+    --bg-card:     #ffffff;
+    --bg-soft:     #f5edd6;
+    --ink:         #0b1220;
+    --ink-soft:    #5c6770;
+    --ink-faint:   #8fa0ae;
+    --line:        #e5e9df;
+    --line-strong: #d8d4c3;
+    --gold:        #b8902e;
+    --gold-dark:   #8a6d1f;
+    --gold-soft:   #d9b558;
+    --gold-tint:   rgba(184, 144, 46, 0.08);
+    --gold-tint-2: rgba(184, 144, 46, 0.18);
+    --gold-tint-3: rgba(184, 144, 46, 0.30);
+    --gold-bg:     #f7f0dc;
+    --user-bg:     #0b1220;
+    --user-fg:     #ffffff;
+    --bot-bg:      #ffffff;
+    --bot-fg:      #0b1220;
+    --shadow-sm:   0 1px 2px rgba(11,18,32,0.06);
+    --shadow-md:   0 4px 14px rgba(11,18,32,0.07), 0 1px 3px rgba(11,18,32,0.04);
+    --shadow-glow: 0 2px 10px rgba(184, 144, 46, 0.22);
+    --radius-sm:   10px;
+    --radius-md:   16px;
+    --radius-lg:   18px;
+    --font:        'Inter', 'IBM Plex Sans Thai Looped', 'Sukhumvit Set', 'Leelawadee UI', 'Thonburi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; }
@@ -44,12 +50,273 @@ body {
     line-height: 1.6;
     display: flex; flex-direction: column;
     overflow-x: hidden;
+    position: relative;
 }
-/* Thai text gets a slightly more generous line-height for tone marks / loops */
-:lang(th) .msg-bubble,
-.msg-bubble:lang(th) { line-height: 1.7; }
+:lang(th) .bubble,
+.bubble:lang(th) { line-height: 1.72; }
 
-/* ─── SPLASH (initial page-load welcome) ─── */
+/* ─── PARTICLES (decorative floating gold orbs) ─── */
+.particles {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-image: radial-gradient(circle, rgba(184, 144, 46, 0.10) 0%, rgba(184, 144, 46, 0) 70%);
+    animation: drift 18s ease-in-out infinite;
+}
+.particle.p1 { width: 220px; height: 220px; top:  8%; left:  6%; animation-delay:  0s; }
+.particle.p2 { width: 160px; height: 160px; top: 28%; right:  8%; animation-delay: -4s; animation-duration: 22s; }
+.particle.p3 { width: 280px; height: 280px; bottom: 12%; left: 14%; animation-delay: -8s; animation-duration: 26s; }
+.particle.p4 { width: 140px; height: 140px; top: 58%; right: 18%; animation-delay: -2s; animation-duration: 20s; }
+.particle.p5 { width: 200px; height: 200px; bottom: 28%; right:  4%; animation-delay: -10s; animation-duration: 24s; }
+.particle.p6 { width: 120px; height: 120px; top: 45%; left: 40%; animation-delay: -6s; animation-duration: 28s; opacity: 0.7; }
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    33%      { transform: translate(20px, -25px); }
+    66%      { transform: translate(-15px, 18px); }
+}
+
+/* ─── HEADER ─── */
+.bar {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.85rem 1.2rem;
+    background-image: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 2px rgba(11, 18, 32, 0.06);
+    gap: 0.9rem;
+}
+.bar-left { display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+.agent-avatar-wrap { position: relative; flex-shrink: 0; }
+.agent-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-soft);
+    box-shadow: var(--shadow-glow);
+    display: block;
+}
+.online-dot {
+    position: absolute; right: 1px; bottom: 1px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #1fba5a;
+    box-shadow: 0 0 0 2.5px var(--bg-card), 0 0 0 4px rgba(31, 186, 90, 0.22);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 2.5px var(--bg-card), 0 0 0 4px rgba(31, 186, 90, 0.22); }
+    50%      { box-shadow: 0 0 0 2.5px var(--bg-card), 0 0 0 6px rgba(31, 186, 90, 0.12); }
+}
+.agent-info { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.agent-name-row { display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap; }
+.agent-name { font-size: 0.98rem; font-weight: 700; letter-spacing: 0.01em; line-height: 1.1; }
+.app-version { font-size: 0.7rem; color: var(--ink-faint); font-weight: 500; letter-spacing: 0.05em; }
+.agent-sub { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.15; }
+
+.lang-wrap { position: relative; flex-shrink: 0; }
+.lang-btn {
+    padding: 0.42rem 0.8rem;
+    border-radius: 14px;
+    border: 1px solid var(--gold-tint-3);
+    background: var(--gold-bg);
+    font-family: var(--font); font-size: 0.78rem; font-weight: 600;
+    color: var(--gold-dark); cursor: pointer; transition: all 0.15s;
+    display: flex; align-items: center; gap: 0.35rem;
+}
+.lang-btn:hover { background: #efe2bd; }
+.lang-btn .caret { font-size: 0.55rem; opacity: 0.6; }
+.lang-menu {
+    position: absolute; top: calc(100% + 6px); right: 0;
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    min-width: 180px; padding: 0.3rem;
+    display: none; z-index: 30;
+    max-height: 70vh; overflow-y: auto;
+}
+.lang-menu.open { display: block; }
+.lang-item {
+    width: 100%; text-align: left;
+    padding: 0.55rem 0.7rem; border: 0; background: transparent;
+    border-radius: 8px;
+    font-family: var(--font); font-size: 0.85rem; color: var(--ink);
+    cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+}
+.lang-item:hover { background: var(--bg-soft); }
+.lang-item.active { background: var(--gold-tint); color: var(--gold-dark); font-weight: 600; }
+.lang-item .flag { font-size: 1rem; }
+
+/* ─── CHAT (always visible, no separate welcome) ─── */
+.chat {
+    flex: 1; display: flex; flex-direction: column;
+    max-width: 760px; width: 100%; margin: 0 auto;
+    padding: 0 1.2rem;
+    overflow: hidden;
+    position: relative; z-index: 1;
+}
+.messages {
+    flex: 1; overflow-y: auto;
+    padding: 1.4rem 0.4rem 1rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    scroll-behavior: smooth;
+}
+
+/* ─── MESSAGE ─── */
+.msg { display: flex; gap: 0.6rem; max-width: 100%; }
+.msg.user { justify-content: flex-end; }
+.msg-av {
+    width: 32px; height: 32px; border-radius: 50%;
+    flex-shrink: 0; object-fit: cover;
+    border: 1.5px solid var(--gold-soft);
+    align-self: flex-end; margin-bottom: 2px;
+}
+.bubble {
+    padding: 0.75rem 1rem;
+    font-size: 0.94rem;
+    max-width: calc(100% - 50px);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+}
+.msg.bot .bubble {
+    background: var(--bot-bg); color: var(--bot-fg);
+    border-radius: 18px 18px 18px 4px;
+}
+.msg.user .bubble {
+    background: var(--user-bg); color: var(--user-fg);
+    border-radius: 18px 18px 4px 18px;
+    border-color: transparent;
+}
+.typing-label { font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 0.35rem; }
+.dots { display: inline-flex; gap: 4px; }
+.dots span {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--gold-soft);
+    animation: dot-pulse 1.3s infinite;
+}
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dot-pulse {
+    0%, 60%, 100% { opacity: 0.35; transform: scale(0.85); }
+    30%           { opacity: 1;    transform: scale(1); }
+}
+
+/* ─── SUGGESTION CHIPS (Fah-style pills) ─── */
+.suggestions {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin: 0.1rem 0 0;
+    padding-left: 40px;  /* aligns under bot bubble (avatar 32 + gap 8) */
+}
+.suggest-chip {
+    padding: 0.45rem 0.85rem;
+    background: var(--gold-tint);
+    border: 1px solid var(--gold-tint-3);
+    border-radius: 18px;
+    font-family: var(--font);
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--gold-dark);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+    line-height: 1.35;
+}
+.suggest-chip:hover  { background: var(--gold-tint-2); transform: translateY(-1px); }
+.suggest-chip:active { transform: translateY(0); }
+
+/* ─── LEAD CARD ─── */
+.lead-card {
+    margin: 0.4rem 0;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-soft);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.1rem;
+    box-shadow: var(--shadow-md);
+    max-width: calc(100% - 50px);
+}
+.lead-card-h {
+    font-size: 0.74rem; color: var(--gold-dark); font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.7rem;
+}
+.lead-row { display: flex; gap: 0.5rem; padding: 0.32rem 0; font-size: 0.88rem; line-height: 1.4; }
+.lead-row .k { color: var(--ink-soft); min-width: 78px; flex-shrink: 0; }
+.lead-row .v { font-weight: 500; }
+.lead-actions { display: flex; gap: 0.5rem; margin-top: 0.9rem; padding-top: 0.85rem; border-top: 1px solid var(--line); }
+.btn-confirm, .btn-edit {
+    flex: 1; padding: 0.7rem 1rem;
+    border: 0; border-radius: var(--radius-sm);
+    font-family: var(--font); font-size: 0.88rem; font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+}
+.btn-confirm { background: var(--ink); color: #fff; }
+.btn-confirm:hover { background: #1a2336; }
+.btn-edit { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); }
+.btn-edit:hover { border-color: var(--ink-soft); color: var(--ink); }
+.lead-sent { display: none; padding: 0.85rem; text-align: center; color: #2d7a4f; font-weight: 600; background: #ecf7ee; border-radius: var(--radius-sm); margin-top: 0.85rem; font-size: 0.9rem; }
+.lead-card.sent .lead-actions { display: none; }
+.lead-card.sent .lead-sent { display: block; }
+
+/* ─── INPUT ─── */
+.input-area {
+    width: 100%;
+    padding: 0.85rem 1.2rem 1rem;
+    background: var(--bg-card);
+    box-shadow: 0 -2px 12px rgba(11, 18, 32, 0.05);
+    position: relative; z-index: 5;
+}
+.input-shell {
+    max-width: 760px; margin: 0 auto;
+    display: flex; align-items: flex-end; gap: 0.5rem;
+    background: var(--bg-card);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 0.55rem 0.6rem 0.55rem 1rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.input-shell:focus-within {
+    border-color: var(--gold-soft);
+    box-shadow: 0 0 0 3px var(--gold-tint);
+}
+.input-field {
+    flex: 1;
+    border: 0; outline: 0; background: transparent;
+    font-family: var(--font); font-size: 0.95rem; color: var(--ink);
+    padding: 0.35rem 0; resize: none;
+    max-height: 120px; line-height: 1.45;
+}
+.input-field::placeholder { color: var(--ink-faint); }
+.send-btn {
+    width: 34px; height: 34px; border: 0;
+    border-radius: 10px;
+    background: var(--ink); color: #fff;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s; flex-shrink: 0;
+}
+.send-btn:disabled { background: var(--line-strong); cursor: not-allowed; }
+.send-btn:not(:disabled):hover { background: var(--gold-dark); }
+.send-btn svg { width: 15px; height: 15px; }
+.input-hint {
+    max-width: 760px; margin: 0.5rem auto 0;
+    font-size: 0.7rem; color: var(--ink-faint);
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.68rem; color: var(--ink-faint);
+    background: var(--bg);
+    position: relative; z-index: 5;
+}
+.footer a { color: var(--ink-soft); text-decoration: none; }
+.footer a:hover { color: var(--gold); }
+
+/* ─── SPLASH (initial loading) ─── */
 .splash {
     position: fixed; inset: 0; z-index: 100;
     background: var(--bg);
@@ -80,271 +347,31 @@ body {
     50%      { opacity: 0.9; }
 }
 
-/* ─── NEXT-QUESTION SUGGESTION CHIPS (after each bot reply) ─── */
-.suggestions {
-    display: flex; flex-wrap: wrap; gap: 0.45rem;
-    margin: 0.55rem 0 0.3rem;
-    padding-left: 38px;  /* aligns with bot bubble (avatar 30px + 8px gap) */
-}
-.suggest-chip {
-    padding: 0.5rem 0.9rem;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-family: var(--font); font-size: 0.82rem; color: var(--ink);
-    cursor: pointer;
-    transition: all 0.15s;
-    text-align: left;
-    line-height: 1.35;
-}
-.suggest-chip:hover  { border-color: var(--gold-soft); background: var(--bg-soft); transform: translateY(-1px); }
-.suggest-chip:active { transform: translateY(0); }
-@media (max-width: 520px) {
-    .suggestions { padding-left: 0; }
-    .suggest-chip { font-size: 0.78rem; padding: 0.45rem 0.78rem; }
-}
-
-/* ─── HEADER ─── */
-.bar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0.7rem 1.1rem;
-    border-bottom: 1px solid var(--line);
-    background: var(--bg);
-    position: sticky; top: 0; z-index: 20;
-}
-.bar-left { display: flex; align-items: center; gap: 0.7rem; min-width: 0; }
-.bar-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    object-fit: cover; border: 1.5px solid var(--gold-soft);
-    flex-shrink: 0;
-}
-.bar-titles { min-width: 0; }
-.bar-h1 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; line-height: 1.1; }
-.bar-sub { font-size: 0.72rem; color: var(--ink-soft); margin-top: 1px; line-height: 1.1; }
-
-.lang-wrap { position: relative; }
-.lang-btn {
-    padding: 0.42rem 0.75rem 0.42rem 0.85rem;
-    border-radius: 999px;
-    border: 1px solid var(--line-strong);
-    background: var(--bg-card);
-    font-family: var(--font); font-size: 0.78rem; font-weight: 500;
-    color: var(--ink); cursor: pointer; transition: all 0.15s;
-    display: flex; align-items: center; gap: 0.35rem;
-}
-.lang-btn:hover { border-color: var(--gold-soft); }
-.lang-btn .caret { font-size: 0.6rem; opacity: 0.5; }
-.lang-menu {
-    position: absolute; top: calc(100% + 6px); right: 0;
-    background: var(--bg-card); border: 1px solid var(--line);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-md);
-    min-width: 180px; padding: 0.3rem;
-    display: none; z-index: 30;
-    max-height: 70vh; overflow-y: auto;
-}
-.lang-menu.open { display: block; }
-.lang-item {
-    width: 100%; text-align: left;
-    padding: 0.55rem 0.7rem; border: 0; background: transparent;
-    border-radius: 6px;
-    font-family: var(--font); font-size: 0.85rem; color: var(--ink);
-    cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
-}
-.lang-item:hover { background: var(--bg-soft); }
-.lang-item.active { background: var(--bg-soft); font-weight: 600; }
-.lang-item .flag { font-size: 1rem; }
-
-/* ─── WELCOME ─── */
-.welcome {
-    flex: 1;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center;
-    padding: 2rem 1.2rem 1.5rem;
-    max-width: 640px; width: 100%; margin: 0 auto;
-}
-.welcome.hidden { display: none; }
-.welcome-portrait {
-    width: 180px; height: 180px; border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--gold-soft);
-    box-shadow: var(--shadow-md), 0 0 0 8px rgba(184,144,46,0.06);
-    margin-bottom: 1.5rem;
-}
-.welcome-name { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; }
-.welcome-role {
-    margin-top: 0.3rem;
-    font-size: 0.92rem; color: var(--ink-soft);
-}
-.welcome-tagline {
-    margin-top: 1.1rem;
-    font-size: 0.88rem; color: var(--ink-soft);
-    padding: 0.55rem 1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    display: inline-block;
-}
-
-.chips {
-    margin: 1.8rem 0 1rem;
-    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.65rem; width: 100%; max-width: 560px;
-}
-.chip {
-    text-align: left;
-    padding: 0.85rem 1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: var(--font);
-    color: var(--ink);
-    display: flex; align-items: flex-start; gap: 0.6rem;
-    box-shadow: var(--shadow-sm);
-}
-.chip:hover { border-color: var(--gold-soft); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.chip .icon { font-size: 1.15rem; flex-shrink: 0; line-height: 1.3; }
-.chip .label { font-size: 0.86rem; font-weight: 500; line-height: 1.3; }
-
-/* ─── CHAT ─── */
-.chat {
-    flex: 1; display: none; flex-direction: column;
-    max-width: 720px; width: 100%; margin: 0 auto;
-    padding: 0 1rem;
-    overflow: hidden;
-}
-.chat.active { display: flex; }
-.messages {
-    flex: 1; overflow-y: auto;
-    padding: 1.2rem 0 1rem;
-    display: flex; flex-direction: column; gap: 0.8rem;
-    scroll-behavior: smooth;
-}
-.msg { display: flex; gap: 0.55rem; max-width: 100%; }
-.msg.user { justify-content: flex-end; }
-.msg-av {
-    width: 30px; height: 30px; border-radius: 50%;
-    flex-shrink: 0; object-fit: cover; border: 1px solid var(--line);
-    align-self: flex-end; margin-bottom: 2px;
-}
-.msg-bubble {
-    padding: 0.7rem 0.95rem;
-    border-radius: var(--radius-md);
-    font-size: 0.94rem; line-height: 1.5;
-    max-width: calc(100% - 50px);
-    word-wrap: break-word; white-space: pre-wrap;
-}
-.msg.bot .msg-bubble {
-    background: var(--bot-bg); color: var(--bot-fg);
-    border: 1px solid var(--line);
-    border-top-left-radius: 6px;
-}
-.msg.user .msg-bubble {
-    background: var(--user-bg); color: var(--user-fg);
-    border-top-right-radius: 6px;
-}
-.typing-label { font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 0.35rem; }
-.dots { display: inline-flex; gap: 4px; }
-.dots span {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--ink-faint);
-    animation: dot-pulse 1.3s infinite;
-}
-.dots span:nth-child(2) { animation-delay: 0.2s; }
-.dots span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes dot-pulse { 0%, 60%, 100% { opacity: 0.3; transform: scale(0.85); } 30% { opacity: 1; transform: scale(1); } }
-
-/* ─── LEAD CARD ─── */
-.lead-card {
-    margin: 0.4rem 0;
-    background: var(--bg-card);
-    border: 1px solid var(--gold-soft);
-    border-radius: var(--radius-md);
-    padding: 1rem 1.1rem;
-    box-shadow: var(--shadow-md);
-}
-.lead-card-h {
-    font-size: 0.74rem; color: var(--gold); font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    margin-bottom: 0.7rem;
-}
-.lead-row { display: flex; gap: 0.5rem; padding: 0.32rem 0; font-size: 0.88rem; line-height: 1.4; }
-.lead-row .k { color: var(--ink-soft); min-width: 78px; flex-shrink: 0; }
-.lead-row .v { font-weight: 500; }
-.lead-actions { display: flex; gap: 0.5rem; margin-top: 0.9rem; padding-top: 0.85rem; border-top: 1px solid var(--line); }
-.btn-confirm, .btn-edit {
-    flex: 1; padding: 0.7rem 1rem;
-    border: 0; border-radius: var(--radius-sm);
-    font-family: var(--font); font-size: 0.88rem; font-weight: 600;
-    cursor: pointer; transition: all 0.15s;
-}
-.btn-confirm { background: var(--ink); color: #fff; }
-.btn-confirm:hover { background: #1a2336; }
-.btn-edit { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); }
-.btn-edit:hover { border-color: var(--ink-soft); color: var(--ink); }
-.lead-sent { display: none; padding: 0.85rem; text-align: center; color: #2d7a4f; font-weight: 600; background: #ecf7ee; border-radius: var(--radius-sm); margin-top: 0.85rem; font-size: 0.9rem; }
-.lead-card.sent .lead-actions { display: none; }
-.lead-card.sent .lead-sent { display: block; }
-
-/* ─── INPUT ─── */
-.input-area {
-    width: 100%;
-    padding: 0.7rem 1rem 1rem;
-    border-top: 1px solid var(--line);
-    background: var(--bg);
-    max-width: 720px; margin: 0 auto;
-}
-.input-shell {
-    display: flex; align-items: flex-end; gap: 0.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 0.5rem 0.55rem 0.5rem 1rem;
-    transition: border-color 0.15s, box-shadow 0.15s;
-}
-.input-shell:focus-within { border-color: var(--gold-soft); box-shadow: 0 0 0 3px rgba(184,144,46,0.08); }
-.input-field {
-    flex: 1;
-    border: 0; outline: 0; background: transparent;
-    font-family: var(--font); font-size: 0.95rem; color: var(--ink);
-    padding: 0.4rem 0; resize: none;
-    max-height: 120px; line-height: 1.4;
-}
-.input-field::placeholder { color: var(--ink-faint); }
-.send-btn {
-    width: 38px; height: 38px; border: 0; border-radius: 50%;
-    background: var(--ink); color: #fff;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    transition: all 0.15s; flex-shrink: 0;
-}
-.send-btn:disabled { background: var(--line-strong); cursor: not-allowed; }
-.send-btn:not(:disabled):hover { transform: scale(1.05); }
-.send-btn svg { width: 16px; height: 16px; }
-
-.footer {
-    text-align: center;
-    padding: 0.7rem 1rem;
-    font-size: 0.7rem; color: var(--ink-faint);
-    border-top: 1px solid var(--line);
-    background: var(--bg);
-}
-.footer a { color: var(--ink-soft); text-decoration: none; }
-.footer a:hover { color: var(--gold); }
-
 /* ─── MOBILE ─── */
 @media (max-width: 520px) {
-    .welcome-portrait { width: 140px; height: 140px; }
-    .welcome-name { font-size: 1.35rem; }
-    .chips { grid-template-columns: 1fr; }
-    .bar-h1 { font-size: 0.88rem; }
-    .bar-sub { font-size: 0.68rem; }
+    .bar { padding: 0.7rem 0.9rem; gap: 0.5rem; }
+    .agent-avatar { width: 40px; height: 40px; }
+    .agent-name { font-size: 0.92rem; }
+    .agent-sub  { font-size: 0.7rem; }
+    .app-version { display: none; }
+    .lang-btn { padding: 0.4rem 0.7rem; font-size: 0.72rem; }
+    .chat { padding: 0 0.7rem; }
+    .messages { padding-top: 1rem; gap: 0.85rem; }
+    .suggestions { padding-left: 0; gap: 0.4rem; }
+    .suggest-chip { font-size: 0.8rem; padding: 0.42rem 0.78rem; }
+    .input-area { padding: 0.7rem 0.85rem 0.85rem; }
+    .particle.p1 { width: 140px; height: 140px; }
+    .particle.p2 { width: 100px; height: 100px; }
+    .particle.p3 { width: 180px; height: 180px; }
+    .particle.p4 { display: none; }
+    .particle.p5 { width: 140px; height: 140px; }
+    .particle.p6 { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- SPLASH (initial loading) -->
+<!-- SPLASH -->
 <div class="splash" id="splash">
     <div class="splash-inner">
         <img src="images/sand_profile_pic.png" alt="" class="splash-img">
@@ -352,13 +379,29 @@ body {
     </div>
 </div>
 
+<!-- PARTICLES (decorative bg) -->
+<div class="particles" aria-hidden="true">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+</div>
+
 <!-- HEADER -->
 <div class="bar">
     <div class="bar-left">
-        <img src="images/sand_profile_pic.png" alt="Sand" class="bar-avatar" id="barAvatar">
-        <div class="bar-titles">
-            <div class="bar-h1" id="barH1">AI Concierge</div>
-            <div class="bar-sub" id="barSub">Thailand Boat Festival 2027</div>
+        <div class="agent-avatar-wrap">
+            <img src="images/sand_profile_pic.png" alt="Sand" class="agent-avatar" id="barAvatar">
+            <span class="online-dot" aria-hidden="true"></span>
+        </div>
+        <div class="agent-info">
+            <div class="agent-name-row">
+                <span class="agent-name" id="barH1">Sand · AI Concierge</span>
+                <span class="app-version" id="appVersion">V.1.0</span>
+            </div>
+            <div class="agent-sub" id="barSub">Thailand Boat Festival 2027 · Online</div>
         </div>
     </div>
     <div class="lang-wrap">
@@ -378,27 +421,20 @@ body {
     </div>
 </div>
 
-<!-- WELCOME (landing) -->
-<div class="welcome" id="welcome">
-    <img src="images/sand_profile_pic.png" alt="Sand — AI Concierge" class="welcome-portrait">
-    <div class="welcome-name" id="wName">ทราย / Sand</div>
-    <div class="welcome-role" id="wRole">AI Concierge · Thailand Boat Festival 2027</div>
-    <div class="welcome-tagline" id="wTagline">ถามทรายได้ทุกภาษา · Ask Sand in any language</div>
-
-    <div class="chips" id="chips"></div>
-</div>
-
-<!-- CHAT -->
-<div class="chat" id="chat">
+<!-- CHAT (always visible — welcome is the first bot bubble) -->
+<div class="chat">
     <div class="messages" id="messages"></div>
 </div>
 
-<!-- INPUT (always shown) -->
+<!-- INPUT -->
 <div class="input-area">
     <div class="input-shell">
         <textarea class="input-field" id="input" rows="1" placeholder="ถามทรายได้เลย · Ask Sand…" oninput="autoResize(this); updateSend()" onkeydown="onKey(event)"></textarea>
         <button class="send-btn" id="sendBtn" onclick="send()" disabled aria-label="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
         </button>
     </div>
 </div>
@@ -412,115 +448,108 @@ body {
 /* ─── i18n COPY ─── */
 const COPY = {
     en: {
-        h1: 'AI Concierge', sub: 'Thailand Boat Festival 2027',
-        wName: 'Sand', wRole: 'AI Concierge · Thailand Boat Festival 2027',
-        wTagline: 'Ask Sand in any language',
+        h1: 'Sand · AI Concierge',
+        sub: 'Thailand Boat Festival 2027 · Online',
         placeholder: 'Ask Sand…',
-        typing: 'Sand is typing…', searching: '🔍 Searching the web…',
+        typing: 'Sand is typing…',
         splash: 'Sand is getting ready…',
         brand: 'Sand · M Vision Public Company Limited',
-        lead: { h: 'CONFIRM YOUR DETAILS', confirm: '✓  Confirm', edit: '✎  Edit', sent: '✓  Sent — our team will be in touch shortly.' },
+        welcome: "Good day. I'm Sand, the AI Concierge for Thailand Boat Festival 2027.\n\nI'm here to assist with attendance, exhibitor and yacht display arrangements, sponsorship, and event details. How may I help you today?",
         chips: [
-            { i: '⛵', t: 'I\'m planning to visit',          q: 'I\'m planning to visit the festival.' },
-            { i: '🛥️', t: 'Showcase my brand or yacht',     q: 'I want to showcase my brand or yacht at TBF.' },
-            { i: '✨', t: 'Sponsorship opportunities',       q: 'I\'m interested in sponsorship for TBF.' },
-            { i: '🌊', t: 'About the festival',              q: 'Tell me about Thailand Boat Festival 2027.' }
+            "I'm planning to visit the festival",
+            'I want to showcase my brand or yacht',
+            "I'm interested in sponsorship",
+            'Tell me about Thailand Boat Festival 2027'
         ]
     },
     th: {
-        h1: 'AI Concierge', sub: 'Thailand Boat Festival 2027',
-        wName: 'ทราย', wRole: 'AI Concierge · Thailand Boat Festival 2027',
-        wTagline: 'ถามทรายได้ทุกภาษาค่ะ',
+        h1: 'ทราย · AI Concierge',
+        sub: 'Thailand Boat Festival 2027 · พร้อมช่วย',
         placeholder: 'ถามทรายได้เลยค่ะ…',
-        typing: 'ทรายกำลังพิมพ์…', searching: '🔍 กำลังค้นหาข้อมูล…',
+        typing: 'ทรายกำลังพิมพ์…',
         splash: 'ทรายกำลังเตรียมพร้อม…',
         brand: 'ทราย · บริษัท เอ็ม วิชั่น จำกัด (มหาชน)',
-        lead: { h: 'ยืนยันข้อมูลของคุณ', confirm: '✓  ยืนยัน', edit: '✎  แก้ไข', sent: '✓  ส่งแล้ว — ทีมจะติดต่อกลับเร็วๆ นี้ค่ะ' },
+        welcome: 'สวัสดีค่ะ ดิฉันชื่อทราย ทำหน้าที่ AI Concierge ของ Thailand Boat Festival 2027 ค่ะ\n\nดิฉันยินดีดูแลทุกเรื่อง ตั้งแต่การเข้าร่วมงาน การจัดแสดงแบรนด์หรือเรือ การเป็นสปอนเซอร์ ไปจนถึงรายละเอียดงานทั่วไป ไม่ทราบว่ามีเรื่องใดให้ดิฉันช่วยดูแลคะ',
         chips: [
-            { i: '⛵', t: 'สนใจมาเดินงาน',          q: 'สนใจมาเดินงาน TBF' },
-            { i: '🛥️', t: 'อยากออกบูธ / นำเรือมาแสดง', q: 'อยากออกบูธหรือนำเรือมาแสดงในงาน TBF' },
-            { i: '✨', t: 'สนใจเป็นสปอนเซอร์',       q: 'สนใจเรื่อง sponsorship ของงาน TBF' },
-            { i: '🌊', t: 'เกี่ยวกับงาน',           q: 'เล่าเรื่อง Thailand Boat Festival 2027 ให้ฟังหน่อย' }
+            'สนใจมาเดินงาน TBF',
+            'อยากออกบูธหรือนำเรือมาแสดง',
+            'สนใจเป็นสปอนเซอร์',
+            'เล่าเรื่อง TBF 2027 ให้ฟัง'
         ]
     },
     zh: {
-        h1: 'AI 礼宾员', sub: 'Thailand Boat Festival 2027',
-        wName: '小沙 / Sand', wRole: 'AI 礼宾员 · Thailand Boat Festival 2027',
-        wTagline: '用您的语言向小沙提问',
+        h1: '小沙 · AI 礼宾员',
+        sub: 'Thailand Boat Festival 2027 · 在线',
         placeholder: '向小沙提问…',
-        typing: '小沙正在输入…', searching: '🔍 正在搜索资料…',
+        typing: '小沙正在输入…',
         splash: '小沙正在准备…',
         brand: 'Sand · M Vision Public Company Limited',
-        lead: { h: '请确认您的信息', confirm: '✓  确认', edit: '✎  修改', sent: '✓  已送出 — 我们的团队将尽快与您联系' },
+        welcome: '您好。我是小沙,Thailand Boat Festival 2027 的 AI 礼宾员。\n\n关于参访安排、品牌或游艇展出、赞助合作以及活动详情,我都可以为您协助。请问今天有什么需要为您效劳的?',
         chips: [
-            { i: '⛵', t: '我打算来参观',            q: '我打算来参观 TBF 活动' },
-            { i: '🛥️', t: '展出我的品牌或游艇',     q: '我想在 TBF 展出我的品牌或游艇' },
-            { i: '✨', t: '赞助合作',                q: '我对 TBF 的赞助合作感兴趣' },
-            { i: '🌊', t: '关于活动',                q: '介绍一下 Thailand Boat Festival 2027' }
+            '我打算来参观活动',
+            '我想展出品牌或游艇',
+            '我对赞助合作感兴趣',
+            '介绍一下 TBF 2027'
         ]
     },
     ja: {
-        h1: 'AI コンシェルジュ', sub: 'Thailand Boat Festival 2027',
-        wName: 'サンド / Sand', wRole: 'AI コンシェルジュ · Thailand Boat Festival 2027',
-        wTagline: 'サンドにどんな言語でもお気軽にどうぞ',
+        h1: 'サンド · AI コンシェルジュ',
+        sub: 'Thailand Boat Festival 2027 · オンライン',
         placeholder: 'サンドにご質問ください…',
-        typing: 'サンドが入力中…', searching: '🔍 ウェブ検索中…',
+        typing: 'サンドが入力中…',
         splash: 'サンドが準備中…',
         brand: 'Sand · M Vision Public Company Limited',
-        lead: { h: '内容のご確認', confirm: '✓  確定', edit: '✎  修正', sent: '✓  送信完了 — チームより折り返しご連絡いたします' },
+        welcome: 'ご機嫌よう。Thailand Boat Festival 2027 の AI コンシェルジュ、サンドと申します。\n\nご来場のご案内、ブランドおよびヨットの出展、スポンサーシップ、その他イベント詳細まで承っております。本日はいかがいたしましょうか。',
         chips: [
-            { i: '⛵', t: '来場を予定しています',     q: 'TBF への来場を予定しています' },
-            { i: '🛥️', t: 'ブランドやヨットを出展', q: 'TBF でブランドまたはヨットを出展したいです' },
-            { i: '✨', t: 'スポンサーシップ',         q: 'TBF のスポンサーシップに興味があります' },
-            { i: '🌊', t: 'イベントについて',         q: 'Thailand Boat Festival 2027 について教えてください' }
+            '来場を予定しています',
+            'ブランドやヨットを出展したい',
+            'スポンサーシップに興味があります',
+            'TBF 2027 について教えて'
         ]
     },
     ko: {
-        h1: 'AI 컨시어지', sub: 'Thailand Boat Festival 2027',
-        wName: '샌드 / Sand', wRole: 'AI 컨시어지 · Thailand Boat Festival 2027',
-        wTagline: '어떤 언어로든 샌드에게 문의하세요',
+        h1: '샌드 · AI 컨시어지',
+        sub: 'Thailand Boat Festival 2027 · 온라인',
         placeholder: '샌드에게 무엇이든 물어보세요…',
-        typing: '샌드가 입력 중…', searching: '🔍 웹 검색 중…',
+        typing: '샌드가 입력 중…',
         splash: '샌드가 준비 중…',
         brand: 'Sand · M Vision Public Company Limited',
-        lead: { h: '입력 정보 확인', confirm: '✓  확인', edit: '✎  수정', sent: '✓  전송 완료 — 팀에서 곧 연락드릴게요' },
+        welcome: '안녕하십니까. Thailand Boat Festival 2027의 AI 컨시어지 샌드입니다.\n\n방문 안내, 브랜드 및 요트 전시, 스폰서십, 행사 세부 사항 등 무엇이든 도와드리겠습니다. 어떤 부분을 도와드릴까요?',
         chips: [
-            { i: '⛵', t: '방문 예정입니다',          q: 'TBF 축제를 방문할 예정입니다' },
-            { i: '🛥️', t: '브랜드 / 요트 전시',     q: 'TBF에서 브랜드나 요트를 전시하고 싶습니다' },
-            { i: '✨', t: '스폰서십',                q: 'TBF 스폰서십에 관심이 있습니다' },
-            { i: '🌊', t: '행사 정보',               q: 'Thailand Boat Festival 2027에 대해 알려주세요' }
+            '방문 예정입니다',
+            '브랜드/요트를 전시하고 싶어요',
+            '스폰서십에 관심이 있습니다',
+            'TBF 2027 소개해 주세요'
         ]
     },
     vi: {
-        h1: 'AI Concierge', sub: 'Thailand Boat Festival 2027',
-        wName: 'Sand', wRole: 'AI Concierge · Thailand Boat Festival 2027',
-        wTagline: 'Hỏi Sand bằng bất kỳ ngôn ngữ nào',
+        h1: 'Sand · AI Concierge',
+        sub: 'Thailand Boat Festival 2027 · Trực tuyến',
         placeholder: 'Hỏi Sand…',
-        typing: 'Sand đang gõ…', searching: '🔍 Đang tìm trên web…',
+        typing: 'Sand đang gõ…',
         splash: 'Sand đang chuẩn bị…',
         brand: 'Sand · M Vision Public Company Limited',
-        lead: { h: 'XÁC NHẬN THÔNG TIN', confirm: '✓  Xác nhận', edit: '✎  Sửa', sent: '✓  Đã gửi — Đội ngũ sẽ liên hệ với bạn sớm.' },
+        welcome: 'Xin chào. Tôi là Sand, AI Concierge của Thailand Boat Festival 2027.\n\nTôi có thể hỗ trợ về việc tham dự, trưng bày thương hiệu/du thuyền, tài trợ và các chi tiết sự kiện. Hôm nay tôi có thể giúp gì cho bạn?',
         chips: [
-            { i: '⛵', t: 'Tôi dự định tham dự',          q: 'Tôi dự định tham dự lễ hội TBF' },
-            { i: '🛥️', t: 'Trưng bày thương hiệu / du thuyền', q: 'Tôi muốn trưng bày thương hiệu hoặc du thuyền tại TBF' },
-            { i: '✨', t: 'Cơ hội tài trợ',                q: 'Tôi quan tâm đến cơ hội tài trợ cho TBF' },
-            { i: '🌊', t: 'Về lễ hội',                     q: 'Hãy kể cho tôi nghe về Thailand Boat Festival 2027' }
+            'Tôi dự định tham dự lễ hội',
+            'Tôi muốn trưng bày thương hiệu/du thuyền',
+            'Tôi quan tâm đến tài trợ',
+            'Giới thiệu về TBF 2027'
         ]
     },
     ru: {
-        h1: 'AI-консьерж', sub: 'Thailand Boat Festival 2027',
-        wName: 'Сэнд / Sand', wRole: 'AI-консьерж · Thailand Boat Festival 2027',
-        wTagline: 'Спрашивайте Сэнд на любом языке',
+        h1: 'Сэнд · AI-консьерж',
+        sub: 'Thailand Boat Festival 2027 · Онлайн',
         placeholder: 'Спросите Сэнд…',
-        typing: 'Сэнд печатает…', searching: '🔍 Идёт поиск…',
+        typing: 'Сэнд печатает…',
         splash: 'Сэнд готовится…',
         brand: 'Sand · M Vision Public Company Limited',
-        lead: { h: 'ПОДТВЕРЖДЕНИЕ ДАННЫХ', confirm: '✓  Подтвердить', edit: '✎  Изменить', sent: '✓  Отправлено — команда скоро свяжется с вами.' },
+        welcome: 'Добрый день. Я Сэнд, AI-консьерж Thailand Boat Festival 2027.\n\nГотова содействовать в вопросах посещения, представления бренда или яхты, спонсорства, а также по иным деталям мероприятия. Чем могу быть полезна сегодня?',
         chips: [
-            { i: '⛵', t: 'Планирую посетить',              q: 'Я планирую посетить фестиваль TBF' },
-            { i: '🛥️', t: 'Представить бренд или яхту',    q: 'Хочу представить бренд или яхту на TBF' },
-            { i: '✨', t: 'Спонсорство',                    q: 'Меня интересует спонсорство TBF' },
-            { i: '🌊', t: 'О фестивале',                    q: 'Расскажите про Thailand Boat Festival 2027' }
+            'Планирую посетить фестиваль',
+            'Хочу представить бренд или яхту',
+            'Меня интересует спонсорство',
+            'Расскажите про TBF 2027'
         ]
     }
 };
@@ -531,6 +560,7 @@ let langPref = localStorage.getItem('sand_lang') || 'auto';
 let currentLang = 'en';
 let history = [];
 let isWaiting = false;
+let welcomeShown = false;  // tracks whether we've shown the initial greeting
 
 /* ─── LANGUAGE ─── */
 function detectBrowserLang() {
@@ -543,12 +573,20 @@ function detectBrowserLang() {
 }
 function effectiveLang() { return langPref === 'auto' ? detectBrowserLang() : langPref; }
 function setLang(lang) {
+    const prevLang = currentLang;
     langPref = lang;
     localStorage.setItem('sand_lang', lang);
     currentLang = effectiveLang();
     applyCopy();
     document.getElementById('langMenu').classList.remove('open');
     document.querySelectorAll('.lang-item').forEach(i => i.classList.toggle('active', i.dataset.lang === lang));
+
+    // If user changed language before sending anything, refresh the welcome greeting
+    if (welcomeShown && history.length === 0 && currentLang !== prevLang) {
+        document.getElementById('messages').innerHTML = '';
+        welcomeShown = false;
+        showWelcomeBot();
+    }
 }
 function toggleLangMenu(e) {
     e?.stopPropagation();
@@ -562,24 +600,12 @@ function applyCopy() {
     const c = COPY[currentLang] || COPY.en;
     document.getElementById('barH1').textContent     = c.h1;
     document.getElementById('barSub').textContent    = c.sub;
-    document.getElementById('wName').textContent     = c.wName;
-    document.getElementById('wRole').textContent     = c.wRole;
-    document.getElementById('wTagline').textContent  = c.wTagline;
     document.getElementById('input').placeholder     = c.placeholder;
     document.getElementById('ftBrand').textContent   = c.brand;
     document.getElementById('langLabel').textContent = LANG_LABEL[langPref] || LANG_LABEL.auto;
     const sl = document.getElementById('splashLabel');
     if (sl && c.splash) sl.textContent = c.splash;
     document.documentElement.setAttribute('lang', currentLang);
-    renderChips(c.chips);
-}
-function renderChips(chips) {
-    const wrap = document.getElementById('chips');
-    wrap.innerHTML = chips.map(c =>
-        `<button class="chip" onclick="quickAsk(${JSON.stringify(c.q).replace(/"/g, '&quot;')})">
-            <span class="icon">${c.i}</span><span class="label">${c.t}</span>
-        </button>`
-    ).join('');
 }
 
 /* ─── CHAT ─── */
@@ -601,10 +627,6 @@ function quickAsk(text) {
     updateSend();
     send();
 }
-function showWelcome(show) {
-    document.getElementById('welcome').classList.toggle('hidden', !show);
-    document.getElementById('chat').classList.toggle('active', !show);
-}
 function escapeHtml(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 }
@@ -613,7 +635,7 @@ function addMsg(text, role) {
     const wrap = document.createElement('div');
     wrap.className = 'msg ' + role;
     const av = role === 'bot' ? `<img src="images/sand_profile_pic.png" class="msg-av" alt="">` : '';
-    wrap.innerHTML = `${av}<div class="msg-bubble">${escapeHtml(text)}</div>`;
+    wrap.innerHTML = `${av}<div class="bubble">${escapeHtml(text)}</div>`;
     cont.appendChild(wrap);
     cont.scrollTop = cont.scrollHeight;
     return wrap;
@@ -624,7 +646,7 @@ function showTyping() {
     const wrap = document.createElement('div');
     wrap.className = 'msg bot'; wrap.id = 'typing';
     wrap.innerHTML = `<img src="images/sand_profile_pic.png" class="msg-av" alt="">
-        <div class="msg-bubble">
+        <div class="bubble">
             <div class="typing-label">${c.typing}</div>
             <div class="dots"><span></span><span></span><span></span></div>
         </div>`;
@@ -635,6 +657,34 @@ function removeTyping() {
     const t = document.getElementById('typing');
     if (t) t.remove();
 }
+
+/* ─── WELCOME BOT (auto-injected first message — like Fah) ─── */
+function showWelcomeBot() {
+    if (welcomeShown) return;
+    welcomeShown = true;
+    const c = COPY[currentLang] || COPY.en;
+    addMsg(c.welcome, 'bot');
+    addSuggestions(c.chips);
+}
+
+/* ─── SUGGESTION CHIPS ─── */
+function addSuggestions(questions) {
+    if (!Array.isArray(questions) || !questions.length) return;
+    document.querySelectorAll('.suggestions').forEach(el => el.remove());
+    const cont = document.getElementById('messages');
+    const wrap = document.createElement('div');
+    wrap.className = 'suggestions';
+    wrap.innerHTML = questions.slice(0, 4).map(q => {
+        const safe = String(q).trim().slice(0, 160);
+        const attr = JSON.stringify(safe).replace(/"/g, '&quot;');
+        return `<button class="suggest-chip" type="button" onclick="quickAsk(${attr})">${escapeHtml(safe)}</button>`;
+    }).join('');
+    cont.appendChild(wrap);
+    cont.scrollTop = cont.scrollHeight;
+}
+document.getElementById('input').addEventListener('input', () => {
+    document.querySelectorAll('.suggestions').forEach(el => el.remove());
+});
 
 /* ─── CONVERSATION ID + RESTORE ─── */
 function getConversationId() {
@@ -648,17 +698,17 @@ function getConversationId() {
 }
 async function restoreChat() {
     const id = sessionStorage.getItem('sand_conv_id');
-    if (!id) return;
+    if (!id) { showWelcomeBot(); return; }
     try {
         const r = await fetch('/.netlify/functions/get-conversation?id=' + encodeURIComponent(id));
-        if (!r.ok) return;
+        if (!r.ok) { showWelcomeBot(); return; }
         const d = await r.json();
         const msgs = (d.messages || []).filter(m => m.content && m.content.trim());
-        if (!msgs.length) return;
-        showWelcome(false);
+        if (!msgs.length) { showWelcomeBot(); return; }
+        welcomeShown = true;  // prevent welcome injection on restored convs
         history = msgs.map(m => ({ role: m.role, content: m.content }));
         for (const m of msgs) addMsg(m.content, m.role === 'user' ? 'user' : 'bot');
-    } catch (_) {}
+    } catch (_) { showWelcomeBot(); }
 }
 
 /* ─── SEND ─── */
@@ -668,7 +718,7 @@ async function send() {
     const text = inp.value.trim();
     if (!text) return;
 
-    showWelcome(false);
+    welcomeShown = true;  // any send guarantees welcome won't re-inject
     addMsg(text, 'user');
     history.push({ role: 'user', content: text });
     inp.value = ''; autoResize(inp); updateSend();
@@ -688,7 +738,6 @@ async function send() {
         const leadMatch = replyRaw.match(/\[LEAD_CARD\]([\s\S]*?)\[\/LEAD_CARD\]/);
         const nextMatch = replyRaw.match(/\[NEXT_QUESTIONS\]([\s\S]*?)\[\/NEXT_QUESTIONS\]/);
 
-        // Strip both tags from the prose we display
         const prose = replyRaw
             .replace(/\[LEAD_CARD\][\s\S]*?\[\/LEAD_CARD\]/, '')
             .replace(/\[NEXT_QUESTIONS\][\s\S]*?\[\/NEXT_QUESTIONS\]/, '')
@@ -706,15 +755,13 @@ async function send() {
             addMsg(prose, 'bot');
         }
 
-        // Render follow-up suggestion chips (only when NOT a lead-card turn)
         if (nextMatch && !leadMatch) {
             try {
                 const qs = JSON.parse(nextMatch[1].trim());
                 if (Array.isArray(qs) && qs.length) addSuggestions(qs);
-            } catch (_) { /* malformed JSON, skip */ }
+            } catch (_) {}
         }
 
-        // Track only the prose in history (strip tags)
         history.push({ role: 'assistant', content: prose });
     } catch (err) {
         removeTyping();
@@ -729,6 +776,12 @@ async function send() {
 /* ─── LEAD CARD ─── */
 function addLeadCard(d) {
     const c = COPY[currentLang] || COPY.en;
+    const labels = {
+        h: { en: 'CONFIRM YOUR DETAILS', th: 'ยืนยันข้อมูลของคุณ', zh: '请确认您的信息', ja: '内容のご確認', ko: '입력 정보 확인', vi: 'XÁC NHẬN THÔNG TIN', ru: 'ПОДТВЕРЖДЕНИЕ ДАННЫХ' }[currentLang] || 'CONFIRM YOUR DETAILS',
+        confirm: { en: '✓  Confirm', th: '✓  ยืนยัน', zh: '✓  确认', ja: '✓  確定', ko: '✓  확인', vi: '✓  Xác nhận', ru: '✓  Подтвердить' }[currentLang] || '✓  Confirm',
+        edit: { en: '✎  Edit', th: '✎  แก้ไข', zh: '✎  修改', ja: '✎  修正', ko: '✎  수정', vi: '✎  Sửa', ru: '✎  Изменить' }[currentLang] || '✎  Edit',
+        sent: { en: '✓  Sent — our team will be in touch shortly.', th: '✓  ส่งแล้ว — ทีมจะติดต่อกลับเร็วๆ นี้ค่ะ', zh: '✓  已送出 — 我们的团队将尽快与您联系', ja: '✓  送信完了 — チームより折り返しご連絡いたします', ko: '✓  전송 완료 — 팀에서 곧 연락드릴게요', vi: '✓  Đã gửi — Đội ngũ sẽ liên hệ với bạn sớm.', ru: '✓  Отправлено — команда скоро свяжется с вами.' }[currentLang] || '✓  Sent'
+    };
     const cont = document.getElementById('messages');
     const rows = [
         d.name     && { k: 'Name',     v: d.name },
@@ -747,14 +800,14 @@ function addLeadCard(d) {
     const card = document.createElement('div');
     card.className = 'msg bot';
     card.innerHTML = `<img src="images/sand_profile_pic.png" class="msg-av" alt="">
-        <div class="lead-card" id="leadCard" style="max-width:calc(100% - 50px);">
-            <div class="lead-card-h">${c.lead.h}</div>
+        <div class="lead-card">
+            <div class="lead-card-h">${labels.h}</div>
             ${rowsHtml}
             <div class="lead-actions">
-                <button class="btn-confirm" onclick="confirmLead('${dataStr}', this)">${c.lead.confirm}</button>
-                <button class="btn-edit" onclick="editLead()">${c.lead.edit}</button>
+                <button class="btn-confirm" onclick="confirmLead('${dataStr}', this)">${labels.confirm}</button>
+                <button class="btn-edit" onclick="editLead()">${labels.edit}</button>
             </div>
-            <div class="lead-sent">${c.lead.sent}</div>
+            <div class="lead-sent">${labels.sent}</div>
         </div>`;
     cont.appendChild(card);
     cont.scrollTop = cont.scrollHeight;
@@ -771,42 +824,21 @@ async function confirmLead(dataStr, btn) {
         });
         card.classList.add('sent');
     } catch (_) {
-        btn.disabled = false; btn.textContent = (COPY[currentLang] || COPY.en).lead.confirm;
+        btn.disabled = false;
+        btn.textContent = '✓ Confirm';
     }
 }
 function editLead() {
     const inp = document.getElementById('input');
-    inp.value = (currentLang === 'th') ? 'ขอแก้ข้อมูลนิดนึงค่ะ' : 'I\'d like to edit my details.';
+    inp.value = (currentLang === 'th') ? 'ขอแก้ข้อมูลนิดนึงค่ะ' : "I'd like to edit my details.";
     inp.focus(); updateSend();
 }
 
-/* ─── SUGGESTION CHIPS (rendered after each bot reply) ─── */
-function addSuggestions(questions) {
-    if (!Array.isArray(questions) || !questions.length) return;
-    // Drop any existing suggestion row — only the latest reply gets chips
-    document.querySelectorAll('.suggestions').forEach(el => el.remove());
-    const cont = document.getElementById('messages');
-    const wrap = document.createElement('div');
-    wrap.className = 'suggestions';
-    wrap.innerHTML = questions.slice(0, 4).map(q => {
-        const safe = String(q).trim().slice(0, 140);
-        const attr = JSON.stringify(safe).replace(/"/g, '&quot;');
-        return `<button class="suggest-chip" type="button" onclick="quickAsk(${attr})">${escapeHtml(safe)}</button>`;
-    }).join('');
-    cont.appendChild(wrap);
-    cont.scrollTop = cont.scrollHeight;
-}
-// Strip existing suggestions when user types something new (so they don't pile up)
-document.getElementById('input').addEventListener('input', () => {
-    document.querySelectorAll('.suggestions').forEach(el => el.remove());
-}, { once: false });
-
-/* ─── SPLASH HIDE (after fonts ready + tiny grace period) ─── */
+/* ─── SPLASH HIDE ─── */
 async function hideSplash() {
     const splash = document.getElementById('splash');
     if (!splash) return;
     try { await document.fonts.ready; } catch (_) {}
-    // Give portrait img a beat to load too
     await new Promise(r => setTimeout(r, 250));
     splash.classList.add('hidden');
     setTimeout(() => splash.remove(), 600);
