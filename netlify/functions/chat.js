@@ -314,7 +314,46 @@ const BRAND_KEYWORDS = {
     'luxury car phuket':        'lifestyle/phuket-concierge-services.md',
     'phuket wellness':          'lifestyle/phuket-concierge-services.md',
     'phuket spa':               'lifestyle/phuket-concierge-services.md',
-    'lifestyle management':     'lifestyle/phuket-concierge-services.md'
+    'lifestyle management':     'lifestyle/phuket-concierge-services.md',
+
+    // ─── Maintenance & service ───
+    'maintenance schedule':     'ownership/maintenance-schedules.md',
+    'yacht service':            'ownership/maintenance-schedules.md',
+    'authorized service':       'ownership/maintenance-schedules.md',
+    'engine service':           'ownership/maintenance-schedules.md',
+    'yacht upkeep':             'ownership/maintenance-schedules.md',
+    'service interval':         'ownership/maintenance-schedules.md',
+    'engine hours':             'ownership/maintenance-schedules.md',
+    'seakeeper':                'ownership/maintenance-schedules.md',
+    'warranty':                 'ownership/maintenance-schedules.md',
+
+    // ─── Spare parts & marine supply chain ───
+    'spare parts':              'ownership/spare-parts-supply.md',
+    'marine parts':             'ownership/spare-parts-supply.md',
+    'chandlery':                'ownership/spare-parts-supply.md',
+    'volvo penta':              'ownership/spare-parts-supply.md',
+    'alpha tech marine':        'ownership/spare-parts-supply.md',
+    'phuket marine engineering':'ownership/spare-parts-supply.md',
+    'yse marine':               'ownership/spare-parts-supply.md',
+    'man engine':               'ownership/spare-parts-supply.md',
+    'caterpillar marine':       'ownership/spare-parts-supply.md',
+    'cummins onan':             'ownership/spare-parts-supply.md',
+    'yanmar':                   'ownership/spare-parts-supply.md',
+    'mercury marine':           'ownership/spare-parts-supply.md',
+    'mercruiser':               'ownership/spare-parts-supply.md',
+    'kohler generator':         'ownership/spare-parts-supply.md',
+    'rehlko':                   'ownership/spare-parts-supply.md',
+    'engine parts':             'ownership/spare-parts-supply.md',
+    'marine electronics':       'ownership/spare-parts-supply.md',
+    'raymarine':                'ownership/spare-parts-supply.md',
+    'octopus electrical':       'ownership/spare-parts-supply.md',
+    'mastervolt':               'ownership/spare-parts-supply.md',
+    'furuno':                   'ownership/spare-parts-supply.md',
+    'garmin marine':            'ownership/spare-parts-supply.md',
+    'simrad':                   'ownership/spare-parts-supply.md',
+    'b&g electronics':          'ownership/spare-parts-supply.md',
+    'flir':                     'ownership/spare-parts-supply.md',
+    'boat parts phuket':        'ownership/spare-parts-supply.md'
 };
 
 // Resolve knowledge dir across local / Netlify Lambda contexts
