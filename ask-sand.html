@@ -327,7 +327,7 @@ body {
 .splash.hidden { opacity: 0; pointer-events: none; }
 .splash-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .splash-img {
-    width: 96px; height: 96px; border-radius: 50%;
+    width: 106px; height: 106px; border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--gold-soft);
     box-shadow: 0 6px 28px rgba(184,144,46,0.22), 0 0 0 6px rgba(184,144,46,0.05);
@@ -836,7 +836,7 @@ async function hideSplash() {
     const splash = document.getElementById('splash');
     if (!splash) return;
     try { await document.fonts.ready; } catch (_) {}
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 3000));
     splash.classList.add('hidden');
     setTimeout(() => splash.remove(), 600);
 }
