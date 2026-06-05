@@ -221,7 +221,7 @@ async function loadRelevantKnowledge(messages) {
     const matched = new Set();
     for (const [kw, file] of Object.entries(BRAND_KEYWORDS)) {
         if (recentText.includes(kw)) matched.add(file);
-        if (matched.size >= 7) break;  // cap at 7 files / call (knowledge base grew 2x with P3-P6)
+        if (matched.size >= 4) break;  // cap at 4 files (keep latency under Netlify 10s timeout)
     }
     if (!matched.size) return '';
 
@@ -229,7 +229,7 @@ async function loadRelevantKnowledge(messages) {
     for (const file of matched) {
         const content = await loadKnowledgeFile(file);
         if (content) {
-            const trimmed = content.length > 4000 ? content.slice(0, 4000) + '\n…[truncated]' : content;
+            const trimmed = content.length > 2500 ? content.slice(0, 2500) + '\n…[truncated]' : content;
             blocks.push(`### Reference: ${file}\n\n${trimmed}`);
         }
     }
@@ -992,7 +992,11 @@ export async function handler(event) {
             messages: safeMessages
         };
 
-        const requestWithTools = {
+        // When we have substantial local knowledge (≥2 files loaded), skip web_search
+        // to stay under Netlify's 10s function timeout. Local knowledge is curated and
+        // recent enough that web_search is redundant for these queries.
+        const hasRichKnowledge = knowledgeChunk.length > 2000;
+        const requestWithTools = hasRichKnowledge ? baseRequest : {
             ...baseRequest,
             tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 4 }]
         };
