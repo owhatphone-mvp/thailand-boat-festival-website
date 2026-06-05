@@ -766,7 +766,9 @@ async function send() {
     } finally {
         isWaiting = false;
         updateSend();
-        document.getElementById('input').focus();
+        // DON'T auto-focus input — let user read the reply + suggestion chips
+        // without the mobile keyboard popping up and blocking the content.
+        // Keyboard only appears when user manually taps the input field.
     }
 }
 
