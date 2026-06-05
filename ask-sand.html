@@ -659,11 +659,8 @@ function addMsg(text, role) {
         wrap.innerHTML = `<img src="images/sand_profile_pic.png" class="msg-av" alt="">
                           <div class="bubble">${escapeHtml(text)}</div>`;
     } else {
-        const c = COPY[currentLang] || COPY.en;
-        const youLabel = c.you || 'You';
         wrap.innerHTML = `
             <div class="user-stack">
-                <div class="user-label">${escapeHtml(youLabel)}</div>
                 <div class="bubble">${escapeHtml(text)}</div>
             </div>
             <img src="images/user_avatar.svg" class="msg-av" alt="">`;
