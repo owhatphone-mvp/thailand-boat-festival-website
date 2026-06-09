@@ -1168,7 +1168,7 @@ const baseHeaders = {
 const jsonResponse = (status, body) =>
     new Response(JSON.stringify(body), { status, headers: baseHeaders });
 
-export default async (req) => {
+export default async (req, context) => {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: baseHeaders });
     if (req.method !== 'POST')    return jsonResponse(405, { error: 'Method not allowed' });
 
@@ -1307,11 +1307,19 @@ export default async (req) => {
             return jsonResponse(200, { reply: friendlyFallback(safeMessages), fallback: true });
         }
 
-        // Best-effort save to Blobs (never blocks chat reply)
+        // Best-effort save to Blobs via context.waitUntil() — keeps the background
+        // promise alive in Netlify v2 after Response is sent. Without this, the
+        // serverless container freezes and the save silently dies.
         if (conversationId && /^[a-zA-Z0-9_-]{8,64}$/.test(conversationId)) {
-            saveConversation(conversationId, messages, reply).catch(err => {
-                console.warn('Blob save failed (non-fatal):', err.message);
-            });
+            const savePromise = saveConversation(conversationId, messages, reply)
+                .then(() => console.log(`[Sand save] conv:${conversationId} saved`))
+                .catch(err => console.error(`[Sand save] FAILED conv:${conversationId}:`, err.message, err.stack));
+            if (context && typeof context.waitUntil === 'function') {
+                context.waitUntil(savePromise);
+            } else {
+                // Fallback for local dev / non-Netlify hosts — await directly
+                await savePromise;
+            }
         }
 
         return jsonResponse(200, { reply });
