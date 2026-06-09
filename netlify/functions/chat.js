@@ -1153,50 +1153,46 @@ If user pushes back ("are you sure?") — acknowledge uncertainty honestly: "My 
 - No one gets turned away — everyone has a place at TBF.
 - Don't send the confirmation summary until you have at minimum: name + email + interest type.`;
 
-export async function handler(event) {
-    const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Content-Type': 'application/json'
-    };
+// ─── Netlify Functions v2 (export default + Web Request/Response).
+// REQUIRED so Netlify auto-injects the Blobs runtime context. Without v2,
+// getStore() throws "MissingBlobsEnvironment" and conversations are NEVER saved
+// (the error is silently caught — admin dashboard appears empty).
 
-    if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
-    if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method not allowed' }) };
-    }
+const baseHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Content-Type': 'application/json'
+};
+
+const jsonResponse = (status, body) =>
+    new Response(JSON.stringify(body), { status, headers: baseHeaders });
+
+export default async (req) => {
+    if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: baseHeaders });
+    if (req.method !== 'POST')    return jsonResponse(405, { error: 'Method not allowed' });
 
     const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-        return {
-            statusCode: 500, headers,
-            body: JSON.stringify({ error: 'API key not configured', fallback: true })
-        };
-    }
+    if (!apiKey) return jsonResponse(500, { error: 'API key not configured', fallback: true });
+
+    let body;
+    try { body = await req.json(); }
+    catch (_) { return jsonResponse(400, { error: 'Invalid JSON body', fallback: true }); }
 
     try {
-        const { messages, conversationId } = JSON.parse(event.body);
+        const { messages, conversationId } = body;
 
         if (!Array.isArray(messages) || messages.length === 0) {
-            return {
-                statusCode: 400, headers,
-                body: JSON.stringify({ error: 'Invalid messages payload', fallback: true })
-            };
+            return jsonResponse(400, { error: 'Invalid messages payload', fallback: true });
         }
         if (messages.length > 40) {
-            return {
-                statusCode: 400, headers,
-                body: JSON.stringify({ error: 'Conversation too long — please refresh', fallback: true })
-            };
+            return jsonResponse(400, { error: 'Conversation too long — please refresh', fallback: true });
         }
         const totalChars = messages.reduce(
             (sum, m) => sum + (typeof m.content === 'string' ? m.content.length : 0), 0
         );
         if (totalChars > 12000) {
-            return {
-                statusCode: 413, headers,
-                body: JSON.stringify({ error: 'Message too large', fallback: true })
-            };
+            return jsonResponse(413, { error: 'Message too large', fallback: true });
         }
 
         // Send last 20 turns to API; older saved in Blobs
@@ -1275,10 +1271,7 @@ export async function handler(event) {
                         response = await callAnthropic({ ...baseRequest, model: FALLBACK_MODEL });
                     } else {
                         console.error('Fallback model error:', errText2);
-                        return {
-                            statusCode: 502, headers,
-                            body: JSON.stringify({ reply: friendlyFallback(safeMessages), fallback: true })
-                        };
+                        return jsonResponse(502, { reply: friendlyFallback(safeMessages), fallback: true });
                     }
                 }
             } else if (response.status === 400 && looksLikeToolError) {
@@ -1286,20 +1279,14 @@ export async function handler(event) {
                 response = await callAnthropic(baseRequest);
             } else {
                 console.error('Anthropic API error:', errText);
-                return {
-                    statusCode: 502, headers,
-                    body: JSON.stringify({ reply: friendlyFallback(safeMessages), fallback: true })
-                };
+                return jsonResponse(502, { reply: friendlyFallback(safeMessages), fallback: true });
             }
         }
 
         if (!response.ok) {
             const errText2 = await response.text();
             console.error('Anthropic API error (post-fallback):', errText2);
-            return {
-                statusCode: 502, headers,
-                body: JSON.stringify({ reply: friendlyFallback(safeMessages), fallback: true })
-            };
+            return jsonResponse(502, { reply: friendlyFallback(safeMessages), fallback: true });
         }
 
         const data = await response.json();
@@ -1317,10 +1304,7 @@ export async function handler(event) {
 
         if (!reply) {
             console.error('Empty reply. Stop reason:', data.stop_reason, 'content blocks:', (data.content || []).map(b => b.type));
-            return {
-                statusCode: 200, headers,
-                body: JSON.stringify({ reply: friendlyFallback(safeMessages), fallback: true })
-            };
+            return jsonResponse(200, { reply: friendlyFallback(safeMessages), fallback: true });
         }
 
         // Best-effort save to Blobs (never blocks chat reply)
@@ -1330,16 +1314,12 @@ export async function handler(event) {
             });
         }
 
-        return {
-            statusCode: 200, headers,
-            body: JSON.stringify({ reply })
-        };
+        return jsonResponse(200, { reply });
 
     } catch (err) {
         console.error('Function error:', err);
-        return {
-            statusCode: 500, headers,
-            body: JSON.stringify({ error: err.message, fallback: true })
-        };
+        return jsonResponse(500, { error: err.message, fallback: true });
     }
-}
+};
+
+export const config = { path: '/.netlify/functions/chat' };
