@@ -435,7 +435,7 @@ async function loadRelevantKnowledge(messages) {
     for (const file of matched) {
         const content = await loadKnowledgeFile(file);
         if (content) {
-            const trimmed = content.length > 2500 ? content.slice(0, 2500) + '\n…[truncated]' : content;
+            const trimmed = content.length > 3500 ? content.slice(0, 3500) + '\n…[truncated]' : content;
             blocks.push(`### Reference: ${file}\n\n${trimmed}`);
         }
     }
@@ -443,6 +443,20 @@ async function loadRelevantKnowledge(messages) {
 
     console.log(`[Sand knowledge] loaded ${blocks.length} file(s): ${[...matched].join(', ')}`);
     return `\n\n---\n\n## RELEVANT REFERENCE MATERIAL\n\nThe following files have been retrieved based on keywords in the user's current message. Use specific facts from them to inform your reply, but DO NOT recite verbatim — translate to Sand's concise refined voice. Cite only what's relevant to the immediate question.\n\n${blocks.join('\n\n')}\n\n---\n`;
+}
+
+// ─── Detect "latest / newest / current" questions → allow web_search even when local knowledge is loaded
+function detectLatestIntent(messages) {
+    const lastUser = (messages || []).slice().reverse().find(m => m.role === 'user');
+    const t = (lastUser && typeof lastUser.content === 'string') ? lastUser.content.toLowerCase() : '';
+    if (!t) return false;
+    const triggers = [
+        'latest', 'newest', 'new model', 'new models', 'just launched', 'recently launched', 'launch', 'debut', 'premiere',
+        'current price', 'price now', 'price today', 'this year', '2026 model', '2027 model', 'model year', 'still available', 'still the dealer', 'current dealer', 'news',
+        'ล่าสุด', 'รุ่นใหม่', 'ใหม่ล่าสุด', 'เปิดตัว', 'ปีนี้', 'ราคาตอนนี้', 'ราคาล่าสุด', 'ราคาปัจจุบัน', 'ตัวแทนตอนนี้', 'ข่าว',
+        '最新', '新款', '新型', '최신', '신형', 'новая модель', 'новинк', 'последн'
+    ];
+    return triggers.some(k => t.includes(k));
 }
 
 // ─── Detect negotiation / barter / pricing context → switch model to Opus 4.7
@@ -598,7 +612,7 @@ Rules:
 
 ## WEB SEARCH RULES (RESTRICTIVE — default is NO search)
 
-**Default: do NOT search.** Use built-in knowledge and ASK the user. Search only in 2 specific cases.
+**Default: do NOT search.** Use built-in knowledge and ASK the user. Search only in the 3 specific cases below.
 
 **❌ NEVER search when:**
 - User is greeting / chatting / asking general FAQ
@@ -606,7 +620,7 @@ Rules:
 - User has already explained their business
 - Question is about TBF itself (package, dates, venue) — those answers are in this prompt
 
-**✅ ALLOWED — only these 2 cases:**
+**✅ ALLOWED — only these 3 cases:**
 
 **Case A** — about to pitch / barter, need ONE specific data point (all conditions must hold):
 1. Clear company / brand / product name on the table
@@ -619,12 +633,18 @@ Rules:
 - Search once, then verify gently
 - If no result: "I couldn't find much on them — could you tell me a bit?"
 
+**Case C** — User asks about the LATEST / NEWEST / CURRENT state of a yacht brand, model, dealer or price ("latest model", "what's new from Azimut", "current price", "still the dealer?", "รุ่นใหม่ล่าสุด", "ราคาตอนนี้", "เปิดตัวล่าสุด")
+- Reference files may be a few months old. Search once (twice at most) on the brand's official site or reputable yachting press to confirm what is newer than the file.
+- Prefer facts from the last 12 months. Combine with the reference file; if they differ, the newer dated source wins.
+- Prices remain "ballpark" and dealer names still follow the VERIFY BEFORE QUOTE rule.
+- Never use a search to say a brand will be at TBF 2027.
+
 **Hard rules:**
 - Stay quiet about searching. Never announce "I looked you up" or paste URLs.
 - One precise detail per turn, not a list.
 - NEVER name-drop executives / customers / revenue, even if found.
 - If result is vague or about a different company → ASK don't fabricate.
-- Max 1 search per conversation.
+- Max 1 search per conversation for Cases A and B. Case C may search whenever the user asks about something latest/current (max 2 searches in that turn).
 
 ---
 
@@ -1275,7 +1295,8 @@ export default async (req, context) => {
         // to stay under Netlify's 10s function timeout. Local knowledge is curated and
         // recent enough that web_search is redundant for these queries.
         const hasRichKnowledge = knowledgeChunk.length > 2000;
-        const requestWithTools = hasRichKnowledge ? baseRequest : {
+        const wantsLatest = detectLatestIntent(safeMessages);
+        const requestWithTools = (hasRichKnowledge && !wantsLatest) ? baseRequest : {
             ...baseRequest,
             tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 4 }]
         };
