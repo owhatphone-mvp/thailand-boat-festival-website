@@ -812,92 +812,14 @@
             Register your interest now and receive first access to exhibitor announcements,<br>VIP program details, and early registration when they open.
         </p>
 
-        <form id="registerForm" name="register-tbf" data-netlify="true" onsubmit="submitRegister(event)" style="text-align:left;">
-            <input type="hidden" name="form-name" value="register-tbf">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-                <div>
-                    <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">First Name *</label>
-                    <input type="text" id="reg-firstname" name="firstname" required placeholder="e.g. James"
-                        style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
-                        onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-                </div>
-                <div>
-                    <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">Last Name *</label>
-                    <input type="text" id="reg-lastname" name="lastname" required placeholder="e.g. Cooper"
-                        style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
-                        onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-                </div>
-            </div>
-
-            <div style="margin-bottom:1rem;">
-                <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">Email Address *</label>
-                <input type="email" id="reg-email" name="email" required placeholder="you@example.com"
-                    style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
-                    onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-            </div>
-
-            <div style="margin-bottom:1rem;">
-                <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">I am interested as a…  *</label>
-                <select id="reg-interest" name="interest" required
-                    style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;appearance:none;cursor:pointer;transition:border-color 0.2s;"
-                    onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-                    <option value="" disabled selected style="background:#0a1628;">— Select one —</option>
-                    <option value="Visitor"  style="background:#0a1628;">⛵ Visitor — I'd like to attend</option>
-                    <option value="Exhibitor" style="background:#0a1628;">🛥️ Exhibitor — I want to showcase my brand / boat</option>
-                    <option value="Sponsor"  style="background:#0a1628;">✨ Sponsor / Partner — I'm interested in partnership</option>
-                </select>
-            </div>
-
-            <div style="margin-bottom:2rem;">
-                <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.4rem;">Phone <span style="color:rgba(255,255,255,0.25);font-size:0.65rem;text-transform:none;">(optional)</span></label>
-                <input type="tel" id="reg-phone" name="phone" placeholder="+66 or international format"
-                    style="width:100%;padding:0.75rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:#fff;font-size:0.9rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s;"
-                    onfocus="this.style.borderColor='rgba(201,168,76,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
-            </div>
-
-            <button type="submit" id="reg-submit"
-                style="width:100%;padding:1rem;border-radius:12px;border:none;background:var(--gold);color:var(--navy);font-size:0.95rem;font-weight:700;font-family:var(--font-body);cursor:pointer;letter-spacing:0.04em;transition:all 0.2s;">
-                Register My Interest →
-            </button>
-
-            <p style="text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:1rem;">
-                No spam. We respect your privacy and will only send relevant updates about TBF 2027.
-            </p>
-        </form>
-
-        <!-- Success state -->
-        <div id="reg-success" style="display:none;padding:2.5rem 2rem;border:1.5px solid rgba(201,168,76,0.4);border-radius:16px;background:rgba(201,168,76,0.06);">
-            <div style="font-size:2.5rem;margin-bottom:1rem;">⚓</div>
-            <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--gold-light);margin-bottom:0.75rem;">You're on the list.</h3>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;">
-                A confirmation has been sent to your inbox. We'll be in touch with updates as the festival takes shape — see you in Phuket.
-            </p>
-        </div>
+        <a href="https://luma.com/pa711ooy" target="_blank" rel="noopener" class="btn btn-gold" style="display:inline-block;padding:1rem 2.6rem;font-size:1rem;">Register on Luma &rarr;</a>
+        <p style="color:rgba(255,255,255,0.45);font-size:0.82rem;margin-top:1.25rem;line-height:1.7;">
+            Visitors, exhibitors, sponsors and media &mdash; choose your interest when you register.<br>You will receive an email confirmation straight away.
+        </p>
     </div>
 </section>
 
-<script>
-async function submitRegister(e) {
-    e.preventDefault();
-    const btn = document.getElementById('reg-submit');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    btn.style.opacity = '0.7';
 
-    const formData = new FormData(e.target);
-
-    try {
-        await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-        });
-    } catch(err) { /* silent — show success regardless */ }
-
-    document.getElementById('registerForm').style.display = 'none';
-    document.getElementById('reg-success').style.display  = 'block';
-}
-</script>
 
 <!-- ─── FOOTER ─── -->
 <footer>
