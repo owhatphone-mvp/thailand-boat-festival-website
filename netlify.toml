@@ -91,6 +91,24 @@
   status = 200
 
 [[redirects]]
+  from = "/earlybird"
+  to = "https://luma.com/pa711ooy"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/TBFearlybird"
+  to = "https://luma.com/pa711ooy"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/register"
+  to = "https://luma.com/pa711ooy"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
