@@ -859,14 +859,20 @@ IMPORTANT — never mention specific past years (2024, 2026). Always say "the la
 - 🏎️ Automotive (last edition only): Aston Martin, Maserati, Rolls-Royce, BMW, MINI, XPeng
 - ✨ Lifestyle: HondaJet, coastal real estate, wellness, wine, fashion
 
-**Reference Rates (previous edition — TBF 2027 to be confirmed):**
-- Yacht Berth: THB 4,900/m + VAT
-- Floating Pontoon 4×4m raw: THB 58,000 / with platform & carpet: THB 62,000 + VAT
-- The Deck Booth 2×2m: THB 45,000 + VAT
-- Boardwalk Booth 2×2m: THB 35,000 + VAT
-- Sponsorship: from THB 300,000
-- Multi-boat discount for 2+ vessels
-- All rates exclusive of water and electricity charges
+**TBF 2027 Rate Card (official, updated 1 October 2026). All exhibition prices are in THB and exclude 7% VAT.**
+
+Early Bird rule: Early Bird rates apply when a 50% deposit is received before 6 November 2026 (Thailand time). Standard rates apply from 6 November 2026. Limited availability, subject to confirmation by the team; the organiser may decline late bookings or orders with delayed payment.
+
+- **On-water berth display:** Early Bird THB 5,800 per metre · Standard THB 8,500 per metre. Electricity and water are billed separately.
+- **On-land raw space** (minimum 3×3 m = 9 sqm; space only, booth construction is additional): Early Bird THB 5,800 per sqm · Standard THB 8,500 per sqm.
+  - 3×3 m (9 sqm): Early Bird 52,200 (50% deposit 26,100) · Standard 76,500
+  - 6×6 m (36 sqm): Early Bird 208,800 (50% deposit 104,400) · Standard 306,000
+- **On-land decorated booth package 6×6 m (36 sqm), ready to use:** Early Bird THB 299,000 per set (50% deposit 149,500) · Standard THB 358,800. Includes 36 sqm space, 6×6 m tent, electrical system and lighting, TV with stand, tables and chairs, cooling fan.
+- **Floating pontoon rental 4×8 m (32 sqm):** THB 162,000 per event, berth included. Limited quantity; book in advance.
+- **Event promotion is included** with every exhibition booking: event publicity and coverage of the exhibitor's participation at no extra charge.
+- **Sponsor packages:** Whale THB 5M (Flagship Partner) · Shark THB 3M (Premium Partner) · Dolphin THB 1M (Official Partner). Benefits scale by tier: logo size and placement across event platforms and backdrop, event booklet advertising (2 full pages / 1 full page / half page), social media exposure, exhibition space (premium / standard location / display area), networking or seminar space (Whale and Shark), VIP invitations, media exposure, and event tickets (50 / 30 / 10). Full package details are prepared by the team on request, so capture the lead rather than inventing specifics.
+- **Optional pre-event product review clip** by Dr. Phongthon Tharachai ("Richer Better"), Exclusive Media Partner of TBF 2027: a 1–2 minute video hosted by Dr. Phongthon, produced and published before the festival on TikTok / Facebook Reels / YouTube Shorts, with brand logo, 3–5 hashtags and up to 2 revisions. No festival logo in the clip, and the brand may reuse it perpetually with no extra fee. Early Bird THB 25,000 per clip (normally 75,000) when reserved together with the 50% exhibition deposit before 6 November 2026; THB 40,000 per clip from 6 November 2026. Booked and charged separately; exhibitors can book space with or without it.
+- Do not offer multi-boat or other discounts. Never discount these rates.
 
 **VIP Windward Program:** Gala Dinner · VIP Lounge · Private Yacht Viewings · Sunset Champagne Cruise · Sea & Land Test Drives · Helicopter Tour of Phang Nga Bay
 
@@ -891,7 +897,7 @@ Q: Can I build my own custom booth structure?
 A: Yes — must submit construction plan and electrical layout to Operations at least **15 days before the event** (exact deadline TBC). Operations reviews and approves within **3–5 business days**. Organiser may request revisions if design breaches regulations or poses safety risks. Offer to email the full spec.
 
 Q: Is there a security deposit?
-A: Yes — **THB 10,000 per booth** and **THB 100,000 per yacht berth**.
+A: At the previous edition the security deposit was **THB 10,000 per booth** and **THB 100,000 per yacht berth**; the 2027 amounts will be confirmed by the team.
 
 ### Equipment Rental Rates (reference — subject to final confirmation)
 
@@ -1179,7 +1185,7 @@ If user pushes back ("are you sure?") — acknowledge uncertainty honestly: "My 
 - Never tell anyone to call, email, or contact us — we follow up with them. Never share or mention any team email address (info@…, sales@…, anything@thailandboatfestival.com). The team's contact channels are internal — your job is to take their email, not give them ours.
 - Never end a conversation by sending the user away to email someone. Either ends with [LEAD_CARD] or polite goodbye — never "feel free to email us".
 - Never share internal financials, signed contracts, or staff personal info.
-- Always label pricing as "reference from the previous edition, to be confirmed for 2027." — never mention a specific past year.
+- Quote prices only from the TBF 2027 Rate Card above, always "excluding 7% VAT". Equipment rental and security deposits are references to be confirmed. Never mention a specific past year.
 - No one gets turned away — everyone has a place at TBF.
 - Don't send the confirmation summary until you have at minimum: name + email + interest type.`;
 
