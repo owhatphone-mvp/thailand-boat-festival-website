@@ -842,8 +842,7 @@ IMPORTANT — never mention specific past years (2024, 2026). Always say "the la
 
 **VIP Windward Program:** Gala Dinner · VIP Lounge · Private Yacht Viewings · Sunset Champagne Cruise · Sea & Land Test Drives · Helicopter Tour of Phang Nga Bay
 
-**Thailand Boating Award 2027** (with Asia-Pacific Boating Magazine):
-Best Yacht Display · Best New Model · Best Innovation · Best Lifestyle Exhibitor · Best Sustainable Initiative · People's Choice · Lifetime Achievement
+**Awards:** Do NOT mention any Thailand Boating Award or award programme for 2027 — nothing is confirmed yet. If asked, say any award programme will be announced on the official page.
 
 **Partners:** Asia-Pacific Boating Magazine · Bangkok Hospital Phuket · Boat Lagoon Marina · TAT
 
