@@ -2,44 +2,51 @@
 
 > **File path:** `knowledge/thai-market/asia-yachting.md`
 > **Keywords:** `["asia yachting", "เอเชี่ย ยอชท์", "asia yachting hong kong"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Web-sourced (asiayachting.net, Yacht Style, dealer locators, brand pages)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-verified Oct 2026 (asiayachting.net brand/contact pages, Yacht Style May 2026 & Nov 2025, Gulf Craft dealer news Apr 2026)
 
 ## Identity
 
-Asia Yachting Limited is a Hong Kong-based luxury yacht dealership founded in 2007 by **Olivier Besson**. Positioned as a full-service yacht sales, charter, and management company covering Greater China and ASEAN. Originally HK-focused, the company has expanded aggressively into Thailand and broader Southeast Asia in recent years. Per asiayachting.net, Yacht Style.
+Asia Yachting is a Hong Kong-based yacht dealership, brokerage and yacht-management company founded in 2007 by **Olivier Besson** (Founder & CEO). HQ: Aberdeen Marina Tower, Hong Kong. Large pre-owned/brokerage listing across many brands.
 
-## Brands Distributed
+## Brands Represented (per its website, as of Oct 2026)
 
-- **Prestige** — Groupe Beneteau's premium motor yacht brand (flybridge and sport cruiser lines)
-- **Monte Carlo Yachts** — luxury Italian motor yachts (part of Groupe Beneteau)
-- **Beneteau Grand Trawler** — long-range trawler yachts
-- Previously represented other Groupe Beneteau brands
+- **Prestige** (Groupe Beneteau) — represented since 2017; the core motor-yacht brand, incl. the M-Line and X-Line
+- **Fountaine Pajot** — sailing and power catamarans
+- **Nautique** — luxury wake boats
+- **Majesty** (Gulf Craft, UAE) — **new, April 2026**, but appointed for **Hong Kong and the Philippines only**. In Thailand, Gulf Craft/Majesty is represented by Derani Yachts.
 
-Asia Yachting's portfolio skews toward Groupe Beneteau's premium tier. Their philosophy: "We don't consider the client as just a buyer but someone that deserves a full, tailored service." Per asiayachting.net, prestige-yachts.com dealer locator, montecarloyachts.it, Yacht Style.
+**No longer listed:** Monte Carlo Yachts (Yacht Style, May 2026, calls it a brand Asia Yachting "used to represent"; Beneteau has scaled the MCY brand down) and Beneteau Grand Trawler. Exact territory for each brand varies by market — verify with the company.
 
-## Regional Coverage
+## Where They Are
 
-Hong Kong (HQ), with expanding presence in Thailand (Phuket office at Boat Lagoon Marina), and broader ASEAN markets. The Phuket office opened to support dealership expansion across ASEAN. Per asiayachting.net, Yacht Style.
+- Hong Kong (HQ)
+- **Thailand office: Boat Lagoon Marina, Phuket** (the TBF venue marina)
+- Philippines office: Bonifacio Global City, Taguig (Manila)
+
+Asia Yachting extended its Prestige/MCY coverage to Thailand, Southeast Asia and the Philippines from 2020 and opened the Phuket and Manila offices then.
+
+## Recent Moves (2025–2026)
+
+- Apr 2026: appointed Majesty dealer for Hong Kong and the Philippines (announced at the Singapore Yachting Festival)
+- Nov 2025: Hong Kong open day showing Prestige, Fountaine Pajot and Nautique models
+- 2026 Prestige models promoted: M7, M8 EVO, M48; Fountaine Pajot Thira 80 and MY6 power catamarans
 
 ## TBF Context
 
-Asia Yachting exhibited **Prestige** models at TBF 2026 (January 15-18, Phuket Boat Lagoon Marina). Their Prestige 420 has been berthed at Royal Phuket Marina for client viewings. Per asiapacificboating.com, Asia Yachting social media.
+Asia Yachting's Thai office sits at Boat Lagoon Marina, where the last edition was held. Its participation in the last edition is not verified here — check the official exhibitor list before mentioning it.
 
 ## Talking Points for Sand
 
-- "Asia Yachting handles Prestige and Monte Carlo Yachts in Thailand — that's Groupe Beneteau's premium and luxury tier."
-- "They started in Hong Kong in 2007 and have expanded into Phuket — growing presence across ASEAN."
-- "If a client is looking at Prestige flybridge or Monte Carlo Yachts, Asia Yachting is the Thai dealer."
-- "Olivier Besson founded the company — he's been in the Asian yacht market for nearly 20 years."
+- "Asia Yachting is a Hong Kong dealer founded in 2007 by Olivier Besson, with an office right here at Boat Lagoon Marina, Phuket."
+- "In Thailand they're the name to ask for Prestige motor yachts and Fountaine Pajot catamarans, plus Nautique wake boats."
+- "They also run brokerage and yacht management, with pre-owned boats from many brands."
+- "Their new Majesty dealership covers Hong Kong and the Philippines; in Thailand, Majesty goes through another dealer."
 
 ## DO NOT
 
-- Confuse Asia Yachting with Boat Lagoon Yachting — they are different companies
-- State they distribute all Groupe Beneteau brands — their portfolio focuses on the premium tier
-- Name specific clients or sales
-
-## Research gaps
-
-- Whether Asia Yachting also distributes standard Beneteau or Jeanneau brands (likely not — BLY handles Jeanneau)
-- Full list of current ASEAN offices beyond HK and Phuket
+- Say they currently sell Monte Carlo Yachts or Beneteau Grand Trawler
+- Say they sell Majesty in Thailand
+- Confuse Asia Yachting with Boat Lagoon Yachting (different companies, same marina)
+- Say they distribute all Groupe Beneteau brands (Jeanneau in Thailand is Boat Lagoon Yachting)
+- Name clients or sales; imply participation in any future edition

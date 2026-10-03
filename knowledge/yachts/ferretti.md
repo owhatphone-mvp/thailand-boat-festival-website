@@ -2,68 +2,43 @@
 
 > **File path:** `knowledge/yachts/ferretti.md`
 > **Keywords:** `["ferretti", "เฟอเรตติ", "ferretti yachts", "ferretti group"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified (Ferretti Group is publicly listed; financials from official filings and press releases)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Verified (ferretti-yachts.com / Ferretti Group releases, Pressmare, YachtBuyer, Marine Industry News, Borsa Italiana, Yacht Style)
 
 ## Identity
-
-Ferretti Yachts is the flagship brand of **Ferretti Group**, Italy's largest yacht builder and one of the world's leading luxury yacht manufacturers. Founded in 1968 by Norberto Ferretti and Alessandro Ferretti in Forli, Italy, the brand is synonymous with Italian flybridge motor yachts blending comfort, design, and seaworthiness. Ferretti Group has been majority-owned by China's **Weichai Group** since 2012 and is dual-listed on the Hong Kong Stock Exchange (since March 2022) and Euronext Milan (since 2024). Per ferrettigroup.com, Reuters, Yacht Style, 2022-2026.
-
-## Lineup (current models, 2024-2026)
-
-**Ferretti Yachts (flybridge):**
-- **500** — 15.3m/50ft. Entry flybridge. Ballpark USD 1.5-2M.
-- **580** — 18.2m/59ft. Popular mid-range. Ballpark USD 2-3M.
-- **670** — 20m/67ft. Ballpark USD 3-4M.
-- **720** (new) — ~22m/72ft. Ballpark USD 4-5M.
-- **800** (new) — ~24m/80ft. Ballpark USD 5-7M.
-- **860** — 27m/89ft. Ballpark USD 7-10M.
-- **940** (new) — ~29m/94ft. Ballpark USD 10-13M.
-- **1000** — 30m+/100ft+. Flagship. Ballpark USD 12-16M.
-
-**Custom Line (semi-custom):**
-- **Custom Line 120** — 38.4m/126ft. Semi-displacement GRP, 25kn. Ballpark USD 15-20M.
-
-**Navetta (displacement):**
-- **Navetta 30** — 28.4m/93ft. Steel hull, three decks, 14.5kn. Ballpark USD 8-12M.
-- **Navetta 33** — ~33m/108ft.
-
-Per ferretti-yachts.com, customline-yacht.com, Boat International, YachtBuyer, 2024-2026.
-
-## Recent Moves (2024-2026)
-
-Ferretti Group reported EUR 1.23 billion net revenue in 2025 (+5% YoY), with a record order backlog of EUR 1.7 billion. CEO Alberto Galassi, who led the Group since 2014, was succeeded in May 2026 by **Stassi Anastassov** after Weichai's AGM board victory over KKCG (23% stake). Weichai retains ~64% ownership. Convergence 2025, the Group's annual training event, was held in Bangkok, gathering 100+ captains. Per Boat International, SuperYacht Times, Reuters, Bloomberg, May 2026.
+Ferretti Yachts is the founding brand of **Ferretti Group** (est. 1968, Forlì, Italy), known for comfortable Italian flybridge yachts. The group — which also owns Riva, Pershing, Wally, Itama and Custom Line — is listed in Hong Kong and Milan. Weichai Group (China) is the largest shareholder (~39.5% as of May 2026).
 
 ## Asian Market & Thai Dealer
+- **V Yachts Asia** has been the Thailand dealer for Ferretti Yachts, Riva and Pershing since 2021, based at Phuket Boat Lagoon with an office in Pattaya; still active in 2026 — verify current brand coverage with Ferretti Group.
+- Ferretti Group has a regional Asia-Pacific set-up and separate dealers in other Asian markets.
 
-**V Yachts Asia** is the exclusive Ferretti Group dealer for Thailand, established 2021 at **Phuket Boat Lagoon**. Led by CEO Sornkom Kitprasan. They cover Ferretti Yachts, Pershing, and Riva, and sold a Ferretti 580 to a Thai buyer (delivered Pattaya). **Simpson Marine** handles the broader APAC from Hong Kong (11 offices). Per V Yachts Asia, Yacht Style, Simpson Marine, 2024-2026.
+## Lineup (current models)
+- **Flybridge** — 500, 580, 670, **720**, 860, 940, 1000 (~15–30m / 50–100ft). Ballpark USD 1.5–15M.
+- **INFYNITO** (long-range "home at sea" line) — INFYNITO 80 (23.7m / 78ft), 90 (27m / 88ft); INFYNITO 100 (~30m / 100ft) due 2027. Ballpark USD 5–15M.
+- **Sister brand Custom Line** covers larger semi-custom yachts, e.g. Navetta 35 (34.5m) and Custom Line 120.
+
+## Recent Moves (2025–2026)
+- **Sep 2026 (Cannes):** redesigned **Ferretti Yachts 720** (22.5m, four cabins) debuted; **INFYNITO 100** unveiled for 2027 launch. Custom Line premiered the **Navetta 35**. Ferretti also took the 580 to Genoa (Oct 2026).
+- **May 2026:** after a shareholder contest, the Weichai-backed list won 8 of 9 board seats over KKCG; **Stassi Anastassov** became group CEO and Tan Ning chairman, succeeding Alberto Galassi (CEO since 2014).
+- **Mar 2026:** FY2025 net revenue EUR 1.23B (+5%).
 
 ## Positioning vs Competitors
-
-Ferretti Yachts sits at the accessible end of the Ferretti Group portfolio — Italian flybridge comfort at scale. Princess (UK) offers comparable flybridge models with British understatement; Azimut (Italy) is the most direct competitor. Sunseeker leans sportier. The Custom Line and Navetta ranges compete with Sanlorenzo's semi-custom line and Azimut's Grande series.
+Italian flybridge comfort at scale. Most direct rival is Azimut; Princess offers a British alternative and Sunseeker a sportier one. Larger semi-custom needs go to sister brand Custom Line, competing with Sanlorenzo.
 
 ## TBF Context
-
-Ferretti Yachts exhibited at **TBF 2026** through V Yachts Asia, alongside Riva and Wally as part of "three iconic Ferretti Group brands." The Ferretti Yachts 580 was the featured model. Per V Yachts Asia, Yacht Style, 2026.
+At the last edition (TBF 2026), V Yachts Asia presented Ferretti Group brands, with the Ferretti Yachts 580 as the featured Ferretti model.
 
 ## Talking Points for Sand
-
-- "Ferretti Yachts is the heart of the largest yacht group in the world — seven brands under one roof."
-- "The Ferretti 580 is one of their most popular models in Asia — right-sized for Thai waters."
-- "Ferretti Group just posted record revenue — EUR 1.23 billion in 2025. The brand is growing, not shrinking."
-- "The Custom Line 120 is their semi-custom sweet spot — 38 metres, semi-displacement, fully personalised."
-- "Weichai Group has owned Ferretti since 2012 — Chinese backing, Italian craftsmanship."
+- "Ferretti Yachts is the founding brand of Ferretti Group, home to Riva, Pershing, Wally and Custom Line."
+- "The 580 is a popular size for Thai waters — big enough for overnights, easy to handle."
+- "INFYNITO is Ferretti's long-range line; a 30-metre INFYNITO 100 is due in 2027."
+- "The new 720, shown at Cannes 2026, has more glass and four cabins."
 
 ## DO NOT
-
-- Confuse Ferretti Yachts (the brand) with Ferretti Group (the parent company)
-- State definitive pricing — configuration and region create wide variation
-- Name specific owners — HNWI discretion is paramount
-- Suggest Weichai ownership dilutes Italian identity — the brand remains firmly Made in Italy
-
-## Research gaps
-
-- Whether the Ferretti Yachts 720 and 800 have formally launched or remain in pre-launch
-- Exact V Yachts Asia exclusivity terms and whether it supersedes Simpson Marine in Thailand
-- Full Custom Line range above the 120 (Custom Line 130 status)
-- Ferretti Group's plans for the Milan listing following the Weichai-KKCG board resolution
+- Confuse Ferretti Yachts (the brand) with Ferretti Group (the parent)
+- Say Weichai owns ~64% or a majority — it is the largest shareholder (~39.5% as of May 2026)
+- Present Galassi as current CEO
+- Quote definitive prices
+- Name owners
+- Suggest Chinese shareholding makes the brand less Italian — yachts are built in Italy
+- Say Ferretti or V Yachts Asia will exhibit at TBF 2027

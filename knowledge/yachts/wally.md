@@ -2,59 +2,52 @@
 
 > **File path:** `knowledge/yachts/wally.md`
 > **Keywords:** `["wally", "วอลลี่", "wally yachts", "wallypower", "wallywhy"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Web-sourced (cross-checked across wally.com, Ferretti Group, Yacht Style, YachtBuyer, Robb Report, V Yachts Asia)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-sourced (wally.com, Ferretti Group, Pressmare, Boote, YachtBuyer, Yacht Style, Bloomberg)
 
 ## Identity
 
-Wally is an avant-garde yacht brand founded in 1994 by Luca Bassani, now part of **Ferretti Group** (acquired 2019). Known for radical design, carbon-fibre construction, and fast planing motor yachts. Wally's DNA comes from sailing — the brand was born from the Wally Class racing circuit — and that performance ethos runs through every model. Within Ferretti Group, Wally is the most design-forward and experimental brand, distinct from the more traditional Riva and Pershing. Per wally.com, Ferretti Group, Boat International.
-
-## Lineup (current models, 2024-2026)
-
-**Motor:**
-- **wallytender** — day boats. 43X and 48X (13–14m / 43–48ft). Outboard or sterndrive. Ballpark USD 500K–900K.
-- **wallypower** — fast planing. wallypower50X (15m/50ft) and wallypower58 (17.7m/58ft, new generation 2024). IPS pod drive, angular superstructure. Ballpark USD 1.5M–3.5M.
-- **wallywhy (WHY)** — named by gross tonnage, unique in yachting. wallywhy150 (150 GT, ~24m/79ft) and wallywhy200 (200 GT, ~27m/89ft). Beach clubs, expansive decks, Loro Piana interior option. Ballpark USD 5–10M+.
-
-**Sail:**
-- **wallyrocket71 (NEW June 2025)** — 71ft maxi racer by Botin Partners, 12 tons. Unveiled at Loro Piana Giraglia 2025.
-- Heritage: wallywind 110 and Wally Class racing lineage.
-
-Per wally.com, YachtBuyer, Yacht Style, Ferretti Group, 2024-2026.
-
-## Recent Moves (2024-2026)
-
-The wallypower58 launched as the "new generation" planing range. The **wallyrocket71** (June 2025) marks a serious return to sailing. The **Loro Piana Interiors** collaboration deepens — the wallywhy200 debuted in APAC with Loro Piana-furnished interiors, and the rocket71 was unveiled at the Loro Piana Giraglia regatta. This fashion-house partnership is unique in yachting. Ferretti Group's 25-model plan (Cannes 2024) includes continued Wally investment. Per Robb Report, Ferretti Group, Yacht Style, 2024-2026.
+Wally is an avant-garde Italian-Monegasque yacht brand founded in 1994 and part of **Ferretti Group** since 2019. It is known for radical design, carbon and composite construction, and DNA from racing sailboats. It is the most experimental brand in the group.
 
 ## Asian Market & Thai Dealer
 
-**V Yachts Asia** is the exclusive Ferretti Group dealer for Thailand and SE Asia, covering Wally alongside Ferretti and Riva. Based in Phuket, they debuted the wallywhy150 in Thailand (July 2025) with an Asia-specific layout. Also available through Ferretti Group Asia Pacific (ferrettigroupasiapacific.com). Per V Yachts Asia, yachtstyle.co, wally.com, 2025.
+As of 2026, **V Yachts Asia** (Phuket Boat Lagoon) is Ferretti Group's dealer in Thailand. It has represented Ferretti Yachts, Pershing and Riva since 2021. For Wally, contact V Yachts Asia or Ferretti Group Asia Pacific; confirm current Wally coverage with the brand.
+
+## Lineup (current models)
+
+- **wallytender43 / 48** day boats (13–15 m / 43–48 ft). Ballpark USD 600K–1.2M.
+- **wallypower58** (17.7 m / 58 ft): fast planing yacht with an angular design. Ballpark USD 2.5M–3.5M.
+- **wallywhy100** (21.5 m / 70 ft, launched 2024): a compact "WHY" weekender, also usable as a superyacht tender, with a top speed of about 27 kn.
+- **wallywhy150 / wallywhy200** (about 24–27 m / 79–89 ft): named by gross tonnage, with a large beach club. Interiors by Loro Piana are available on the 200. Ballpark USD 6M–12M+.
+- **Sail**: the **wallyrocket71** (21.6 m / 71 ft maxi racer by Botin) was unveiled in Jun 2025 at the Loro Piana Giraglia.
+
+## Recent Moves (2025–2026)
+
+- **Sep 2026**: Ferretti's announced Cannes/Monaco premieres (Riva, Pershing, Custom Line, Itama) included no Wally.
+- **May 2026**: The wallywhy150 got a new interior layout and was shown at Wally Live Days in Rapallo, alongside the wallytender43/48, wallypower58 and wallywhy100.
+- **May 2026**: Ferretti Group governance changed. Weichai-backed shareholders won 8 of 9 board seats over the investor KKCG, and **Stassi Anastassov** was named Ferretti Group CEO.
+- **Jul 2025**: wallywhy150 Asia-Pacific debut in Phuket.
+- **Jun 2025**: wallyrocket71 marks Wally's return to maxi racing.
 
 ## Positioning vs Competitors
 
-Wally's closest peer is Pershing (also Ferretti Group) — both fast and Italian-designed, but Wally is more avant-garde while Pershing is more aggressively sporty with waterjets. Against Sunseeker Predator: Wally trades outright speed for innovative design and lighter construction. Against Mangusta: Wally is more design-literate and fashion-adjacent. The wallywhy range has no direct competitor — gross-tonnage naming and Loro Piana interiors create a unique category.
+Peers include sister brand Pershing, Sunseeker Predator and Mangusta; Wally stands out on avant-garde design, and its tonnage-named WHY range has no direct equivalent.
 
 ## TBF Context
 
-Wally exhibited at **TBF 2026** through V Yachts Asia, showing the **wallywhy150** alongside Ferretti and Riva. V Yachts Asia confirmed "three iconic Ferretti Group brands" at the show. The wallywhy150 subsequently made its formal APAC debut in Phuket (July 2025) with the Asia-specific layout. Per V Yachts Asia, Yacht Style, 2025-2026.
+At the last edition (TBF 2026), V Yachts Asia presented Ferretti Group brands. Reports indicate Wally was among them, with the wallywhy150.
 
 ## Talking Points for Sand
 
-- "Wally started as a sailing brand — the Wally Class racing circuit was legendary. That performance DNA runs through every motor yacht."
-- "The wallywhy range is named by gross tonnage, not length — 150 GT and 200 GT — unique in yachting."
-- "The Loro Piana collaboration is real — wallywhy200 interiors by the fashion house. No other yacht brand has this partnership."
-- "The wallyrocket71 is brand new — a 71ft maxi racer, Wally's most serious sailing yacht in years."
-- "Within Ferretti Group, Wally is the experimental brand — if a client wants something that looks like nothing else on the water."
+- "Wally was born from sailing, and that performance DNA runs through every motor yacht."
+- "The WHY range is named by gross tonnage, not length: 100, 150 and 200 GT."
+- "A wallywhy150 with an Asia-specific layout, including a private dining suite, debuted right here in Phuket."
+- "Within Ferretti Group, Wally is for clients who want something that looks like nothing else on the water."
 
 ## DO NOT
 
-- Confuse Wally (brand) with Wallywhy (model range within Wally)
-- State Wally is independently owned — part of Ferretti Group since 2019
-- Quote definitive pricing — Loro Piana options create wide variation
-- Overstate volume — Wally is low-production, high-exclusivity
-
-## Research gaps
-
-- Exact pricing for wallywhy models with Loro Piana options
-- Whether V Yachts Asia has a formal long-term exclusive or is appointed show-by-show
-- Full wallyrocket71 specifications beyond displacement and ballast
+- Confuse Wally (the brand) with wallywhy (one of its ranges).
+- Describe Wally as independent. It has been part of Ferretti Group since 2019.
+- Comment on the Ferretti shareholder dispute beyond the public facts.
+- Quote definitive prices or overstate production volume.
+- Say or imply that Wally or V Yachts Asia will exhibit at TBF 2027.

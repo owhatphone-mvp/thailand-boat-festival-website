@@ -2,59 +2,52 @@
 
 > **File path:** `knowledge/yachts/beneteau.md`
 > **Keywords:** `["beneteau", "beneteau-boats", "เบเนโต", "groupe-beneteau"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-sourced (Groupe Beneteau press, Marine Industry News, Yacht Style, Figaro Nautisme, Ancasta)
 
 ## Identity
 
-Beneteau is the flagship brand of Groupe Beneteau, the world's largest recreational boat builder, headquartered in France since 1884. The brand spans both power and sail segments with a reputation for accessible, well-engineered production boats appealing to owner-operators and charter fleets. The group's broader portfolio also includes Jeanneau, Prestige, Monte Carlo Yachts, Lagoon, and Excess. Per Groupe Beneteau filings, the group operates 400+ dealers across five continents.
-
-## Lineup (current models, 2024-2026)
-
-**Gran Turismo** (sport cruisers): Full range redesign underway. The flagship GT 50, featuring twin Volvo Penta IPS650 (2x480 hp) and a Kanso-inspired minimalist interior, is the headline launch for 2026, with GT 41 and GT 38 following. Per YachtBuyer, January 2026. Ballpark pricing: GT 50 in the high-six-figures USD.
-
-**Antares** (power cruisers): Outboard-powered family cruisers spanning the 8, 9, 11 (Fly and Coupe), and range-topping Antares 12 with three cabins and up to triple 300 hp outboards. Ballpark: Antares 12 in the mid-six-figures USD.
-
-**Flyer** (bowriders/day boats): SUNdeck and SPORTdeck configurations across Flyer 8, 9, and 10. The Flyer 9 SUNdeck lists around $260,000 USD in the US market, per YachtWorld, 2025.
-
-**Oceanis** (cruising sailboats): Eight models from 31 to 60 feet, now in eighth generation. The new Oceanis 47 and 52 debuted in 2025. Per Cruising World, 2025.
-
-**First** (performance sailboats): Agile racer-cruisers continuing Beneteau's competitive sailing heritage.
-
-## Recent Moves (2024-2026)
-
-Groupe Beneteau has faced a cyclical downturn, reporting a 16% revenue contraction in H1 2025 and a 43% Q1 2025 drop, per Marine Industry News. Despite headwinds, the group showcased 19 new models with 14 world premieres at Cannes 2025. The complete Gran Turismo redesign is the most visible outcome, positioning the brand for the next upturn.
+Beneteau, founded in France in 1884, is the flagship brand of Groupe Beneteau. The group had about EUR 849M in revenue in 2025 and owns seven brands: Beneteau, Jeanneau, Prestige, Lagoon, Excess, Wellcraft and Delphia. Beneteau builds accessible production sail and power boats for owners and charter fleets.
 
 ## Asian Market & Thai Dealer
 
-Primus Marine (Phuket) was appointed exclusive Beneteau and Excess dealer for Thailand in late 2024, per Yacht Style, operating from Phuket Boat Lagoon Marina. They exhibited the Oceanis 40.1 and Antares 11 Fly at TIBS 2026. Asia Yachting (HK-based, founded 2007) distributes Groupe Beneteau sister brands Prestige and Monte Carlo Yachts across Hong Kong, Thailand, and the Philippines, and has represented the Beneteau Grand Trawler line. Simpson Marine hosted the Asia premiere of the Beneteau Grand Trawler flagship.
+**Primus Marine** has been the exclusive Beneteau (and Excess) dealer for Thailand since Dec 2024, with bases in Bangkok, Pattaya and Phuket. It held a Beneteau Open Day at Ocean Marina Pattaya on 19 Sep 2026. In Hong Kong, ASIAMARINE sells Beneteau (as of 2026).
+
+## Lineup (current models)
+
+- **Oceanis** cruising sailboats, about 11–18 m (37–60 ft), now in their 8th generation. Over 30,000 have been built since 1986. Ballpark USD 250K–1.5M+.
+- **First** performance sailboats: First 30 (European Yacht of the Year 2026), First 36, and the **new First 60** (18.95 m / 62 ft, boot 2026).
+- **Gran Turismo** sport cruisers, redesigned range: GT 35 (11.2 m), GT 40 (12.5 m) and flagship **GT 50** (16 m / 52 ft), with an Alpine limited edition. Ballpark USD 350K–1.2M.
+- **Swift Trawler 37/43** and **Grand Trawler 63**: long-range trawlers. Ballpark USD 600K–3M.
+- **Antares** outboard cruisers (8–12 m) and **Flyer** dayboats (7–10 m, plus the new Flyer 30). Ballpark USD 100K–700K.
+
+## Recent Moves (2025–2026)
+
+- **Sep 2026**: Cannes: the group showed 24 new models and 11 world premieres, with Beneteau bringing the new GT 35/40/50 and First 60. The Neo refit programme was expanded.
+- **H1 2026**: Group retail sales rose about 14% year on year.
+- **Apr 2026**: **E-Lektra Marine** JV with Fountaine Pajot for electric/hybrid sail propulsion.
+- **Jan 2026**: The First 60 and the GT 50 Alpine Limited Edition premiered at boot Düsseldorf.
+- **2025**: Revenue about EUR 849M as dealers cut stock; 23 launches toward 66 new models by 2027.
 
 ## Positioning vs Competitors
 
-Beneteau sits in the accessible production segment, pricing below sister brands Prestige and Monte Carlo Yachts. Competitors include Jeanneau (also Groupe Beneteau), Bavaria, and Galeon in powerboats; Hanse and Dufour in sailboats. The Gran Turismo competes with sport cruisers from Axopar and Nimbus at the premium end of production. Beneteau's strength is value, a 400+ dealer global network, and the Easy Boating ecosystem.
+Beneteau is a premium-production, value-led brand that sits below its sister brand Prestige. It competes with Jeanneau, Bavaria, Hanse and Dufour in sail, and with Galeon and Axopar-style dayboats in power.
 
 ## TBF Context
 
-Beneteau exhibited at TIBS 2026 (January, Phuket Yacht Haven) through Primus Marine with the Oceanis 40.1 and Antares 11 Fly. Whether models appeared under the TBF banner or at the parallel TIBS needs confirmation. TBF 2027 participation is unconfirmed.
+Beneteau's participation and the specific models shown at the last edition (TBF 2026) are not confirmed. In Jan 2026, Primus Marine showed the Oceanis 40.1 and Antares 11 Fly in Phuket at TIBS.
 
 ## Talking Points for Sand
 
-- Groupe Beneteau is the world's largest boat builder, offering strong parts availability, resale value, and global service infrastructure.
-- Primus Marine in Phuket provides local sales and after-sales support for Beneteau and Excess.
-- The Antares range suits Thai coastal waters with outboard power, shallow draft, and easy handling.
-- The Oceanis line remains a reference for cruising sailboats suited to both private ownership and charter.
-- Beneteau's Easy Boating program offers training and maintenance packages for new owners entering the lifestyle.
+- "Beneteau has been building boats since 1884, and the Oceanis line just turned 40."
+- "The new Gran Turismo range and the First 60 show how fresh the line-up is."
+- "Primus Marine in Bangkok, Pattaya and Phuket gives local sales and after-sales support."
+- "Antares outboard cruisers suit Thai coastal waters well, with easy handling and shallow draft."
 
 ## DO NOT
 
-- Confuse Beneteau with sister brands Prestige or Monte Carlo Yachts, which target higher price points.
-- Claim Beneteau is a luxury brand; it occupies the premium-production segment with strong value positioning.
-- Quote definitive pricing; always give ballpark USD ranges noting Thai-market variability.
-- Reference specific owner names; HNWI buyers value discretion.
-
-## Research gaps
-
-- Exact Beneteau model pricing for the Thai market including shipping and import duty estimates.
-- Which Beneteau lines are actively stocked vs. special-order through Primus Marine.
-- Whether the Grand Trawler line falls under Primus Marine or Asia Yachting in Thailand.
-- TBF-specific exhibition history (vs. TIBS) for Beneteau in 2025 and 2026.
+- Confuse Beneteau with its sister brand Prestige, or describe it as a luxury brand.
+- Call Monte Carlo Yachts a current group brand.
+- Quote definitive prices; always give ballpark ranges.
+- Name owners.
+- Say or imply that Beneteau or Primus Marine will exhibit at TBF 2027.

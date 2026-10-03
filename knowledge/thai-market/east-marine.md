@@ -2,37 +2,42 @@
 
 > **File path:** `knowledge/thai-market/east-marine.md`
 > **Keywords:** `["east marine", "อีสท์ มารีน", "east marine asia"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Web-sourced (eastmarineasia.com, eastmarinedistributor.com, Superyacht Services Guide, Facebook)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-verified Oct 2026 (eastmarineasia.com about/contact pages, eastmarinedistributor.com, Noonsite, Superyacht Services Guide)
 
 ## Identity
 
-East Marine Co. Ltd. is a Thai-based marine equipment and yacht accessories distributor headquartered in Phuket. Primarily a **chandlery and marine products distributor** rather than a yacht brand dealer — they supply boat equipment, electronics, safety gear, and marine accessories to the Thai and regional yacht market. They also operate a well-stocked chandlery in Phuket. Per eastmarineasia.com, Superyacht Services Guide.
+East Marine Asia (East Marine Co., Ltd.) is a Phuket-based **chandlery and marine-products distributor**, founded in 2006. It describes itself as the largest yacht chandlery in Southeast Asia. It is **not a yacht-brand dealer** — it sells equipment, maintenance products and parts, not new yachts.
 
-## Business Focus
+## What They Sell (per its website, as of Oct 2026)
 
-East Marine operates two distinct channels: a retail chandlery/marine supply store in Phuket (eastmarineasia.com) and a wholesale distribution arm for premium marine brands (eastmarinedistributor.com). They recruit sub-dealers for their brand portfolio across Southeast Asia. Per eastmarineasia.com, eastmarinedistributor.com.
+- 30+ distribution brands, e.g. **Awlgrip, International Yacht Paint, West System, Epifanes** (coatings/epoxy), **Lewmar, Ronstan, Spinlock, Wichard, Antal** (deck/rigging hardware), **Sta-Lok** and wire rigging, **Donaghys** ropes, **Rocna** anchors, ENO/Force 10 stoves, Whale and Groco plumbing
+- Electronics, safety gear, anchoring, sailing, fishing and water-sports products
+- Rigging service (Thailand Rigging Service) and online shop
+- Wholesale prices and a sub-dealer program for other chandleries (eastmarinedistributor.com)
 
-## Regional Coverage
+## Where They Are
 
-Based in Phuket with distribution across Thailand. Their dealer recruitment program targets broader SE Asia coverage. Per eastmarineasia.com.
+- **Shop and office: Phuket Boat Lagoon** (23/159 Moo 2, Koh Kaew), next to the Boat Lagoon repair-and-refit yard
+- Open Mon–Sat 08:00–17:00; tel +66 76 239 113; LINE @eastmarineasia
+- Ships to Bangkok, Pattaya, Krabi, Langkawi and worldwide
+
+## Recent Moves
+
+No notable 2025–2026 announcements found. No evidence it has added yacht-brand dealerships (checked Oct 2026).
 
 ## TBF Context
 
-No confirmed presence at TBF as a yacht brand exhibitor. East Marine may participate as a marine services/equipment supplier at industry events. Not verified in TBF exhibitor lists.
+East Marine is not on record as a yacht-brand exhibitor at the last edition. It sits in the same marina where the festival is held, so it's a useful nearby resource for owners.
 
 ## Talking Points for Sand
 
-- "East Marine is a marine equipment and chandlery distributor in Phuket — they supply the hardware and accessories that keep yachts running."
-- "They're not a yacht brand dealer in the traditional sense — think of them as the supply chain behind the scenes."
-- "If a client needs marine electronics, safety equipment, or yacht accessories in Phuket, East Marine is a key resource."
+- "East Marine is a big chandlery at Boat Lagoon in Phuket — paints, epoxy, rigging, deck hardware, safety gear and spare parts."
+- "They're not a yacht dealer; they keep yachts running. For new boats, ask the brand dealers."
+- "They ship around Thailand and to Langkawi, and offer wholesale pricing to other marine businesses."
 
 ## DO NOT
 
-- Confuse East Marine with a yacht brand dealership — they are primarily a marine products distributor
-- State they sell complete yachts — their business is equipment and accessories
-
-## Research gaps
-
-- Whether East Marine has expanded into yacht brand representation (no evidence found as of June 2026)
-- Full list of premium brands they distribute wholesale
+- Call East Marine a yacht dealership or say it sells complete yachts
+- Confuse it with Boat Lagoon Yachting or with the marina itself
+- Imply it will exhibit at a future edition

@@ -2,68 +2,47 @@
 
 > **File path:** `knowledge/yachts/lurssen.md`
 > **Keywords:** `["lurssen", "lürssen", "lurssen-superyacht", "german-yacht-builder", "megayacht"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified / Web-sourced
+> **Last updated:** 2026-10-03
+> **Source confidence:** Verified — Boote Magazin, Forbes/Nautik, Boat International, YachtBuyer, Yacht Style, defence press on the NVL sale (2025–2026)
 
 ## Identity
-
-Lurssen is a German custom superyacht and megayacht builder founded in 1875 in Bremen-Vegesack, Germany. The company is renowned for building some of the largest and most complex private yachts ever constructed, including the record-setting Azzam (180m) and the explorer vessel Octopus (126m). Lurssen remains a family-owned shipyard, now in its fifth generation, and is considered one of only a handful of yards capable of delivering megayachts above 100 metres. Per Lurssen official site and BOAT International.
-
-## Lineup
-
-Lurssen does not produce series or semi-custom yachts. Every project is fully custom, designed and engineered to the owner's exact requirements. Typical build sizes:
-
-- **60-80m** -- Smaller custom projects, though Lurssen's core reputation is in larger vessels.
-- **80-120m** -- Core range where most recent deliveries sit. The 122m Kismet is a prime example.
-- **120m+** -- Flagship megayacht projects. Azzam at 180m remains the largest private yacht ever built.
-
-Build timelines typically span 4-5 years for the largest projects. Per Lurssen official site.
-
-## Recent Moves
-
-- **Kismet (122m):** Delivered May 2024, the third Kismet built by Lurssen for the same owner. Won Motor Yacht of the Year at the 2025 ISS Awards. Charter approximately USD 480,000/week. Per BOAT International.
-
-**Project Deep Blue (134.2m):** Launched from the Lurssen sheds in 2025 and departed for the UK for final fitting and delivery. One of the largest yachts currently under completion. Per BOAT International, 2025.
-
-**Four major launches in 2025:** Lurssen launched four big superyachts during 2025, cementing its position as the most active large-scale superyacht yard. Per Boat International Facebook.
-
-**Project Cosmos:** Described as Lurssen's first superyacht to incorporate advanced hybrid technology at unprecedented scale. Per SuperYacht Times, 2025.
-
-Lurssen currently holds the most large-scale superyacht projects underway, claiming seven of the top positions on the global order book. Per Boat International.
+Lürssen is a German, family-run shipyard founded in 1875 in Bremen-Vegesack. It specialises in fully custom megayachts. It has built more than 30 yachts over 100m, including *Azzam* (180m), and more than a third of the world's 100 largest yachts. In March 2026 its naval division (NVL) passed to Rheinmetall. Lürssen continues as a dedicated yacht builder.
 
 ## Asian Market & Thai Dealer
+- There is no dealer network and no Thai agent. New builds are sold directly from Bremen, usually through introductions by top superyacht brokers or family offices.
+- Pre-owned and charter Lürssen yachts are handled by international brokers.
+- No Asia sales office is confirmed (as of 2026). Refer enquiries to the yard or a reputable broker.
 
-Lurssen has no dealer network. All sales are conducted directly from the Bremen shipyard, with senior management personally involved in client relationships. Pre-owned Lurssen yachts are handled through selected international brokers.
+## Lineup (ballpark only)
+There are no series models. Every yacht is custom.
+- **~60–85m (197–279ft)**: smaller custom projects. Ballpark USD 150M+.
+- **85–120m (279–394ft)**: core range, e.g. *Nixie* 102.4m and *Kismet* 122m. Typically USD 250M+.
+- **120m+ (394ft+)**: flagship megayachts, e.g. *Deep Blue* 134m and *Azzam* 180m. Several hundred million USD.
+- An average build takes about 4 years; the largest take longer.
 
-Asia-Pacific represents a growing opportunity. Simpson Superyachts has represented Lurssen at APAC superyacht summits. Per Simpson Superyachts Instagram, 2024. Thailand remains an emerging market for megayachts of this scale.
+## Recent Moves (2025–2026)
+- **Sep 2026:** 102.4m *Nixie* made its world debut at Monaco Yacht Show (23–26 Sep). It has diesel-electric propulsion with energy storage.
+- **Jul–Sep 2026:** Record year — six deliveries in 2026, from 78 to 134m: *Odisea* (78m), *O3* (110m, an expedition yacht), *Nixie* (102.4m), *Nausicaä* (114m), *Boardwalk* (117m) and *Deep Blue* (134m).
+- **Mar 2026:** Rheinmetall completed its takeover of Naval Vessels Lürssen (NVL), the military arm.
+- **2026 pipeline:** *Project Cosmos* (114m) is one of the first yachts with fuel-cell technology (per Boat International).
+- **Jun 2025:** *Deep Blue* (134m) launched to mark the yard's 150th anniversary.
+- **2025:** *Kismet* (122m, 2024) won Motor Yacht of the Year at the ISS Awards.
 
 ## Positioning vs Competitors
-
-Lurssen occupies the top tier of custom megayacht building. Direct competitors include Feadship (Netherlands, similar prestige, typically 50-120m), Oceanco (Netherlands, strong in 80m+ custom), and Benetti (Italy, larger production capacity, more accessible pricing). Lurssen's unique claim is its track record in the 100m+ megayacht segment, where it has built more yachts than any other yard in history.
+Lürssen leads the 100m+ segment. Its peers at the top of full-custom building are Feadship and Oceanco. It ranked No. 3 on the 2026 Global Order Book by length (Yacht Style).
 
 ## TBF Context
-
-Lurssen does not exhibit at boat shows, including TBF, Monaco Yacht Show, or any other event. The brand sells exclusively through direct relationships from its German shipyard. Sand should explain that Lurssen enquiries go directly to the yard in Bremen, and introductions typically come through established superyacht brokers or family offices.
+Lürssen has not exhibited at previous TBF editions. Do not suggest it will appear at TBF 2027.
 
 ## Talking Points for Sand
-
-- Lurssen is the builder of the world's largest private yachts, including the 180m Azzam
-- German family-owned shipyard since 1875, now in its fifth generation
-- Every yacht is fully custom -- no series or semi-custom production
-- Pricing is in the hundreds of millions for large projects; ballpark USD 150M+ for 80m+ builds
-- The 122m Kismet, delivered 2024, won Yacht of the Year at the 2025 ISS Awards
-- Lurssen holds the most large-scale superyacht projects currently under construction globally
+- "Lürssen, from Bremen since 1875, builds many of the world's largest private yachts. Azzam, at 180 metres, is one of them."
+- "2026 was a record year for them: six superyachts delivered, from 78 to 134 metres."
+- "Every Lürssen is fully custom and usually takes about four years to build."
+- "Enquiries go directly to the yard, usually through an experienced superyacht broker. We can help connect you."
 
 ## DO NOT
-
-- Quote definitive prices -- Lurssen pricing is never published; use extremely broad ballpark ranges only
-- Name any Lurssen owners -- absolute discretion required for HNWI clients
-- Suggest Lurssen will exhibit at TBF -- they never exhibit at any show
-- Confuse Lurssen with production or semi-custom builders
-
-## Research gaps
-
-- Confirm total number of Lurssen projects currently under construction
-- Identify if any Lurssen yachts are based in or regularly visit Thai waters
-- Check if Simpson Superyachts has an active Lurssen representation agreement for APAC
-- Get details on Project Cosmos specifications and delivery timeline
+- Quote firm prices — use only very broad ballparks
+- Name any Lürssen owner
+- Claim a Thai or Asian dealer exists
+- Say Lürssen still builds naval ships — that division was sold in 2026
+- Say or imply Lürssen will exhibit at TBF 2027

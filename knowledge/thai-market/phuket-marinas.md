@@ -2,48 +2,40 @@
 
 > **File path:** `knowledge/thai-market/phuket-marinas.md`
 > **Keywords:** `["phuket marina", "boat lagoon", "yacht haven", "ao po", "royal phuket marina"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Web-sourced (marina websites, Yacht Style, Superyacht Services Guide, cross-checked)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-sourced — marina websites, Marine Industry News (Apr 2026), Yacht Style, TBF channel/tide notes. Figures are approximate; confirm with each marina.
 
 ## Identity
-
-Phuket is the yachting hub of Southeast Asia, with four major marinas serving cruising yachts, superyachts, and the boat show circuit. Each marina has a distinct character and capability profile. Understanding the differences is essential for advising yacht owners on berthing, haul-out, and lifestyle considerations.
+Phuket is Thailand's yachting hub, with four main marinas on the sheltered east and north-east coast. Match the marina to the boat's size and draft first, and to lifestyle second.
 
 ## Marina Comparison
 
-| Feature | Boat Lagoon | Yacht Haven | Ao Po Grand Marina | Royal Phuket Marina |
+| Feature | Boat Lagoon | Yacht Haven | Ao Po Grand | Royal Phuket Marina |
 |---|---|---|---|---|
-| **Location** | NE Phuket, Thalang | N Phuket, Mai Khao | E Phuket, Ao Po | E Phuket, near town |
-| **Distance to airport** | ~24 km / 30 min | ~10-15 km / 15 min (closest) | ~22 km / 25 min | ~25 km / 30 min |
-| **Wet berths** | ~180 | 320+ | ~230 | ~100 |
-| **Max vessel** | Mid-size (verify max LOA) | Large (superyacht capable) | Large (deepest water) | ~35m standard (limited 50m) |
-| **Depth** | 2.5-3m | 6m+ (all-tide access) | 7m seaward (24/7 all-tide) | 2.5-3.5m (tidal restricted) |
-| **Haul-out** | 50T travel lift | Full shipyard facilities | 80T Roodberg haul-out | 50T travel lift |
-| **Character** | Marina village; BLY HQ; TBF venue | Superyacht hub; near shipyards | Strategic gateway to Phang Nga Bay | Luxury lifestyle; residential; TIBS venue |
-| **Key tenants** | Boat Lagoon Yachting | Various superyacht services | Marine services cluster | DCH Marine (Sunseeker) |
-
-Per boatlagoonmarina.com, yacht-haven-phuket.com, royalphuketmarina.com, aopograndmarina.com, Yacht Style.
+| **Location** | E coast, Ko Kaeo | N tip, Mai Khao side | NE, Ao Po | E coast, Ko Kaeo |
+| **Wet berths** | ~180 (300+ boats incl. dry) | 330+ | ~230 | ~100–250 (verify) |
+| **Max size** | Mid-size; bigger yachts side-tie | Superyachts up to ~100m | Up to 499GT; deep outer docks | ~35m (24h access after 2021 dredging) |
+| **Water / access** | Tidal channel (~45 min); deep-draft boats go near high water; basin ~4m | Deep-water berths | 3m inside to 7m outer; no tidal limits | Dredged channel, ~2.5m min (verify) |
+| **Haul-out** | Yard, hardstand, dry stack | Yard services nearby | 47T + 80T Roodberg trailers, ~60 hardstand spots | Limited (verify) |
+| **Character** | Marina village; BLY base; **TBF venue** | Superyacht hub near airport; TIBS venue | Gateway to Phang Nga Bay | Lifestyle, residential, near Phuket Town |
 
 ## Key Insights for Sand
-
-**Boat Lagoon** is the TBF venue and BLY's home base — best for mid-size cruising yachts and the boat show circuit. The marina village atmosphere creates an intimate, community feel.
-
-**Yacht Haven** is the superyacht operational hub — closest to the airport, deepest water, and the most shipyard infrastructure. Hosts the Thailand International Boat Show (TIBS). Best for larger vessels needing serious maintenance.
-
-**Ao Po Grand Marina** has the deepest water (7m) and 24/7 all-tide access — critical for deep-draft vessels. The 80T Roodberg haul-out is the largest in Phuket. Strategic position as a gateway to Phang Nga Bay cruising.
-
-**Royal Phuket Marina** is the most lifestyle-oriented — residential setting, luxury amenities, close to Phuket Town. Tidal restrictions limit access for larger vessels. Hosts DCH Marine's Sunseeker operation.
+- **Boat Lagoon** is the venue of Thailand Boat Festival (14–17 Jan 2027). It suits mid-size cruising yachts and has full service on site. Deep-draft boats must time the channel with the tide (Harbour Master VHF 71).
+- **Yacht Haven** is the main superyacht marina, with 330+ berths for yachts up to ~100m. It is the closest marina to the airport, and TIBS named it the show's permanent venue in Apr 2026.
+- **Ao Po Grand** has deep water and 24/7 access with no tidal limits. It is the jumping-off point for Phang Nga Bay and has strong haul-out capacity.
+- **Royal Phuket Marina** offers a residential and lifestyle setting. Its channel was dredged for 24-hour access for yachts up to ~35m; larger yachts should check first.
+- **2025–2026:** Yacht Haven is upgrading its onshore dining and amenities. Since the 2024 rule change, foreign charter superyachts of 24m+ can be licensed, which is driving demand for larger berths.
 
 ## Talking Points for Sand
-
-- "Boat Lagoon is where TBF happens — it's also BLY's home, so Princess and Jeanneau service is right there."
-- "Yacht Haven is the superyacht marina — closest to the airport, 6-metre depth, all-tide access."
-- "Ao Po Grand has the deepest water in Phuket — 7 metres — and the biggest haul-out at 80 tonnes."
-- "Royal Phuket Marina is the lifestyle choice — residential, near Phuket Town, but tidal restrictions limit bigger boats."
-- "If a client has a 40m+ yacht, Yacht Haven or Ao Po Grand are the realistic options."
+- "TBF is at Boat Lagoon — a full-service marina village, with Boat Lagoon Yachting right there."
+- "For 40m+ yachts, Yacht Haven or Ao Po Grand are the realistic choices: deep water and all-tide access."
+- "Ao Po Grand is the gateway to Phang Nga Bay, with no tidal restrictions."
+- "Royal Phuket Marina is the lifestyle choice near Phuket Town, best for yachts up to about 35m."
+- "Tide and channel timing always needs confirming with the Harbour Master."
 
 ## DO NOT
-
-- Quote specific monthly berth rates — they change frequently and vary by season
-- State any marina is "better" than another — frame by capability and character
-- Name specific yacht owners berthed at any marina
+- Quote berth rates — they change by season and size
+- Say any marina is "better" — compare capability and character only
+- Name owners berthed at any marina
+- Criticise TIBS or any other show
+- Guarantee channel entry times or berth availability

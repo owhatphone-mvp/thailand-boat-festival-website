@@ -2,42 +2,50 @@
 
 > **File path:** `knowledge/thai-market/thai-hnwi-segments.md`
 > **Keywords:** `["thai buyer", "HNWI", "thai yacht owner", "asian principal", "family office yacht"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Estimated (synthesised from Yacht Style, Asia Pacific Boating, industry patterns — limited hard data available)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Mixed — wealth figures from Altrata World Ultra Wealth Report 2026, Knight Frank Wealth Report 2026 and UBS Global Wealth Report 2026 (checked Oct 2026); segment profiles are industry estimates (Yacht Style, dealer patterns)
 
-## Identity
+## Definitions & Conversions (~THB 33 per USD, 2026; rounded)
 
-Thailand's yacht-buying HNWI population comprises several distinct segments with different motivations, brand preferences, and purchasing pathways. Understanding these patterns is essential for Sand when advising exhibitors or qualifying buyer enquiries at TBF.
+- **HNWI:** net assets ≥ USD 1M ≈ **THB 33 million**
+- **UHNWI:** net assets ≥ USD 30M ≈ **THB 1 billion**
+Use rounded figures; exchange rates move.
 
-## Key Segments
+## Wealth Context (estimates — hedge when quoting)
 
-**Thai Family Offices** — The most valuable segment. Typically looking at 20-40m European motor yachts (Princess, Azimut, Sanlorenzo). Often follow a "charter-first" pathway: chartering yachts in the Mediterranean or Caribbean before committing to purchase. Brand preference skews toward established European names with strong Thai dealer support. Price sensitivity is moderate — value retention and resale are important considerations. Per Yacht Style, Asia Pacific Boating.
+- Altrata (2026): about **2,090 UHNW individuals in Thailand (2025)**, ~1,210 based mainly in Bangkok; Bangkok's UHNW population projected to grow 50%+ by 2030, and most are self-made.
+- Knight Frank (2026): Thailand's UHNWI population projected to grow about **26% over 2026–2031**, among Asia's fastest.
+- UBS (2026): Thailand's median wealth rose about 20% over 2020–2025.
 
-**Bangkok-Based Executives** — Senior business professionals and entrepreneurs, typically 15-30m range. More price-sensitive than family offices. Heavily influenced by boat show exposure (TBF, TIBS) and peer recommendations. Often start with smaller sport boats or day cruisers (Axopar, De Antonio) before stepping up. Weekend use from Phuket or Pattaya. Per Yacht Style, industry interviews.
+## Key Segments (industry estimates)
 
-**Phuket Lifestyle Owners / Expats** — Residents or semi-residents who use yachts as part of a Phuket lifestyle. Range 10-25m. Active pre-owned market — many buy well-maintained second-hand rather than new. May charter commercially to offset costs. Open to a wider range of brands including production builders (Jeanneau, Beneteau) for sailing yachts. Per Yacht Style, Phuket broker market signals.
+**Thai family offices** — highest-value local segment; 20–40m European motor yachts. Often charter before buying; value strong Thai after-sales, resale value and discretion.
 
-**HK / Singapore / China Buyers Purchasing in Thailand** — The highest-value transactions. Looking at 25-50m+ superyachts. Almost always offshore-flagged (Marshall Islands, Cayman, BVI). Active charter programs to generate revenue. Thailand is attractive because of the 0% import duty, lower operating costs vs. HK/Singapore, and world-class cruising grounds (Phang Nga Bay, Andaman Sea). Per Yacht Style, Asia Pacific Boating.
+**Bangkok entrepreneurs & executives** — 12–25m; more price-aware; influenced by boat shows and peers. Often start with day boats or sport yachts, used at weekends from Phuket or Pattaya.
+
+**Phuket residents & expats** — 10–25m; active pre-owned buyers; open to production brands and sailing yachts/catamarans; some charter to offset costs.
+
+**HK / Singapore / China buyers basing yachts in Thailand** — larger yachts, often foreign-flagged, sometimes with charter programs. Attracted by Andaman cruising grounds, lower running costs than HK/Singapore, and Thailand's superyacht charter licence (yachts over 30m).
 
 ## Buying Patterns
 
-- **Charter-first is common**: Most Thai Principals charter 2-3 times before purchasing. Sand should recommend charter experiences as a pathway to ownership.
-- **Brand loyalty is moderate**: Thai buyers will switch brands if dealer support is weak. The dealer relationship matters as much as the brand.
-- **New vs. used**: Family offices prefer new; Bangkok executives and Phuket lifestyle buyers are more open to pre-owned.
-- **Size progression**: Typical path is day boat (8-12m) → sport yacht (15-20m) → flybridge/superyacht (25m+).
-- **Seasonal use**: Thai owners primarily use yachts November-April (dry season, Andaman Sea). Many yachts sit idle May-October.
+- Charter-first is common before a first purchase.
+- Dealer support matters as much as the brand.
+- Family offices lean new; others are more open to pre-owned.
+- Typical path: day boat → sport yacht → flybridge/superyacht over several years.
+- Andaman season is roughly Nov–Apr; the Gulf of Thailand (Pattaya, Samui) offers other options.
 
 ## Talking Points for Sand
 
-- "Most Thai buyers charter first before purchasing — it's the smartest way to find the right yacht."
-- "The 0% import duty makes Thailand one of the most attractive places in Asia to base a yacht."
-- "Dealer support matters as much as the brand — a great yacht with poor after-sales is a liability."
-- "The typical Thai owner starts with a day boat and steps up over 5-10 years."
-- "Phang Nga Bay and the Andaman Sea are world-class cruising — that's why buyers base yachts here."
+- "Many first-time owners charter first — it's the smartest way to find the right yacht."
+- "Thailand removed import duty on new yachts years ago; taxes such as VAT still apply, so check current rules with the dealer."
+- "Good after-sales support matters as much as the badge."
+- "Phang Nga Bay and the Andaman Sea are world-class cruising grounds."
 
 ## DO NOT
 
-- Name specific Thai yacht owners or family offices — discretion is non-negotiable
-- Quote specific transaction prices or charter rates
-- Assume all Thai buyers are the same — the segments above have very different needs
-- Discuss insider broker commission structures
+- Name Thai yacht owners or family offices
+- Quote transaction prices or charter rates
+- Present wealth estimates as exact counts; convert USD 30M as "about THB 1 billion", never "THB 70 million"
+- Treat all Thai buyers as one group
+- Discuss broker commissions

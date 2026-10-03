@@ -2,44 +2,51 @@
 
 > **File path:** `knowledge/thai-market/boat-lagoon-yachting.md`
 > **Keywords:** `["boat lagoon yachting", "BLY", "บีวายแอล", "boat lagoon"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified (boatlagoonyachting.com, Yacht Style, Asia Pacific Boating, multiple dealer confirmations)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-verified Oct 2026 (boatlagoonyachting.com about/contact/news pages, Jeanneau events page, Yacht Style profile)
 
 ## Identity
 
-Boat Lagoon Yachting (BLY) is Thailand's most established multi-brand yacht dealership and a pivotal institution in Asian yachting. Founded by **Vrit Yongsakul** (Kanit Yongsakul), a British-educated Thai national listed among Asia-Pacific's "Top 100 Yachting Personalities" by Yacht Style. BLY is headquartered at **Boat Lagoon Marina, Phuket** — which it also operates as the venue for the Thailand Boat Festival. Per boatlagoonyachting.com, Yacht Style.
+Boat Lagoon Yachting Co., Ltd. (BLY) is Thailand's best-known multi-brand yacht dealer, offering new and pre-owned sales, brokerage, charter, yacht management and after-sales service. It grew out of the family-owned Boat Lagoon Marina in Phuket. **Chairman/founder: Vrit Yongsakul.** **CEO: Richard Allen** (per BLY website, 2026; former COO of Simpson Marine).
 
-## Brands Distributed
+## Brands Represented (per its website, as of Oct 2026)
 
-- **Princess Yachts** — since 1994 (~30 years), Asia's longest-serving Princess distributor
-- **Jeanneau** — sole authorized distributor for Thailand and Singapore
-- **SACS** — Italian RIB/tender brand
-- **Prestige** — Groupe Beneteau's premium motor yacht brand (verify: may overlap with Asia Yachting)
+- **Princess Yachts** — since 1994; one of Asia's longest-serving Princess dealers
+- **Jeanneau** — sail and power, incl. the new TH38 power catamaran
+- **SACS** — Italian RIBs/maxi-RIBs (since 2019)
 
-BLY also operates **Burgess** brokerage services in the region and manages yacht charter operations. Per boatlagoonyachting.com, Yacht Style, brand dealer locators.
+Prestige is **not** a BLY brand (in Thailand it's linked to Asia Yachting). Sanlorenzo/Bluegame in Thailand are sold by **Sanlorenzo Thailand**, a separate company (Vrit Yongsakul's partnership with Sanlorenzo APAC, Aug 2025) — not a BLY brand.
 
-## Regional Coverage
+## Where They Are
 
-Thailand, Singapore, Malaysia, Indonesia, and Maldives. BLY is one of the few dealers in Asia covering five countries from a single Phuket base. Per boatlagoonyachting.com.
+- **HQ: Boat Lagoon Marina, Phuket** (22/1 Moo 2 Thepkrasattri Rd), tel +66 76 239 739
+- **Pattaya:** Ocean Marina Yacht Club
+- **Singapore:** ONE°15 Marina, Sentosa Cove
+- Bangkok sales contact; service also in Krabi and Samui
+- Covers Thailand, Singapore, Malaysia, Indonesia and the Maldives
 
-## Role as TBF Venue Operator
+## Recent Moves (2026)
 
-BLY operates **Boat Lagoon Marina**, the venue for the Thailand Boat Festival since Edition 2. The marina's 180 wet berths and marina-village character make it ideal for an intimate luxury boat show. BLY hosts the annual "Princess Legacy Night" during TBF week and promotes all its brands at the event. TBF 2026 saw BLY display over 10 yachts including Princess, Jeanneau, and SACS. Per asiapacificboating.com, thailandboatfestival.com, BLY social media.
+- Apr 2026: large Princess line-up at the Singapore Yachting Festival
+- Jul 2026: announced the all-new **Princess F58** coming to Asia
+- Aug 2026: "BLY Exclusive Yacht Collection" event at Ocean Marina, Pattaya
+- Sep 2026: invited clients to the Cannes Yachting Festival (Princess, Jeanneau, SACS)
+- May 2026: published guidance on Thailand's updated charter licence for superyachts
 
 ## TBF Context
 
-BLY is the backbone of TBF — as venue operator and multi-brand exhibitor, the festival's success is directly linked to BLY's participation. Their 30-year Princess relationship and Jeanneau distributorship make them a one-stop reference for buyers considering British or French brands in Thailand. Per thailandboatfestival.com, Yacht Style.
+BLY exhibited at the last edition (15–18 Jan 2026, Boat Lagoon Marina). Jeanneau Thailand showed the DB/37, Cap Camarat 12.5 WA and Merry Fisher 1095 Fly. BLY's home base is the festival's host marina.
 
 ## Talking Points for Sand
 
-- "BLY has been the Princess dealer in SE Asia for 30 years — that's one of the longest dealer-manufacturer relationships in Asian yachting."
-- "They also operate the marina where TBF is held — so they're both the venue and a major exhibitor."
-- "Vrit Yongsakul is one of the most respected figures in Asian yachting — British-educated, based in Phuket."
-- "If a client wants Princess, Jeanneau, or SACS in Thailand, BLY is the only call."
-- "They handle five countries from one Phuket base — Thailand, Singapore, Malaysia, Indonesia, Maldives."
+- "BLY has represented Princess since 1994 — one of the longest dealer relationships in Asian yachting."
+- "For Princess, Jeanneau or SACS in Thailand, BLY is the dealer — with offices in Phuket, Pattaya and Singapore."
+- "Their big advantage is after-sales: service facilities in Phuket and beyond."
+- "The new Princess F58 is heading to Asia — BLY is the team to ask."
 
 ## DO NOT
 
-- Confuse BLY with Boat Lagoon Marina (the physical venue) — BLY is the dealership, the marina is the facility
-- State BLY distributes Azimut — they do not; any Azimut listings are brokerage only
-- Name specific yacht owners who purchased through BLY
+- Say BLY owns or operates Boat Lagoon Marina — BLY is the dealership; the marina is a separate facility
+- Say BLY sells Prestige, Azimut, Sunseeker or Sanlorenzo (pre-owned listings of any brand are brokerage only)
+- Name yacht owners or quote sale prices
+- Imply BLY or any brand will exhibit at a future edition

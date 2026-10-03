@@ -2,66 +2,50 @@
 
 > **File path:** `knowledge/yachts/feadship.md`
 > **Keywords:** `["feadship", "feadship-superyacht", "de-vries", "dutch-superyacht", "custom-yacht"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified / Web-sourced
+> **Last updated:** 2026-10-03
+> **Source confidence:** Verified — feadship.nl news, Boat International, YachtBuyer, Yacht Style (2025–2026)
 
 ## Identity
-
-Feadship is the world's most prestigious custom superyacht builder, based in the Netherlands. The brand traces its origins to 1849 as De Vries Scheepsbouw, and the Feadship name (First Export Association of Dutch Shipbuilders) was established in 1949. Feadship builds exclusively full-custom superyachts, typically ranging from 50 metres to over 100 metres, and is widely regarded as setting the global benchmark for build quality, engineering innovation, and owner experience. Per Feadship official site and BOAT International.
-
-## Lineup
-
-Feadship does not have a production lineup or series models. Every yacht is fully custom, designed from the keel up to each owner's specifications. Typical size range:
-
-- **50-65m** -- Entry tier for Feadship, still fully custom. New builds in this range starting from ballpark USD 65-80 million. Per SuperYacht Times.
-- **65-80m** -- Core range where many recent deliveries sit.
-- **80-100m+** -- Flagship projects, with the largest being Project 821 "Breakthrough" at 118.8 metres.
-
-A typical Feadship takes three to four years from initial order to delivery. Per Feadship official site.
-
-## Recent Moves
-
-**Project 821 "Breakthrough" (118.8m):** Delivered 2025, the world's first hydrogen fuel-cell superyacht. A landmark in sustainable yachting with groundbreaking propulsion. Completed sea trials and was listed for sale. Per SuperYacht Times and BOAT International, 2025.
-
-**Project 717 (50m):** Launched ahead of spring 2026 delivery. Feadship's presence in the sub-500GT category. Per YachtBuyer.
-
-**Project Solent:** Code-named project for 2027 delivery. Per Megayacht News, 2025.
-
-Feadship typically delivers 2-4 yachts per year, maintaining exclusivity through limited production capacity.
+Feadship is the Netherlands' best-known full-custom superyacht brand. It is a partnership of the Royal De Vries and Royal Van Lent yards, with roots back to 1849; the Feadship name dates from 1949. It builds only fully custom yachts, mostly 45–120m, and is widely seen as a global benchmark for build quality.
 
 ## Asian Market & Thai Dealer
+- Feadship has no dealers and no Thai agent. New builds are sold directly by the yard in the Netherlands, often after an introduction by a broker or advisor.
+- Pre-owned yachts are sold through Feadship's own resale service and international brokers.
+- No Asia sales office has been confirmed (as of 2026). Ask Feadship directly.
 
-Feadship has no traditional dealer network. All sales are conducted directly through the Feadship team in the Netherlands, with project managers working closely with each owner throughout the multi-year build process. Selected global brokers handle resale of pre-owned Feadships.
+## Lineup (ballpark only)
+There are no series models. Every yacht is custom.
+- **~45–55m (148–180ft)**, often aluminium and under 500GT (e.g. *Graycliffs*, 49.5m). Ballpark USD 50–80M+.
+- **~60–85m (197–279ft)**: core range. Ballpark USD 100–250M.
+- **100m+ (328ft+)**: flagships such as *Destiny* (101.2m) and *Breakthrough* (118.8m). Several hundred million USD.
+- A build takes about 3–4 years. Concept designs (e.g. Etherea, Dec 2025) can be delivered in ~3 years.
 
-The Asia Pacific luxury yacht market is seeing increased interest from ultra-high-net-worth individuals. Feadship, along with Lurssen and Oceanco, has reinforced its positioning in the region. Per GM Insights market report, 2024. Thailand remains a developing market for custom superyachts of this scale.
+## Recent Moves (2025–2026)
+- **Aug 2026:** 80m Project 716 launched at Aalsmeer, scheduled for 2026 delivery.
+- **Jul 2026:** 101.2m *Destiny* (Project 1014) delivered. It was launched in Makkum on 1 Apr 2026 and has a glass-bottomed pool and a helipad.
+- **Apr 2026:** 49.5m aluminium *Graycliffs* (499GT) delivered.
+- **Feb 2026:** Wins at the BOAT Design & Innovation Awards.
+- **Jan 2026:** 49.5m Project 717 revealed.
+- **Nov 2025:** 118.8m *Breakthrough* (2025) presented as a new standard in innovation. It uses hydrogen fuel cells.
+- **Sep 2025:** Exploratory MoU signed with Qatar Free Zones Authority at the Monaco Yacht Show.
 
 ## Positioning vs Competitors
-
-Feadship competes at the absolute pinnacle of the superyacht world. Direct competitors include Lurssen (Germany, builds larger megayachts 100m+), Oceanco (Netherlands, similar size range, strong in custom), and Amels/Damen (Netherlands, semi-custom at lower price points). Feadship's key differentiator is its uncompromising full-custom approach combined with Dutch engineering excellence and the longest continuous heritage in superyacht building.
+Feadship is a top-tier full-custom builder alongside Lürssen and Oceanco. It is especially strong in innovation and engineering. Amels and Heesen offer more semi-custom platforms.
 
 ## TBF Context
-
-Feadship does not exhibit at boat shows of any kind, including TBF, Monaco, or Fort Lauderdale. The brand operates exclusively through direct relationships, private showings at the yard in the Netherlands, and its global broker network. There is no Feadship stand, no Feadship brochure rack, no Feadship presence at any show worldwide. This is by design -- the brand's exclusivity is its marketing. Sand should explain that Feadship enquiries are handled directly by the yard, and introductions are typically made through established yacht brokers or wealth advisors.
+Feadship has not exhibited at previous TBF editions. At major international shows it usually appears through hospitality lounges and private appointments rather than sales stands. Do not suggest it will appear at TBF 2027.
 
 ## Talking Points for Sand
-
-- Feadship is widely considered the finest custom superyacht builder in the world
-- Every yacht is fully custom -- no series or semi-custom options
-- Builds typically take 3-4 years from order to delivery
-- Pricing starts ballpark USD 65M+ for a 50m new build; larger projects can exceed USD 200M+
-- Project 821 "Breakthrough" is the world's first hydrogen fuel-cell superyacht (2025)
-- The brand does not exhibit at any boat shows anywhere in the world
+- "Feadship builds only fully custom superyachts in the Netherlands. No two are alike."
+- "A new build usually takes three to four years. Their concept designs can shorten that."
+- "In 2026 they delivered the 101-metre *Destiny* and the 49.5-metre *Graycliffs*."
+- "*Breakthrough* (118.8m) is their landmark yacht with hydrogen fuel cells."
+- "Enquiries go direct to the yard or through an experienced superyacht broker. We can help connect you."
 
 ## DO NOT
-
-- Quote definitive prices -- Feadship pricing is never published; use very broad ballpark ranges only
-- Name any Feadship owners -- absolute discretion required
-- Suggest Feadship will exhibit at TBF or any show -- they never do
-- Confuse Feadship with semi-custom builders like Amels
-
-## Research gaps
-
-- Confirm how many Feadship yachts are currently in Asian waters
-- Identify which global brokers handle the most Feadship resales in the APAC region
-- Check if any Thai-based clients have commissioned Feadship builds
-- Get more details on the current order book and delivery schedule through 2027
+- Quote prices — Feadship never publishes them. Use only very broad ballparks.
+- Name any Feadship owner
+- Claim a Thai or Asian dealer exists
+- Say Feadship "never attends shows" — say it has no sales stand at regional shows
+- Say or imply Feadship will exhibit at TBF 2027
+- Confuse Feadship with semi-custom builders

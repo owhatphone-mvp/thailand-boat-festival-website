@@ -2,55 +2,54 @@
 
 > **File path:** `knowledge/yachts/chris-craft.md`
 > **Keywords:** `["chris-craft", "คริสคราฟท์", "chris craft yachts"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified (cross-checked across chriscraft.com, Wikipedia, Winnebago investor relations, Asia Pacific Boating, MGC-Asia)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Verified (chriscraft.com, Winnebago Industries releases/filings, YachtBuyer, Trade Only Today, Thai business press)
 
 ## Identity
 
-Chris-Craft Corporation is an American luxury dayboat builder founded in 1874 by Christopher Columbus Smith in Algonac, Michigan — making it one of the oldest continuously operating boat brands in the world (150+ years). Now headquartered in Sarasota, Florida, with manufacturing also in Winnsboro, South Carolina. Owned by **Winnebago Industries** (Forest City, Iowa, NASDAQ: WGO) since June 2018, acquired from Stellican Ltd. Known for heritage mahogany-style runabout aesthetics reinterpreted in modern fiberglass with teak decking and stainless accents. Per chriscraft.com, Wikipedia, GlobeNewsWire.
-
-## Lineup (current models, 2024-2026)
-
-- **Sportster** — entry-level heritage runabouts. Sportster 25 (7.6m/25ft, NEW 150th anniversary model, USD 149K) and Sportster 28 (8.6m/28ft, USD 210K).
-- **Launch** — classic open-bow runabout. Launch 27 (8.1m/28ft, Gen 3, from USD 213K).
-- **Launch GT** — premium open-bow luxury. Launch 28 GT (8.8m/29ft, USD 281K), 31 GT (9.4m/31ft, USD 503K), 35 GT (10.6m/35ft, USD 584K–644K). Teak decking, Seakeeper option.
-- **Calypso** — dual-console family cruisers. 28 (9.0m/30ft, USD 352K), 32 (10.3m/34ft, USD 659K), 35 (11.3m/37ft, USD 815K).
-- **Catalina** — center-console elegance. 24 (8.2m/26ft, est. USD 120K–140K), 28 (9.0m/30ft, est. USD 250K–300K), 31 (10.3m/34ft, est. USD 350K+).
-
-All prices are starting MSRP in USD from chriscraft.com. Catalina prices are estimates from dealer listings.
-
-## Recent Moves (2024-2026)
-
-Chris-Craft celebrated its 150th anniversary in February 2024 with a special marketing campaign and the Sportster 25 launch model. The Calypso 35 debuted as the new flagship with fully enclosed windshield. A new state-of-the-art manufacturing facility opened under Winnebago's investment. The brand continues its design direction: modern fiberglass vessels with deliberate heritage references — teak decking, mahogany trim, chrome accents, classic runabout proportions. Per chriscraft.com, Winnebago investor relations, Boat Trader.
+American premium dayboat builder founded in 1874 by Christopher Columbus Smith in Algonac, Michigan — one of the world's oldest boat brands ("America's Boatbuilder Since 1874"). Built in Sarasota, Florida. Owned by **Winnebago Industries** (NASDAQ: WGO) since 2018; heritage runabout style (teak, chrome, classic lines) in modern fiberglass.
 
 ## Asian Market & Thai Dealer
 
-**MGC Marine & Charter (Asia)** is the exclusive Chris-Craft dealer for Thailand and the ASEAN region. MGC Marine also distributes Azimut Yachts in Thailand (sole distributor). Their Chris-Craft Thailand showroom is at **Riverdale Marina**, near Bangkok. MGC is a subsidiary of Master Group Asia / MGC Group. Per chriscraft.com press release, Yahoo Finance, Asia Pacific Boating, ibinews.com.
+- **MGC Marine & Charter (Asia)**, part of MGC-ASIA (Millennium Group Corporation Asia) — exclusive Chris-Craft dealer for Thailand and ASEAN since 2023 (as of 2026). Showroom and service at **Riverdale Marina**, Pathum Thani (Bangkok area). MGC also distributes Azimut in Thailand.
+- Riverdale Marina Boat Fair (March 2025): MGC showed 24ft console models; demo/used boats from ~THB 3.4M.
+
+## Lineup (current models)
+
+- **Launch 27** — ~8.1m/27ft classic open bow, sterndrive; redesigned for 2026. Ballpark USD 210K–260K.
+- **Launch GT 28 / 31 / 35** — 8.8–10.6m (29–35ft) premium open bows; sterndrive or outboard. Ballpark USD 280K–650K.
+- **Sportster 25 / 28** — 7.6–8.6m (25–28ft) family bowriders. Ballpark USD 150K–220K.
+- **Corsair 27 (NEW)** — 8.4m/28ft closed-bow revival, Mercury/Volvo V8 sterndrive 300–430hp. From ~USD 234K.
+- **Calypso** (dual console, outboard) — ~28–35ft. Ballpark USD 350K–820K.
+- **Catalina** (center console, outboard) — ~24–31ft. Ballpark USD 120K–400K (verify with dealer).
+- Wake Surf Editions offered on several series.
+
+## Recent Moves (2025–2026)
+
+- **Sep 2026** — Corsair 27 returns as a reimagined closed-bow model (2027 model year).
+- **Aug 2026** — Winnebago manufacturing realignment covers RV brands only; Chris-Craft unaffected, no lines discontinued.
+- **Feb 2026** — All-new Launch 27 unveiled at Miami International Boat Show; Winnebago marine brands recognised by NMMA for customer satisfaction.
+- **Mar 2025** — MGC-ASIA formally launched its marine arm (Azimut + Chris-Craft) in Thailand.
+- **2024** — 150th anniversary.
 
 ## Positioning vs Competitors
 
-Chris-Craft occupies the heritage American luxury niche — often called "the American Riva." Both blend classic runabout styling with modern technology, but Riva is Italian ultra-luxury (USD 500K–3M+) while Chris-Craft is accessible American premium (USD 150K–815K). vs. De Antonio: completely different philosophies — Chris-Craft is heritage inboard with teak/mahogany; De Antonio is modern Spanish outboard with hidden engines. vs. Axopar: Chris-Craft is lifestyle/entertaining; Axopar is adventure/utility. Little buyer overlap — Chris-Craft attracts clients who value tradition and American craftsmanship.
+Often called "the American Riva": classic runabout styling like Riva, but at a far more accessible price. Appeals to buyers who value heritage over outboard-adventure brands like Axopar.
 
 ## TBF Context
 
-Chris-Craft exhibited at **TBF 2026** through MGC Marine, with the Catalina 24 specifically highlighted. Confirmed as an exhibitor for **TBF 2027** (January 14-17). MGC Marine / Chris-Craft Thailand is the exhibiting dealer. Per thailandboatfestival.com, Chris-Craft Thailand social media.
+At the last edition (TBF 2026), Chris-Craft was shown through MGC Marine, with the Catalina 24 highlighted.
 
 ## Talking Points for Sand
 
-- "Chris-Craft is 150 years old — one of the oldest boat brands in the world. Christopher Columbus Smith built his first boat in 1874."
-- "They're called 'the American Riva' — classic mahogany and teak runabout styling, but at a fraction of Riva's price."
-- "Everything is still built in the USA — Sarasota, Florida. American manufacturing is part of the brand identity."
-- "MGC Marine handles Thailand from Riverdale Marina near Bangkok — they also do Azimut, so there's a natural connection."
-- "The Launch GT 35 is their flagship open-bow — teak decking, integrated galley, starting around USD 644K. That's the one for entertaining."
+- "Chris-Craft has built boats since 1874 — over 150 years of American boating history."
+- "Think classic runabout style — teak, chrome, mahogany looks — but modern and far more accessible than Riva."
+- "New: the Corsair 27 is back, and the Launch 27 was completely redesigned for 2026."
+- "In Thailand, MGC Marine handles Chris-Craft from Riverdale Marina near Bangkok."
 
 ## DO NOT
 
-- State Chris-Craft uses outboards as primary — they are primarily inboard/sterndrive, with some outboard options
-- Confuse with Riva's price tier — Chris-Craft is significantly more accessible
-- Name specific celebrity owners unless confirmed (broadly referenced but not verified in this session)
-
-## Research gaps
-
-- Whether Winnebago Industries plans further marine acquisitions beyond Chris-Craft and Barletta
-- Exact Catalina series MSRP (pricing estimated from dealer listings)
-- Chris-Craft's presence at shows outside Thailand in the Asian circuit
+- Say Chris-Craft is mainly outboard — Launch/Sportster/Corsair are sterndrive-led; Calypso/Catalina are outboard
+- Put it in Riva's price tier
+- Name celebrity or private owners
+- Quote definitive prices — Thai landed prices differ from US MSRP

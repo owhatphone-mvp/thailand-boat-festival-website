@@ -2,68 +2,55 @@
 
 > **File path:** `knowledge/yachts/fountaine-pajot.md`
 > **Keywords:** `["fountaine-pajot", "fp-catamaran", "ฟองแตน ปาโช", "dufour-yachts"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Web-sourced
+> **Last updated:** 2026-10-03
+> **Source confidence:** Web-sourced (catamarans-fountaine-pajot.com, FP Group press release Jul 2026, Marine Industry News, Yacht Style, Figaro Nautisme)
 
 ## Identity
 
-Fountaine Pajot is a French premium production catamaran builder, part of the independent Fountaine Pajot Group (Compagnie du Catamaran), separate from Groupe Beneteau. Founded in 1976 in La Rochelle, the brand is known for higher finish quality vs. rival Lagoon. Per Yacht Style, the group exceeded EUR 300M in revenue and also owns Dufour Yachts (monohulls).
-
-## Lineup (current models, 2024-2026)
-
-**Isla 40**: Entry to the range, three or four cabin layouts. Ballpark: EUR 350-450k (~$400-500k USD), per Inautia.
-
-**FP44** (new 2025): Replaces the Astrea 44. Electric-ready design with optional hybrid propulsion. Per FP official site.
-
-**Elba 45**: Mid-range staple popular in charter fleets. Around EUR 669k (~$740k USD), per Botentekoop, 2026.
-
-**Tanna 47**: Versatile cruiser between Elba 45 and Aura 51 with multiple cabin layouts including a five-cabin charter version.
-
-**Aura 51**: Premium mid-range with spacious owner's hull option. Approx. EUR 1.1M (~$1.2M USD), per YachtWorld.
-
-**FPY 70S** (new): Sailing yacht marking FP's expansion into monohull luxury. Up to 12 guests and 5 crew.
-
-**Quorix 61**: Bluewater cruiser with performance-oriented hull design.
-
-**Alegria 67**: Flagship catamaran with semi-custom interiors. Approx. 20m LOA, per Boat24. Multi-million USD pricing.
-
-**Bali 5.4**: Motor catamaran under the FP Group umbrella for power-cat buyers.
-
-## Recent Moves (2024-2026)
-
-The FP Group finalized its majority stake in Dufour Yachts in October 2024, per Yacht Sales Co. Three new models were revealed at Cannes 2025 including the FPY 70S. Most significantly, Groupe Beneteau and FP Group jointly announced E-Lektra Marine in April 2026, a JV targeting 2030 electrification across seven brands (Beneteau, Jeanneau, Lagoon, Excess, Fountaine Pajot, FP Yachts, Dufour), per Groupe Beneteau press release.
+Fountaine Pajot is a French builder of premium production catamarans, founded in 1976 near La Rochelle. It celebrates its 50th anniversary in 2026. The independent, listed Fountaine Pajot Group is separate from Groupe Beneteau and also owns Dufour Yachts (monohulls) and Fountaine Pajot Yachts (FPY).
 
 ## Asian Market & Thai Dealer
 
-Asia Yachting serves as FP's exclusive dealer for Hong Kong and the Philippines, expanded from motor yachts to include sailing catamarans. For Thailand, no confirmed exclusive dealer was identified. FP brokerage listings appear on YachtWorld in Thailand, and Derani Yachts exhibited at TIBS 2025, but their FP dealer status is unconfirmed. The brand has presence in Thai waters through private and charter ownership.
+**New in Sep 2026:** **Asia Yachting** expanded its Fountaine Pajot dealership, signed at Cannes 2026, to cover **Thailand**, Singapore, Hong Kong (where it has sold FP since 2021) and the Philippines. The deal covers both the FP sailing catamarans and the FPY yachts. The group also has a majority stake in The Yacht Sales Co., an Asia-Pacific dealer network with 15 locations in 11 countries (Oct 2024).
+
+## Lineup (current models)
+
+New FP-numbered range, 2025–2026:
+- **FP41** (12.1 m / 40 ft). Ballpark USD 450K–600K.
+- **FP44** (13.3 m / 44 ft), launched in 2026. Ballpark USD 600K–800K.
+- **FP48** (about 14 m / 48 ft), **new**, replacing the Tanna 47.
+- **FP51** (about 15 m / 51 ft). Ballpark USD 1.1M–1.4M.
+- **FP55** (about 17 m / 55 ft), **new**.
+- **FPY yachts**: Samana 59 / FPY 59S (18 m / 59 ft), **new FPY 70S** (22 m / 70 ft), Thira 80 (23 m / 80 ft), FPY 120S (35 m / 120 ft), plus the Power 80 motor cat. Multi-million USD, on request.
+
+Most models can be ordered with hybrid propulsion.
+
+## Recent Moves (2025–2026)
+
+- **Sep 2026**: FP48, FP55 and FPY 70S world premieres at Cannes, where the Asia Yachting deal was also signed.
+- **Jul 2026**: First-half FY2025/26 revenue was EUR 136.3M (down 12.7%), still profitable. CEO Nicolas Gardies plans to retire in 2027, with Deputy CEO Mathieu Fountaine leading the transition.
+- **Apr 2026**: The group formed the **E-Lektra Marine** joint venture (50/50 with Groupe Beneteau) for electric and hybrid propulsion on boats of 9–24 m.
+- **Sep 2025**: The new FP41 and FP44 were presented at Cannes.
 
 ## Positioning vs Competitors
 
-FP positions above Lagoon on finish quality and customization. Competitors include Nautitech, Leopard Catamarans, and Bali (Catana Group) in production cats; Sunreef occupies a higher custom tier. FP's strength is near-custom quality at production pricing, appealing to experienced sailors upgrading from other brands.
+Fountaine Pajot sits above Lagoon on finish and specification while staying at production prices. Its peers are Leopard, Bali and Nautitech, and Sunreef occupies the higher custom tier.
 
 ## TBF Context
 
-Whether Fountaine Pajot exhibited at TBF 2026 is unconfirmed. The brand's Thai dealer structure is less defined than Lagoon's (ASIAMARINE) or Beneteau's (Primus Marine). Derani Yachts appeared at TIBS 2025 but their relationship to FP needs verification.
+Whether Fountaine Pajot exhibited at the last edition (TBF 2026) is not confirmed.
 
 ## Talking Points for Sand
 
-- Fountaine Pajot offers a step up in finish quality from Lagoon while remaining in the production catamaran price range.
-- The FP44 (new 2025) is electric-ready and future-proofed via the E-Lektra Marine hybrid propulsion platform.
-- The range spans from the accessible Isla 40 to the flagship Alegria 67, catering to owner-operators and charter investors alike.
-- FP Group's independence from Groupe Beneteau (while partnering on electrification) gives it distinct brand identity and positioning.
-- The brand is well suited to experienced catamaran buyers seeking higher interior specification than standard production offerings.
+- "Fountaine Pajot turns 50 in 2026, and it has refreshed its whole range with the FP41 to FP55."
+- "It offers a step up in finish from mainstream production catamarans, and hybrid propulsion is available on most models."
+- "Since Sep 2026, Asia Yachting represents Fountaine Pajot in Thailand."
+- "The group runs its own superyacht line, from the FPY 70S up to the 35 m FPY 120S."
 
 ## DO NOT
 
-- Confuse Fountaine Pajot with Lagoon or imply they are part of the same group; FP is independent (Compagnie du Catamaran).
-- Claim FP has an exclusive Thai dealer; research did not confirm one.
-- Quote definitive pricing; always provide ballpark ranges and note market variability.
-- Reference the Allegra 67 spelling; the correct model name is Alegria 67.
-
-## Research gaps
-
-- Confirmed exclusive Fountaine Pajot dealer for Thailand (if any).
-- Exact FP pricing for Thai delivery including shipping and import costs.
-- Whether Derani Yachts holds any FP dealership in Thailand.
-- TBF 2026 or TIBS 2026 FP exhibition participation.
-- Bali motor catamaran availability and pricing in the Asian market.
+- Say Fountaine Pajot is part of Groupe Beneteau. The two only partner on E-Lektra.
+- List the Bali 5.4 as a Fountaine Pajot model. Bali belongs to the Catana Group.
+- Use the old range names (Isla, Tanna, Aura) as current models without checking.
+- Quote definitive prices.
+- Say or imply that Fountaine Pajot or Asia Yachting will exhibit at TBF 2027.

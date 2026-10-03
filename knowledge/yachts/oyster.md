@@ -2,65 +2,57 @@
 
 > **File path:** `knowledge/yachts/oyster.md`
 > **Keywords:** `["oyster-yachts", "oyster", "bluewater-sailing", "oyster-yacht-thailand"]`
-> **Last updated:** 2026-06-05
-> **Source confidence:** Verified / Web-sourced
+> **Last updated:** 2026-10-03
+> **Source confidence:** Verified / Web-sourced (oysteryachts.com Summer Update 2026, Yacht (yacht.de), Marine Industry News, Elite Traveler, Humphreys Yacht Design)
 
 ## Identity
 
-Oyster Yachts is a British luxury sailing yacht builder founded in 1975 in Ipswich, Suffolk, by Richard Matthews. Known worldwide for high-quality bluewater cruising yachts, Oyster has built over 1,000 yachts across five decades, earning a reputation for ocean-crossing capability, refined interiors, and robust construction. The brand is currently owned by Richard Hadida, a tech entrepreneur who acquired the company and has invested heavily in modernizing the lineup while preserving its heritage. Per Oyster Yachts official site and Yachting News, 2024.
-
-## Lineup
-
-Current production models (2024-2026), all semi-custom:
-
-- **Oyster 495** -- Entry to the range, ~50ft bluewater cruiser.
-- **Oyster 565 Series II** -- Best-selling model, award-winning sub-60ft yacht with recent Series II upgrades.
-- **Oyster 595 Series II** -- Proven long-distance cruiser. Starting ballpark USD 2.9M. Per Yachting World.
-- **Oyster 675** -- Serious ocean-going yacht with generous volume.
-- **Oyster 745** -- Luxurious bridge between cruising and superyacht territory.
-- **Oyster 885 Series II** -- Flagship 90ft crewed sailing yacht. Pre-owned examples ballpark USD 5.9M. Per itBoat.
-
-The superyacht-class Oyster 835 and 895 were announced as part of a G6 fleet expansion. Per Sail World Cruising.
-
-## Recent Moves
-
-Richard Hadida acquired Oyster Yachts and has revitalized the brand since taking over. Per Superyacht News, Hadida now owns all Oyster assets, tooling, IP, and subsidiaries. Founder Richard Matthews has returned to the board of directors in an advisory capacity. Per Oyster Yachts official announcement.
-
-The company has introduced Series II upgrades across multiple models, including the 565 and 595, featuring improved deck layouts, upgraded navigation systems, and enhanced performance. Oyster has also hosted private viewings in London (2025) showcasing the full lineup together for the first time. Per Oyster Yachts Facebook, 2025.
+British builder of semi-custom bluewater sailing yachts, founded in 1973 and best known for comfortable deck-saloon yachts that cross oceans. Privately owned; CEO **Stefan Zimmermann Zschocke** (since 2025). Main yard at Wroxham, Norfolk, now its "Manufacturing Centre of Excellence"; Southampton production is being phased down.
 
 ## Asian Market & Thai Dealer
 
-Oyster has appointed Asia Yacht Services (AYS) as its exclusive agent for Hong Kong and South China. Per Sail-World. There is no confirmed dedicated Thai dealer as of 2025, but the brand is represented through regional brokerage networks and occasional private viewings.
+- **No confirmed Thai dealer as of 2026.** Oyster sells largely direct via its UK sales team and private viewings; Asia Yacht Services was historically its agent for Hong Kong/South China (verify current status).
+- Phuket's sailing scene (e.g. the Phuket King's Cup Regatta) is the natural Thai link; the Oyster World Rally 2026–27 fleet was in the South Pacific as of mid-2026.
 
-Thailand's active sailing community, centered around Phuket and the Andaman Sea, makes it a natural market for Oyster's bluewater cruisers. The Phuket King's Cup Regatta -- Asia's largest and most prestigious regatta, held annually since 1987 -- draws international sailing yachts including Oysters. Per Yacht Style, 2024. The 36th edition in December 2024 featured strong international participation.
+## Lineup (current models)
+
+- **Oyster 515 (NEW Jul 2026)** — ~15.5m/50ft next-gen entry model with beach-club aft deck (Humphreys design); evolves the 495.
+- **565 Series II** — ~17m/56ft, best-seller.
+- **595 Series II** — ~18m/59ft; next build slots reported at spring 2028.
+- **675** — ~20m/67ft.
+- **745** — ~23m/75ft.
+- **805 (NEW)** — 24m/80ft, Humphreys design, first hull due 2027.
+- **885 Series II** — ~27m/88ft flagship of the production range.
+- **C60 (announced Sep 2026)** — 18.3m/60ft, Oyster's first bluewater catamaran, designed with Berret Racoupeau; likely built in France; price TBC.
+- **Oyster 36M (announced Sep 2026)** — 36m/118ft Frers-designed sailing superyacht flagship; build yard TBC.
+- Ballpark: ~USD 1.5M (50ft) to USD 6M+ (885); superyachts priced on request.
+
+## Recent Moves (2025–2026)
+
+- **Sep 2026** — C60 catamaran unveiled at Cannes; 36M flagship revealed.
+- **Jul 2026** — Oyster 515 unveiled.
+- **Apr–Jun 2026** — London Private View with strong orders; 50ft concept previewed; Wroxham investment, Southampton phase-down; Oyster World Rally 2030–31 entries opened.
+- **2025** — New CEO appointed; Oyster 805 announced.
 
 ## Positioning vs Competitors
 
-Oyster occupies the premium bluewater cruising niche, competing with Hallberg-Rassy (Sweden, more production-oriented), Nautor's Swan (Finland, more racing heritage, higher price point), and Amel (France, owner-operator simplicity). Oyster's differentiator is British craftsmanship combined with proven ocean-crossing pedigree and semi-custom flexibility.
+Comfort-first bluewater cruisers with an owner-support and rally ecosystem. vs Nautor's Swan: Swan leans to performance/racing heritage; vs Hallberg-Rassy: Oyster is larger and more semi-custom.
 
 ## TBF Context
 
-Oyster Yachts does not typically exhibit at the Thailand Boat Festival or similar Asian boat shows. The brand relies on private viewings, brokerage networks, and word-of-mouth within the sailing community. Sand should note that while Oyster may not have a physical TBF presence, brand awareness among Thai sailing enthusiasts is strong.
+Oyster has not exhibited at past TBF editions; the brand relies on private viewings and its owner community.
 
 ## Talking Points for Sand
 
-- Quintessential British bluewater sailing brand -- over 1,000 yachts built since 1975
-- The 565 is their most popular model, ideal for long-distance sailing with a small crew
-- Pricing ballpark USD 1.5M (495) to USD 6M+ (885 Series II) depending on specification
-- All yachts are semi-custom with extensive personalization
-- Thailand's sailing scene, especially Phuket, is a natural fit for Oyster's ocean-going DNA
-- Brand revitalized under new ownership with modernized Series II models
+- "Oyster is the British name for ocean-crossing sailing yachts — semi-custom, built for comfort at sea."
+- "2026 is a big year: a new 515, the first Oyster catamaran (C60), and a 36-metre flagship."
+- "Owners can join the Oyster World Rally — a round-the-world sail with a fleet of sister yachts."
+- "There is no official Thai dealer; enquiries go to Oyster directly."
 
 ## DO NOT
 
-- Quote definitive prices -- use ballpark USD ranges only
-- Name specific owners or buyers
-- Claim Oyster has an official Thai dealer if not confirmed
-- Confuse the 835/895 superyacht range with the main production lineup
-
-## Research gaps
-
-- Confirm whether Oyster has a current Thai dealer or representative (AYS covers HK/South China only)
-- Verify if any Oyster yachts are currently based in Thai waters
-- Get confirmed pricing for the 675 and 745 models
-- Clarify the status of the 835 and 895 superyacht models in the current lineup
+- Quote definitive prices
+- Name owners or buyers
+- Claim an official Thai dealer
+- Promise delivery dates — popular models are booked years ahead
+- Mention the old "835/895 G6" plans as current models

@@ -1,50 +1,46 @@
 # Azimut Yachts
 
+> **File path:** `knowledge/yachts/azimut.md`
 > **Keywords:** `["azimut", "อาซิมุท", "azimut yachts"]`
-> **Last updated:** 2026-06-05 (ENRICHED — research gaps filled)
-> **Source confidence:** Verified (cross-checked across azimutyachts.com, MGC-Asia, Asia Pacific Boating, Boat International, Yacht Style)
+> **Last updated:** 2026-10-03
+> **Source confidence:** Verified (azimutyachts.com, YachtBuyer, Pressmare, Boat International Global Order Book via Forbes Italia, Milano Finanza, MGC-Asia)
 
 ## Identity
-Azimut Yachts is an Italian motor yacht builder headquartered in Avigliana (Turin region). Part of Azimut|Benetti Group — one of the largest privately-held yacht builders globally by volume. Best known for contemporary, refined flybridge and sport yachts in the 12–35m (40–115ft) range. 26 current models across 7 series. Long collaboration with Stefano Righini for exterior lines and Achille Salvagni / Francesco Guida for interiors. Per azimutyachts.com, Boat International.
-
-## Lineup (current major collections, 2024-2026)
-
-- **S Collection (Sport)** — sport coupé planing, hardchine hulls, IPS pod drive. Models S6, S7, S8.
-- **Flybridge Collection** — twin-deck flybridge cruisers, the heart of the brand. Fly 53 up through Fly 82 (NEW 2025, 24.8m, Deck2Deck terrace concept).
-- **Magellano Collection** — semi-displacement, long-range, dual-mode hull. Now in third generation: Magellano 27M (NEW 2025, 26.2m).
-- **Grande Collection** — superyacht tier above 75ft, semi-custom. Grande 30M (NEW 2025, 28.7m, Rolls-Royce mtu POD drive).
-- **Seadeck** — new hybrid series. Seadeck 7 with Volvo Penta D13 IPS hybrid + 80kWh battery, 40% CO2 reduction, "Zero Emission Hotel Mode."
-- **Verve / Atlantis** — entry-level open cruisers, retired in recent years.
-
-Per azimutyachts.com, Cannes 2025 press coverage, Boat International.
-
-## Recent Moves (2024-2026)
-
-Cannes 2025 was a major showcase: **Grande 30M**, **Fly 82**, and **Magellano 27M** all debuted. Boot Düsseldorf 2026 featured five models. The **Seadeck 7 hybrid** entered production — Volvo Penta IPS hybrid + 80kWh battery, 40% CO2 reduction, "Zero Emission Hotel Mode." Associated with E1 Series (electric powerboat championship) via E1 Team Miami. Sustainability partners: Politecnico di Torino, Eni (HVO biofuel), Lloyd's Register SEA Index. CEO Marco Valle committed to increased APAC investment at Singapore Yachting Festival 2025. Per azimutyachts.com, Boat International.
+Italian motor yacht builder based in Avigliana (Turin), part of the privately held Azimut|Benetti Group — ranked No. 1 in Boat International's Global Order Book for the 26th straight year (Dec 2025). Known for contemporary flybridge, efficiency-led and Grande yachts from ~16m to ~44m.
 
 ## Asian Market & Thai Dealer
+- **Thailand:** MGC Marine (MGC-ASIA group) has been the Azimut distributor since 2015, with bases in Bangkok, Phuket and Chon Buri (as of 2026).
+- Other APAC markets have separate dealers — check the dealer locator on azimutyachts.com.
+- Simpson Marine stopped representing Azimut in 2015. Boat Lagoon Yachting is not an Azimut dealer.
 
-**MGC Marine & Charter (Asia)** is the sole Azimut distributor for Thailand since February 2015. Three locations: Bangkok, Phuket, Chon Buri. Subsidiary of Master Group Asia. **CORRECTION: Simpson Marine parted ways with Azimut in May 2015** — now represents Sanlorenzo, Bluegame, Fairline only. **Boat Lagoon Yachting is NOT an Azimut dealer** — brands are Princess, Jeanneau, SACS, Prestige.
+## Lineup (current models)
+- **Fly** (flybridge) — Fly 53 to Fly 82 (16.8–24.8m / 55–81ft). Ballpark USD 2–9M.
+- **Seadeck** (efficiency/hybrid-ready) — Seadeck 6, 7, 9 (17.3–25.6m / 57–84ft). Ballpark USD 3–12M.
+- **Magellano** (long-range, dual-mode hull) — Magellano 60, 66, 27M, 30M (18.5–29.6m / 61–97ft). Ballpark USD 3–16M.
+- **Grande** (flagship series) — Grande 26M to Grande 44M (26–43.9m / 86–144ft). Ballpark USD 10–40M+.
 
-Other Asian dealers: **Marine Italia Asia** (HK, Singapore, Macau), **Tam Son Yachting** (Vietnam), **Europa Yachts** (Philippines, Indonesia), **Supreme Yachts** (Taiwan), **Sunch Yachts** (China). 12 dealers APAC total. Per azimutyachts.com, MGC-Asia.
+## Recent Moves (2025–2026)
+- **Sep 2026 (Cannes):** three world premieres — **Grande 44M** (43.85m, largest Azimut ever, mild-hybrid, Hull Vane foil; seven sold before launch), **Seadeck 9** (25.6m, battery "Hotel Mode"), **Magellano 27M** (26.2m, up to 10 guests).
+- **Jul 2026:** group president Giovanna Vitelli said Azimut|Benetti could evaluate buying some assets of The Italian Sea Group (no deal confirmed).
+- **Dec 2025:** No. 1 in Global Order Book again (~163 yachts under construction).
+- **Sep 2025 (Cannes):** **Fly 82** (new Fly flagship) and **Grande 30M** (Rooftop Lounge) premiered.
 
 ## Positioning vs Competitors
-Azimut occupies the "contemporary refined" middle of the Italian motor yacht market. Cleaner, less aggressive than Pershing. More accessible price point than Sanlorenzo's semi-custom approach. Broader lineup than Riva (which is heritage-prestige). Closest competitor to Princess (UK) at similar price tiers, though with Italian rather than British design language.
+The contemporary, design-led middle of Italian yachting: broader range than Sanlorenzo's semi-custom offer, closest rival to Princess and Ferretti Yachts at similar sizes, with Italian rather than British styling.
 
 ## TBF Context
-
-MGC Marine displayed the **Azimut Fly 60** and **Fly 53** at both TIBS 2025 (Phuket Yacht Haven Marina, January) and **TBF 2026** (Phuket Boat Lagoon Marina, January). Azimut is listed as a confirmed exhibitor brand for TBF 2027 (January 14-17). Per MGC-Asia, Asia Pacific Boating, thailandboatfestival.com.
+At the last edition (TBF 2026, January), MGC Marine displayed the Azimut Fly 60 and Fly 53. MGC also showed Azimut at TIBS 2025.
 
 ## Talking Points for Sand
-- "Azimut's S Collection is the sport line — planing hull, IPS pod drive, open layout."
-- "The Fly 82 is brand new — their Deck2Deck terrace concept is a big talking point."
-- "The Grande 30M uses Rolls-Royce mtu POD drive — that's serious technology for a yacht of that size."
-- "The Seadeck 7 is their hybrid — Volvo Penta IPS hybrid with Zero Emission Hotel Mode. 40% CO2 reduction."
-- "MGC Marine is the Thai dealer, not Simpson Marine — Simpson parted ways in 2015."
+- "The Grande 44M, launched at Cannes 2026, is the biggest Azimut ever — nearly 44 metres, with mild-hybrid tech."
+- "Seadeck is Azimut's efficiency line — the new Seadeck 9 can run hotel loads on batteries for hours."
+- "Magellano is for long-range cruising — the Magellano 27M debuted in Cannes 2026."
+- "In Thailand, Azimut is handled by MGC Marine, not Simpson Marine."
 
 ## DO NOT
-- State Simpson Marine distributes Azimut — that relationship ended May 2015
-- State Boat Lagoon Yachting is an Azimut dealer — they are not
-- Quote specific prices — they vary by country, dealer, and configuration
-- Name specific Asian Principals — discretion is everything in this segment
-- Discuss internal Azimut|Benetti Group financials
+- Say Simpson Marine or Boat Lagoon Yachting sells Azimut
+- Say Azimut|Benetti has bought any TISG assets — only "evaluating" as of Jul 2026
+- Quote exact prices — they vary by country, dealer and spec
+- Name owners or Asian Principals
+- Discuss internal group financials beyond published rankings
+- Say Azimut or MGC will exhibit at TBF 2027
