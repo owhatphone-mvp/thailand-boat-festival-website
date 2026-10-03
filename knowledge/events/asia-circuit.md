@@ -13,7 +13,7 @@ The Asian yacht show circuit has matured significantly between 2023 and 2026, wi
 
 | Show | Dates (2025–2026) | Venue | Scale | Notes |
 |------|-------------------|-------|-------|-------|
-| **TBF** | Jan 15–18, 2026 / Jan 14–17, 2027 | Boat Lagoon, Phuket | 50 yachts, 72 exhibitors, 6,380 visitors | First Asian show of the year |
+| **TBF** | Jan 15–18, 2026 / Jan 14–17, 2027 | Boat Lagoon, Phuket | 44 boats on water (fully booked), 72 exhibitors | First Asian show of the year |
 | **TIBS** | Jan 15–18, 2026 / Jan 14–17, 2027 | Yacht Haven, Phuket | 100+ exhibitors, 6,000+ visitors | Same dates as TBF — see tibs-context.md |
 | **Hong Kong Intl Boat Show** | Dec 4–7, 2025 / Mar 30–Apr 2, 2026 | Club Marina Cove / AsiaWorld-Expo | 26th edition | Dates shift between winter/spring |
 | **MYBOS Langkawi** | Apr 2–5, 2026 | Royal Langkawi YC | First ed. 2025; growing | New show |

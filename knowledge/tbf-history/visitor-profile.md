@@ -7,7 +7,7 @@
 
 ## Summary (one paragraph)
 
-TBF attracts a predominantly high-net-worth visitor base from Thailand's domestic elite and the broader Asia-Pacific yacht market. Per Asia-Pacific Boating (January 2026), TBF 2026 welcomed 6,380 attendees. The profile skews toward Thai family offices, Bangkok professionals seeking weekend boats, Phuket lifestyle buyers, and international visitors from Hong Kong, Singapore, and mainland China. Per Heesen Yachts (2025), Asia is home to 1,533 billionaires (~49% of global total), and Thailand commands approximately 12% of the Asia-Pacific luxury yacht market (per Market Data Forecast). TBF's curated VIP programs are designed to attract and convert these wealthy visitors.
+TBF attracts a predominantly high-net-worth visitor base from Thailand's domestic elite and the broader Asia-Pacific yacht market. The profile skews toward Thai family offices, Bangkok professionals seeking weekend boats, Phuket lifestyle buyers, and international visitors from Hong Kong, Singapore, and mainland China. Per Heesen Yachts (2025), Asia is home to 1,533 billionaires (~49% of global total), and Thailand commands approximately 12% of the Asia-Pacific luxury yacht market (per Market Data Forecast). TBF's curated VIP programs are designed to attract and convert these wealthy visitors.
 
 ## Key Details
 
@@ -68,7 +68,9 @@ No published demographic breakdown of TBF attendees exists. Estimates above are 
 
 ## Talking Points for Sand
 
-- "TBF attracts nearly 6,400 visitors, many serious buyers. Our VIP program offers a private, curated experience."
+- Never state visitor, attendee or VIP numbers — TBF does not publish attendance figures.
+
+- "TBF draws serious buyers and owners. Our VIP program offers a private, curated experience."
 - "Visitors come from across Asia — Bangkok, Hong Kong, Singapore, and increasingly mainland China. Phuket is a convenient regional hub."
 - "Whether it's a day boat or a 30-metre yacht, TBF lets you compare brands side by side — unique in Southeast Asia."
 

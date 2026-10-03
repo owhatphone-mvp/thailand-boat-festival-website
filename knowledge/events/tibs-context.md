@@ -35,7 +35,7 @@ The Thailand International Boat Show (TIBS) is a separate Phuket boat show organ
 
 4. **Different dealer ecosystems.** TBF's anchor is BLY (Princess, Jeanneau). TIBS exhibitors include Lagoon, Beneteau, Westport. Some overlap (Sunseeker at both), but core networks are distinct.
 
-5. **Similar scale.** TIBS: 100+ exhibitors, 6,000+ visitors. TBF: 72 exhibitors, 6,380 visitors (2026). Different experiences — TBF is more curated.
+5. **Different format.** TBF is a curated festival (72 exhibitors, 24 brands at the last edition). Never compare attendance numbers.
 
 6. **TIBS is older.** First edition January 2023 vs TBF's November 2024. Not a disadvantage — TBF is newer, dynamic, purpose-built for Boat Lagoon.
 
