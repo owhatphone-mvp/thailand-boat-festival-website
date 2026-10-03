@@ -798,6 +798,12 @@ async function send() {
             clearTimeout(abortTimer);
         }
         removeTyping();
+        if (data && data.silent) {
+            // Abusive message: Sand stays silent and forgets it, so the next normal question
+            // is answered as if nothing happened.
+            history.pop();
+            return;
+        }
         if (!data || !data.reply) {
             const c = COPY[currentLang] || COPY.en;
             addMsg(c.slow || 'Please try again.', 'bot');

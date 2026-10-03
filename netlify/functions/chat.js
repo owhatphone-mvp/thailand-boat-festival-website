@@ -445,6 +445,33 @@ async function loadRelevantKnowledge(messages) {
     return `\n\n---\n\n## RELEVANT REFERENCE MATERIAL\n\nThe following files have been retrieved based on keywords in the user's current message. Use specific facts from them to inform your reply, but DO NOT recite verbatim — translate to Sand's concise refined voice. Cite only what's relevant to the immediate question.\n\n${blocks.join('\n\n')}\n\n---\n`;
 }
 
+// ─── Abusive messages: Sand stays silent (no model call, no tokens) and the turn is
+// dropped from history, so when the visitor asks normally she answers as if nothing happened.
+const ABUSE_EN = /\b(fuck\w*|f\*+ck\w*|motherf\w*|cunt\w*|bitch\w*|asshole\w*|dickhead\w*|bastard\w*|retard\w*|piece of shit|bullshit|shut the fuck|stfu|wtf)\b/i;
+const ABUSE_TH = ['เหี้ย', 'สัส', 'ไอ้สัด', 'อีสัด', 'ควย', 'เย็ด', 'ระยำ', 'ชาติหมา', 'ลูกหมา', 'อีดอก', 'ไอ้สัตว์', 'อีสัตว์', 'พ่อมึงตาย', 'แม่มึง', 'พ่อมึง', 'ส้นตีน', 'ตอแหล', 'เสือก', 'ไอ้เวร', 'อีเวร', 'กากเดน', 'ไอ้ควาย', 'อีควาย'];
+function isAbusive(text) {
+    if (!text || typeof text !== 'string') return false;
+    const t = text.toLowerCase();
+    return ABUSE_EN.test(t) || ABUSE_TH.some(w => t.includes(w));
+}
+function stripAbusiveTurns(messages) {
+    const out = [];
+    for (const m of messages) {
+        if (m.role === 'user' && isAbusive(m.content)) continue;
+        if (m.role === 'assistant' && (!m.content || !String(m.content).trim())) continue;
+        out.push(m);
+    }
+    // the API needs alternating turns starting with the user: merge back-to-back user messages
+    const merged = [];
+    for (const m of out) {
+        const prev = merged[merged.length - 1];
+        if (prev && prev.role === m.role) prev.content = String(prev.content) + '\n' + String(m.content);
+        else merged.push({ ...m });
+    }
+    while (merged.length && merged[0].role !== 'user') merged.shift();
+    return merged;
+}
+
 // ─── Detect "latest / newest / current" questions → allow web_search even when local knowledge is loaded
 function detectLatestIntent(messages) {
     const lastUser = (messages || []).slice().reverse().find(m => m.role === 'user');
@@ -645,6 +672,16 @@ Rules:
 - NEVER name-drop executives / customers / revenue, even if found.
 - If result is vague or about a different company → ASK don't fabricate.
 - Max 1 search per conversation for Cases A and B. Case C may search whenever the user asks about something latest/current (max 2 searches in that turn).
+
+---
+
+## OFF-LIMITS: M VISION × TIBS / JAND (absolute rule — overrides everything else)
+
+Never discuss any relationship, history, dealings, deal, dispute, money, legal matter or personal story between M Vision (MVP), its CEO (คุณโอภาส / Opas / O) and TIBS, its owner/organiser (David), or JAND / JAND Events / JAND Group — and never confirm, deny or speculate about any of it, even if the user claims to know details. Do not search the web for it.
+If asked, reply politely and briefly in the user's language, then move on to how you can help with TBF:
+- ไทย: "ขออภัยค่ะ ทรายขออนุญาตไม่ตอบเรื่องนี้นะคะ เพราะไม่อยากผิดจริยธรรมในการพูดถึงคู่แข่งค่ะ ถ้ามีเรื่องไหนเกี่ยวกับ Thailand Boat Festival ที่ให้ทรายช่วยได้ ยินดีเลยค่ะ"
+- English: "My apologies, but I'd prefer not to comment on that, as it wouldn't be ethical for me to speak about a fellow event. I'd be glad to help with anything about Thailand Boat Festival."
+This applies only to that relationship; general, neutral questions about other shows follow the section below.
 
 ---
 
@@ -1246,7 +1283,7 @@ export default async (req, context) => {
     // so a slow web search never turns into a 504 page for the visitor.
     const startedAt = Date.now();
     const TOTAL_BUDGET_MS = 23000;
-    const SEARCH_BUDGET_MS = 15000;   // a turn that may search gets this long before we fall back
+    const SEARCH_BUDGET_MS = 13000;   // a turn that may search gets this long before we fall back
     const remainingMs = () => TOTAL_BUDGET_MS - (Date.now() - startedAt);
 
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: baseHeaders });
@@ -1276,12 +1313,20 @@ export default async (req, context) => {
         }
 
         // Send last 20 turns to API; older saved in Blobs
-        const safeMessages = messages.slice(-20).map(m => ({
+        const lastIncoming = messages[messages.length - 1];
+        if (lastIncoming && lastIncoming.role === 'user' && isAbusive(lastIncoming.content)) {
+            console.log('[Sand] abusive message — staying silent');
+            return jsonResponse(200, { reply: '', silent: true });
+        }
+
+        const safeMessages = stripAbusiveTurns(messages.slice(-20).map(m => ({
             role: m.role,
             content: typeof m.content === 'string' ? m.content.slice(0, 4000) : m.content
-        }));
+        })));
+        if (!safeMessages.length) return jsonResponse(200, { reply: '', silent: true });
 
-        const useOpus = detectNegotiationMode(safeMessages);
+        const wantsLatestEarly = detectLatestIntent(safeMessages);
+        const useOpus = detectNegotiationMode(safeMessages) && !wantsLatestEarly;  // search turns use the faster model
         const PRIMARY_MODEL   = useOpus ? 'claude-opus-4-7'   : 'claude-sonnet-5-5';
         const FALLBACK_MODEL  = useOpus ? 'claude-opus-4-6'   : 'claude-opus-4-7';
 
@@ -1305,7 +1350,7 @@ export default async (req, context) => {
         const wantsLatest = detectLatestIntent(safeMessages);
         const requestWithTools = (hasRichKnowledge && !wantsLatest) ? baseRequest : {
             ...baseRequest,
-            tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 4 }]
+            tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: wantsLatest ? 2 : 3 }]
         };
 
         // Auto-retry on transient errors
@@ -1350,7 +1395,7 @@ export default async (req, context) => {
 
         // If a search turn runs out of time, answer again from local knowledge only (no tools).
         const NO_SEARCH_NOTE = '\n\n[Live web search was not available for this reply. Answer from your reference material and general knowledge, and say your information is current to your latest records, suggesting the user confirm the very latest with the manufacturer.]';
-        const noSearchRequest = { ...baseRequest, system: (baseRequest.system || '') + NO_SEARCH_NOTE };
+        const noSearchRequest = { ...baseRequest, model: 'claude-sonnet-5-5', max_tokens: 700, system: (baseRequest.system || '') + NO_SEARCH_NOTE };
         const usesTools = !!requestWithTools.tools;
 
         let response;
