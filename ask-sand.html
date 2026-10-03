@@ -463,6 +463,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · Online',
         placeholder: 'Ask Sand…',
         typing: 'Sand is typing…',
+        searching: 'Checking the latest information for you…',
+        slow: 'Apologies, that took longer than expected. Please send your message again, or leave your email and our team will follow up.',
         splash: 'Sand is getting ready…',
         you: 'You',
         brand: 'Sand · M Vision Public Company Limited',
@@ -479,6 +481,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · พร้อมช่วย',
         placeholder: 'ถามทรายได้เลยค่ะ…',
         typing: 'ทรายกำลังพิมพ์…',
+        searching: 'ทรายกำลังค้นข้อมูลล่าสุดให้นะคะ…',
+        slow: 'ขออภัยค่ะ ใช้เวลานานกว่าปกติ รบกวนส่งข้อความอีกครั้ง หรือฝากอีเมลไว้ ทีมงานจะติดต่อกลับค่ะ',
         splash: 'ทรายกำลังเตรียมพร้อม…',
         you: 'คุณ',
         brand: 'ทราย · บริษัท เอ็ม วิชั่น จำกัด (มหาชน)',
@@ -495,6 +499,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · 在线',
         placeholder: '向小沙提问…',
         typing: '小沙正在输入…',
+        searching: '小沙正在为您查询最新信息…',
+        slow: '抱歉，处理时间较长。请重新发送，或留下邮箱，团队会与您联系。',
         splash: '小沙正在准备…',
         you: '您',
         brand: 'Sand · M Vision Public Company Limited',
@@ -511,6 +517,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · オンライン',
         placeholder: 'サンドにご質問ください…',
         typing: 'サンドが入力中…',
+        searching: '最新情報を確認しております…',
+        slow: '申し訳ございません。時間がかかっております。もう一度送信いただくか、メールアドレスをお知らせください。',
         splash: 'サンドが準備中…',
         you: 'あなた',
         brand: 'Sand · M Vision Public Company Limited',
@@ -527,6 +535,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · 온라인',
         placeholder: '샌드에게 무엇이든 물어보세요…',
         typing: '샌드가 입력 중…',
+        searching: '최신 정보를 확인하고 있습니다…',
+        slow: '죄송합니다. 시간이 오래 걸리고 있습니다. 다시 보내주시거나 이메일을 남겨주세요.',
         splash: '샌드가 준비 중…',
         you: '나',
         brand: 'Sand · M Vision Public Company Limited',
@@ -543,6 +553,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · Trực tuyến',
         placeholder: 'Hỏi Sand…',
         typing: 'Sand đang gõ…',
+        searching: 'Sand đang kiểm tra thông tin mới nhất…',
+        slow: 'Xin lỗi, phản hồi mất nhiều thời gian hơn dự kiến. Vui lòng gửi lại hoặc để lại email để đội ngũ liên hệ.',
         splash: 'Sand đang chuẩn bị…',
         you: 'Bạn',
         brand: 'Sand · M Vision Public Company Limited',
@@ -559,6 +571,8 @@ const COPY = {
         sub: 'Thailand Boat Festival 2027 · Онлайн',
         placeholder: 'Спросите Сэнд…',
         typing: 'Сэнд печатает…',
+        searching: 'Проверяю самую свежую информацию…',
+        slow: 'Извините, ответ занял больше времени. Пожалуйста, отправьте сообщение ещё раз или оставьте email — команда свяжется с вами.',
         splash: 'Сэнд готовится…',
         you: 'Вы',
         brand: 'Sand · M Vision Public Company Limited',
@@ -669,6 +683,7 @@ function addMsg(text, role) {
     cont.scrollTop = cont.scrollHeight;
     return wrap;
 }
+let typingTimer = null;
 function showTyping() {
     const cont = document.getElementById('messages');
     const wrap = document.createElement('div');
@@ -677,8 +692,22 @@ function showTyping() {
         <div class="bubble"><div class="dots"><span></span><span></span><span></span></div></div>`;
     cont.appendChild(wrap);
     cont.scrollTop = cont.scrollHeight;
+    // After 6 seconds Sand is probably checking the web: show a short note beside the dots
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(() => {
+        const t = document.getElementById('typing');
+        if (!t) return;
+        const c = COPY[currentLang] || COPY.en;
+        const note = document.createElement('span');
+        note.className = 'typing-note';
+        note.textContent = c.searching || '';
+        note.style.cssText = 'margin-left:0.5rem;font-size:0.78rem;opacity:0.7;';
+        const b = t.querySelector('.bubble'); if (b) b.appendChild(note);
+        cont.scrollTop = cont.scrollHeight;
+    }, 6000);
 }
 function removeTyping() {
+    clearTimeout(typingTimer);
     const t = document.getElementById('typing');
     if (t) t.remove();
 }
@@ -751,13 +780,30 @@ async function send() {
     isWaiting = true;
     showTyping();
     try {
-        const res = await fetch('/.netlify/functions/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: history, conversationId: getConversationId() })
-        });
-        const data = await res.json();
+        // Wait up to 28s (the server answers within ~23s, even when it searches the web)
+        const ctrl = new AbortController();
+        const abortTimer = setTimeout(() => ctrl.abort(), 28000);
+        let data = null;
+        try {
+            const res = await fetch('/.netlify/functions/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: history, conversationId: getConversationId() }),
+                signal: ctrl.signal
+            });
+            data = await res.json();
+        } catch (_) {
+            data = null;
+        } finally {
+            clearTimeout(abortTimer);
+        }
         removeTyping();
+        if (!data || !data.reply) {
+            const c = COPY[currentLang] || COPY.en;
+            addMsg(c.slow || 'Please try again.', 'bot');
+            history.pop();   // let the visitor resend the same question cleanly
+            return;
+        }
 
         const replyRaw = data.reply || '';
         const leadMatch = replyRaw.match(/\[LEAD_CARD\]([\s\S]*?)\[\/LEAD_CARD\]/);

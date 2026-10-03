@@ -1242,6 +1242,13 @@ const jsonResponse = (status, body) =>
     new Response(JSON.stringify(body), { status, headers: baseHeaders });
 
 export default async (req, context) => {
+    // Time budget: Netlify cuts synchronous functions at ~26s. Keep every reply inside ~23s
+    // so a slow web search never turns into a 504 page for the visitor.
+    const startedAt = Date.now();
+    const TOTAL_BUDGET_MS = 23000;
+    const SEARCH_BUDGET_MS = 15000;   // a turn that may search gets this long before we fall back
+    const remainingMs = () => TOTAL_BUDGET_MS - (Date.now() - startedAt);
+
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: baseHeaders });
     if (req.method !== 'POST')    return jsonResponse(405, { error: 'Method not allowed' });
 
@@ -1286,7 +1293,7 @@ export default async (req, context) => {
 
         const baseRequest = {
             model: PRIMARY_MODEL,
-            max_tokens: 8192,
+            max_tokens: 2048,
             system: finalSystem,
             messages: safeMessages
         };
@@ -1303,9 +1310,16 @@ export default async (req, context) => {
 
         // Auto-retry on transient errors
         const RETRYABLE = new Set([429, 500, 502, 503, 504, 529]);
-        const callAnthropic = async (body) => {
+        // callAnthropic(body, limitMs): each attempt is aborted when the time limit is reached.
+        // Retries only happen while there is still enough budget left.
+        const callAnthropic = async (body, limitMs) => {
             const backoffs = [1500, 3000];
+            const deadline = Date.now() + Math.max(1000, Math.min(limitMs || remainingMs(), remainingMs()));
             for (let attempt = 0; attempt <= backoffs.length; attempt++) {
+                const timeLeft = deadline - Date.now();
+                if (timeLeft < 1500) { const e = new Error('time budget exhausted'); e.name = 'AbortError'; throw e; }
+                const ctrl = new AbortController();
+                const timer = setTimeout(() => ctrl.abort(), timeLeft);
                 try {
                     const r = await fetch('https://api.anthropic.com/v1/messages', {
                         method: 'POST',
@@ -1314,21 +1328,42 @@ export default async (req, context) => {
                             'x-api-key': apiKey,
                             'anthropic-version': '2023-06-01'
                         },
-                        body: JSON.stringify(body)
+                        body: JSON.stringify(body),
+                        signal: ctrl.signal
                     });
-                    if (r.ok) return r;
-                    if (!RETRYABLE.has(r.status) || attempt === backoffs.length) return r;
+                    if (r.ok) { const data = await r.json(); clearTimeout(timer); return { ok: true, status: r.status, json: async () => data, text: async () => JSON.stringify(data) }; }
+                    clearTimeout(timer);
+                    const enoughTime = (deadline - Date.now()) > (backoffs[attempt] || 0) + 4000;
+                    if (!RETRYABLE.has(r.status) || attempt === backoffs.length || !enoughTime) return r;
                     console.warn(`Anthropic ${r.status} on attempt ${attempt + 1} — retrying in ${backoffs[attempt]}ms`);
                     await new Promise(res => setTimeout(res, backoffs[attempt]));
                 } catch (netErr) {
-                    if (attempt === backoffs.length) throw netErr;
+                    clearTimeout(timer);
+                    if (netErr.name === 'AbortError') throw netErr;
+                    const enoughTime = (deadline - Date.now()) > (backoffs[attempt] || 0) + 4000;
+                    if (attempt === backoffs.length || !enoughTime) throw netErr;
                     console.warn(`Network error on attempt ${attempt + 1}`, netErr.message);
                     await new Promise(res => setTimeout(res, backoffs[attempt]));
                 }
             }
         };
 
-        let response = await callAnthropic(requestWithTools);
+        // If a search turn runs out of time, answer again from local knowledge only (no tools).
+        const NO_SEARCH_NOTE = '\n\n[Live web search was not available for this reply. Answer from your reference material and general knowledge, and say your information is current to your latest records, suggesting the user confirm the very latest with the manufacturer.]';
+        const noSearchRequest = { ...baseRequest, system: (baseRequest.system || '') + NO_SEARCH_NOTE };
+        const usesTools = !!requestWithTools.tools;
+
+        let response;
+        try {
+            response = await callAnthropic(requestWithTools, usesTools ? SEARCH_BUDGET_MS : undefined);
+        } catch (e) {
+            if (e.name !== 'AbortError') throw e;
+            console.warn(`[Sand] ${usesTools ? 'search' : 'reply'} timed out after ${Date.now() - startedAt}ms`);
+            if (!usesTools || remainingMs() < 4000) {
+                return jsonResponse(200, { reply: friendlyFallback(safeMessages), fallback: true });
+            }
+            response = await callAnthropic(noSearchRequest);
+        }
 
         if (!response.ok) {
             const errText = await response.text();
@@ -1400,7 +1435,8 @@ export default async (req, context) => {
 
     } catch (err) {
         console.error('Function error:', err);
-        return jsonResponse(500, { error: err.message, fallback: true });
+        const msgs = (body && Array.isArray(body.messages)) ? body.messages : [];
+        return jsonResponse(200, { reply: friendlyFallback(msgs), fallback: true, error: err.name === 'AbortError' ? 'timeout' : 'error' });
     }
 };
 
