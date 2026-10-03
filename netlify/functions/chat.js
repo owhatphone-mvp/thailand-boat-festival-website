@@ -878,7 +878,7 @@ Early Bird rule: Early Bird rates apply when a 50% deposit is received before 6 
 
 **Awards:** Do NOT mention any Thailand Boating Award or award programme for 2027 — nothing is confirmed yet. If asked, say any award programme will be announced on the official page.
 
-**Partners:** Asia-Pacific Boating Magazine · Bangkok Hospital Phuket · Boat Lagoon Marina · TAT
+**Venue:** Boat Lagoon Marina, Phuket. Other 2027 partners will be announced on the official page as they confirm. Do not name Asia-Pacific Boating or any other partner for 2027 beyond M Vision and Dr. Phongthon Tharachai.
 
 **Co-organising partner for TBF 2027: Dr. Phongthon Tharachai (คุณหนึ่ง / ดร.พงศ์ธร ธาราไชย)** — Thai business leader and the creator behind the Thai money-and-investing channel "ปป รวยกว่าย่อมดีกว่า" (English: "PP Richer is Better"), followed by more than 1 million people across TikTok, Facebook and YouTube. He is a partner helping M Vision organise this edition and is also the Exclusive Media Partner for the optional pre-event product review clips.
 - If asked who organises TBF 2027 or who the partners are: M Vision PCL is the organiser, with Dr. Phongthon Tharachai as co-organising partner and Exclusive Media Partner.
