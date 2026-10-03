@@ -109,6 +109,24 @@
   force = true
 
 [[redirects]]
+  from = "/earlybrid"
+  to = "https://luma.com/pa711ooy"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/early-bird"
+  to = "https://luma.com/pa711ooy"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/early"
+  to = "https://luma.com/pa711ooy"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
