@@ -7,24 +7,24 @@
 
 ## Summary (one paragraph)
 
-Across its first two editions (November 2024 at Yacht Haven, January 2026 at Boat Lagoon), the Thailand Boat Festival has attracted international yacht brands represented by the major Asia-Pacific dealerships. The roster spans Italian, British, French, Finnish, American, and UAE-built yachts, plus marine services, luxury automotive, and lifestyle partners. Key dealer-exhibitors include BLY, DCH Marine, Derani Yachts, MGC Marine, Simpson Marine, V Yachts Asia, and Flow Yacht Club. Per the TBF 2027 listing on thailandboatfestival.com, confirmed returns include Azimut, Sunseeker, Princess, Jeanneau, Sanlorenzo, and Wally.
+Across its first two editions (November 2024 at Yacht Haven, January 2026 at Boat Lagoon), the Thailand Boat Festival has attracted international yacht brands represented by the major Asia-Pacific dealerships. The roster spans Italian, British, French, Finnish, American, and UAE-built yachts, plus marine services, luxury automotive, and lifestyle partners. Key dealer-exhibitors include BLY, DCH Marine, Derani Yachts, MGC Marine, Simpson Marine, V Yachts Asia, and Flow Yacht Club. No brand is confirmed for TBF 2027 yet — never say or imply that any brand will return; the 2027 line-up is announced on the page as brands confirm.
 
 ## Key Details
 
-**Yacht Brand Roster (across TBF 2024, 2026, and confirmed 2027):**
+**Yacht Brand Roster (TBF 2024 and 2026 only — nothing confirmed for 2027):**
 
 | Brand | Origin | Ballpark USD | Dealer | Editions |
 |-------|--------|-------------|--------|----------|
-| Sunseeker | UK | 2M–12M+ | DCH Marine | 2026, 2027 |
-| Princess | UK | 1.5M–15M+ | BLY | 2024, 2026, 2027 |
-| Azimut | Italy | 1M–20M+ | MGC Marine | 2024, 2026, 2027 |
-| Jeanneau | France | 300K–5M | BLY | 2024, 2026, 2027 |
-| Sanlorenzo | Italy | 3M–25M+ | Simpson Marine | 2026, 2027 |
-| Wally | Italy | 2M–10M+ | V Yachts Asia | 2026, 2027 |
-| Axopar | Finland | 100K–600K | Derani Yachts | 2024, 2026, 2027 |
-| Chris-Craft | USA | 100K–800K | MGC Marine | 2026, 2027 |
-| De Antonio | Spain | 150K–800K | Flow Yacht Club | 2026, 2027 |
-| Saxdor | Finland | 80K–400K | DCH Marine | 2026, 2027 |
+| Sunseeker | UK | 2M–12M+ | DCH Marine | 2026 |
+| Princess | UK | 1.5M–15M+ | BLY | 2024, 2026 |
+| Azimut | Italy | 1M–20M+ | MGC Marine | 2024, 2026 |
+| Jeanneau | France | 300K–5M | BLY | 2024, 2026 |
+| Sanlorenzo | Italy | 3M–25M+ | Simpson Marine | 2026 |
+| Wally | Italy | 2M–10M+ | V Yachts Asia | 2026 |
+| Axopar | Finland | 100K–600K | Derani Yachts | 2024, 2026 |
+| Chris-Craft | USA | 100K–800K | MGC Marine | 2026 |
+| De Antonio | Spain | 150K–800K | Flow Yacht Club | 2026 |
+| Saxdor | Finland | 80K–400K | DCH Marine | 2026 |
 | Greenline | Slovenia | 300K–2M | Derani Yachts | 2024, 2026 |
 | Gulf Craft | UAE | 500K–8M | Derani Yachts | 2026 |
 | Alpha Rivati | Italy | 150K–400K | Direct | 2026 |
