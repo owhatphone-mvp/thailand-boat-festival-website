@@ -1232,8 +1232,8 @@ export default async (req, context) => {
         }));
 
         const useOpus = detectNegotiationMode(safeMessages);
-        const PRIMARY_MODEL   = useOpus ? 'claude-opus-4-7'   : 'claude-sonnet-4-20250514';
-        const FALLBACK_MODEL  = useOpus ? 'claude-opus-4-6'   : 'claude-sonnet-4-20250514';
+        const PRIMARY_MODEL   = useOpus ? 'claude-opus-4-7'   : 'claude-sonnet-5-5';
+        const FALLBACK_MODEL  = useOpus ? 'claude-opus-4-6'   : 'claude-opus-4-7';
 
         // Smart-load yacht/topic knowledge based on keywords in last few messages
         const knowledgeChunk = await loadRelevantKnowledge(safeMessages);
