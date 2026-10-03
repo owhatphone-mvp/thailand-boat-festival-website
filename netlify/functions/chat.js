@@ -454,10 +454,38 @@ function isAbusive(text) {
     const t = text.toLowerCase();
     return ABUSE_EN.test(t) || ABUSE_TH.some(w => t.includes(w));
 }
+// ─── Gibberish / trolling (keyboard mashing, random characters, symbol spam): stay silent too
+const KEY_ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm', 'ฟหกดเ้่าสวง', 'ๆไำพะัีรนยบลฃ', 'ผปแอิืทมใฝ'];
+const KEY_CHUNKS = (() => {
+    const out = [];
+    for (const r of KEY_ROWS) for (const row of [r, [...r].reverse().join('')]) {
+        const a = [...row];
+        for (let i = 0; i + 5 <= a.length; i++) out.push(a.slice(i, i + 5).join(''));
+    }
+    return out;
+})();
+function isGibberish(text) {
+    if (typeof text !== 'string') return false;
+    const t = text.trim();
+    if (!t) return true;
+    if (/^[\p{P}\p{S}\s]+$/u.test(t) && !/[?？]/.test(t)) return true;            // only symbols / emoji
+    const low = t.toLowerCase().replace(/\s+/g, '');
+    if (/(.)\1{4,}/u.test(low) && low.replace(/(.)\1+/gu, '$1').length <= 3) return true;  // "aaaaaa", "5555555"
+    if ([...low].length <= 40 && KEY_CHUNKS.some(c => low.includes(c))) return true;      // keyboard mashing (EN/TH)
+    const latin = t.split(/\s+/).filter(w => /^[a-z]+$/i.test(w));
+    if (latin.length && latin.length === t.split(/\s+/).length && latin.every(w => w.length >= 6 && !/[aeiouy]/i.test(w))) return true;
+    if (/^[a-z]{10,}$/i.test(low)) {
+        const v = (low.match(/[aeiou]/g) || []).length / low.length;
+        if (v < 0.15) return true;
+    }
+    return false;
+}
+const shouldIgnore = (text) => isAbusive(text) || isGibberish(text);
+
 function stripAbusiveTurns(messages) {
     const out = [];
     for (const m of messages) {
-        if (m.role === 'user' && isAbusive(m.content)) continue;
+        if (m.role === 'user' && shouldIgnore(m.content)) continue;
         if (m.role === 'assistant' && (!m.content || !String(m.content).trim())) continue;
         out.push(m);
     }
@@ -672,6 +700,11 @@ Rules:
 - NEVER name-drop executives / customers / revenue, even if found.
 - If result is vague or about a different company → ASK don't fabricate.
 - Max 1 search per conversation for Cases A and B. Case C may search whenever the user asks about something latest/current (max 2 searches in that turn).
+
+---
+
+## NONSENSE / TROLLING → SILENCE
+If the user's latest message is meaningless (random characters, keyboard mashing, nonsense words), deliberate trolling, or abuse with no real question, reply with exactly [SILENT] and nothing else — no NEXT_QUESTIONS. When they later ask something real, answer normally, as if nothing happened; never mention the earlier messages. Short real messages ("hi", "?", "ok", a greeting, an emoji after your answer) are NOT nonsense — answer those normally.
 
 ---
 
@@ -1314,8 +1347,10 @@ export default async (req, context) => {
 
         // Send last 20 turns to API; older saved in Blobs
         const lastIncoming = messages[messages.length - 1];
-        if (lastIncoming && lastIncoming.role === 'user' && isAbusive(lastIncoming.content)) {
-            console.log('[Sand] abusive message — staying silent');
+        const userTexts = messages.filter(m => m.role === 'user').map(m => String(m.content || '').trim());
+        const spamRepeat = userTexts.length >= 3 && userTexts.slice(-3).every(x => x === userTexts[userTexts.length - 1]);
+        if (lastIncoming && lastIncoming.role === 'user' && (shouldIgnore(lastIncoming.content) || spamRepeat)) {
+            console.log('[Sand] abusive / gibberish / spam message — staying silent');
             return jsonResponse(200, { reply: '', silent: true });
         }
 
@@ -1454,6 +1489,11 @@ export default async (req, context) => {
         if (data.stop_reason === 'max_tokens' && reply) {
             console.warn('Anthropic stopped at max_tokens. Length:', reply.length);
             reply = reply.replace(/[\s,.;:—-]+$/, '') + '…';
+        }
+
+        if (/^\s*\[SILENT\]\s*$/.test(reply)) {
+            console.log('[Sand] model chose silence');
+            return jsonResponse(200, { reply: '', silent: true });
         }
 
         if (!reply) {
