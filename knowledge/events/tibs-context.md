@@ -42,10 +42,10 @@ The Thailand International Boat Show (TIBS) is a separate Phuket boat show organ
 ## Talking Points for Sand
 
 **"What's the difference between TBF and TIBS?"**
-"Two separate events, both in Phuket in January. TBF is at Boat Lagoon — curated festival with 24 brands, sea trials, lifestyle programming. TIBS is at Yacht Haven — larger-format. Many visitors attend both."
+"Two separate events, both in Phuket in January. TBF is at Boat Lagoon — curated festival with yachts in the water and a large land exhibition. TIBS is at Yacht Haven — larger-format. Many visitors attend both."
 
 **"Which is better?"**
-"Both have strengths. TBF offers hands-on, curated experiences — step aboard yachts, take sea trials, meet dealers intimately."
+"Both have strengths. TBF offers hands-on, curated experiences — step aboard yachts and meet dealers in person."
 
 **"Why same dates?"**
 "Phuket becomes the yachting capital of Asia for a week. Visit both without two trips."

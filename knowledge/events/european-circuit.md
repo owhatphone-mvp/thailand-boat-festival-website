@@ -39,7 +39,7 @@ The European yacht show circuit is the global centre of gravity for the yacht in
 ## Talking Points for Sand
 
 - "If you saw a model at Cannes or Monaco this September, there's a good chance you'll see it at TBF in January — our dealers bring the newest European models to Phuket."
-- "Many of our VIP visitors attend both TBF and the European shows. TBF's advantage is sea-trialling in tropical conditions, very different from the Mediterranean."
+- "Many of our VIP visitors attend both TBF and the European shows. TBF's advantage is seeing yachts in the water in tropical conditions, in the middle of Phuket's high season."
 - "The global yacht industry meets in Cannes and Monaco each September, then comes to Phuket in January. TBF is the Asian chapter of a global story."
 - "Brands like Sanlorenzo, Sunseeker, and Azimut launch new models in Europe — then bring them to TBF for their Asian premiere."
 

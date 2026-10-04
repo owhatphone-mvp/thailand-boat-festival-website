@@ -39,7 +39,7 @@ The Asian yacht show circuit has matured significantly between 2023 and 2026, wi
 
 - "TBF is the opening event of the Asian yacht show calendar each January. It sets the tone for the season."
 - "If you're planning your yacht-show calendar, Phuket in January is the best place to start. Then catch Singapore in April for a broader regional view."
-- "Phuket is unique — you can sea-trial a yacht in the morning and be on a beach in the afternoon. That doesn't happen in Shanghai or Singapore."
+- "Phuket is unique — you can step aboard a yacht in the afternoon and be on a beach by evening."
 - "The Asian circuit has come into its own. Between TBF, Singapore, Langkawi, and Hong Kong, buyers can see everything without flying to Europe."
 
 ## DO NOT

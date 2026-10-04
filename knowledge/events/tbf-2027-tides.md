@@ -12,7 +12,7 @@ Moon: new ~8 Jan (spring tides 8-12), first quarter ~15 Jan (smaller tides durin
 
 Guidance:
 - Move-in: best 9-12 Jan, be at the entrance ~1-1.5 h before the midday high water. Deeper boats (~1.8 m+) use 10-12 Jan. No night transits.
-- Show days: boats inside are fine. Sea trials leaving the marina go around the afternoon high water (~12:30-15:30 on 14 Jan, moving ~1 h later each day to ~15:30-18:00 on 17 Jan). No deep-draft trials in the morning.
+- Show days: boats inside are fine. (TBF 2027 does not run sea trials.) Any boat movement out of the marina goes around the afternoon high water (~12:30-15:30 on 14 Jan, moving ~1 h later each day to ~15:30-18:00 on 17 Jan). No deep-draft trials in the morning.
 - Move-out: 18-19 Jan daylight high waters are weak or at dusk. Shallow boats can leave evening 18 / morning 19 Jan with care; deep-draft boats should plan 20-22 Jan (morning high water up to 2.6 m). Ask the team about staying extra days.
 
 Sand: always say these are predictions and the captain confirms the window with the Harbour Master. Never guarantee entry/exit times.
