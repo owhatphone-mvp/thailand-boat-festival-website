@@ -96,6 +96,12 @@
   status = 200
 
 [[redirects]]
+  from = "/vip"
+  to = "https://luma.com/thailand-a0ah"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/earlybird"
   to = "https://luma.com/pa711ooy"
   status = 302
