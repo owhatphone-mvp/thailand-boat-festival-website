@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Concierge — Thailand Boat Festival 2027</title>
+<meta name="description" content="For VIP Pass holders: tell the TBF team which yachts you'd like to view and we'll arrange your priority viewings.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="images/cropped-log-01-90x56.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Instrument+Serif:ital@0;1&family=Noto+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--sea:#08222c;--sea2:#103340;--paper:#eef1ec;--ink:#0f252d;--muted:#5a6d71;--line:#cfd8d2;--brass:#b39a5f;--brass-lt:#cfb57f;--foam:#f4f6f1;--err:#b3261e;
+--sans:"Archivo","Noto Sans Thai","Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+.top{background:var(--sea);color:var(--foam);padding:28px 20px 44px}
+.wrap{max-width:640px;margin:0 auto}
+.top img{height:46px;width:auto;display:block}
+.top h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,9vw,3.8rem);line-height:1;margin:34px 0 0}
+.top h1 em{color:var(--brass-lt)}
+.top p{color:#c9d8da;margin:14px 0 0;max-width:34rem}
+.top .th{display:block;color:#9fb6ba;font-size:.92rem;margin-top:4px}
+form{padding:8px 20px 56px}
+fieldset{border:0;margin:0;padding:22px 0;border-bottom:1px solid var(--line)}
+legend,label.q{display:block;font-weight:650;font-variation-settings:"wdth" 108;font-size:1rem;padding:0;margin-bottom:8px}
+.sub{display:block;font-weight:400;color:var(--muted);font-size:.86rem;margin-top:2px}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:6px;padding:.75em .85em}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--brass);outline-offset:1px;border-color:var(--brass)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.grid2{grid-template-columns:1fr}}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0}
+.opt span{display:inline-block;padding:.6em 1em;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-size:.95rem}
+.opt input:checked+span{background:var(--sea);border-color:var(--sea);color:var(--foam)}
+.opt input:focus-visible+span{outline:2px solid var(--brass);outline-offset:2px}
+.check{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;margin-top:12px;cursor:pointer}
+.check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--sea)}
+.fine{color:var(--muted);font-size:.85rem;margin-top:14px}
+.hp{position:absolute;left:-9999px}
+button{margin-top:28px;width:100%;font:inherit;font-weight:650;font-variation-settings:"wdth" 112;font-size:1.05rem;color:var(--foam);background:var(--sea);border:0;border-radius:6px;padding:1em;cursor:pointer}
+button:hover{background:var(--sea2)}
+button[disabled]{opacity:.6;cursor:wait}
+.msg{margin-top:16px;padding:14px 16px;border-radius:6px;font-size:.95rem}
+.msg.err{background:#fbeaea;color:var(--err)}
+.done{padding:40px 20px 64px;text-align:left}
+.done h2{font-family:var(--serif);font-weight:400;font-size:2.4rem;margin:0}
+.done p{color:var(--muted)}
+.req{color:var(--brass)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="images/cropped-log-01.png" alt="Thailand Boat Festival">
+  <h1>VIP <em>Concierge</em></h1>
+  <p>Thank you for your VIP Pass. Tell us what you'd like to see and our team will arrange your priority yacht viewings before you arrive. It takes about a minute.
+  <span class="th">ขอบคุณที่เลือกบัตร VIP บอกเราว่าอยากชมเรือแบบไหน ทีมงานจะนัดชมเรือให้ก่อนวันงาน ใช้เวลาราว 1 นาที</span></p>
+  <p style="font-size:.9rem;color:#9fb6ba">14–17 January 2027 · Boat Lagoon Marina, Phuket</p>
+</div></header>
+
+<main class="wrap">
+<form id="f" novalidate>
+  <fieldset>
+    <div class="grid2">
+      <div><label class="q" for="name">Your name <span class="req">*</span><span class="sub">ชื่อ-นามสกุล</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+      <div><label class="q" for="email">Email used for your VIP Pass <span class="req">*</span><span class="sub">อีเมลที่ใช้ซื้อบัตร</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div><label class="q" for="company">Company<span class="sub">บริษัท</span></label><input id="company" name="company" type="text" autocomplete="organization"></div>
+      <div><label class="q" for="position">Position<span class="sub">ตำแหน่ง</span></label><input id="position" name="position" type="text" autocomplete="organization-title"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label class="q" for="boats">Which yachts would you like to see?<span class="sub">อยากชมเรือแบบไหน บอกแบรนด์ รุ่น ขนาด หรือการใช้งานได้เลย</span></label>
+    <textarea id="boats" name="boats" placeholder="e.g. Flybridge 18–25 m, a power catamaran for family cruising, Sunseeker or Azimut"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Shall we book priority viewings for you?<span class="sub">ให้ทีมงานนัดชมเรือให้ไหม</span></legend>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="viewing" value="yes" checked><span>Yes, please · ใช่ นัดให้เลย</span></label>
+      <label class="opt"><input type="radio" name="viewing" value="not-now"><span>Not now · ยังไม่ต้อง</span></label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Which days do you plan to visit?<span class="sub">ตั้งใจมาวันไหน (เลือกได้มากกว่า 1 วัน)</span></legend>
+    <div class="opts">
+      <label class="opt"><input type="checkbox" name="days" value="Thu 14 Jan"><span>Thu 14 Jan</span></label>
+      <label class="opt"><input type="checkbox" name="days" value="Fri 15 Jan"><span>Fri 15 Jan</span></label>
+      <label class="opt"><input type="checkbox" name="days" value="Sat 16 Jan"><span>Sat 16 Jan</span></label>
+      <label class="opt"><input type="checkbox" name="days" value="Sun 17 Jan"><span>Sun 17 Jan</span></label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Your privacy<span class="sub">ความเป็นส่วนตัว (ไม่บังคับ)</span></legend>
+    <label class="check"><input type="checkbox" id="consent_network"><span>Share my name and company with other VIP guests and exhibitors for networking at the festival.<span class="sub">แบ่งปันชื่อและบริษัทของฉันกับแขก VIP และผู้แสดงสินค้าในงาน เพื่อการเชื่อมต่อทางธุรกิจ</span></span></label>
+    <label class="check"><input type="checkbox" id="consent_website"><span>Feature my name and profile on the TBF website VIP page.<span class="sub">แสดงชื่อและโปรไฟล์ของฉันบนหน้า VIP ของเว็บไซต์ TBF</span></span></label>
+    <p class="fine">You can withdraw consent at any time by emailing info@thailandboatfestival.com. ถอนความยินยอมได้ตลอดทางอีเมลนี้ · <a href="/privacy">Privacy</a></p>
+  </fieldset>
+
+  <input class="hp" type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button type="submit" id="send">Send to the VIP team · ส่งให้ทีมงาน</button>
+  <div id="msg" class="msg err" hidden></div>
+</form>
+
+<section id="done" class="done" hidden>
+  <h2>Thank you</h2>
+  <p>Our VIP team will be in touch to confirm your viewings, usually within two working days.<br>
+  ทีมงาน VIP จะติดต่อกลับเพื่อยืนยันนัดชมเรือ ภายในประมาณ 2 วันทำการ</p>
+  <p>Questions: info@thailandboatfestival.com · <a href="https://m.me/thailandboatfestival">Message us on Facebook</a></p>
+</section>
+</main>
+
+<script>
+(function(){
+  var f=document.getElementById('f'),msg=document.getElementById('msg'),btn=document.getElementById('send');
+  try{var q=new URLSearchParams(location.search);if(q.get('email'))f.elements['email'].value=q.get('email');if(q.get('name'))f.elements['name'].value=q.get('name');}catch(e){}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();msg.hidden=true;
+    var name=f.elements['name'].value.trim(),email=f.elements['email'].value.trim();
+    if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.textContent='Please add your name and the email you used for your VIP Pass. · กรุณากรอกชื่อและอีเมลที่ใช้ซื้อบัตร';msg.hidden=false;return;}
+    var days=[].slice.call(f.querySelectorAll('input[name=days]:checked')).map(function(x){return x.value});
+    var body={name:name,email:email,company:f.elements['company'].value,position:f.elements['position'].value,boats:f.elements['boats'].value,
+      viewing:(f.querySelector('input[name=viewing]:checked')||{}).value||'',days:days,
+      consent_network:document.getElementById('consent_network').checked,consent_website:document.getElementById('consent_website').checked,
+      website:f.elements['website'].value,lang:navigator.language||''};
+    btn.disabled=true;btn.textContent='Sending… · กำลังส่ง';
+    fetch('/api/vip-concierge',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json().then(function(j){return{ok:r.ok&&j.ok}})})
+      .then(function(res){
+        if(res.ok){f.hidden=true;document.getElementById('done').hidden=false;window.scrollTo(0,0);}
+        else throw new Error();
+      })
+      .catch(function(){msg.textContent='We could not send your details. Please try again, or email info@thailandboatfestival.com. · ส่งข้อมูลไม่สำเร็จ กรุณาลองอีกครั้ง หรืออีเมลถึงเรา';msg.hidden=false;})
+      .finally(function(){btn.disabled=false;btn.textContent='Send to the VIP team · ส่งให้ทีมงาน';});
+  });
+})();
+</script>
+</body>
+</html>
