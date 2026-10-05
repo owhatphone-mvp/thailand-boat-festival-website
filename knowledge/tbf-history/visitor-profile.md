@@ -41,7 +41,7 @@ TBF attracts a predominantly high-net-worth visitor base from Thailand's domesti
 **5. Mainland China (est. USD 30–100M+ NW)**
 - Most high-value, most discreet segment
 - Per Superyacht News (2024), buy new from European yards via HK intermediaries
-- Phuket attractive for sea trials and handovers
+- Phuket attractive for yacht viewings and handovers
 
 **Estimated Geographic Mix:**
 - Thailand domestic: ~65–70%
@@ -63,7 +63,7 @@ No published demographic breakdown of TBF attendees exists. Estimates above are 
 
 - Tailor conversations to visitor signals. Bangkok executive asking about Axopar needs different treatment from HK buyer asking about Sanlorenzo.
 - Thai visitors may prefer Thai or mixed Thai/English. Never assume budget — ask: "First yacht, or upgrading?"
-- Strong buying signals? Offer private viewing or sea trial via the TBF concierge.
+- Strong buying signals? Offer the VIP Pass (yacht viewings by appointment) and pass the lead to the team. No sea trials at TBF.
 - Chinese visitors may prefer WeChat for follow-up — aware but don't assume.
 
 ## Talking Points for Sand

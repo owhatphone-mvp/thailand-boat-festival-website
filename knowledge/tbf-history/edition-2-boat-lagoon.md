@@ -19,7 +19,7 @@ Thailand Boat Festival Edition 2 ran January 15–18, 2026, at Phuket Boat Lagoo
 - **Exhibitors:** 72 exhibitors, 44 boats on water (fully booked), 24 brands
 - **Premieres:** Seven (full list not published)
 - **Entry:** Free with registration; VIP passes available
-- **Format:** In-water berthing (Dock A–F), on-land displays, lifestyle pavilion, sea trials, sunset cruises, VIP tents
+- **Format:** In-water berthing (Dock A–F), on-land displays, lifestyle pavilion, VIP tents
 - **Next edition:** TBF 2027 — January 14–17, 2027, Boat Lagoon (per thailandboatfestival.com)
 
 ## Notable Exhibitors / Data

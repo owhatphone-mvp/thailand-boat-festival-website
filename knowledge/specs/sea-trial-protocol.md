@@ -2,12 +2,12 @@
 
 > **File path:** `knowledge/specs/sea-trial-protocol.md`
 > **Keywords:** `["sea-trial", "yacht-purchase", "boat-testing", "survey", "pre-purchase", "TBF-marina"]`
-> **Last updated:** 2026-06-05
+> **Last updated:** 2026-10-05 (TBF has no sea trials)
 > **Source confidence:** Web-sourced
 
 ## Summary (one paragraph)
 
-A sea trial is the on-water evaluation of a yacht before purchase, typically lasting 2-4 hours and covering engine performance, handling, electronics, stabilisation, and anchoring. It is conducted after a satisfactory out-of-water survey and before the final sale. At TBF, dealers arrange sea trials directly from the marina, allowing buyers to experience the yacht in real Thai coastal conditions. Per YATCO and Salterns Brokerage, a well-structured sea trial can reveal issues worth tens of thousands in repairs.
+A sea trial is the on-water evaluation of a yacht before purchase, typically lasting 2-4 hours and covering engine performance, handling, electronics, stabilisation, and anchoring. It is conducted after a satisfactory out-of-water survey and before the final sale. **TBF does not run sea trials:** at the festival, buyers view yachts in the water at the berth (VIP Pass guests by appointment); any sea trial is arranged privately with the dealer after the show. Per YATCO and Salterns Brokerage, a well-structured sea trial can reveal issues worth tens of thousands in repairs.
 
 ## Key Information
 
@@ -46,12 +46,12 @@ Key systems tested per YachtTrading.com (2025): engines (cold start, WOT RPM, vi
 
 ## Asian / Thai Market Context
 
-At TBF, dealers arrange sea trials from the host marina (typically Boat Lagoon, Phuket). Per SeaRadar (2025), Phuket's tidal range is 2.5-3.5m on spring tides; trials should be scheduled around slack or mid-tide. Weather windows are best December-March when the Andaman Sea is calm. During the southwest monsoon (May-October), conditions can deteriorate quickly. Thai waters near Phuket average 10-20m depth, useful for depth sounder testing but limiting WOT runs in some channels.
+TBF itself does not run sea trials. When a buyer arranges a sea trial with a dealer after the show, it usually departs from a Phuket marina such as Boat Lagoon. Per SeaRadar (2025), Phuket's tidal range is 2.5-3.5m on spring tides; trials should be scheduled around slack or mid-tide. Weather windows are best December-March when the Andaman Sea is calm. During the southwest monsoon (May-October), conditions can deteriorate quickly. Thai waters near Phuket average 10-20m depth, useful for depth sounder testing but limiting WOT runs in some channels.
 
 ## Talking Points for Sand
 
 - Always recommend an independent surveyor attends — the most valuable investment in the purchase process.
-- At TBF, dealers handle logistics: fuelling, crew, insurance, scheduling. Buyers just show up prepared.
+- TBF does not run sea trials. At the festival, buyers view yachts at the berth (VIP Pass guests get viewings by appointment). For a sea trial, put the buyer in touch with the dealer to arrange after the show.
 - A sea trial is a structured evaluation, not a day out.
 - Test at expected cruising speeds, not just wide-open throttle.
 - Tropical heat stress-tests cooling systems — an advantage for buyers.
@@ -62,7 +62,7 @@ At TBF, dealers arrange sea trials from the host marina (typically Boat Lagoon, 
 - Quote specific surveyor fees or recommend individual surveyors.
 - Suggest that skipping a sea trial is acceptable for any purchase above $100,000.
 - Describe sea trials as "test drives" — they are formal evaluations.
-- Promise that all TBF yacht models will be available for sea trials.
+- Say or imply that sea trials or test drives happen at TBF — they don't.
 
 ## Research gaps
 

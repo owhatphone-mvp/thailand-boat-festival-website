@@ -16,7 +16,7 @@ The first Thailand Boat Festival (TBF) took place November 13–17, 2024, at Phu
 - **Marina specs:** 320 berths, vessels up to 100m LOA, 6m+ depth, ~15 min from airport. Per TYHA, features superyacht berths and a full-service yard
 - **Organizer:** Dream Marine Events. Per Yacht Style (January 2026), founder Araya launched the company for a premium Thai boat festival
 - **Exhibitor count:** 100+ exhibitors, ~45 boat displays (per Prestige Online, November 2024)
-- **Format:** In-water displays, on-land displays, lifestyle pavilions, sea trials, sunset champagne cruises, VIP lounges
+- **Format:** In-water displays, on-land displays, lifestyle pavilions, VIP lounges
 - **Entry:** Free with pre-registration
 - **Timing:** Peak tourism season; just weeks before Phuket King's Cup Regatta
 
@@ -46,7 +46,7 @@ The first Thailand Boat Festival (TBF) took place November 13–17, 2024, at Phu
 - "TBF launched in November 2024 at Phuket Yacht Haven, one of Asia's largest marinas with 320 berths — the response exceeded expectations."
 - "The first edition brought together over 45 yachts and 100 exhibitors across marine and lifestyle categories."
 - "We chose Yacht Haven for Edition 1 for its airport proximity and superyacht capacity. For Edition 2, we moved to our long-term home at Boat Lagoon Marina."
-- "TBF is designed as a festival — sea trials, sunset cruises, and VIP experiences are central to the format."
+- "TBF is designed as a festival — yachts in the water, lifestyle and VIP experiences are central to the format."
 
 ## DO NOT
 
