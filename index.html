@@ -157,6 +157,13 @@ section{padding-block:clamp(64px,9vw,120px)}
 .units button{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--contour);border:0;padding:.55em 1.1em;cursor:pointer}
 .units button[aria-pressed="true"]{background:var(--foam);color:var(--sea)}
 .units button:focus-visible{outline:2px solid var(--contour);outline-offset:2px}
+.lookup{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-bottom:6px}
+.lookup input{width:100%;background:var(--sea);border:1px solid var(--sea-line);color:var(--foam);font-family:var(--mono);font-size:1rem;padding:.7em .8em;border-radius:0}
+.lookup input:focus{border-color:var(--contour);outline:none}
+.lookup button{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;background:var(--foam);color:var(--sea);border:0;padding:0 1.1em;cursor:pointer}
+.lookup button[disabled]{opacity:.6;cursor:wait}
+.lookup-msg{font-size:.85rem;color:var(--contour);min-height:1.3em;margin:0 0 16px}
+.lookup-msg a{color:var(--foam)}
 .finder .fine{font-size:.8rem;color:var(--contour);margin-top:16px}
 .finder .btn{margin-top:18px}
 .priority{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;border:1px solid var(--buoy);padding:20px 22px}
@@ -456,6 +463,9 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163946;padding-top:20px;fon
       <div class="finder">
         <h3>Berth finder</h3>
         <p>Enter your boat and see which dock it fits. Our team confirms every berth.</p>
+        <label class="mono" for="model" style="display:block;font-size:.7rem;letter-spacing:.1em;color:var(--contour);margin-bottom:6px">Boat model · รุ่นเรือ</label>
+        <form class="lookup" id="lookup" autocomplete="off"><input id="model" type="text" placeholder="e.g. Azimut 68, Lagoon 46" maxlength="80"><button type="submit" id="lookupBtn">Search · ค้นหา</button></form>
+        <p class="lookup-msg" id="lookupMsg" aria-live="polite">Type your model and we fill in the size. You can edit every number. · พิมพ์รุ่นเรือ ระบบจะกรอกขนาดให้ แก้ไขเองได้</p>
         <div class="units" role="group" aria-label="Units / หน่วย"><button type="button" data-u="m" aria-pressed="true">Metres · เมตร</button><button type="button" data-u="ft" aria-pressed="false">Feet · ฟุต</button></div>
         <div class="fields">
           <div class="field"><label for="hull">Hull</label><select id="hull"><option value="mono">Monohull</option><option value="cat">Catamaran</option></select></div>
@@ -671,6 +681,29 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163946;padding-top:20px;fon
     fit();
   }
   [].forEach.call(document.querySelectorAll('.units button'),function(b){ b.addEventListener('click',function(){ setUnit(b.getAttribute('data-u')); }); });
+  var lmsg=$('lookupMsg'), lbtn=$('lookupBtn');
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  $('lookup').addEventListener('submit',function(e){
+    e.preventDefault();
+    var q=$('model').value.trim(); if(q.length<3){ lmsg.textContent='Please enter a brand and model, e.g. Azimut 68. · กรุณาพิมพ์ยี่ห้อและรุ่น'; return; }
+    lbtn.disabled=true; lbtn.textContent='Searching…'; lmsg.textContent='Looking up '+q+'. This can take up to 20 seconds. · กำลังค้นหา อาจใช้เวลาถึง 20 วินาที';
+    fetch('/api/boat-specs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(!j.ok) throw new Error(j.error||'');
+        if(!j.found){ lmsg.textContent='We couldn\u2019t find reliable specs for "'+q+'". Please enter the size below. · ไม่พบข้อมูลรุ่นนี้ กรุณากรอกขนาดเอง'; return; }
+        var f=(unit==='ft')?FT:1, r1=function(v){return unit==='ft'?Math.round(v*f*2)/2:Math.round(v*10)/10};
+        $('hull').value=j.hull==='cat'?'cat':'mono';
+        if(j.loa_m) $('loa').value=r1(j.loa_m);
+        if(j.beam_m) $('beam').value=r1(j.beam_m);
+        if(j.draft_m) $('draft').value=r1(j.draft_m);
+        fit();
+        var name=esc(((j.brand||'')+' '+(j.model||'')).trim()||q);
+        lmsg.innerHTML='Filled in for <b>'+name+'</b>'+(j.source?' (<a href="'+esc(j.source)+'" target="_blank" rel="noopener nofollow">source</a>)':'')+'. Please check and edit if your boat differs. · กรอกให้แล้ว กรุณาตรวจสอบและแก้ไขได้';
+      })
+      .catch(function(){ lmsg.textContent='Search is unavailable right now. Please enter the size below. · ค้นหาไม่ได้ในขณะนี้ กรุณากรอกขนาดเอง'; })
+      .finally(function(){ lbtn.disabled=false; lbtn.textContent='Search · ค้นหา'; });
+  });
   fit();
   $('copyEmail').addEventListener('click',function(){
     var b=this, t=$('email').textContent;

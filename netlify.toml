@@ -56,6 +56,11 @@
   status = 200
 
 [[redirects]]
+  from = "/api/boat-specs"
+  to = "/.netlify/functions/boat-specs"
+  status = 200
+
+[[redirects]]
   from = "/api/vip-concierge"
   to = "/.netlify/functions/vip-concierge"
   status = 200
