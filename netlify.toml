@@ -147,7 +147,4 @@
   to = "/privacy.html"
   status = 200
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No catch-all: unknown URLs now return 404.html with a real 404 status (SEO: avoids soft-404 duplicates).
