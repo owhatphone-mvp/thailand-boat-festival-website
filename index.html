@@ -2,6 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18503297653"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18503297653');
+  // Count clicks to the registration / VIP pages (conversion actions are set in Google Ads)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var kind = /\/earlybird\b/.test(h) ? 'earlybird' : (/\/vip\b/.test(h) ? 'vip' : null);
+    if (!kind) return;
+    gtag('event', 'register_click', { pass_type: kind, page_lang: document.documentElement.lang, transport_type: 'beacon' });
+  }, true);
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thailand Boat Festival 2027 · Phuket Boat &amp; Yacht Show · 14–17 Jan</title>
 <meta name="description" content="Phuket boat and yacht show, 14–17 January 2027 at Boat Lagoon Marina. 50+ yachts in the water, 100+ booths on land. Register by 30 Nov 2026 for complimentary entry.">
