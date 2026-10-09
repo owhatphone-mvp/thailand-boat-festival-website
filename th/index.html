@@ -17,6 +17,7 @@
     var kind = /\/earlybird\b/.test(h) ? 'earlybird' : (/\/vip\b/.test(h) ? 'vip' : null);
     if (!kind) return;
     gtag('event', 'register_click', { pass_type: kind, page_lang: document.documentElement.lang, transport_type: 'beacon' });
+    if (kind === 'earlybird') gtag('event', 'conversion', { send_to: 'AW-18503297653/76DYCIzI2JYdEPXUh_dE', value: 1.0, currency: 'THB', transport_type: 'beacon' });
   }, true);
 </script>
 
