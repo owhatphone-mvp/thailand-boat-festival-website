@@ -225,3 +225,14 @@ nav.main .btn { color: var(--ink); }
 @media (max-width: 640px) { .enq-grid { grid-template-columns: 1fr; } }
 .hall-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 @media (max-width: 700px) { .hall-actions .toggle { display: none; } }
+
+/* embedded 3D explorer replaces the tilted plan */
+.hall-text { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: end; }
+.hall-tip { color: var(--muted-d); font-size: 15px; max-width: 30em; }
+.explorer-wrap { margin-top: 26px; }
+.explorer-frame { display: block; width: 100%; height: 760px; border: 0; border-radius: 6px; background: #e6e8e1; box-shadow: var(--lift-strong); }
+.plan-cap { margin-top: 12px; font-size: 13px; color: var(--label-d); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.plan-cap a { color: var(--brass); }
+@media (max-width: 1050px) { .explorer-frame { height: 980px; } }
+@media (max-width: 760px) { .explorer-frame { height: 900px; } }
+@media (max-width: 480px) { .explorer-frame { height: 820px; } }
