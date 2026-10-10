@@ -223,3 +223,5 @@ nav.main .btn { color: var(--ink); }
 .enq-msg { margin-top: 12px; color: var(--stone); min-height: 1.4em; }
 .enq-msg.err { color: #F0C9A6; }
 @media (max-width: 640px) { .enq-grid { grid-template-columns: 1fr; } }
+.hall-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+@media (max-width: 700px) { .hall-actions .toggle { display: none; } }

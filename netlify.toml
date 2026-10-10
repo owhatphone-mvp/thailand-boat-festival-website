@@ -156,6 +156,78 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://propertyexpophuket.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://propertyexpophuket.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.propertyexpophuket.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.propertyexpophuket.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://phuketpropertyxpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://phuketpropertyxpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.phuketpropertyxpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.phuketpropertyxpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thailandpropertyexpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thailandpropertyexpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.thailandpropertyexpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.thailandpropertyexpo.com/3d"
+  to = "https://www.thailandboatfestival.com/property/3d/"
+  status = 301
+  force = true
+
 # Phuket Property Expo domains -> /property (host rules must come before path rules)
 # Early Bird registration on Luma (Phuket Property Expo event)
 [[redirects]]
