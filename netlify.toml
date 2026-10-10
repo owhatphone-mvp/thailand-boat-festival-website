@@ -58,145 +58,145 @@
 # Phuket Property Expo domains -> /property (host rules must come before path rules)
 [[redirects]]
   from = "https://propertyexpophuket.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://propertyexpophuket.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://propertyexpophuket.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://propertyexpophuket.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://propertyexpophuket.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://propertyexpophuket.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.propertyexpophuket.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.propertyexpophuket.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.propertyexpophuket.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.propertyexpophuket.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.propertyexpophuket.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.propertyexpophuket.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://phuketpropertyxpo.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://phuketpropertyxpo.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://phuketpropertyxpo.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://phuketpropertyxpo.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://phuketpropertyxpo.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://phuketpropertyxpo.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.phuketpropertyxpo.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.phuketpropertyxpo.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://www.phuketpropertyxpo.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.phuketpropertyxpo.com/th"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.phuketpropertyxpo.com/th/*"
-  to = "https://thailandboatfestival.com/property/th/"
+  to = "https://www.thailandboatfestival.com/property/th/"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.phuketpropertyxpo.com/*"
-  to = "https://thailandboatfestival.com/property/"
+  to = "https://www.thailandboatfestival.com/property/"
   status = 301
   force = true
 
