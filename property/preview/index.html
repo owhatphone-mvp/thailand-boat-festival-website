@@ -44,6 +44,7 @@
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Phuket Property Expo 2027",
+  
   "description": "Luxury property show in the air-conditioned White House hall at Thailand Boat Festival 2027, Boat Lagoon Marina, Phuket: luxury villas, branded residences and condominiums, with agencies and legal and finance advisers for foreign buyers. Shared lounge and daily Property Talks. Daily 14:00–21:00.",
   "startDate": "2027-01-14T14:00:00+07:00",
   "endDate": "2027-01-17T21:00:00+07:00",
@@ -55,14 +56,7 @@
   "location": {
     "@type": "Place",
     "name": "White House hall, Boat Lagoon Marina, Phuket",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "22/1 Moo 2, Thepkrasattri Rd",
-      "addressLocality": "Koh Kaew, Mueang Phuket",
-      "addressRegion": "Phuket",
-      "postalCode": "83000",
-      "addressCountry": "TH"
-    }
+    "address": { "@type": "PostalAddress", "streetAddress": "22/1 Moo 2, Thepkrasattri Rd", "addressLocality": "Koh Kaew, Mueang Phuket", "addressRegion": "Phuket", "postalCode": "83000", "addressCountry": "TH" }
   },
   "organizer": { "@type": "Organization", "name": "M Vision Public Company Limited", "url": "https://thailandboatfestival.com/" },
   "superEvent": { "@type": "Event", "name": "Thailand Boat Festival 2027", "url": "https://thailandboatfestival.com/" }
@@ -71,44 +65,48 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/property/assets/v2.css">
+<link rel="preload" as="image" href="/images/6.jpg">
+<link rel="stylesheet" href="/property/assets/v3.css">
+<script src="/property/assets/v3.js" defer></script>
 </head>
 <body>
 
-<header class="site-head">
+<header class="site-head on-dark">
   <div class="wrap bar">
-    <a class="brand" href="/property/"><img src="/property/assets/logo-horizontal.svg" alt="Phuket Property Expo" width="198" height="40"></a>
+    <a class="brand" href="/property/preview/"><img src="/property/assets/logo-horizontal-reversed.svg" alt="Phuket Property Expo" width="198" height="40"></a>
     <nav class="main" aria-label="Main">
       <a class="sec" href="#buyers">For buyers</a>
       <a class="sec" href="#developers">For developers</a>
       <a class="sec" href="#visit">Visit</a>
       <a class="sec" href="#faq">FAQ</a>
       <a class="lang" href="/property/preview/th/" lang="th" hreflang="th">ภาษาไทย</a>
-      <a class="btn btn-ink btn-sm" href="/earlybird">Register</a>
+      <a class="btn btn-brass btn-sm" href="/earlybird">Register</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="wrap hero" aria-labelledby="title">
-  <div>
-    <h1 id="title" class="serif">Phuket Property Expo 2027</h1>
-    <p class="lede">Luxury villas, branded residences and condominiums from Phuket's developers and agencies, in one hall at Thailand Boat Festival.</p>
-    <p class="when">14–17 January 2027, 14:00–21:00 daily. White House hall, Boat Lagoon Marina, Phuket.</p>
-    <div class="actions">
-      <a class="btn btn-ink" href="/earlybird">Get your Early Bird pass</a>
-      <a class="btn btn-quiet" href="#developers">Exhibit at the expo</a>
+<section class="hero on-dark" aria-labelledby="title">
+  <div class="hero-bg" data-depth="-0.18" aria-hidden="true"><img src="/images/6.jpg" alt="" width="1400" height="800" fetchpriority="high"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 id="title" class="serif">Phuket Property Expo 2027</h1>
+      <p class="lede">Luxury villas, branded residences and condominiums from Phuket's developers and agencies, in one hall at Thailand Boat Festival.</p>
+      <div class="actions">
+        <a class="btn btn-brass" href="/earlybird">Get your Early Bird pass</a>
+        <a class="btn btn-glass" href="#developers">Exhibit at the expo</a>
+      </div>
+      <p class="note">Early Bird registration is complimentary until 30 November 2026.</p>
     </div>
-    <p class="note">Early Bird registration is complimentary until 30 November 2026.</p>
+    <figure class="window" data-depth="0.06">
+      <div class="frame"><img src="/images/10.jpg" alt="Homes around the Boat Lagoon waterways, with the hills of Phuket behind" width="1400" height="800"></div>
+      <figcaption>Boat Lagoon, Phuket</figcaption>
+    </figure>
   </div>
-  <figure class="arch">
-    <img src="/images/6.jpg" alt="Boat Lagoon Marina and the hills of Phuket from the air at sunset" width="1400" height="800" fetchpriority="high">
-    <figcaption>Boat Lagoon Marina, Phuket</figcaption>
-  </figure>
 </section>
 
-<div class="facts">
-  <dl class="wrap">
+<div class="wrap facts">
+  <dl>
     <div><dt>Dates</dt><dd>14–17 January 2027</dd></div>
     <div><dt>Open</dt><dd>14:00–21:00 daily</dd></div>
     <div><dt>Venue</dt><dd>White House hall, Boat Lagoon Marina</dd></div>
@@ -127,8 +125,9 @@
         <li><strong>Legal and finance advisers</strong><span>Answers on ownership, contracts and moving money for foreign buyers</span></li>
         <li><strong>Lounge and Property Talks</strong><span>Seating and refreshments, with talks every day. Programme to be announced.</span></li>
       </ul>
-      <figure class="photo">
-        <img src="/images/5.jpg" alt="Yachts in Boat Lagoon Marina with homes and palm trees behind" width="1400" height="800" loading="lazy">
+      <figure class="collage">
+        <img class="c-main" src="/images/5.jpg" alt="Yachts in Boat Lagoon Marina with homes and palm trees behind" width="1400" height="800" loading="lazy">
+        <img class="c-sub" src="/images/1-1.jpg" alt="Guests on yacht decks at Thailand Boat Festival" width="1400" height="800" loading="lazy" data-depth="0.08">
         <figcaption>Boat Lagoon Marina, where the festival and the expo take place</figcaption>
       </figure>
     </div>
@@ -139,7 +138,8 @@
   </div>
 </section>
 
-<section class="sec-pad dark" id="developers" aria-labelledby="dev-h">
+<section class="sec-pad dev on-dark" id="developers" aria-labelledby="dev-h">
+  <div class="dev-bg" data-depth="-0.15" aria-hidden="true"><img src="/images/3-1.jpg" alt="" width="1400" height="800" loading="lazy"></div>
   <div class="wrap">
     <h2 id="dev-h" class="serif h2">Why exhibit in Phuket in January</h2>
     <p class="market">Phuket is the world's fifth-largest market for branded residences, with around US$14 billion of new supply in development.<sup>1</sup> Twenty-three condominium projects launched on the island in 2025,<sup>2</sup> and sixteen villa projects launched in the first half of 2026.<sup>3</sup> The market is shaped by affluent international buyers, with an average property price of 12.8 million baht,<sup>4</sup> and January is high season, when many of them are on the island.</p>
@@ -149,35 +149,34 @@
         <h3>The hall</h3>
         <p>32 booth modules of 3 × 3 m along three walls, around a shared lounge with refreshments and a Property Talks stage. Book one module, or combine several for a larger space.</p>
         <p>Registration and concierge sit at the entrance, so every visitor passes the booths on the way to the lounge.</p>
+        <button type="button" class="btn btn-glass btn-sm toggle" data-plan-toggle aria-pressed="false" data-label-flat="Show flat plan" data-label-3d="Show 3D view">Show flat plan</button>
       </div>
-      <figure class="plan">
-        <svg class="plan-svg" viewBox="-60 -20 1080 450" role="img" aria-labelledby="plan-t-en plan-d-en" font-family="Hanken Grotesk, IBM Plex Sans Thai, sans-serif"><title id="plan-t-en">Concept layout of the White House hall</title><desc id="plan-d-en">32 booth modules of 3 by 3 metres along three walls, around a shared lounge with refreshments and a Property Talks stage. Registration and concierge at the entrance.</desc><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1F5C58"/></marker></defs><rect x="-10" y="-10" width="1000" height="410" fill="#FFFFFF" stroke="#10272B" stroke-width="2.5"/><rect x="6" y="10" width="120" height="60" fill="#E3EFEA" stroke="#1F5C58" stroke-width="1.5"/><text x="66" y="32" font-size="12" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">Registration</text><text x="66" y="50" font-size="12" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">&amp; Concierge</text><rect x="126" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="156" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">01</text><rect x="186" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="216" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">02</text><rect x="246" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="276" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">03</text><rect x="306" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="336" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">04</text><rect x="366" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="396" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">05</text><rect x="426" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="456" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">06</text><rect x="486" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="516" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">07</text><rect x="546" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="576" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">08</text><rect x="606" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="636" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">09</text><rect x="666" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="696" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">10</text><rect x="726" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="756" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">11</text><rect x="786" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="816" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">12</text><rect x="846" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="876" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">13</text><rect x="906" y="10" width="60" height="60" fill="#EEF0EC" stroke="#9FB1AD" stroke-width="1.2" stroke-dasharray="4 3"/><text x="936" y="40" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">Clear</text><rect x="906" y="70" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="100" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">15</text><rect x="906" y="130" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="160" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">16</text><rect x="906" y="190" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="220" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">17</text><rect x="906" y="250" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="280" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">18</text><rect x="906" y="310" width="60" height="60" fill="#EEF0EC" stroke="#9FB1AD" stroke-width="1.2" stroke-dasharray="4 3"/><text x="936" y="340" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">Clear</text><rect x="6" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="36" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">34</text><rect x="66" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="96" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">33</text><rect x="126" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="156" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">32</text><rect x="186" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="216" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">31</text><rect x="246" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="276" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">30</text><rect x="306" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="336" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">29</text><rect x="366" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="396" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">28</text><rect x="426" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="456" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">27</text><rect x="486" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="516" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">26</text><rect x="546" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="576" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">25</text><rect x="606" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="636" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">24</text><rect x="666" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="696" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">23</text><rect x="726" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="756" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">22</text><rect x="786" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="816" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">21</text><rect x="846" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="876" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">20</text><rect x="140" y="130" width="720" height="120" fill="#F3EBDD" stroke="#C9A56A" stroke-width="1.5"/><text x="450" y="190" font-size="14" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">Shared lounge · seating &amp; refreshments</text><rect x="752" y="152" width="92" height="76" fill="#1F5C58" stroke="#1F5C58" stroke-width="1.5"/><text x="798" y="180" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Property</text><text x="798" y="198" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Talks</text><text x="500" y="100" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">3 m aisle</text><text x="500" y="280" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">3 m aisle</text><path d="M-40 100 H80" stroke="#1F5C58" stroke-width="2" marker-end="url(#ah)"/><path d="M80 280 H-40" stroke="#1F5C58" stroke-width="2" marker-end="url(#ah)"/><text x="-36" y="84" font-size="11" font-weight="600" fill="#1F5C58" text-anchor="middle" dominant-baseline="middle">Entry</text><text x="-36" y="296" font-size="11" font-weight="600" fill="#1F5C58" text-anchor="middle" dominant-baseline="middle">Exit</text></svg>
-        <figcaption>Concept layout. Final layout to be confirmed on site.</figcaption>
-      </figure>
+      <div class="model-stage">
+        <figure class="model">
+          <div class="board"><svg class="plan-svg" viewBox="-60 -20 1080 450" role="img" aria-labelledby="plan-t-en plan-d-en" font-family="Hanken Grotesk, IBM Plex Sans Thai, sans-serif"><title id="plan-t-en">Concept layout of the White House hall</title><desc id="plan-d-en">32 booth modules of 3 by 3 metres along three walls, around a shared lounge with refreshments and a Property Talks stage. Registration and concierge at the entrance.</desc><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1F5C58"/></marker></defs><rect x="-10" y="-10" width="1000" height="410" fill="#FFFFFF" stroke="#10272B" stroke-width="2.5"/><rect x="6" y="16" width="120" height="60" fill="#9FB1AD"/><rect x="126" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="186" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="246" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="306" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="366" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="426" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="486" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="546" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="606" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="666" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="726" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="786" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="846" y="16" width="60" height="60" fill="#9FB1AD"/><rect x="906" y="76" width="60" height="60" fill="#9FB1AD"/><rect x="906" y="136" width="60" height="60" fill="#9FB1AD"/><rect x="906" y="196" width="60" height="60" fill="#9FB1AD"/><rect x="906" y="256" width="60" height="60" fill="#9FB1AD"/><rect x="6" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="66" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="126" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="186" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="246" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="306" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="366" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="426" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="486" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="546" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="606" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="666" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="726" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="786" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="846" y="316" width="60" height="60" fill="#9FB1AD"/><rect x="752" y="157" width="92" height="76" fill="#0E3532"/><rect x="6" y="10" width="120" height="60" fill="#E3EFEA" stroke="#1F5C58" stroke-width="1.5"/><text x="66" y="32" font-size="12" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">Registration</text><text x="66" y="50" font-size="12" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">&amp; Concierge</text><rect x="126" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="156" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">01</text><rect x="186" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="216" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">02</text><rect x="246" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="276" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">03</text><rect x="306" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="336" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">04</text><rect x="366" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="396" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">05</text><rect x="426" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="456" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">06</text><rect x="486" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="516" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">07</text><rect x="546" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="576" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">08</text><rect x="606" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="636" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">09</text><rect x="666" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="696" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">10</text><rect x="726" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="756" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">11</text><rect x="786" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="816" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">12</text><rect x="846" y="10" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="876" y="40" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">13</text><rect x="906" y="10" width="60" height="60" fill="#EEF0EC" stroke="#9FB1AD" stroke-width="1.2" stroke-dasharray="4 3"/><text x="936" y="40" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">Clear</text><rect x="906" y="70" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="100" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">15</text><rect x="906" y="130" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="160" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">16</text><rect x="906" y="190" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="220" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">17</text><rect x="906" y="250" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="936" y="280" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">18</text><rect x="906" y="310" width="60" height="60" fill="#EEF0EC" stroke="#9FB1AD" stroke-width="1.2" stroke-dasharray="4 3"/><text x="936" y="340" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">Clear</text><rect x="6" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="36" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">34</text><rect x="66" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="96" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">33</text><rect x="126" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="156" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">32</text><rect x="186" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="216" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">31</text><rect x="246" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="276" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">30</text><rect x="306" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="336" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">29</text><rect x="366" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="396" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">28</text><rect x="426" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="456" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">27</text><rect x="486" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="516" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">26</text><rect x="546" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="576" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">25</text><rect x="606" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="636" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">24</text><rect x="666" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="696" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">23</text><rect x="726" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="756" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">22</text><rect x="786" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="816" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">21</text><rect x="846" y="310" width="60" height="60" fill="#F7F8F5" stroke="#1F5C58" stroke-width="1.5"/><text x="876" y="340" font-size="15" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">20</text><rect x="140" y="130" width="720" height="120" fill="#F3EBDD" stroke="#C9A56A" stroke-width="1.5"/><circle cx="240" cy="160.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="240" cy="220.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="340" cy="160.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="340" cy="220.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="440" cy="160.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="440" cy="220.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="540" cy="160.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="540" cy="220.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="640" cy="160.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><circle cx="640" cy="220.0" r="13" fill="#FFFFFF" stroke="#C9A56A" stroke-width="1.2"/><rect x="160" y="146" width="44" height="20" fill="#E2D3B6" stroke="#C9A56A" stroke-width="1"/><rect x="160" y="234" width="44" height="20" fill="#E2D3B6" stroke="#C9A56A" stroke-width="1"/><rect x="192" y="180" width="516" height="20" rx="4" fill="#F3EBDD"/><text x="450" y="190" font-size="14" font-weight="600" fill="#10272B" text-anchor="middle" dominant-baseline="middle">Shared lounge · seating &amp; refreshments</text><rect x="752" y="152" width="92" height="76" fill="#1F5C58" stroke="#1F5C58" stroke-width="1.5"/><text x="798" y="180" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Property</text><text x="798" y="198" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">Talks</text><text x="500" y="100" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">3 m aisle</text><text x="500" y="280" font-size="11" font-weight="500" fill="#4A5A5C" text-anchor="middle" dominant-baseline="middle">3 m aisle</text><path d="M-40 100 H80" stroke="#1F5C58" stroke-width="2" marker-end="url(#ah)"/><path d="M80 280 H-40" stroke="#1F5C58" stroke-width="2" marker-end="url(#ah)"/><text x="-36" y="84" font-size="11" font-weight="600" fill="#1F5C58" text-anchor="middle" dominant-baseline="middle">Entry</text><text x="-36" y="296" font-size="11" font-weight="600" fill="#1F5C58" text-anchor="middle" dominant-baseline="middle">Exit</text></svg></div>
+          <figcaption>Concept layout. Final layout to be confirmed on site.</figcaption>
+        </figure>
+      </div>
     </div>
 
-    <table class="options">
-      <caption>Ways to take part</caption>
-      <tbody>
-        <tr><th scope="row">Booth module</th><td>A 3 × 3 m booth in the White House hall. Combine modules for a larger space. Your project on the expo website and floor plan.</td><td class="rate">Rates on request</td></tr>
-        <tr><th scope="row">Title partner</th><td>The expo presented as “Phuket Property Expo presented by” your brand. One partner per edition.</td><td class="rate">Rates on request</td></tr>
-        <tr><th scope="row">Stage partner</th><td>Host a Property Talks session, with your brand on the stage programme.</td><td class="rate">Rates on request</td></tr>
-      </tbody>
-    </table>
-
-    <div class="dev-cta">
-      <a class="btn btn-brass" href="mailto:info@thailandboatfestival.com?subject=Phuket%20Property%20Expo%202027%20exhibitor%20pack">Request the exhibitor pack</a>
-      <span>or email <a href="mailto:info@thailandboatfestival.com">info@thailandboatfestival.com</a></span>
+    <div class="glass">
+      <table class="options">
+        <caption>Ways to take part</caption>
+        <tbody>
+          <tr><th scope="row">Booth module</th><td>A 3 × 3 m booth in the White House hall. Combine modules for a larger space. Your project on the expo website and floor plan.</td><td class="rate">Rates on request</td></tr>
+          <tr><th scope="row">Title partner</th><td>The expo presented as “Phuket Property Expo presented by” your brand. One partner per edition.</td><td class="rate">Rates on request</td></tr>
+          <tr><th scope="row">Stage partner</th><td>Host a Property Talks session, with your brand on the stage programme.</td><td class="rate">Rates on request</td></tr>
+        </tbody>
+      </table>
+      <div class="dev-cta">
+        <a class="btn btn-brass" href="mailto:info@thailandboatfestival.com?subject=Phuket%20Property%20Expo%202027%20exhibitor%20pack">Request the exhibitor pack</a>
+        <span>or email <a href="mailto:info@thailandboatfestival.com">info@thailandboatfestival.com</a></span>
+      </div>
     </div>
 
     <div class="refs">
       <p>Sources</p>
-      <ol>
-        <li>C9 Hotelworks, reported by <a href="https://www.edgeprop.sg/amp/property-news/phukets-us14-bil-property-pipeline-drive-shift-tourist-hotspot-global-living-hub">EdgeProp</a>, January 2026</li>
-        <li>Colliers Thailand, 2025 figures</li>
-        <li><a href="https://www.cbre.com/insights/figures/phuket-overall-figures-h1-2026">CBRE, Phuket figures H1 2026</a></li>
-        <li><a href="https://www.nationthailand.com/business/property/40070944">Nation Thailand</a>, September 2026</li>
-      </ol>
+      <ol><li>C9 Hotelworks, reported by <a href="https://www.edgeprop.sg/amp/property-news/phukets-us14-bil-property-pipeline-drive-shift-tourist-hotspot-global-living-hub">EdgeProp</a>, January 2026</li><li>Colliers Thailand, 2025 figures</li><li><a href="https://www.cbre.com/insights/figures/phuket-overall-figures-h1-2026">CBRE, Phuket figures H1 2026</a></li><li><a href="https://www.nationthailand.com/business/property/40070944">Nation Thailand</a>, September 2026</li></ol>
     </div>
   </div>
 </section>
@@ -203,22 +202,10 @@
   <div class="wrap">
     <h2 id="faq-h" class="serif h2">Questions</h2>
     <div class="faq">
-      <details>
-        <summary>Do I need a ticket for the property expo?</summary>
-        <div class="a"><p>Your Thailand Boat Festival registration covers the expo. Early Bird registration is complimentary until 30 November 2026.</p></div>
-      </details>
-      <details>
-        <summary>Who will be exhibiting?</summary>
-        <div class="a"><p>Developers of luxury villas, branded residences and condominiums, property agencies, and legal and finance advisers for foreign buyers. The exhibitor list will be announced closer to the event.</p></div>
-      </details>
-      <details>
-        <summary>Can foreigners buy property in Phuket?</summary>
-        <div class="a"><p>Foreign buyers can own a condominium unit in their own name, within the foreign quota of each building. Foreigners cannot own land in their own name, so villas are usually held on a registered lease.</p><p>This is general information, not legal advice. Talk to an independent lawyer before you commit. Legal advisers will be in the hall.</p></div>
-      </details>
-      <details>
-        <summary>I'm a developer or agency. How do I book a booth?</summary>
-        <div class="a"><p>Email <a href="mailto:info@thailandboatfestival.com?subject=Phuket%20Property%20Expo%202027%20exhibitor%20pack">info@thailandboatfestival.com</a> for the exhibitor pack. Booths are 3 × 3 m modules and can be combined.</p></div>
-      </details>
+      <details><summary>Do I need a ticket for the property expo?</summary><div class="a"><p>Your Thailand Boat Festival registration covers the expo. Early Bird registration is complimentary until 30 November 2026.</p></div></details>
+      <details><summary>Who will be exhibiting?</summary><div class="a"><p>Developers of luxury villas, branded residences and condominiums, property agencies, and legal and finance advisers for foreign buyers. The exhibitor list will be announced closer to the event.</p></div></details>
+      <details><summary>Can foreigners buy property in Phuket?</summary><div class="a"><p>Foreign buyers can own a condominium unit in their own name, within the foreign quota of each building. Foreigners cannot own land in their own name, so villas are usually held on a registered lease.</p><p>This is general information, not legal advice. Talk to an independent lawyer before you commit. Legal advisers will be in the hall.</p></div></details>
+      <details><summary>I'm a developer or agency. How do I book a booth?</summary><div class="a"><p>Email <a href="mailto:info@thailandboatfestival.com?subject=Phuket%20Property%20Expo%202027%20exhibitor%20pack">info@thailandboatfestival.com</a> for the exhibitor pack. Booths are 3 × 3 m modules and can be combined.</p></div></details>
     </div>
   </div>
 </section>
