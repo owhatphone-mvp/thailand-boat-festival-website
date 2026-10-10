@@ -165,10 +165,23 @@
           <tr><th scope="row">Stage Partner</th><td>เป็นเจ้าภาพช่วง Property Talks พร้อมแบรนด์ของคุณบนตารางเวที</td><td class="rate">สอบถามราคา</td></tr>
         </tbody>
       </table>
-      <div class="dev-cta">
-        <a class="btn btn-brass" href="mailto:info@propertyexpophuket.com?subject=Phuket%20Property%20Expo%202027%20exhibitor%20pack">ขอรายละเอียดการออกบูธ</a>
-        <span>หรืออีเมล <a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></span>
-      </div>
+      <form class="enquiry" id="enquiry" novalidate>
+        <p class="enq-h">ขอรายละเอียดการออกบูธ</p>
+        <div class="enq-grid">
+          <label><span>ชื่อ</span><input name="name" type="text" required autocomplete="name"></label>
+          <label><span>บริษัทหรือโครงการ</span><input name="company" type="text" autocomplete="organization"></label>
+          <label><span>อีเมล</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span>โทรศัพท์ (ไม่บังคับ)</span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label><span>สนใจ</span><select name="interest"><option>บูธโมดูล</option><option>Title Partner</option><option>Stage Partner</option></select></label>
+          <label class="wide"><span>รายละเอียดเพิ่มเติม (ไม่บังคับ)</span><textarea name="message" rows="3"></textarea></label>
+          <label class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="dev-cta">
+          <button class="btn btn-brass" type="submit" data-sending="กำลังส่ง…">ส่งคำขอ</button>
+          <span>หรืออีเมล <a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></span>
+        </div>
+        <p class="enq-msg" role="status" aria-live="polite" data-ok="ขอบคุณครับ ทีมงานจะส่งรายละเอียดการออกบูธให้ และได้ส่งอีเมลยืนยันถึงคุณแล้ว" data-err="ส่งไม่สำเร็จ กรุณาอีเมลมาที่ info@propertyexpophuket.com"></p>
+      </form>
     </div>
 
     <div class="refs">

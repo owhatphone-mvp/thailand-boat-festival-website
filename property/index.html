@@ -165,10 +165,23 @@
           <tr><th scope="row">Stage partner</th><td>Host a Property Talks session, with your brand on the stage programme.</td><td class="rate">Rates on request</td></tr>
         </tbody>
       </table>
-      <div class="dev-cta">
-        <a class="btn btn-brass" href="mailto:info@propertyexpophuket.com?subject=Phuket%20Property%20Expo%202027%20exhibitor%20pack">Request the exhibitor pack</a>
-        <span>or email <a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></span>
-      </div>
+      <form class="enquiry" id="enquiry" novalidate>
+        <p class="enq-h">Request the exhibitor pack</p>
+        <div class="enq-grid">
+          <label><span>Name</span><input name="name" type="text" required autocomplete="name"></label>
+          <label><span>Company or project</span><input name="company" type="text" autocomplete="organization"></label>
+          <label><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span>Phone (optional)</span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label><span>Interested in</span><select name="interest"><option>Booth module</option><option>Title partner</option><option>Stage partner</option></select></label>
+          <label class="wide"><span>Anything we should know (optional)</span><textarea name="message" rows="3"></textarea></label>
+          <label class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="dev-cta">
+          <button class="btn btn-brass" type="submit" data-sending="Sending…">Send request</button>
+          <span>or email <a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></span>
+        </div>
+        <p class="enq-msg" role="status" aria-live="polite" data-ok="Thank you. The exhibitor pack is on its way; we have also sent you a confirmation email." data-err="Something went wrong. Please email info@propertyexpophuket.com instead."></p>
+      </form>
     </div>
 
     <div class="refs">

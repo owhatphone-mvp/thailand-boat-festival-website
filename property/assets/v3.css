@@ -208,3 +208,18 @@ nav.main .btn { color: var(--ink); }
 .broker > div { max-width: 44em; }
 .broker .h3 { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 8px; }
 .broker p { color: var(--muted); }
+
+/* exhibitor enquiry form (inside the glass card) */
+.enquiry { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line-d); }
+.enq-h { font-family: var(--serif); font-size: 22px; color: var(--stone); margin-bottom: 14px; }
+:lang(th) .enq-h { font-family: 'Noto Serif Thai', serif; font-weight: 500; }
+.enq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+.enq-grid label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--muted-d); }
+.enq-grid .wide { grid-column: 1 / -1; }
+.enq-grid .hp { position: absolute; left: -9999px; }
+.enq-grid input, .enq-grid select, .enq-grid textarea { font: 16px/1.4 var(--sans); color: var(--stone); background: rgba(16, 39, 43, .45); border: 1px solid rgba(238, 240, 236, .28); border-radius: 3px; padding: 11px 12px; }
+.enq-grid select option { color: var(--ink); }
+.enq-grid input:focus, .enq-grid select:focus, .enq-grid textarea:focus { outline: 2px solid var(--brass); outline-offset: 1px; border-color: var(--brass); }
+.enq-msg { margin-top: 12px; color: var(--stone); min-height: 1.4em; }
+.enq-msg.err { color: #F0C9A6; }
+@media (max-width: 640px) { .enq-grid { grid-template-columns: 1fr; } }

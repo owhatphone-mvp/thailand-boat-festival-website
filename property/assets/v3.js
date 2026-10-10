@@ -34,3 +34,25 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+/* exhibitor enquiry form */
+(function () {
+  var form = document.getElementById('enquiry');
+  if (!form) return;
+  var btn = form.querySelector('button[type=submit]');
+  var msg = form.querySelector('.enq-msg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    data.lang = document.documentElement.lang;
+    var label = btn.textContent; btn.disabled = true; btn.textContent = btn.getAttribute('data-sending');
+    msg.className = 'enq-msg'; msg.textContent = '';
+    fetch('/api/property-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function () { msg.textContent = msg.getAttribute('data-ok'); form.reset(); if (window.gtag) gtag('event', 'exhibitor_enquiry', { page_section: 'property_expo', page_lang: data.lang }); })
+      .catch(function () { msg.className = 'enq-msg err'; msg.textContent = msg.getAttribute('data-err'); })
+      .then(function () { btn.disabled = false; btn.textContent = label; });
+  });
+})();

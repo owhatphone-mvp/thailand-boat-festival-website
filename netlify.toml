@@ -366,6 +366,11 @@
   status = 200
 
 [[redirects]]
+  from = "/api/property-lead"
+  to = "/.netlify/functions/property-lead"
+  status = 200
+
+[[redirects]]
   from = "/api/send-lead"
   to = "/.netlify/functions/send-lead"
   status = 200
