@@ -353,7 +353,8 @@ section{padding-block:clamp(64px,9vw,120px)}
 @media (max-width:620px){.passes{grid-template-columns:1fr}}
 
 /* contact */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,4vw,48px);align-items:start}
+.contact-grid > div:first-child{grid-column:1/-1}
 .contact-grid h2{font-weight:800;font-variation-settings:"wdth" 120;text-transform:uppercase;font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:.98}
 .contact-grid h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--contour)}
 .contact-grid > div > p{color:var(--contour);margin-top:16px;max-width:28rem}
@@ -838,7 +839,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163946;padding-top:20px;fon
       </div>
       <div class="chan">
         <span class="mono">Email</span>
-        <div class="val" id="email">info@thailandboatfestival.com</div>
+        <div class="val" id="email">info@<wbr>thailandboatfestival.com</div>
         <p>For berth plans, rates and the exhibitor kit.</p>
         <button class="copy" id="copyEmail" type="button">Copy email</button>
       </div>
@@ -847,6 +848,12 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163946;padding-top:20px;fon
         <div class="val">Thailand Boat Festival</div>
         <p>Send us a message on our page.</p>
         <a class="btn btn-ghost" href="https://m.me/thailandboatfestival">Message us</a>
+      </div>
+      <div class="chan">
+        <span class="mono">Brokers</span>
+        <div class="val">Broker registration</div>
+        <p>Yacht brokers and property agents: register for VIP access.</p>
+        <a class="btn btn-ghost" href="/broker">Register</a>
       </div>
     </div>
     <p class="sand">Quick answers in your language, any hour: <a href="/ask-sand">Ask Sand</a></p>
@@ -860,7 +867,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid #163946;padding-top:20px;fon
     <div><span class="mono">Organiser</span><b>M Vision Public Company Limited</b></div>
     <div><span class="mono">Co-organising &amp; Exclusive Media Partner</span><b>Dr. Phongthon Tharachai</b><br>PP Richer is Better</div>
     <div><span class="mono">Venue</span><b>Boat Lagoon Marina, Phuket</b></div>
-    <div class="legal"><span>© 2026 Thailand Boat Festival · Organised by M Vision PCL</span><span><a href="https://www.facebook.com/thailandboatfestival">Facebook</a> · <a href="https://www.youtube.com/@ThailandBoatFestival">YouTube</a> · <a href="https://thailandboatfestival.com/privacy">Privacy</a> · <a href="/th/" hreflang="th" lang="th">ภาษาไทย</a></span></div>
+    <div class="legal"><span>© 2026 Thailand Boat Festival · Organised by M Vision PCL</span><span><a href="https://www.facebook.com/thailandboatfestival">Facebook</a> · <a href="https://www.youtube.com/@ThailandBoatFestival">YouTube</a> · <a href="/broker">Brokers</a> · <a href="https://thailandboatfestival.com/privacy">Privacy</a> · <a href="/th/" hreflang="th" lang="th">ภาษาไทย</a></span></div>
   </div>
 </footer>
 

@@ -353,7 +353,8 @@ section{padding-block:clamp(64px,9vw,120px)}
 @media (max-width:620px){.passes{grid-template-columns:1fr}}
 
 /* contact */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,4vw,48px);align-items:start}
+.contact-grid > div:first-child{grid-column:1/-1}
 .contact-grid h2{font-weight:800;font-variation-settings:"wdth" 120;text-transform:uppercase;font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:.98}
 .contact-grid h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--contour)}
 .contact-grid > div > p{color:var(--contour);margin-top:16px;max-width:28rem}
@@ -837,7 +838,7 @@ body{font-family:"Noto Sans Thai",var(--display)}
       </div>
       <div class="chan">
         <span class="mono">อีเมล</span>
-        <div class="val" id="email">info@thailandboatfestival.com</div>
+        <div class="val" id="email">info@<wbr>thailandboatfestival.com</div>
         <p>ขอผังท่าจอด ราคา และเอกสารสำหรับผู้ออกงาน</p>
         <button class="copy" id="copyEmail" type="button">คัดลอกอีเมล</button>
       </div>
@@ -846,6 +847,12 @@ body{font-family:"Noto Sans Thai",var(--display)}
         <div class="val">Thailand Boat Festival</div>
         <p>ส่งข้อความหาเราทางเพจ</p>
         <a class="btn btn-ghost" href="https://m.me/thailandboatfestival">ส่งข้อความ</a>
+      </div>
+      <div class="chan">
+        <span class="mono">โบรกเกอร์</span>
+        <div class="val">ลงทะเบียนโบรกเกอร์</div>
+        <p>สำหรับโบรกเกอร์เรือและนายหน้าอสังหาฯ ลงทะเบียนรับสิทธิ์ VIP</p>
+        <a class="btn btn-ghost" href="/broker">ลงทะเบียน</a>
       </div>
     </div>
     <p class="sand">ถามเป็นภาษาของคุณได้ทุกเวลา: <a href="/ask-sand">ถามทราย</a></p>
@@ -859,7 +866,7 @@ body{font-family:"Noto Sans Thai",var(--display)}
     <div><span class="mono">ผู้จัดงาน</span><b>บริษัท เอ็ม วิชั่น จำกัด (มหาชน)</b></div>
     <div><span class="mono">ผู้ร่วมจัดและพันธมิตรสื่ออย่างเป็นทางการ</span><b>Dr. Phongthon Tharachai</b><br>PP Richer is Better</div>
     <div><span class="mono">สถานที่จัดงาน</span><b>Boat Lagoon Marina ภูเก็ต</b></div>
-    <div class="legal"><span>© 2026 Thailand Boat Festival · จัดโดย M Vision PCL</span><span><a href="https://www.facebook.com/thailandboatfestival">Facebook</a> · <a href="https://www.youtube.com/@ThailandBoatFestival">YouTube</a> · <a href="/privacy">นโยบายความเป็นส่วนตัว</a> · <a href="/" hreflang="en" lang="en">English</a></span></div>
+    <div class="legal"><span>© 2026 Thailand Boat Festival · จัดโดย M Vision PCL</span><span><a href="https://www.facebook.com/thailandboatfestival">Facebook</a> · <a href="https://www.youtube.com/@ThailandBoatFestival">YouTube</a> · <a href="/broker">โบรกเกอร์</a> · <a href="/privacy">นโยบายความเป็นส่วนตัว</a> · <a href="/" hreflang="en" lang="en">English</a></span></div>
   </div>
 </footer>
 
