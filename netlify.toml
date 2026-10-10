@@ -61,6 +61,55 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 # Phuket Property Expo domains -> /property (host rules must come before path rules)
+# Early Bird registration on Luma (Phuket Property Expo event)
+[[redirects]]
+  from = "https://propertyexpophuket.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://propertyexpophuket.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://www.propertyexpophuket.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://www.propertyexpophuket.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://phuketpropertyxpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://phuketpropertyxpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://www.phuketpropertyxpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://www.phuketpropertyxpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
 [[redirects]]
   from = "https://propertyexpophuket.com/th"
   to = "https://www.thailandboatfestival.com/property/th/"
@@ -258,6 +307,18 @@
 [[redirects]]
   from = "/vip"
   to = "https://luma.com/thailand-a0ah"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/property/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/PPXearlybird"
+  to = "https://luma.com/phuket-property-expo"
   status = 302
   force = true
 
