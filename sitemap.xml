@@ -18,4 +18,18 @@
     <loc>https://thailandboatfestival.com/ask-sand</loc>
     <lastmod>2026-10-09</lastmod>
   </url>
+  <url>
+    <loc>https://thailandboatfestival.com/property/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thailandboatfestival.com/property/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thailandboatfestival.com/property/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thailandboatfestival.com/property/"/>
+  </url>
+  <url>
+    <loc>https://thailandboatfestival.com/property/th/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thailandboatfestival.com/property/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thailandboatfestival.com/property/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thailandboatfestival.com/property/"/>
+  </url>
 </urlset>

@@ -46,6 +46,11 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
+  for = "/property/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
   for = "/admin"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
@@ -146,5 +151,15 @@
   from = "/privacy"
   to = "/privacy.html"
   status = 200
+
+[[redirects]]
+  from = "/property-expo"
+  to = "/property/"
+  status = 301
+
+[[redirects]]
+  from = "/propertyexpo"
+  to = "/property/"
+  status = 301
 
 # No catch-all: unknown URLs now return 404.html with a real 404 status (SEO: avoids soft-404 duplicates).
