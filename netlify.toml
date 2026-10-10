@@ -148,6 +148,18 @@
   force = true
 
 [[redirects]]
+  from = "/broker"
+  to = "https://luma.com/tbf-broker"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/brokers"
+  to = "https://luma.com/tbf-broker"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "/privacy"
   to = "/privacy.html"
   status = 200
