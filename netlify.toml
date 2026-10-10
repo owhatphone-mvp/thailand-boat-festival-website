@@ -60,6 +60,102 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[redirects]]
+  from = "https://thailandpropertyexpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://thailandpropertyexpo.com/th"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thailandpropertyexpo.com/th/*"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thailandpropertyexpo.com/*"
+  to = "https://www.thailandboatfestival.com/property/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thailandpropertyexpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://thailandpropertyexpo.com/th"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thailandpropertyexpo.com/th/*"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://thailandpropertyexpo.com/*"
+  to = "https://www.thailandboatfestival.com/property/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.thailandpropertyexpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://www.thailandpropertyexpo.com/th"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.thailandpropertyexpo.com/th/*"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.thailandpropertyexpo.com/*"
+  to = "https://www.thailandboatfestival.com/property/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.thailandpropertyexpo.com/earlybird"
+  to = "https://luma.com/phuket-property-expo"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://www.thailandpropertyexpo.com/th"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.thailandpropertyexpo.com/th/*"
+  to = "https://www.thailandboatfestival.com/property/th/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.thailandpropertyexpo.com/*"
+  to = "https://www.thailandboatfestival.com/property/"
+  status = 301
+  force = true
+
 # Phuket Property Expo domains -> /property (host rules must come before path rules)
 # Early Bird registration on Luma (Phuket Property Expo event)
 [[redirects]]
