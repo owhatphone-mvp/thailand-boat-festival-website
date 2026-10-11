@@ -236,3 +236,21 @@ nav.main .btn { color: var(--ink); }
 @media (max-width: 1050px) { .explorer-frame { height: 980px; } }
 @media (max-width: 760px) { .explorer-frame { height: 900px; } }
 @media (max-width: 480px) { .explorer-frame { height: 820px; } }
+
+/* poster first; the 3D model loads only when asked */
+.explorer-poster { position: relative; border-radius: 6px; overflow: hidden; box-shadow: var(--lift-strong); background: #e6e8e1; }
+.explorer-poster img { width: 100%; height: auto; display: block; }
+.explorer-poster .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px 14px 18px; border: 0; border-radius: 999px; background: var(--ink); color: var(--stone); font: 600 16px/1 var(--sans); cursor: pointer; box-shadow: 0 18px 40px -12px rgba(0,0,0,.6); transition: background-color .15s ease, transform .15s ease; }
+.explorer-poster .play:hover { background: var(--teal); transform: translate(-50%, -50%) scale(1.03); }
+.explorer-poster .play-icon { width: 34px; height: 34px; border-radius: 50%; background: var(--brass); position: relative; }
+.explorer-poster .play-icon::after { content: ""; position: absolute; left: 13px; top: 9px; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent var(--ink); }
+.explorer-poster.loading .play { opacity: .6; pointer-events: none; }
+
+/* poster first; the 3D model loads only when asked */
+.explorer-poster { position: relative; border-radius: 6px; overflow: hidden; box-shadow: var(--lift-strong); background: #e6e8e1; }
+.explorer-poster img { width: 100%; height: auto; display: block; }
+.explorer-poster .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px 14px 18px; border: 0; border-radius: 999px; background: var(--ink); color: var(--stone); font: 600 16px/1 var(--sans); cursor: pointer; box-shadow: 0 18px 40px -12px rgba(0,0,0,.6); transition: background-color .15s ease, transform .15s ease; }
+.explorer-poster .play:hover { background: var(--teal); transform: translate(-50%, -50%) scale(1.03); }
+.explorer-poster .play-icon { width: 34px; height: 34px; border-radius: 50%; background: var(--brass); position: relative; }
+.explorer-poster .play-icon::after { content: ""; position: absolute; left: 13px; top: 9px; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent var(--ink); }
+.explorer-poster.loading .play { opacity: .6; pointer-events: none; }

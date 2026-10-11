@@ -56,3 +56,34 @@
       .then(function () { btn.disabled = false; btn.textContent = label; });
   });
 })();
+
+/* 3D explorer: poster until the visitor asks for it */
+(function () {
+  var box = document.querySelector('[data-explorer]');
+  if (!box) return;
+  var btn = box.querySelector('.play');
+  btn.addEventListener('click', function () {
+    box.classList.add('loading');
+    var f = document.createElement('iframe');
+    f.className = 'explorer-frame'; f.src = box.getAttribute('data-src'); f.title = box.getAttribute('data-title');
+    f.setAttribute('allowfullscreen', ''); f.setAttribute('referrerpolicy', 'same-origin');
+    box.parentNode.replaceChild(f, box);
+    if (window.gtag) gtag('event', 'open_3d_hall', { page_section: 'property_expo', page_lang: document.documentElement.lang });
+    f.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+
+/* 3D explorer: poster until the visitor asks for it */
+(function () {
+  var box = document.querySelector('[data-explorer]');
+  if (!box) return;
+  box.querySelector('.play').addEventListener('click', function () {
+    box.classList.add('loading');
+    var f = document.createElement('iframe');
+    f.className = 'explorer-frame'; f.src = box.getAttribute('data-src'); f.title = box.getAttribute('data-title');
+    f.setAttribute('allowfullscreen', ''); f.setAttribute('referrerpolicy', 'same-origin');
+    box.parentNode.replaceChild(f, box);
+    if (window.gtag) gtag('event', 'open_3d_hall', { page_section: 'property_expo', page_lang: document.documentElement.lang });
+    f.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
