@@ -254,3 +254,22 @@ nav.main .btn { color: var(--ink); }
 .explorer-poster .play-icon { width: 34px; height: 34px; border-radius: 50%; background: var(--brass); position: relative; }
 .explorer-poster .play-icon::after { content: ""; position: absolute; left: 13px; top: 9px; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent var(--ink); }
 .explorer-poster.loading .play { opacity: .6; pointer-events: none; }
+
+/* v4 lean layout */
+.hero-lean .hero-copy { max-width: 40em; }
+.band-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.band-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; box-shadow: var(--lift); }
+.band-photo figcaption { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.band-text p { color: var(--muted); margin-top: 16px; max-width: 34em; }
+.band-text p.muted { font-size: 15px; }
+.cats { margin-top: 22px; display: grid; gap: 10px; }
+.cats li { padding-left: 18px; position: relative; color: var(--ink); }
+.cats li::before { content: ""; position: absolute; left: 0; top: .65em; width: 8px; height: 8px; border-radius: 50%; background: var(--brass-dark, #A27B3A); }
+@media (max-width: 860px) { .band-grid { grid-template-columns: 1fr; } .band-alt .band-text { order: 2; } }
+.refs-fold { margin-top: 36px; color: var(--label-d); font-size: 14px; }
+.refs-fold summary { cursor: pointer; color: var(--muted-d); }
+.refs-fold .evidence { margin-top: 14px; }
+.visit-lean { max-width: 44em; }
+.visit-lean p { margin-top: 14px; color: var(--muted); }
+.visit-lean .btn { margin-top: 22px; }
+.visit-lean .small { font-size: 14px; }
