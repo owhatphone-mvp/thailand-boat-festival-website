@@ -273,3 +273,4 @@ nav.main .btn { color: var(--ink); }
 .visit-lean p { margin-top: 14px; color: var(--muted); }
 .visit-lean .btn { margin-top: 22px; }
 .visit-lean .small { font-size: 14px; }
+.foot-sub { margin-top: 8px; font-size: 14px; color: var(--muted); }
