@@ -61,6 +61,25 @@
     function end() { drag = null; tt.classList.remove('dragging'); }
     window.addEventListener('pointerup', end);
     window.addEventListener('pointercancel', end);
+    // touch and narrow screens: the model turns as it scrolls through the viewport, until the visitor takes over
+    var coarse = window.matchMedia && (window.matchMedia('(hover: none)').matches || window.matchMedia('(max-width: 960px)').matches);
+    if (coarse && !reduce) {
+      var ticking = false;
+      var r0 = tt.getBoundingClientRect(), p0 = 1 - (r0.top + r0.height) / (window.innerHeight + r0.height);  // where the page opened
+      window.addEventListener('scroll', function () {
+        if (ticking || !ready || tt.getAttribute('data-touched')) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          var r = tt.getBoundingClientRect(), vh = window.innerHeight;
+          if (r.bottom < 0 || r.top > vh) return;
+          var p = 1 - (r.top + r.height) / (vh + r.height);   // 0 entering from below .. 1 leaving at the top
+          var start = +tt.getAttribute('data-start') || 12;
+          var t = p0 < 1 ? (p - p0) / (1 - p0) : 0;            // 0 at the starting position .. 1 as the model leaves the view
+          show(start + Math.max(-1, Math.min(1, t)) * 11);
+        });
+      }, { passive: true });
+    }
     tt.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       e.preventDefault(); tt.setAttribute('data-touched', '1');
@@ -71,8 +90,8 @@
   /* Hall plan: module hotspots placed from the 3D model's booth coordinates (% of the plan image) */
   var mods = document.querySelector('.mods');
   if (mods) {
-    var M = [[1,8.39,14.75,0],[2,13.94,14.75,0],[3,19.49,14.75,0],[4,25.04,14.75,0],[5,30.58,14.75,0],[6,36.13,14.75,0],[7,41.68,14.75,0],[8,47.23,14.75,0],[9,52.77,14.75,0],[10,58.32,14.75,0],[11,63.87,14.75,0],[12,69.42,14.75,0],[13,74.96,14.75,0],[15,80.51,14.75,0],[16,8.39,85.25,0],[17,13.94,85.25,0],[18,19.49,85.25,0],[20,25.04,85.25,0],[21,30.58,85.25,0],[22,36.13,85.25,0],[23,41.68,85.25,0],[24,47.23,85.25,0],[25,52.77,85.25,0],[26,58.32,85.25,0],[27,63.87,85.25,0],[28,69.42,85.25,0],[29,74.96,85.25,0],[30,80.51,85.25,0],[31,16.72,39.63,1],[32,22.26,39.63,1],[33,16.72,60.37,1],[34,22.26,60.37,1]];
-    var W = 5.547, H = 12.44;
+    var M = [[1,8.6,14.75,0],[2,14.28,14.75,0],[3,19.97,14.75,0],[4,25.66,14.75,0],[5,31.33,14.75,0],[6,37.02,14.75,0],[7,42.71,14.75,0],[8,48.39,14.75,0],[9,54.07,14.75,0],[10,59.76,14.75,0],[11,65.44,14.75,0],[12,71.13,14.75,0],[13,76.81,14.75,0],[15,82.49,14.75,0],[16,8.6,85.25,0],[17,14.28,85.25,0],[18,19.97,85.25,0],[20,25.66,85.25,0],[21,31.33,85.25,0],[22,37.02,85.25,0],[23,42.71,85.25,0],[24,48.39,85.25,0],[25,54.07,85.25,0],[26,59.76,85.25,0],[27,65.44,85.25,0],[28,71.13,85.25,0],[29,76.81,85.25,0],[30,82.49,85.25,0],[31,17.13,39.63,1],[32,22.81,39.63,1],[33,17.13,60.37,1],[34,22.81,60.37,1]];
+    var W = 5.684, H = 12.44;
     var read = document.querySelector('.plan-read');
     var label = mods.getAttribute('data-mod'), size = mods.getAttribute('data-size');
     var wall = mods.getAttribute('data-wall'), open = mods.getAttribute('data-open');
