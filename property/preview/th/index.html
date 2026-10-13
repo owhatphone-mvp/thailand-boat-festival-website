@@ -64,14 +64,21 @@
 }
 </script>
 <link rel="preload" as="font" type="font/woff2" href="/property/assets/v5/fonts/fahkwang-thai-300-normal.woff2" crossorigin>
-<link rel="preload" as="image" href="/property/assets/v5/turn/f12.webp" imagesrcset="/property/assets/v5/turn-s/f12.webp 800w, /property/assets/v5/turn/f12.webp 1600w" imagesizes="(min-width: 960px) 58vw, 100vw">
+<link rel="preload" as="image" href="/property/assets/v5/walk/w00.webp" media="(min-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="/property/assets/v5/walk-m/w00.webp" media="(max-aspect-ratio: 9/10)">
 <link rel="stylesheet" href="/property/assets/v5/v5.css">
 <script src="/property/assets/v5/v5.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
 
-<header class="gallery" id="top">
+<header class="arrival" id="top">
+  <div class="walk" aria-hidden="false">
+    <picture>
+      <source media="(max-aspect-ratio: 9/10)" srcset="/property/assets/v5/walk-m/w00.webp" width="720" height="1280">
+      <img class="walk-frame" src="/property/assets/v5/walk/w00.webp" width="1600" height="900" alt="ภายในฮอลล์ White House มองจากทางเข้า: บูธเรียงสองฝั่ง เลานจ์กลางฮอลล์ และเวที Property Talks ท้ายฮอลล์" fetchpriority="high" data-frames="20" data-settle="8">
+    </picture>
+  </div>
   <div class="wrap bar">
     <a class="brand" href="/property/preview/th/"><img src="/property/assets/logo-horizontal-reversed.svg" alt="Phuket Property Expo" width="198" height="40"></a>
     <nav aria-label="เมนูหลัก">
@@ -82,7 +89,7 @@
     </nav>
   </div>
 
-  <div class="wrap gallery-grid" id="main">
+  <div class="wrap arrival-grid" id="main">
     <div class="sheet">
       <div class="sheet-title">
         <h1>Phuket Property Expo 2027<span class="th-name">งานอสังหาภูเก็ต 2027</span></h1>
@@ -100,17 +107,7 @@
         <a class="door door-exhibit" href="#exhibit"><span class="door-h">ออกบูธ</span><span class="door-s">จองบูธ · 32 <span class="nw">โมดูล</span> ขนาด 3 × 3 ม.</span></a>
       </div>
     </div>
-
-    <figure class="model">
-      <div class="turntable" tabindex="0" role="img" aria-label="โมเดลแนวคิดของฮอลล์ ใช้ปุ่มลูกศรเพื่อหมุน" data-frames="24" data-start="12">
-        <img src="/property/assets/v5/turn/f12.webp" srcset="/property/assets/v5/turn-s/f12.webp 800w, /property/assets/v5/turn/f12.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1349" height="809" alt="โมเดลแนวคิดของฮอลล์ White House บนแท่นหินขัด: บูธเรียงสองฝั่ง เลานจ์กลางฮอลล์ และเวที Property Talks ท้ายฮอลล์" draggable="false" fetchpriority="high">
-      </div>
-      <figcaption>
-        <span><span class="nw">ฮอลล์</span> White House · 50 × 20 ม. · โมเดลแนวคิด</span>
-        <span class="turn-hint" aria-hidden="true"><span class="t-mouse">ลากเพื่อหมุนโมเดล</span><span class="t-touch">ปัดหรือเลื่อนหน้าจอเพื่อหมุนโมเดล</span></span>
-        <a href="/property/3d/">เดินชมแบบ 3 มิติ</a>
-      </figcaption>
-    </figure>
+    <p class="walk-cap"><span><span class="nw">ฮอลล์</span> White House · ภาพจำลองแนวคิด</span> <a href="/property/3d/">เดินชมแบบ 3 มิติ</a></p>
   </div>
 </header>
 
@@ -121,20 +118,11 @@
       <h2 id="col-h"><span class="nw">วิลล่า</span> branded residence และ<span class="nw">คอนโด</span> รวมใน<span class="nw">ฮอลล์</span>เดียว</h2>
       <p><span class="nw">วิลล่า</span>หรู branded residence และ<span class="nw">คอนโด</span>จาก<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span>ในภูเก็ต พร้อม<span class="nw">เอเจนซี่</span>และ<span class="nw">ที่ปรึกษา</span>ที่ช่วยผู้ซื้อจากต่าง<span class="nw">ประเทศ</span></p>
     </div>
-    <div class="boards">
-      <figure class="board board-wood">
-        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-villa.webp" width="863" height="572" alt="" loading="lazy"><span class="plaque"><span class="nw">วิลล่า</span>หรูและ<span class="nw">เรซิเดนซ์</span></span></div>
-        <figcaption>นำเสนอโดยบริษัท<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span>เอง <span class="illus">โมเดลประกอบ</span></figcaption>
-      </figure>
-      <figure class="board board-terrazzo">
-        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-branded.webp" width="935" height="788" alt="" loading="lazy"><span class="plaque">Branded residence</span></div>
-        <figcaption><span class="nw">เรซิเดนซ์</span>ภายใต้<span class="nw">แบรนด์</span>โรงแรมและ<span class="nw">แบรนด์</span><span class="nw">ดีไซน์</span> นำเสนอโดย<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span> <span class="illus">โมเดลประกอบ</span></figcaption>
-      </figure>
-      <figure class="board board-card">
-        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-condo.webp" width="529" height="821" alt="" loading="lazy"><span class="plaque"><span class="nw">คอนโด</span>และ<span class="nw">โครงการ</span>ใหม่</span></div>
-        <figcaption><span class="nw">โครงการ</span>เปิดใหม่และอาคารที่สร้างเสร็จแล้ว จาก<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span>ทั่วเกาะ <span class="illus">โมเดลประกอบ</span></figcaption>
-      </figure>
-    </div>
+    <ul class="types">
+      <li><h3><span class="nw">วิลล่า</span>หรูและ<span class="nw">เรซิเดนซ์</span></h3><p>นำเสนอโดยบริษัท<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span>เอง</p></li>
+      <li><h3>Branded residence</h3><p><span class="nw">เรซิเดนซ์</span>ภายใต้<span class="nw">แบรนด์</span>โรงแรมและ<span class="nw">แบรนด์</span><span class="nw">ดีไซน์</span> นำเสนอโดย<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span></p></li>
+      <li><h3><span class="nw">คอนโด</span>และ<span class="nw">โครงการ</span>ใหม่</h3><p><span class="nw">โครงการ</span>เปิดใหม่และอาคารที่สร้างเสร็จแล้ว จาก<span class="nw">ผู้พัฒนา</span><span class="nw">โครงการ</span>ทั่วเกาะ</p></li>
+    </ul>
     <dl class="also">
       <div><dt><span class="nw">เอเจนซี่</span></dt><dd><span class="nw">วิลล่า</span>และ<span class="nw">เรซิเดนซ์</span>ขายต่อ และสัญญาเช่าระยะยาว จาก<span class="nw">เอเจนต์</span>ที่รู้จักทุกชายฝั่งของเกาะ</dd></div>
       <div><dt><span class="nw">ที่ปรึกษา</span>สำหรับผู้ซื้อต่างชาติ</dt><dd>เรื่องการถือครอง สัญญา และการนำเงินเข้าจากต่าง<span class="nw">ประเทศ</span> ถามได้ใน<span class="nw">ฮอลล์</span></dd></div>

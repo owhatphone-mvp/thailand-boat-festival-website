@@ -64,14 +64,21 @@
 }
 </script>
 <link rel="preload" as="font" type="font/woff2" href="/property/assets/v5/fonts/fahkwang-{{fk_preload}}-300-normal.woff2" crossorigin>
-<link rel="preload" as="image" href="/property/assets/v5/turn/f12.webp" imagesrcset="/property/assets/v5/turn-s/f12.webp 800w, /property/assets/v5/turn/f12.webp 1600w" imagesizes="(min-width: 960px) 58vw, 100vw">
+<link rel="preload" as="image" href="/property/assets/v5/walk/w00.webp" media="(min-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="/property/assets/v5/walk-m/w00.webp" media="(max-aspect-ratio: 9/10)">
 <link rel="stylesheet" href="/property/assets/v5/v5.css">
 <script src="/property/assets/v5/v5.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">{{skip}}</a>
 
-<header class="gallery" id="top">
+<header class="arrival" id="top">
+  <div class="walk" aria-hidden="false">
+    <picture>
+      <source media="(max-aspect-ratio: 9/10)" srcset="/property/assets/v5/walk-m/w00.webp" width="720" height="1280">
+      <img class="walk-frame" src="/property/assets/v5/walk/w00.webp" width="1600" height="900" alt="{{walk_alt}}" fetchpriority="high" data-frames="20" data-settle="8">
+    </picture>
+  </div>
   <div class="wrap bar">
     <a class="brand" href="{{home}}"><img src="/property/assets/logo-horizontal-reversed.svg" alt="Phuket Property Expo" width="198" height="40"></a>
     <nav aria-label="{{nav_label}}">
@@ -82,7 +89,7 @@
     </nav>
   </div>
 
-  <div class="wrap gallery-grid" id="main">
+  <div class="wrap arrival-grid" id="main">
     <div class="sheet">
       <div class="sheet-title">
         <h1>{{h1}}{{th_name}}</h1>
@@ -100,17 +107,7 @@
         <a class="door door-exhibit" href="#exhibit"><span class="door-h">{{door_e_h}}</span><span class="door-s">{{door_e_s}}</span></a>
       </div>
     </div>
-
-    <figure class="model">
-      <div class="turntable" tabindex="0" role="img" aria-label="{{turn_label}}" data-frames="24" data-start="12">
-        <img src="/property/assets/v5/turn/f12.webp" srcset="/property/assets/v5/turn-s/f12.webp 800w, /property/assets/v5/turn/f12.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1349" height="809" alt="{{model_alt}}" draggable="false" fetchpriority="high">
-      </div>
-      <figcaption>
-        <span>{{model_cap}}</span>
-        <span class="turn-hint" aria-hidden="true"><span class="t-mouse">{{turn_hint}}</span><span class="t-touch">{{turn_hint_touch}}</span></span>
-        <a href="/property/3d/">{{walk3d}}</a>
-      </figcaption>
-    </figure>
+    <p class="walk-cap"><span>{{walk_cap}}</span> <a href="/property/3d/">{{walk3d}}</a></p>
   </div>
 </header>
 
@@ -121,20 +118,11 @@
       <h2 id="col-h">{{col_h2}}</h2>
       <p>{{homes_p}}</p>
     </div>
-    <div class="boards">
-      <figure class="board board-wood">
-        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-villa.webp" width="863" height="572" alt="" loading="lazy"><span class="plaque">{{cat1}}</span></div>
-        <figcaption>{{b1}} <span class="illus">{{illus}}</span></figcaption>
-      </figure>
-      <figure class="board board-terrazzo">
-        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-branded.webp" width="935" height="788" alt="" loading="lazy"><span class="plaque">{{cat2}}</span></div>
-        <figcaption>{{b2}} <span class="illus">{{illus}}</span></figcaption>
-      </figure>
-      <figure class="board board-card">
-        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-condo.webp" width="529" height="821" alt="" loading="lazy"><span class="plaque">{{cat3}}</span></div>
-        <figcaption>{{b3}} <span class="illus">{{illus}}</span></figcaption>
-      </figure>
-    </div>
+    <ul class="types">
+      <li><h3>{{cat1}}</h3><p>{{b1}}</p></li>
+      <li><h3>{{cat2}}</h3><p>{{b2}}</p></li>
+      <li><h3>{{cat3}}</h3><p>{{b3}}</p></li>
+    </ul>
     <dl class="also">
       <div><dt>{{i2t}}</dt><dd>{{i2}}</dd></div>
       <div><dt>{{i3t}}</dt><dd>{{i3}}</dd></div>

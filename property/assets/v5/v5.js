@@ -1,90 +1,58 @@
-/* Phuket Property Expo 2027 — v5: model turntable, hall plan, exhibitor enquiry */
+/* Phuket Property Expo 2027 — v5: walk-in arrival, hall plan, exhibitor enquiry */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Turntable: frames rendered from the hall's 3D model; drag or arrow keys to turn */
-  var tt = document.querySelector('.turntable');
-  if (tt) {
-    var img = tt.querySelector('img');
-    var n = +tt.getAttribute('data-frames') || 24;
-    var cur = +tt.getAttribute('data-start') || 12;
-    var dir = (window.innerWidth >= 700 || window.devicePixelRatio > 1.5) ? 'turn' : 'turn-s';
-    var base = '/property/assets/v5/' + dir + '/f';
-    var frames = [], loaded = 0, ready = false;
+  /* Arrival: frames rendered at eye level from the hall's 3D model. On load the camera glides in from the
+     entrance (the one authored moment); scrolling past the hero carries it on towards the lounge. */
+  var img = document.querySelector('.walk-frame');
+  if (img) {
+    var n = +img.getAttribute('data-frames') || 20, settle = +img.getAttribute('data-settle') || 8;
+    var portrait = window.matchMedia && window.matchMedia('(max-aspect-ratio: 9/10)').matches;
+    var base = '/property/assets/v5/' + (portrait ? 'walk-m' : 'walk') + '/w';
+    var hero = document.querySelector('.arrival');
+    var frames = [], loaded = 0, ready = false, cur = 0, glide = 0;
     function src(i) { return base + (i < 10 ? '0' : '') + i + '.webp'; }
     function show(i) {
       i = Math.max(0, Math.min(n - 1, Math.round(i)));
-      if (i === cur && img.getAttribute('data-f') == i) return;
-      cur = i; img.setAttribute('data-f', i);
-      if (frames[i] && frames[i].complete) { img.removeAttribute('srcset'); img.src = frames[i].src; }
+      if (i === cur || !frames[i] || !frames[i].complete) return;
+      cur = i;
+      var s = img.parentNode.querySelector('source');
+      if (s) s.parentNode.removeChild(s);
+      img.src = frames[i].src;
+    }
+    function scrolled() {
+      var r = hero.getBoundingClientRect();
+      var p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height * 0.8)));  // 0 at top .. 1 as the hero leaves
+      return settle + p * (n - 1 - settle);
+    }
+    function onScroll() { if (ready && glide >= 1) show(scrolled()); }
+    function start() {
+      if (reduce) { show(settle); return; }
+      var t0 = null, dur = 2600;
+      function step(t) {
+        if (t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / dur);
+        glide = k;
+        var e = 1 - Math.pow(2, -9 * k);
+        show(Math.max(e * settle, k >= 1 ? scrolled() : 0));
+        if (k < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     }
     function preload() {
       for (var i = 0; i < n; i++) {
         var im = new Image();
         im.decoding = 'async';
-        im.onload = im.onerror = function () { if (++loaded === n) { ready = true; intro(); } };
+        im.onload = im.onerror = function () { if (++loaded === n) { ready = true; start(); } };
         im.src = src(i); frames[i] = im;
       }
     }
-    // the one authored moment: once every frame is in, the model settles a quarter turn into place
-    function intro() {
-      if (reduce || tt.getAttribute('data-touched')) return;
-      var from = 4, to = +tt.getAttribute('data-start') || 12, t0 = null, dur = 1600;
-      function step(t) {
-        if (tt.getAttribute('data-touched')) return;
-        if (t0 === null) t0 = t;
-        var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(2, -10 * k);
-        show(from + (to - from) * e);
-        if (k < 1) requestAnimationFrame(step);
-      }
-      show(from); requestAnimationFrame(step);
-    }
-    if ('requestIdleCallback' in window) requestIdleCallback(preload, { timeout: 1500 }); else setTimeout(preload, 400);
-
-    var drag = null;
-    tt.addEventListener('pointerdown', function (e) {
-      if (e.pointerType === 'mouse' && e.button !== 0) return;
-      drag = { x: e.clientX, y: e.clientY, f: cur, locked: e.pointerType === 'mouse' };
-      tt.setAttribute('data-touched', '1');
-    });
-    window.addEventListener('pointermove', function (e) {
-      if (!drag) return;
-      var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-      if (!drag.locked) {               // touch: only take horizontal drags, leave vertical scrolling alone
-        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
-        if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
-        drag.locked = true;
-      }
-      tt.classList.add('dragging');
-      if (ready) show(drag.f - dx / (tt.clientWidth / 30));
-    });
-    function end() { drag = null; tt.classList.remove('dragging'); }
-    window.addEventListener('pointerup', end);
-    window.addEventListener('pointercancel', end);
-    // touch and narrow screens: the model turns as it scrolls through the viewport, until the visitor takes over
-    var coarse = window.matchMedia && (window.matchMedia('(hover: none)').matches || window.matchMedia('(max-width: 960px)').matches);
-    if (coarse && !reduce) {
-      var ticking = false;
-      var r0 = tt.getBoundingClientRect(), p0 = 1 - (r0.top + r0.height) / (window.innerHeight + r0.height);  // where the page opened
-      window.addEventListener('scroll', function () {
-        if (ticking || !ready || tt.getAttribute('data-touched')) return;
-        ticking = true;
-        requestAnimationFrame(function () {
-          ticking = false;
-          var r = tt.getBoundingClientRect(), vh = window.innerHeight;
-          if (r.bottom < 0 || r.top > vh) return;
-          var p = 1 - (r.top + r.height) / (vh + r.height);   // 0 entering from below .. 1 leaving at the top
-          var start = +tt.getAttribute('data-start') || 12;
-          var t = p0 < 1 ? (p - p0) / (1 - p0) : 0;            // 0 at the starting position .. 1 as the model leaves the view
-          show(start + Math.max(-1, Math.min(1, t)) * 11);
-        });
-      }, { passive: true });
-    }
-    tt.addEventListener('keydown', function (e) {
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      e.preventDefault(); tt.setAttribute('data-touched', '1');
-      if (ready) show(cur + (e.key === 'ArrowLeft' ? 1 : -1));
-    });
+    if (document.readyState === 'complete') preload(); else window.addEventListener('load', preload);
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { ticking = false; onScroll(); });
+    }, { passive: true });
   }
 
   /* Hall plan: module hotspots placed from the 3D model's booth coordinates (% of the plan image) */
