@@ -23,7 +23,7 @@ EN.update(
   model_alt='Concept model of the White House hall on a terrazzo plinth: booths along both long walls, a lounge in the middle and the Property Talks stage at the far end',
   model_cap='White House hall · 50 × 20 m · concept model', turn_hint='Drag to turn the model', turn_hint_touch='Swipe or scroll to turn the model',
   turn_label='Concept model of the hall. Use the arrow keys to turn it.', walk3d='Walk through in 3D',
-  col_h2='Villas, branded residences and condominiums, in one hall', walk_alt='Inside the White House hall from the entrance: booths along both sides, the lounge in the middle and the Property Talks stage at the far end', walk_cap='White House hall · concept render',
+  col_h2='Villas, branded residences and condominiums, in one hall', walk_alt='Inside the White House hall from the entrance: booths along both sides, the lounge in the middle and the Property Talks stage at the far end', walk_cap='White House hall · concept visualisation',
   b1='Presented by the companies building them.',
   b2='Hotel- and designer-branded residences, presented by their developers.',
   b3='New launches and completed buildings, from developers across the island.',

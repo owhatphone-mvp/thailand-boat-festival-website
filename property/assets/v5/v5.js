@@ -1,59 +1,6 @@
-/* Phuket Property Expo 2027 — v5: walk-in arrival, hall plan, exhibitor enquiry */
+/* Phuket Property Expo 2027 — v5: hall plan, exhibitor enquiry, 3D link tracking */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Arrival: frames rendered at eye level from the hall's 3D model. On load the camera glides in from the
-     entrance (the one authored moment); scrolling past the hero carries it on towards the lounge. */
-  var img = document.querySelector('.walk-frame');
-  if (img) {
-    var n = +img.getAttribute('data-frames') || 20, settle = +img.getAttribute('data-settle') || 8;
-    var portrait = window.matchMedia && window.matchMedia('(max-aspect-ratio: 9/10)').matches;
-    var base = '/property/assets/v5/' + (portrait ? 'walk-m' : 'walk') + '/w';
-    var hero = document.querySelector('.arrival');
-    var frames = [], loaded = 0, ready = false, cur = 0, glide = 0;
-    function src(i) { return base + (i < 10 ? '0' : '') + i + '.webp'; }
-    function show(i) {
-      i = Math.max(0, Math.min(n - 1, Math.round(i)));
-      if (i === cur || !frames[i] || !frames[i].complete) return;
-      cur = i;
-      var s = img.parentNode.querySelector('source');
-      if (s) s.parentNode.removeChild(s);
-      img.src = frames[i].src;
-    }
-    function scrolled() {
-      var r = hero.getBoundingClientRect();
-      var p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height * 0.8)));  // 0 at top .. 1 as the hero leaves
-      return settle + p * (n - 1 - settle);
-    }
-    function onScroll() { if (ready && glide >= 1) show(scrolled()); }
-    function start() {
-      if (reduce) { show(settle); return; }
-      var t0 = null, dur = 2600;
-      function step(t) {
-        if (t0 === null) t0 = t;
-        var k = Math.min(1, (t - t0) / dur);
-        glide = k;
-        var e = 1 - Math.pow(2, -9 * k);
-        show(Math.max(e * settle, k >= 1 ? scrolled() : 0));
-        if (k < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-    function preload() {
-      for (var i = 0; i < n; i++) {
-        var im = new Image();
-        im.decoding = 'async';
-        im.onload = im.onerror = function () { if (++loaded === n) { ready = true; start(); } };
-        im.src = src(i); frames[i] = im;
-      }
-    }
-    if (document.readyState === 'complete') preload(); else window.addEventListener('load', preload);
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking) return; ticking = true;
-      requestAnimationFrame(function () { ticking = false; onScroll(); });
-    }, { passive: true });
-  }
 
   /* Hall plan: module hotspots placed from the 3D model's booth coordinates (% of the plan image) */
   var mods = document.querySelector('.mods');
