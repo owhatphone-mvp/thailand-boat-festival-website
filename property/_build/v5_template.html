@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18503297653"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18503297653');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (!/\/earlybird\b/.test(h)) return;
+    gtag('event', 'register_click', { pass_type: 'earlybird', page_lang: document.documentElement.lang, page_section: 'property_expo', transport_type: 'beacon' });
+    gtag('event', 'conversion', { send_to: 'AW-18503297653/76DYCIzI2JYdEPXUh_dE', value: 1.0, currency: 'THB', transport_type: 'beacon' });
+  }, true);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<link rel="canonical" href="{{canonical}}">
+<link rel="alternate" hreflang="en" href="https://thailandboatfestival.com/property/">
+<link rel="alternate" hreflang="th" href="https://thailandboatfestival.com/property/th/">
+<link rel="alternate" hreflang="x-default" href="https://thailandboatfestival.com/property/">
+<meta name="robots" content="{{robots}}">
+<meta name="theme-color" content="#10272B">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://thailandboatfestival.com/images/6.jpg">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="800">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:locale:alternate" content="{{og_alt}}">
+<meta property="og:site_name" content="Phuket Property Expo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/property/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/property/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Phuket Property Expo 2027",
+  {{ld_name_alt}}
+  "description": "{{ld_desc}}",
+  "startDate": "2027-01-14T13:00:00+07:00",
+  "endDate": "2027-01-17T19:00:00+07:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "inLanguage": ["en", "th"],
+  "url": "{{canonical}}",
+  "image": ["https://thailandboatfestival.com/images/6.jpg"],
+  "location": {
+    "@type": "Place",
+    "name": "White House hall, Boat Lagoon Marina, Phuket",
+    "address": { "@type": "PostalAddress", "streetAddress": "22/1 Moo 2, Thepkrasattri Rd", "addressLocality": "Koh Kaew, Mueang Phuket", "addressRegion": "Phuket", "postalCode": "83000", "addressCountry": "TH" }
+  },
+  "organizer": [{ "@type": "Organization", "name": "M Vision Public Company Limited", "url": "https://thailandboatfestival.com/" }, { "@type": "Person", "name": "Dr. Phongthon Tharachai", "alternateName": "ดร.พงศ์ธร ธาราไชย", "email": "phongthon@richerbetter.com", "url": "https://thailandboatfestival.com/co-organiser/", "affiliation": { "@type": "Organization", "name": "PP Richer is Better" } }],
+  "superEvent": { "@type": "Event", "name": "Thailand Boat Festival 2027", "url": "https://thailandboatfestival.com{{tbf}}" }
+}
+</script>
+<link rel="preload" as="font" type="font/woff2" href="/property/assets/v5/fonts/fahkwang-{{fk_preload}}-300-normal.woff2" crossorigin>
+<link rel="preload" as="image" href="/property/assets/v5/turn/f12.webp" imagesrcset="/property/assets/v5/turn-s/f12.webp 800w, /property/assets/v5/turn/f12.webp 1600w" imagesizes="(min-width: 960px) 58vw, 100vw">
+<link rel="stylesheet" href="/property/assets/v5/v5.css">
+<script src="/property/assets/v5/v5.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">{{skip}}</a>
+
+<header class="gallery" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="{{home}}"><img src="/property/assets/logo-horizontal-reversed.svg" alt="Phuket Property Expo" width="198" height="40"></a>
+    <nav aria-label="{{nav_label}}">
+      <a href="#visit">{{n_visit2}}</a>
+      <a href="#exhibit">{{n_exhibit}}</a>
+      <a href="/broker">{{n_brokers}}</a>
+      <a class="lang" href="{{other_href}}" lang="{{other_lang}}" hreflang="{{other_lang}}">{{other_label}}</a>
+    </nav>
+  </div>
+
+  <div class="wrap gallery-grid" id="main">
+    <div class="sheet">
+      <div class="sheet-title">
+        <h1>{{h1}}{{th_name}}</h1>
+        <p class="edition">{{ed}}</p>
+      </div>
+      <p class="lede">{{lede}}</p>
+      <dl class="cells">
+        <div><dt>{{f1t}}</dt><dd>{{f1}}</dd></div>
+        <div><dt>{{f2t}}</dt><dd>{{f2}}</dd></div>
+        <div><dt>{{f3t}}</dt><dd>{{f3}}</dd></div>
+        <div><dt>{{f4t}}</dt><dd>{{f4s}}</dd></div>
+      </dl>
+      <div class="doors">
+        <a class="door door-visit" href="/property/earlybird"><span class="door-h">{{door_v_h}}</span><span class="door-s">{{door_v_s}}</span></a>
+        <a class="door door-exhibit" href="#exhibit"><span class="door-h">{{door_e_h}}</span><span class="door-s">{{door_e_s}}</span></a>
+      </div>
+    </div>
+
+    <figure class="model">
+      <div class="turntable" tabindex="0" role="img" aria-label="{{turn_label}}" data-frames="24" data-start="12">
+        <img src="/property/assets/v5/turn/f12.webp" srcset="/property/assets/v5/turn-s/f12.webp 800w, /property/assets/v5/turn/f12.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1349" height="809" alt="{{model_alt}}" draggable="false" fetchpriority="high">
+      </div>
+      <figcaption>
+        <span>{{model_cap}}</span>
+        <span class="turn-hint" aria-hidden="true"><span class="t-mouse">{{turn_hint}}</span><span class="t-touch">{{turn_hint_touch}}</span></span>
+        <a href="/property/3d/">{{walk3d}}</a>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="collection" aria-labelledby="col-h">
+  <div class="wrap">
+    <div class="col-head">
+      <h2 id="col-h">{{col_h2}}</h2>
+      <p>{{homes_p}}</p>
+    </div>
+    <div class="boards">
+      <figure class="board board-wood">
+        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-villa.webp" width="863" height="572" alt="" loading="lazy"><span class="plaque">{{cat1}}</span></div>
+        <figcaption>{{b1}} <span class="illus">{{illus}}</span></figcaption>
+      </figure>
+      <figure class="board board-terrazzo">
+        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-branded.webp" width="935" height="788" alt="" loading="lazy"><span class="plaque">{{cat2}}</span></div>
+        <figcaption>{{b2}} <span class="illus">{{illus}}</span></figcaption>
+      </figure>
+      <figure class="board board-card">
+        <div class="board-face"><img class="mass" src="/property/assets/v5/mass-condo.webp" width="529" height="821" alt="" loading="lazy"><span class="plaque">{{cat3}}</span></div>
+        <figcaption>{{b3}} <span class="illus">{{illus}}</span></figcaption>
+      </figure>
+    </div>
+    <dl class="also">
+      <div><dt>{{i2t}}</dt><dd>{{i2}}</dd></div>
+      <div><dt>{{i3t}}</dt><dd>{{i3}}</dd></div>
+      <div><dt>{{i4t}}</dt><dd>{{i4}}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="site" id="visit" aria-labelledby="site-h">
+  <div class="wrap site-grid">
+    <figure class="mount">
+      <img src="/images/10.jpg" width="1400" height="800" alt="{{hero_alt}}" loading="lazy">
+      <figcaption>{{site_cap}}</figcaption>
+    </figure>
+    <div class="site-copy">
+      <h2 id="site-h">{{b_h2}}</h2>
+      <p>{{site_p}}</p>
+      <ul class="hours">
+        <li><span>{{h_expo}}</span><b>13:00–19:00</b></li>
+        <li><span>{{h_fest}}</span><b>14:00–21:00</b></li>
+      </ul>
+      <p class="both">{{a1_plain}}</p>
+      <a class="btn" href="/property/earlybird">{{cta1}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="exhibit" id="exhibit" aria-labelledby="ex-h">
+  <div class="wrap">
+    <div class="ex-head">
+      <h2 id="ex-h">{{d_h2}}</h2>
+      <p>{{why}}</p>
+    </div>
+    <div class="plan-wrap">
+      <figure class="plan">
+        <div class="plan-stage">
+          <img src="/property/assets/v5/plan.webp" width="1624" height="742" alt="{{plan_alt}}" loading="lazy">
+          <div class="mods" data-mod="{{mod}}" data-size="3 × 3 m" data-wall="{{m_wall}}" data-open="{{m_open}}"></div>
+        </div>
+        <figcaption><span class="plan-read" aria-live="polite">{{plan_tip}}</span><span>{{plan_cap}}</span></figcaption>
+      </figure>
+      <div class="plan-text">
+        <h3>{{hall_h}}</h3>
+        <p>{{hall_p1}}</p>
+        <p>{{hall_p2}}</p>
+        <a class="text-link" href="/property/3d/">{{walk}}</a>
+      </div>
+    </div>
+
+    <div class="take-part">
+      <div class="options">
+        <h3>{{opt_cap}}</h3>
+        <dl class="ledger">
+          <div><dt>{{o1t}}</dt><dd>{{o1}}</dd><dd class="rate">{{rate}}</dd></div>
+          <div><dt>{{o2t}}</dt><dd>{{o2}}</dd><dd class="rate">{{rate}}</dd></div>
+          <div><dt>{{o3t}}</dt><dd>{{o3}}</dd><dd class="rate">{{rate}}</dd></div>
+        </dl>
+        <details class="fold"><summary>{{market_fold}}</summary><p>{{market}}</p><p class="small">{{refs}}</p><ol class="small"><li>{{r1}}</li><li>{{r2}}</li><li>{{r3}}</li><li>{{r4}}</li></ol></details>
+      </div>
+      <form class="enquiry" id="enquiry" novalidate>
+        <h3>{{pack}}</h3>
+        <div class="fields">
+          <label><span>{{f_name}}</span><input name="name" type="text" required autocomplete="name"></label>
+          <label><span>{{f_company}}</span><input name="company" type="text" autocomplete="organization"></label>
+          <label><span>{{f_email}}</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span>{{f_phone}}</span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="wide"><span>{{f_interest}}</span><select name="interest"><option>{{o1t}}</option><option>{{o2t}}</option><option>{{o3t}}</option></select></label>
+          <label class="wide"><span>{{f_msg}}</span><textarea name="message" rows="3"></textarea></label>
+          <label class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="send">
+          <button class="btn" type="submit" data-sending="{{f_sending}}">{{f_send}}</button>
+          <span>{{or_email}} <a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></span>
+        </div>
+        <p class="enq-msg" role="status" aria-live="polite" data-ok="{{f_ok}}" data-err="{{f_err}}"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="details" aria-labelledby="det-h">
+  <div class="wrap det-grid">
+    <div>
+      <h2 id="det-h">{{v_h2}}</h2>
+      <dl class="ledger ledger-visit">
+        <div><dt>{{v1t}}</dt><dd>{{v1}}</dd></div>
+        <div><dt>{{v2t}}</dt><dd>{{v2}}</dd></div>
+        <div><dt>{{v3t}}</dt><dd>{{v3}}</dd></div>
+        <div><dt>{{v5t}}</dt><dd>{{v5}}</dd></div>
+        <div><dt>{{v6t}}</dt><dd>{{v6}}</dd></div>
+      </dl>
+    </div>
+    <div class="det-side">
+      <div class="qa">
+        <h3>{{q1}}</h3>{{a1}}
+        <h3>{{q2}}</h3>{{a2}}
+      </div>
+      <div class="brokers">
+        <h3>{{k_h2}}</h3>
+        <p>{{k_p}}</p>
+        <a class="text-link" href="/broker">{{k_cta}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="/property/assets/logo-horizontal-reversed.svg" alt="Phuket Property Expo" width="198" height="40" loading="lazy">
+      <p>{{foot_p}}</p>
+      <a class="btn btn-plaque" href="/property/earlybird">{{cta1}}</a>
+    </div>
+    <div>
+      <h2>{{org}}</h2>
+      <p>{{org_name}}</p>
+      <p class="sub">{{co_org}} <a href="/co-organiser/">{{co_name}}</a> · {{co_ch}}</p>
+    </div>
+    <div>
+      <h2>{{contact}}</h2>
+      <p><a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></p>
+      <p class="sub">{{co_contact}}: <a href="mailto:phongthon@richerbetter.com">phongthon@richerbetter.com</a></p>
+    </div>
+    <div>
+      <h2>{{k_foot_h}}</h2>
+      <p><a href="/broker">{{k_foot}}</a></p>
+      <p class="sub"><a href="{{other_href}}" lang="{{other_lang}}" hreflang="{{other_lang}}">{{other_label}}</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

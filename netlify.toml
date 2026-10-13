@@ -61,6 +61,12 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[redirects]]
+  from = "/property/_build/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "https://thailandpropertyexpo.com/earlybird"
   to = "https://luma.com/phuket-property-expo"
   status = 302
