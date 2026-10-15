@@ -64,6 +64,7 @@ EN.update(
   v5='By registration. Early Bird registration closes on 30 November 2026',
   a1='<p>No. Entry is by registration, and one registration covers both events, whether you register through Phuket Property Expo or Thailand Boat Festival. Early Bird registration closes on 30 November 2026.</p>',
   lede="The luxury property show inside Thailand Boat Festival. Villas, branded residences and condominiums from Phuket's developers, presented at the marina in high season, to buyers already on the island.",
+  walk_alt='Concept view inside the White House marquee at Boat Lagoon: developer booths along both sides, a lounge down the middle and the Property Talks stage at the far end', walk_cap='Inside the White House hall · concept image',
   i4t='Lounge and Property Talks', i4='A lounge set aside for unhurried conversations with developers, and Property Talks each day on owning in Phuket. Programme to be announced.',
 )
 TH.update(
@@ -74,6 +75,7 @@ TH.update(
   v5='เข้างานด้วยการลงทะเบียน ปิดรับ Early Bird 30 พฤศจิกายน 2569',
   a1='<p>ไม่ต้อง เข้างานด้วยการลงทะเบียน และลงทะเบียนครั้งเดียวจาก Phuket Property Expo หรือ Thailand Boat Festival ก็เข้าได้ทั้งสองงาน ปิดรับลงทะเบียน Early Bird 30 พฤศจิกายน 2569</p>',
   lede='งานอสังหาหรูภายใน Thailand Boat Festival รวมวิลล่า branded residence และคอนโดจากผู้พัฒนาโครงการในภูเก็ต นำเสนอที่มารีน่าในช่วงไฮซีซั่น ต่อผู้ซื้อที่อยู่บนเกาะอยู่แล้ว',
+  walk_alt='ภาพแนวคิดภายในฮอลล์ White House ที่ Boat Lagoon: บูธผู้พัฒนาโครงการสองฝั่ง เลานจ์กลางฮอลล์ และเวที Property Talks ท้ายฮอลล์', walk_cap='ภายในฮอลล์ White House · ภาพจำลองแนวคิด',
   i4t='เลานจ์และ Property Talks', i4='เลานจ์สำหรับนั่งคุยกับผู้พัฒนาโครงการอย่างไม่เร่งรีบ และ Property Talks ทุกวันเรื่องการเป็นเจ้าของบ้านในภูเก็ต ประกาศโปรแกรมภายหลัง',
 )
 
