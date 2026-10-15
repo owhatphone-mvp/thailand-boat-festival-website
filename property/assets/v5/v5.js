@@ -15,7 +15,22 @@
 
   /* Hall plan: module hotspots placed from the 3D model's booth coordinates (% of the plan image) */
   var mods = document.querySelector('.mods');
-  if (mods) {
+  var lay = mods && mods.getAttribute('data-layout');
+  if (mods && lay) {
+    lay = JSON.parse(lay);
+    var kinds = JSON.parse(mods.getAttribute('data-kinds'));
+    var read2 = document.querySelector('.plan-read'), lab2 = mods.getAttribute('data-mod'), size2 = mods.getAttribute('data-size'), sel2 = null;
+    lay.m.forEach(function (m) {
+      var b = document.createElement('button'), num = (m[0] < 10 ? '0' : '') + m[0], txt = lab2 + ' ' + num + ' · ' + size2 + ' · ' + kinds[m[3]];
+      b.type = 'button'; b.textContent = num;
+      b.style.left = m[1] + '%'; b.style.top = m[2] + '%';
+      b.style.width = (lay.w - 0.3) + '%'; b.style.height = (lay.h - 0.8) + '%';
+      b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-label', txt);
+      b.addEventListener('click', function () { if (sel2) sel2.setAttribute('aria-pressed', 'false'); sel2 = b; b.setAttribute('aria-pressed', 'true'); read2.textContent = txt; });
+      b.addEventListener('mouseenter', function () { read2.textContent = txt; });
+      mods.appendChild(b);
+    });
+  } else if (mods) {
     var M = [[1,8.6,14.75,0],[2,14.28,14.75,0],[3,19.97,14.75,0],[4,25.66,14.75,0],[5,31.33,14.75,0],[6,37.02,14.75,0],[7,42.71,14.75,0],[8,48.39,14.75,0],[9,54.07,14.75,0],[10,59.76,14.75,0],[11,65.44,14.75,0],[12,71.13,14.75,0],[13,76.81,14.75,0],[15,82.49,14.75,0],[16,8.6,85.25,0],[17,14.28,85.25,0],[18,19.97,85.25,0],[20,25.66,85.25,0],[21,31.33,85.25,0],[22,37.02,85.25,0],[23,42.71,85.25,0],[24,48.39,85.25,0],[25,54.07,85.25,0],[26,59.76,85.25,0],[27,65.44,85.25,0],[28,71.13,85.25,0],[29,76.81,85.25,0],[30,82.49,85.25,0],[31,17.13,39.63,1],[32,22.81,39.63,1],[33,17.13,60.37,1],[34,22.81,60.37,1]];
     var W = 5.684, H = 12.44;
     var read = document.querySelector('.plan-read');

@@ -243,3 +243,17 @@ p{margin:0 0 1em;max-width:68ch}
 .fb-link .fb-i{flex:none;margin-top:2px;color:#1877F2}
 .fb-link strong{display:block;color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .fb-link:hover strong,.fb-link:focus-visible strong{text-decoration-thickness:2px}
+
+/* booth types (52-booth layout, standard shell scheme) */
+.booth-types{margin-top:clamp(40px,5vw,64px)}
+.booth-types h3{margin-bottom:18px}
+.booth-types ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.booth-types li{display:flex;flex-direction:column;gap:4px}
+.booth-types img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:2px;margin-bottom:8px}
+.booth-types b{font-weight:600;font-size:.9875rem}
+.booth-types span{font-size:.8125rem;color:var(--text-2);line-height:1.45}
+.bt-note{margin-top:14px;font-size:.8125rem;color:var(--text-2)}
+@media (max-width:960px){.booth-types ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.booth-types ul{grid-template-columns:1fr 1fr;gap:12px}}
+.plan-wrap .plan{grid-column:1/-1}.plan-wrap .plan-text{grid-column:1/span 7}
+.plan-stage img{filter:none;border:1px solid var(--line)}

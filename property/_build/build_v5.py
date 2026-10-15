@@ -79,6 +79,47 @@ TH.update(
   i4t='เลานจ์และ Property Talks', i4='เลานจ์สำหรับนั่งคุยกับผู้พัฒนาโครงการอย่างไม่เร่งรีบ และ Property Talks ทุกวันเรื่องการเป็นเจ้าของบ้านในภูเก็ต ประกาศโปรแกรมภายหลัง',
 )
 
+# 52-booth all-booth layout (โอ 15 Oct 2026: booths only, no lounge or stage; standard shell-scheme booths chosen)
+import json as _j
+EN.update(
+  door_e_s='Book a booth · 52 modules of 3 × 3 m',
+  ld_desc='Luxury property show in the air-conditioned White House hall at Thailand Boat Festival 2027, Boat Lagoon Marina, Phuket: luxury villas, branded residences and condominiums from Phuket developers and agencies, in 52 booths. Daily 13:00–19:00.',
+  walk_alt='Concept view inside the White House marquee: white booths along both walls and on a centre island, visitors walking the aisles', walk_cap='Inside the White House hall · concept visualisation',
+  i4t='Time with each developer', i4='Every booth has a table and seats, so you can sit down with the developer and go through a project properly.',
+  hall_h='52 booths, one loop', hall_p1='52 booth modules of 3 × 3 m: 26 along the walls and 26 on a centre island. Book one module, or combine two for a 6 × 3 m booth.',
+  hall_p2='Registration sits under the canopy outside, so the whole hall is booths. Aisles are 3.5 m wide and one loop passes every booth. The four island ends face the entrance and the rear aisle.',
+  plan_alt='Plan of the hall from above: 52 booth modules, 26 along the two long walls and 26 back to back on a centre island, with a cross aisle in the middle and the entrance on the short side',
+  plan_cap='Hall 50 × 20 m. Door and exit positions to be confirmed on site.',
+  m_kinds=_j.dumps({'w': 'along the wall, opens onto the aisle', 'i': 'on the centre island, opens onto the aisle', 'c': 'corner, open on two sides', 'p': 'island end, open on two sides, faces the entrance or rear aisle'}).replace('"', '&quot;'),
+  o3t='Island-end booth', o3='One of four premium booths at the island ends, open on two sides and first in view from the entrance.',
+  fb_s='News of exhibiting developers and projects as they are announced.',
+  bt_h='Booth types', bt_note='Standard booth: white partition walls, name board with lighting, project poster wall, display counter, a table with covered chairs. Concept images; final fit-out to be confirmed.',
+  bt1='Wall booth', bt1s='3 × 3 m · open front · 18 booths',
+  bt2='Corner booth', bt2s='3 × 3 m · open on two sides · 12 booths',
+  bt3='Island end', bt3s='3 × 3 m · open on two sides · 4 booths',
+  bt4='Island booth', bt4s='3 × 3 m · open front · 18 booths',
+  bt5='Double booth', bt5s='6 × 3 m · two modules combined',
+)
+TH.update(
+  door_e_s='จองบูธ · 52 โมดูล ขนาด 3 × 3 ม.',
+  ld_desc='งานอสังหาหรูในฮอลล์ติดแอร์ White House ภายในงาน Thailand Boat Festival 2027 ที่ Boat Lagoon Marina ภูเก็ต: วิลล่าหรู branded residence และคอนโดจากผู้พัฒนาโครงการและเอเจนซี่ในภูเก็ต 52 บูธ เปิด 13:00–19:00 น.',
+  walk_alt='ภาพแนวคิดภายในฮอลล์ White House: บูธสีขาวเรียงตามผนังและบนเกาะกลาง ผู้เข้าชมเดินตามทางเดิน', walk_cap='ภายในฮอลล์ White House · ภาพจำลองแนวคิด',
+  i4t='มีเวลาคุยกับผู้พัฒนาโครงการ', i4='ทุกบูธมีโต๊ะและที่นั่ง นั่งคุยรายละเอียดโครงการกับผู้พัฒนาได้เต็มที่',
+  hall_h='52 บูธ เดินรอบเดียวครบ', hall_p1='บูธ 52 โมดูล ขนาด 3 × 3 ม. ริมผนัง 26 บูธ และเกาะกลาง 26 บูธ จองโมดูลเดียว หรือรวมสองโมดูลเป็นบูธ 6 × 3 ม.',
+  hall_p2='จุดลงทะเบียนอยู่ใต้หลังคาผ้าใบหน้าฮอลล์ ข้างในจึงเป็นบูธทั้งหมด ทางเดินกว้าง 3.5 ม. เดินวนรอบเดียวผ่านครบทุกบูธ หัวเกาะทั้งสี่บูธหันหาทางเข้าและทางเดินท้ายฮอลล์',
+  plan_alt='ผังฮอลล์มุมบน: บูธ 52 โมดูล ริมผนังยาวสองฝั่ง 26 บูธ และเกาะกลางหันหลังชนกัน 26 บูธ มีทางตัดกลางฮอลล์ ทางเข้าอยู่ด้านสั้น',
+  plan_cap='ฮอลล์ 50 × 20 ม. ตำแหน่งประตูและทางออกยืนยันหน้างานอีกครั้ง',
+  m_kinds=_j.dumps({'w': 'ริมผนัง เปิดออกทางเดิน', 'i': 'เกาะกลาง เปิดออกทางเดิน', 'c': 'บูธมุม เปิดสองด้าน', 'p': 'หัวเกาะ เปิดสองด้าน หันหาทางเข้าหรือทางเดินท้ายฮอลล์'}, ensure_ascii=False).replace('"', '&quot;'),
+  o3t='บูธหัวเกาะ', o3='บูธพรีเมียมหนึ่งในสี่บูธที่หัวเกาะ เปิดสองด้าน เห็นก่อนจากทางเข้า',
+  fb_s='ข่าวผู้พัฒนาโครงการและโครงการที่มาออกงาน เมื่อประกาศ',
+  bt_h='แบบบูธ', bt_note='บูธมาตรฐาน: ผนัง partition สีขาว ป้ายชื่อพร้อมไฟ ผนังติดโปสเตอร์โครงการ เคาน์เตอร์โชว์ โต๊ะและเก้าอี้คลุมผ้า ภาพจำลองแนวคิด รายละเอียดการตกแต่งยืนยันอีกครั้ง',
+  bt1='บูธริมผนัง', bt1s='3 × 3 ม. · เปิดด้านหน้า · 18 บูธ',
+  bt2='บูธมุม', bt2s='3 × 3 ม. · เปิดสองด้าน · 12 บูธ',
+  bt3='หัวเกาะ', bt3s='3 × 3 ม. · เปิดสองด้าน · 4 บูธ',
+  bt4='บูธเกาะกลาง', bt4s='3 × 3 ม. · เปิดด้านหน้า · 18 บูธ',
+  bt5='บูธคู่', bt5s='6 × 3 ม. · รวมสองโมดูล',
+)
+
 import re
 NOBREAK = ['คอนโด', 'เรซิเดนซ์', 'เอเจนซี่', 'เอเจนต์', 'วิลล่า', 'เลานจ์', 'โมดูล', 'ฮอลล์', 'มารีน่า', 'ไฮซีซั่น', 'ทอล์ก', 'แบรนด์', 'ดีไซน์', 'โบรกเกอร์', 'พาร์ทเนอร์', 'เรือยอชท์', 'ทุกวัน', 'มกราคม', 'พฤศจิกายน', 'ลงทะเบียน', 'ผังงาน', 'จัดงาน', 'โครงการ', 'ผู้พัฒนา', 'ประเทศ', 'ที่ปรึกษา', 'เมื่อประกาศ', 'นำเสนอ']
 def keep_words(html):

@@ -65,8 +65,8 @@
 }
 </script>
 <link rel="preload" as="font" type="font/woff2" href="/property/assets/v5/fonts/fahkwang-{{fk_preload}}-300-normal.woff2" crossorigin>
-<link rel="preload" as="image" href="/property/assets/v5/hall-photo.webp" imagesrcset="/property/assets/v5/hall-photo-1280.webp 1280w, /property/assets/v5/hall-photo.webp 1680w" imagesizes="100vw" media="(min-aspect-ratio: 9/10)">
-<link rel="preload" as="image" href="/property/assets/v5/hall-photo-m.webp" media="(max-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="/property/assets/v5/hall-std.webp" imagesrcset="/property/assets/v5/hall-std-1280.webp 1280w, /property/assets/v5/hall-std.webp 1680w" imagesizes="100vw" media="(min-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="/property/assets/v5/hall-std-m.webp" media="(max-aspect-ratio: 9/10)">
 <link rel="stylesheet" href="/property/assets/v5/v5.css">
 <script src="/property/assets/v5/v5.js" defer></script>
 </head>
@@ -76,9 +76,10 @@
 <header class="arrival" id="top">
   <div class="walk" aria-hidden="false">
     <picture>
-      <source media="(max-aspect-ratio: 9/10)" srcset="/property/assets/v5/hall-photo-m.webp" width="720" height="960">
-      <img class="hall-hero" src="/property/assets/v5/hall-photo.webp" srcset="/property/assets/v5/hall-photo-1280.webp 1280w, /property/assets/v5/hall-photo.webp 1680w" sizes="100vw" width="1680" height="945" alt="{{walk_alt}}" fetchpriority="high">
+      <source media="(max-aspect-ratio: 9/10)" srcset="/property/assets/v5/hall-std-m.webp" width="720" height="1280">
+      <img class="hall-hero" src="/property/assets/v5/hall-std.webp" srcset="/property/assets/v5/hall-std-1280.webp 1280w, /property/assets/v5/hall-std.webp 1680w" sizes="100vw" width="1680" height="945" alt="{{walk_alt}}" fetchpriority="high">
     </picture>
+    <video class="hall-video" muted playsinline loop preload="none" aria-hidden="true" data-src="/property/assets/v5/hall-walk-std.mp4" data-src-m="/property/assets/v5/hall-walk-std-m.mp4"></video>
   </div>
   <div class="wrap bar">
     <a class="brand" href="{{home}}"><img src="/property/assets/logo-horizontal-reversed.svg" alt="Phuket Property Expo" width="198" height="40"></a>
@@ -160,8 +161,8 @@
     <div class="plan-wrap">
       <figure class="plan">
         <div class="plan-stage">
-          <img src="/property/assets/v5/plan.webp" width="1624" height="742" alt="{{plan_alt}}" loading="lazy">
-          <div class="mods" data-mod="{{mod}}" data-size="3 × 3 m" data-wall="{{m_wall}}" data-open="{{m_open}}"></div>
+          <img src="/property/assets/v5/plan52-{{lang}}.webp" width="1820" height="720" alt="{{plan_alt}}" loading="lazy">
+          <div class="mods" data-mod="{{mod}}" data-size="3 × 3 m" data-kinds="{{m_kinds}}" data-layout='{"w":5.275,"h":13.333,"m":[[1,18.791,14.444,"c"],[2,24.066,14.444,"w"],[3,29.341,14.444,"w"],[4,34.615,14.444,"w"],[5,39.89,14.444,"w"],[6,45.165,14.444,"c"],[7,55.714,14.444,"c"],[8,60.989,14.444,"w"],[9,66.264,14.444,"w"],[10,71.538,14.444,"w"],[11,76.813,14.444,"w"],[12,82.088,14.444,"w"],[13,87.363,14.444,"c"],[14,87.363,43.333,"p"],[15,82.088,43.333,"i"],[16,76.813,43.333,"i"],[17,71.538,43.333,"i"],[18,66.264,43.333,"i"],[19,60.989,43.333,"i"],[20,55.714,43.333,"c"],[21,45.165,43.333,"c"],[22,39.89,43.333,"i"],[23,34.615,43.333,"i"],[24,29.341,43.333,"i"],[25,24.066,43.333,"i"],[26,18.791,43.333,"p"],[27,18.791,56.667,"p"],[28,24.066,56.667,"i"],[29,29.341,56.667,"i"],[30,34.615,56.667,"i"],[31,39.89,56.667,"i"],[32,45.165,56.667,"c"],[33,55.714,56.667,"c"],[34,60.989,56.667,"i"],[35,66.264,56.667,"i"],[36,71.538,56.667,"i"],[37,76.813,56.667,"i"],[38,82.088,56.667,"i"],[39,87.363,56.667,"p"],[40,87.363,85.556,"c"],[41,82.088,85.556,"w"],[42,76.813,85.556,"w"],[43,71.538,85.556,"w"],[44,66.264,85.556,"w"],[45,60.989,85.556,"w"],[46,55.714,85.556,"c"],[47,45.165,85.556,"c"],[48,39.89,85.556,"w"],[49,34.615,85.556,"w"],[50,29.341,85.556,"w"],[51,24.066,85.556,"w"],[52,18.791,85.556,"c"]]}'></div>
         </div>
         <figcaption><span class="plan-read" aria-live="polite">{{plan_tip}}</span><span>{{plan_cap}}</span></figcaption>
       </figure>
@@ -171,6 +172,18 @@
         <p>{{hall_p2}}</p>
         <a class="text-link" href="/property/3d/">{{walk}}</a>
       </div>
+    </div>
+
+    <div class="booth-types">
+      <h3>{{bt_h}}</h3>
+      <ul>
+        <li><img src="/property/assets/v5/booth-wall-booth.webp" width="960" height="540" alt="{{bt1}}" loading="lazy"><b>{{bt1}}</b><span>{{bt1s}}</span></li>
+        <li><img src="/property/assets/v5/booth-corner-booth.webp" width="960" height="540" alt="{{bt2}}" loading="lazy"><b>{{bt2}}</b><span>{{bt2s}}</span></li>
+        <li><img src="/property/assets/v5/booth-premium-endcap.webp" width="960" height="540" alt="{{bt3}}" loading="lazy"><b>{{bt3}}</b><span>{{bt3s}}</span></li>
+        <li><img src="/property/assets/v5/booth-island-booth.webp" width="960" height="540" alt="{{bt4}}" loading="lazy"><b>{{bt4}}</b><span>{{bt4s}}</span></li>
+        <li><img src="/property/assets/v5/booth-double-booth.webp" width="960" height="540" alt="{{bt5}}" loading="lazy"><b>{{bt5}}</b><span>{{bt5s}}</span></li>
+      </ul>
+      <p class="bt-note">{{bt_note}}</p>
     </div>
 
     <div class="take-part">
