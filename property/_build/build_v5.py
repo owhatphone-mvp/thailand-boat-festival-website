@@ -55,8 +55,30 @@ TH.update(
   m_wall='ริมผนัง หันหน้าเข้าทางเดินหลัก', m_open='โมดูลเปิดใกล้ทางเข้า เฟอร์นิเจอร์เตี้ย',
 )
 
+# Luxury register (โอ 15 Oct 2026: no "free" — entry is by registration; frame as a place reserved, not a giveaway)
+EN.update(
+  f4t='Entry', f4s='By registration · Early Bird until 30 November',
+  door_v_s='Reserve your pass · Early Bird until 30 November',
+  cta1='Reserve your Early Bird pass',
+  a1_plain='One registration, through either event, admits you to both. Early Bird registration closes on 30 November 2026.',
+  v5='By registration. Early Bird registration closes on 30 November 2026',
+  a1='<p>No. Entry is by registration, and one registration covers both events, whether you register through Phuket Property Expo or Thailand Boat Festival. Early Bird registration closes on 30 November 2026.</p>',
+  lede="The luxury property show inside Thailand Boat Festival. Villas, branded residences and condominiums from Phuket's developers, presented at the marina in high season, to buyers already on the island.",
+  i4t='Lounge and Property Talks', i4='A lounge set aside for unhurried conversations with developers, and Property Talks each day on owning in Phuket. Programme to be announced.',
+)
+TH.update(
+  f4t='การเข้าชม', f4s='เข้างานด้วยการลงทะเบียน · Early Bird ถึง 30 พฤศจิกายน',
+  door_v_s='สำรองสิทธิ์เข้างาน · Early Bird ถึง 30 พฤศจิกายน',
+  cta1='สำรองสิทธิ์ Early Bird',
+  a1_plain='ลงทะเบียนครั้งเดียวจากงานไหนก็ได้ เข้าชมได้ทั้งสองงาน ปิดรับลงทะเบียน Early Bird 30 พฤศจิกายน 2569',
+  v5='เข้างานด้วยการลงทะเบียน ปิดรับ Early Bird 30 พฤศจิกายน 2569',
+  a1='<p>ไม่ต้อง เข้างานด้วยการลงทะเบียน และลงทะเบียนครั้งเดียวจาก Phuket Property Expo หรือ Thailand Boat Festival ก็เข้าได้ทั้งสองงาน ปิดรับลงทะเบียน Early Bird 30 พฤศจิกายน 2569</p>',
+  lede='งานอสังหาหรูภายใน Thailand Boat Festival รวมวิลล่า branded residence และคอนโดจากผู้พัฒนาโครงการในภูเก็ต นำเสนอที่มารีน่าในช่วงไฮซีซั่น ต่อผู้ซื้อที่อยู่บนเกาะอยู่แล้ว',
+  i4t='เลานจ์และ Property Talks', i4='เลานจ์สำหรับนั่งคุยกับผู้พัฒนาโครงการอย่างไม่เร่งรีบ และ Property Talks ทุกวันเรื่องการเป็นเจ้าของบ้านในภูเก็ต ประกาศโปรแกรมภายหลัง',
+)
+
 import re
-NOBREAK = ['คอนโด', 'เรซิเดนซ์', 'เอเจนซี่', 'เอเจนต์', 'วิลล่า', 'เลานจ์', 'โมดูล', 'ฮอลล์', 'มารีน่า', 'ไฮซีซั่น', 'ทอล์ก', 'แบรนด์', 'ดีไซน์', 'โบรกเกอร์', 'พาร์ทเนอร์', 'เรือยอชท์', 'ทุกวัน', 'มกราคม', 'พฤศจิกายน', 'ลงทะเบียน', 'ผังงาน', 'จัดงาน', 'โครงการ', 'ผู้พัฒนา', 'ประเทศ', 'ที่ปรึกษา', 'เมื่อประกาศ']
+NOBREAK = ['คอนโด', 'เรซิเดนซ์', 'เอเจนซี่', 'เอเจนต์', 'วิลล่า', 'เลานจ์', 'โมดูล', 'ฮอลล์', 'มารีน่า', 'ไฮซีซั่น', 'ทอล์ก', 'แบรนด์', 'ดีไซน์', 'โบรกเกอร์', 'พาร์ทเนอร์', 'เรือยอชท์', 'ทุกวัน', 'มกราคม', 'พฤศจิกายน', 'ลงทะเบียน', 'ผังงาน', 'จัดงาน', 'โครงการ', 'ผู้พัฒนา', 'ประเทศ', 'ที่ปรึกษา', 'เมื่อประกาศ', 'นำเสนอ']
 def keep_words(html):
     head, sep, body = html.partition('<body>')
     parts = re.split(r'(<script\b.*?</script>|<[^>]+>)', body, flags=re.S)
