@@ -131,6 +131,9 @@ TH.update(
   k_h2='นายหน้าและโบรกเกอร์อสังหา', k_p='ลงทะเบียนครั้งเดียว ใช้ได้ทั้งงานอสังหาและเทศกาลเรือ รับ VIP Pass ของคุณเอง VIP Pass สำหรับลูกค้า และบันทึกการแนะนำลูกค้าของคุณไว้เป็นหลักฐาน เงื่อนไขแสดงตอนลงทะเบียน', k_cta='ลงทะเบียนโบรกเกอร์', k_foot_h='นายหน้าอสังหา', k_foot='ลงทะเบียนโบรกเกอร์',
 )
 
+EN.update(fb_t='Follow the expo on Facebook', fb_s='News of exhibiting developers and the Property Talks programme as they are announced.', fb_foot='Facebook page')
+TH.update(fb_t='ติดตามงานบน Facebook', fb_s='ข่าวผู้พัฒนาโครงการที่มาออกงาน และโปรแกรม Property Talks เมื่อประกาศ', fb_foot='เพจ Facebook')
+
 for d, sub in ((EN, ''), (TH, 'th/')):
     page = T.replace('{{robots}}', ROBOTS).replace('{{plan}}', open(os.path.join(SP, f"plan_{d['lang']}.svg"), encoding='utf-8').read())
     for k, v in d.items():

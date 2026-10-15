@@ -274,3 +274,9 @@ nav.main .btn { color: var(--ink); }
 .visit-lean .btn { margin-top: 22px; }
 .visit-lean .small { font-size: 14px; }
 .foot-sub { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+/* Facebook follow link (visit section) */
+.fb-link{display:flex;align-items:flex-start;gap:12px;margin-top:28px;max-width:30em;color:var(--muted);text-decoration:none;font-size:15px;line-height:1.5}
+.fb-link .fb-i{flex:none;margin-top:2px;color:#1877F2}
+.fb-link strong{display:block;color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fb-link:hover strong,.fb-link:focus-visible strong{text-decoration-thickness:2px}

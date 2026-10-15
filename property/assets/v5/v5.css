@@ -237,3 +237,9 @@ p{margin:0 0 1em;max-width:68ch}
 .hall-video.on{opacity:1}
 .walk.has-video .hall-hero{animation:none}
 @media (min-width:961px){.hall-video{width:128%;right:auto}}
+
+/* Facebook follow link (visit section) */
+.fb-link{display:flex;align-items:flex-start;gap:12px;margin-top:28px;max-width:30em;color:var(--text-2);text-decoration:none;font-size:15px;line-height:1.5}
+.fb-link .fb-i{flex:none;margin-top:2px;color:#1877F2}
+.fb-link strong{display:block;color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fb-link:hover strong,.fb-link:focus-visible strong{text-decoration-thickness:2px}

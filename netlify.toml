@@ -163,6 +163,30 @@
   force = true
 
 [[redirects]]
+  from = "https://propertyexpophuket.com/facebook"
+  to = "https://www.facebook.com/profile.php?id=61594883987623"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://propertyexpophuket.com/facebook"
+  to = "https://www.facebook.com/profile.php?id=61594883987623"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://www.propertyexpophuket.com/facebook"
+  to = "https://www.facebook.com/profile.php?id=61594883987623"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "http://www.propertyexpophuket.com/facebook"
+  to = "https://www.facebook.com/profile.php?id=61594883987623"
+  status = 302
+  force = true
+
+[[redirects]]
   from = "https://propertyexpophuket.com/3d"
   to = "https://www.thailandboatfestival.com/property/3d/"
   status = 301
@@ -486,6 +510,12 @@
 [[redirects]]
   from = "/vip"
   to = "https://luma.com/thailand-a0ah"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/property/facebook"
+  to = "https://www.facebook.com/profile.php?id=61594883987623"
   status = 302
   force = true
 
