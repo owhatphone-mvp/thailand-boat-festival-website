@@ -257,3 +257,10 @@ p{margin:0 0 1em;max-width:68ch}
 @media (max-width:520px){.booth-types ul{grid-template-columns:1fr 1fr;gap:12px}}
 .plan-wrap .plan{grid-column:1/-1}.plan-wrap .plan-text{grid-column:1/span 7}
 .plan-stage img{filter:none;border:1px solid var(--line)}
+
+/* hero slides: each still fades in and drifts forward; transforms only, so it stays smooth */
+.hall-slides{position:absolute;inset:0;overflow:hidden}
+.hall-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.0);transform-origin:50% 45%;transition:opacity 1.6s ease,transform 0s 1.6s;will-change:opacity,transform;backface-visibility:hidden}
+.hall-slides img.on{opacity:1;transform:scale(1.08);transition:opacity 1.6s ease,transform 7s linear}
+@media (min-width:961px){.hall-slides{width:128%;right:auto}}
+.walk.has-video picture{opacity:0;transition:opacity 1.6s}

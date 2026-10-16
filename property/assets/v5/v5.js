@@ -2,15 +2,26 @@
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Hero: play the walk-in once (landscape or portrait cut), then hold on its last frame */
-  var vid = document.querySelector('.hall-video');
-  var webm = vid && vid.canPlayType('video/webm; codecs="vp9"'), mp4 = vid && vid.canPlayType('video/mp4; codecs="avc1.42E01E"');
-  if (vid && !reduce && (webm || mp4)) {
-    var portrait = window.matchMedia('(max-aspect-ratio: 9/10)').matches;
-    var f = vid.getAttribute(portrait ? 'data-src-m' : 'data-src');
-    vid.src = (mp4 && !webm) || /iP(hone|ad)|Safari/.test(navigator.userAgent) && !/Chrome|Android/.test(navigator.userAgent) ? f : f.replace(/\.mp4$/, '.webm');
-    vid.addEventListener('playing', function () { vid.classList.add('on'); vid.parentNode.classList.add('has-video'); });
-    var p = vid.play(); if (p && p.catch) p.catch(function () {});
+  /* Hero: slow cross-fading tour of the hall (stills, GPU-smooth), skipped under reduced motion */
+  var sl = document.querySelector('.hall-slides');
+  if (sl && !reduce) {
+    var n = +sl.getAttribute('data-n'), base = sl.getAttribute('data-base');
+    var suf = (window.innerWidth < 700 || (window.devicePixelRatio || 1) * window.innerWidth < 1100) ? '-960.webp' : '.webp';
+    var imgs = [], cur = -1, started = false;
+    for (var k = 1; k <= n; k++) { var im = new Image(); im.alt = ''; im.decoding = 'async'; im.setAttribute('data-src', base + k + suf); sl.appendChild(im); imgs.push(im); }
+    function load(i) { var im = imgs[i]; if (!im.src) im.src = im.getAttribute('data-src'); return im; }
+    function show(i) {
+      var im = load(i);
+      var go = function () {
+        if (cur >= 0) imgs[cur].classList.remove('on');
+        im.classList.remove('on'); void im.offsetWidth; im.classList.add('on'); cur = i;
+        if (!started) { started = true; sl.parentNode.classList.add('has-video'); }
+        load((i + 1) % n);
+        setTimeout(function () { show((i + 1) % n); }, 5000);
+      };
+      if (im.complete && im.naturalWidth) go(); else im.onload = go;
+    }
+    show(0);
   }
 
   /* Hall plan: module hotspots placed from the 3D model's booth coordinates (% of the plan image) */
