@@ -6,7 +6,8 @@
   var sl = document.querySelector('.hall-slides');
   if (sl && !reduce) {
     var n = +sl.getAttribute('data-n'), base = sl.getAttribute('data-base');
-    var suf = (window.innerWidth < 700 || (window.devicePixelRatio || 1) * window.innerWidth < 1100) ? '-960.webp' : '.webp';
+    var px = (window.devicePixelRatio || 1) * window.innerWidth;
+    var suf = px <= 1100 ? '-1280.webp' : '.webp';
     var imgs = [], cur = -1, started = false;
     for (var k = 1; k <= n; k++) { var im = new Image(); im.alt = ''; im.decoding = 'async'; im.setAttribute('data-src', base + k + suf); sl.appendChild(im); imgs.push(im); }
     function load(i) { var im = imgs[i]; if (!im.src) im.src = im.getAttribute('data-src'); return im; }
@@ -17,7 +18,7 @@
         im.classList.remove('on'); void im.offsetWidth; im.classList.add('on'); cur = i;
         if (!started) { started = true; sl.parentNode.classList.add('has-video'); }
         load((i + 1) % n);
-        setTimeout(function () { show((i + 1) % n); }, 5000);
+        setTimeout(function () { show((i + 1) % n); }, 4500);
       };
       if (im.complete && im.naturalWidth) go(); else im.onload = go;
     }
