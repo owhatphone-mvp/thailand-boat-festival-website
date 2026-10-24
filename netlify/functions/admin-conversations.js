@@ -59,6 +59,13 @@ export default async (req) => {
         } catch (_) {}
     }
     if (!ok && xHeader === expectedPass) ok = true;
+    // 3. Link key (cookie set by the edge function, or x-admin-key header)
+    const linkKey = process.env.ADMIN_LINK_KEY || '';
+    if (!ok && linkKey) {
+        const cookies = req.headers.get('cookie') || '';
+        const ck = (cookies.match(/(?:^|;\s*)sand_admin=([^;]+)/) || [])[1] || '';
+        if (ck === linkKey || (req.headers.get('x-admin-key') || '') === linkKey) ok = true;
+    }
     if (!ok) return json(401, { error: 'Unauthorized' });
 
     const url = new URL(req.url);

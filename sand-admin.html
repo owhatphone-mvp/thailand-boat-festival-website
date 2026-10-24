@@ -263,7 +263,7 @@ function signOut() {
         headers: { 'Authorization': 'Basic ' + btoa('logout:logout' + Date.now()) }
     })
     .catch(() => {})
-    .finally(() => { sessionStorage.clear(); location.reload(); });
+    .finally(() => { sessionStorage.clear(); location.href = '/admin?logout=1'; });
 }
 
 function isActive(c) { return Date.now() - new Date(c.lastActivity).getTime() < ACTIVE_MS; }
