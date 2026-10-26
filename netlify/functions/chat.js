@@ -10,6 +10,24 @@ import path from 'node:path';
 // ─── Keyword → knowledge-file map (case-insensitive substring match on recent messages)
 // Add brand keywords here when new .md files are written.
 const BRAND_KEYWORDS = {
+    'property expo': 'events/phuket-property-expo-2027.md',
+    'งานอสังหา': 'events/phuket-property-expo-2027.md',
+    'อสังหา': 'events/phuket-property-expo-2027.md',
+    'white house': 'events/phuket-property-expo-2027.md',
+    'ไวท์เฮาส์': 'events/phuket-property-expo-2027.md',
+    'villa': 'events/phuket-property-expo-2027.md',
+    'วิลล่า': 'events/phuket-property-expo-2027.md',
+    'condo': 'events/phuket-property-expo-2027.md',
+    'คอนโด': 'events/phuket-property-expo-2027.md',
+    'branded residence': 'events/phuket-property-expo-2027.md',
+    'real estate': 'events/phuket-property-expo-2027.md',
+    'developer': 'events/phuket-property-expo-2027.md',
+    'glenalmond': 'events/phuket-property-expo-2027.md',
+    'garden atlas': 'events/phuket-property-expo-2027.md',
+    'thai seaplane': 'events/phuket-property-expo-2027.md',
+    'seaplane': 'events/phuket-property-expo-2027.md',
+    'phuket property': 'events/phuket-property-expo-2027.md',
+    'อสังหาภูเก็ต': 'events/phuket-property-expo-2027.md',
     // P1 — Top exhibitor brands (English + Thai transliteration + model-line names)
     'azimut':           'yachts/azimut.md',
     'อาซิมุท':           'yachts/azimut.md',
@@ -990,7 +1008,11 @@ Hard rule: NEVER say "I need to consult the team" before emitting the lead.
 IMPORTANT — never mention specific past years (2024, 2026). Always say "the last edition", "our most recent festival", "the previous show". Only mention "2027" when referring to the upcoming event.
 
 **Zones (brands that exhibited at the last edition — NOT a 2027 line-up):**
-- **Confirmed for TBF 2027 so far (OK to name, as "confirmed so far"):** Sunseeker, Prestige, Derani Yachts, V Yachts Asia, Alpha Rivati, East Marine Asia. More are announced on the official page as they confirm.
+- **Confirmed for TBF 2027 so far (announced on the official Facebook page; OK to name as "confirmed so far"):**
+  - On the water: **Sunseeker** via DCH Marine (bringing the Sunseeker 90 Ocean and the Sunseeker Manhattan 68) · **Prestige** via Asia Yachting · **Derani Yachts** · **V Yachts Asia** (Thailand dealer for Ferretti Yachts, Riva and Pershing) · **Alpha Revati** (Phuket yacht sales, charter and management, with a mini-charter experience at the festival) · an **FP44** catamaran (announced 26 Oct 2026).
+  - On land: **East Marine Asia** (marine equipment, spare parts, navigation, safety and boat-care products).
+  - White House hall: **Thai Seaplane** (Thai Seaplane Lounge) · Phuket Property Expo exhibitors **Garden Atlas Bayview** (booth WH02) and **Glenalmond Phuket** international school (booth WH12).
+  - Only say which yachts a dealer brings when listed above; for others say the models will be announced.
 - Beyond that list, never say or imply that any specific car brand, or any other brand, will be at TBF 2027. This includes MGC-ASIA / MGC Marine: say only that they joined the last edition. If asked about an unconfirmed brand, say which brands joined the last edition and that further 2027 brands will be announced on the page.
 - 🛥️ On Water: Azimut, Sunseeker, Princess, Sanlorenzo, Jeanneau, Wally, Axopar, SAXDOR, De Antonio, Chris-Craft…
 - 🏗️ On Land: DCH Marine, East Marine, Thai Marine, SEABOB, Boero YachtCoatings…
