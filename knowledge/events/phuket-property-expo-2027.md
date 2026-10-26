@@ -8,8 +8,7 @@
 - White House hall (air-conditioned, 50 × 20 m), Boat Lagoon Marina, steps from the docks; 9 km from Phuket Town, ~20 min from the airport.
 - Entry by registration, no ticket. One registration, through either event, admits to both. Early Bird closes 30 November 2026: https://thailandboatfestival.com/property/earlybird
 - Site: https://thailandboatfestival.com/property (Thai: /property/th) · 3D walkthrough of the hall: https://thailandboatfestival.com/property/3d/ · Facebook: https://www.facebook.com/profile.php?id=61594883987623
-- Contact: info@propertyexpophuket.com
-- Organised by M Vision PCL, co-organised with Dr. Phongthon Tharachai (PP Richer is Better, phongthon@richerbetter.com).
+- Organised by M Vision PCL, co-organised with Dr. Phongthon Tharachai (PP Richer is Better).
 - Property agents/brokers: one registration covers both events: https://thailandboatfestival.com/broker
 
 ## Confirmed in the hall so far (announced on the expo's Facebook page)
