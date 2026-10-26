@@ -202,6 +202,14 @@ body {
     border-radius: 18px 18px 4px 18px;
     border-color: transparent;
 }
+/* Links and action buttons inside Sand's replies */
+.msg.bot .bubble a { color: var(--gold-dark); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.msg.bot .bubble strong { font-weight: 600; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.4rem 0 0 50px; }
+.cta-btn { display: inline-block; padding: 0.6rem 1.1rem; border-radius: 999px; background: var(--ink); color: #fff;
+    font-size: 0.88rem; font-weight: 600; text-decoration: none; box-shadow: var(--shadow-md); }
+.cta-btn.gold { background: var(--gold); }
+.cta-btn:active { transform: translateY(1px); }
 /* Typing bubble — compact single-line dots only */
 .msg.bot.typing-msg .bubble { padding: 0.55rem 0.85rem; }
 .dots { display: inline-flex; gap: 5px; align-items: center; line-height: 1; }
@@ -665,13 +673,48 @@ function quickAsk(text) {
 function escapeHtml(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 }
+// Turn plain URLs (and thailandboatfestival.com/... without https) into tappable links, **bold** into <strong>.
+function formatBot(text) {
+    let h = escapeHtml(text);
+    h = h.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+    h = h.replace(/(https?:\/\/[A-Za-z0-9\-._~:\/?#@!$&+,;=%]+|(?:www\.)?thailandboatfestival\.com\/[A-Za-z0-9\-._~\/?#=%&]*)/g, (m) => {
+        let url = m, tail = '';
+        while (/[.,;:!?)]$/.test(url)) { tail = url.slice(-1) + tail; url = url.slice(0, -1); }
+        const href = /^https?:/.test(url) ? url : 'https://' + url;
+        const label = url.replace(/^https?:\/\//, '');
+        return `<a href="${href}" target="_blank" rel="noopener">${label}</a>${tail}`;
+    });
+    return h;
+}
+// Big tap targets under the reply when Sand gives the registration or VIP link.
+const CTA_LABELS = {
+    en: { eb: 'Register Early Bird', vip: 'Get your VIP Pass', ppx: 'Register: Property Expo', broker: 'Broker registration' },
+    th: { eb: 'ลงทะเบียน Early Bird', vip: 'ซื้อบัตร VIP Pass', ppx: 'ลงทะเบียน งานอสังหาภูเก็ต', broker: 'ลงทะเบียนโบรกเกอร์' },
+    zh: { eb: '早鸟登记', vip: '购买 VIP 通行证', ppx: '房产展登记', broker: '经纪人登记' }
+};
+function addCtas(text) {
+    const lang = /[\u0E00-\u0E7F]/.test(text) ? 'th' : /[\u4E00-\u9FFF]/.test(text) ? 'zh' : (CTA_LABELS[currentLang] ? currentLang : 'en');
+    const L = CTA_LABELS[lang] || CTA_LABELS.en;
+    const found = [];
+    if (/thailandboatfestival\.com\/(?:earlybird|register|TBFearlybird)\b/i.test(text)) found.push(['eb', 'https://thailandboatfestival.com/earlybird', '']);
+    if (/thailandboatfestival\.com\/vip\b/i.test(text)) found.push(['vip', 'https://thailandboatfestival.com/vip', 'gold']);
+    if (/thailandboatfestival\.com\/property\/earlybird\b/i.test(text)) found.push(['ppx', 'https://thailandboatfestival.com/property/earlybird', '']);
+    if (/thailandboatfestival\.com\/broker\b/i.test(text)) found.push(['broker', 'https://thailandboatfestival.com/broker', '']);
+    if (!found.length) return;
+    const row = document.createElement('div');
+    row.className = 'cta-row';
+    row.innerHTML = found.map(([k, href, cls]) => `<a class="cta-btn ${cls}" href="${href}" target="_blank" rel="noopener">${escapeHtml(L[k])} →</a>`).join('');
+    const cont = document.getElementById('messages');
+    cont.appendChild(row);
+    cont.scrollTop = cont.scrollHeight;
+}
 function addMsg(text, role) {
     const cont = document.getElementById('messages');
     const wrap = document.createElement('div');
     wrap.className = 'msg ' + role;
     if (role === 'bot') {
         wrap.innerHTML = `<img src="images/sand_profile_pic.png" class="msg-av" alt="">
-                          <div class="bubble">${escapeHtml(text)}</div>`;
+                          <div class="bubble">${formatBot(text)}</div>`;
     } else {
         wrap.innerHTML = `
             <div class="user-stack">
@@ -831,6 +874,7 @@ async function send() {
         } else if (prose) {
             addMsg(prose, 'bot');
         }
+        if (prose) addCtas(prose);
 
         if (nextMatch && !leadMatch) {
             try {
