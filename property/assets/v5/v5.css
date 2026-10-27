@@ -263,3 +263,50 @@ p{margin:0 0 1em;max-width:68ch}
 .hall-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;opacity:0;transition:opacity 1.2s ease;backface-visibility:hidden}
 .hall-slides img.on{opacity:1}
 .walk.has-video picture{opacity:0;transition:opacity 1.6s}
+
+/* ---- UX pass 27 Oct 2026: sticky dock, readable plan on mobile, bigger booth cards, 24px targets ---- */
+
+/* 1+2 · sticky action dock (mobile only) — register always within reach, plus a jump to Exhibit */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(16,39,43,.96);box-shadow:0 -6px 24px rgba(16,39,43,.28);transform:translateY(110%);transition:transform .28s ease}
+.dock.on{transform:translateY(0)}
+.dock-a{flex:1;display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 12px;border-radius:2px;
+  font:600 .9375rem/1.25 var(--sans);text-align:center;text-decoration:none;color:var(--on-dark);border:1px solid rgba(201,165,106,.55)}
+.dock-a:focus-visible{outline:2px solid var(--brass-l);outline-offset:2px}
+.dock-primary{flex:1.5;background:var(--brass-l);border-color:var(--brass-l);color:var(--ink)}
+@media (max-width:700px){.dock{display:flex}body.has-dock{padding-bottom:78px}}
+@media (prefers-reduced-motion:reduce){.dock{transition:none}}
+
+/* 3 · floor plan stays legible on mobile: scroll it at a readable width, keep the legend and the hotspots */
+.plan-swipe{display:none}
+@media (max-width:700px){
+  .mods{display:block}
+  .plan-read{display:block}
+  .plan-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin}
+  .plan-scroll:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+  .plan-stage{min-width:760px}
+  .plan-swipe{display:inline;font-weight:600;color:var(--text)}
+  .mods button{border-style:solid;border-color:rgba(162,123,58,.3)}
+}
+
+/* 4 · booth types: swipeable cards on mobile instead of 173px thumbnails */
+@media (max-width:700px){
+  .booth-types ul{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding-bottom:6px;margin-inline:-16px;padding-inline:16px}
+  .booth-types li{flex:0 0 272px;scroll-snap-align:start}
+  .booth-types img{aspect-ratio:16/10}
+}
+
+/* 5 · WCAG 2.2 target size: standalone links get a 24px tap area */
+.foot a,.src a,.text-link,.plan-text .text-link,.fold a,.fold li a,.send a{display:inline-flex;align-items:center;min-height:24px}
+.fold ol.small li{margin-bottom:4px}
+.foot p{margin-bottom:2px}
+.foot-grid a{padding-block:1px}
+
+/* 6 · required-field marker and a readable logo over a bright hero */
+.req{color:#9B3B2C;font-style:normal;margin-inline-start:3px}
+.req-note{margin-top:10px;font-size:.8125rem;color:var(--text-2)}
+@media (max-width:960px){
+  .walk::before{content:"";position:absolute;top:0;left:0;right:0;height:96px;pointer-events:none;
+    background:linear-gradient(180deg,rgba(16,39,43,.62) 0,rgba(16,39,43,0) 100%)}
+}

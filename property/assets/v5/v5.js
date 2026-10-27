@@ -96,3 +96,29 @@
     if (a && window.gtag) gtag('event', 'open_3d_hall', { page_section: 'property_expo', page_lang: document.documentElement.lang });
   });
 })();
+
+/* UX pass 27 Oct 2026 — sticky dock: show it once the hero CTAs are gone, hide it over the exhibitor form */
+(function () {
+  var dock = document.getElementById('dock');
+  if (!dock || !('IntersectionObserver' in window)) return;
+  if (!window.matchMedia('(max-width:700px)').matches) return;
+  dock.hidden = false;
+  document.body.classList.add('has-dock');
+  var hero = document.querySelector('.doors') || document.querySelector('.sheet') || document.querySelector('.arrival');
+  var form = document.querySelector('#enquiry');
+  var foot = document.querySelector('.foot');
+  var pastHero = false, overForm = false;
+  function sync() { dock.classList.toggle('on', pastHero && !overForm); }
+  if (hero) new IntersectionObserver(function (es) {
+    es.forEach(function (e) { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; });
+    sync();
+  }, { threshold: 0 }).observe(hero);
+  [form, foot].forEach(function (el) {
+    if (!el) return;
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { el.dataset.dockHide = e.isIntersecting ? '1' : ''; });
+      overForm = (form && form.dataset.dockHide === '1') || (foot && foot.dataset.dockHide === '1');
+      sync();
+    }, { threshold: 0.12 }).observe(el);
+  });
+})();

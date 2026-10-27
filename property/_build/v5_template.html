@@ -159,11 +159,13 @@
     </div>
     <div class="plan-wrap">
       <figure class="plan">
+        <div class="plan-scroll" tabindex="0" role="group" aria-label="{{plan_alt}}">
         <div class="plan-stage">
           <img src="/property/assets/v5/plan52-{{lang}}.webp" width="1820" height="720" alt="{{plan_alt}}" loading="lazy">
           <div class="mods" data-mod="{{mod}}" data-size="3 × 3 m" data-kinds="{{m_kinds}}" data-layout='{"w":5.275,"h":13.333,"m":[[1,18.791,14.444,"c"],[2,24.066,14.444,"w"],[3,29.341,14.444,"w"],[4,34.615,14.444,"w"],[5,39.89,14.444,"w"],[6,45.165,14.444,"c"],[7,55.714,14.444,"c"],[8,60.989,14.444,"w"],[9,66.264,14.444,"w"],[10,71.538,14.444,"w"],[11,76.813,14.444,"w"],[12,82.088,14.444,"w"],[13,87.363,14.444,"c"],[14,87.363,43.333,"p"],[15,82.088,43.333,"i"],[16,76.813,43.333,"i"],[17,71.538,43.333,"i"],[18,66.264,43.333,"i"],[19,60.989,43.333,"i"],[20,55.714,43.333,"c"],[21,45.165,43.333,"c"],[22,39.89,43.333,"i"],[23,34.615,43.333,"i"],[24,29.341,43.333,"i"],[25,24.066,43.333,"i"],[26,18.791,43.333,"p"],[27,18.791,56.667,"p"],[28,24.066,56.667,"i"],[29,29.341,56.667,"i"],[30,34.615,56.667,"i"],[31,39.89,56.667,"i"],[32,45.165,56.667,"c"],[33,55.714,56.667,"c"],[34,60.989,56.667,"i"],[35,66.264,56.667,"i"],[36,71.538,56.667,"i"],[37,76.813,56.667,"i"],[38,82.088,56.667,"i"],[39,87.363,56.667,"p"],[40,87.363,85.556,"c"],[41,82.088,85.556,"w"],[42,76.813,85.556,"w"],[43,71.538,85.556,"w"],[44,66.264,85.556,"w"],[45,60.989,85.556,"w"],[46,55.714,85.556,"c"],[47,45.165,85.556,"c"],[48,39.89,85.556,"w"],[49,34.615,85.556,"w"],[50,29.341,85.556,"w"],[51,24.066,85.556,"w"],[52,18.791,85.556,"c"]]}'></div>
         </div>
-        <figcaption><span class="plan-read" aria-live="polite">{{plan_tip}}</span><span>{{plan_cap}}</span></figcaption>
+        </div>
+        <figcaption><span class="plan-read" aria-live="polite">{{plan_tip}}</span><span class="plan-swipe">{{plan_swipe}}</span><span>{{plan_cap}}</span></figcaption>
       </figure>
       <div class="plan-text">
         <h3>{{hall_h}}</h3>
@@ -198,14 +200,15 @@
       <form class="enquiry" id="enquiry" novalidate>
         <h3>{{pack}}</h3>
         <div class="fields">
-          <label><span>{{f_name}}</span><input name="name" type="text" required autocomplete="name"></label>
+          <label><span>{{f_name}}<i class="req" aria-hidden="true">*</i></span><input name="name" type="text" required autocomplete="name"></label>
           <label><span>{{f_company}}</span><input name="company" type="text" autocomplete="organization"></label>
-          <label><span>{{f_email}}</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span>{{f_email}}<i class="req" aria-hidden="true">*</i></span><input name="email" type="email" required autocomplete="email"></label>
           <label><span>{{f_phone}}</span><input name="phone" type="tel" autocomplete="tel"></label>
           <label class="wide"><span>{{f_interest}}</span><select name="interest"><option>{{o1t}}</option><option>{{o2t}}</option><option>{{o3t}}</option></select></label>
           <label class="wide"><span>{{f_msg}}</span><textarea name="message" rows="3"></textarea></label>
           <label class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></label>
         </div>
+        <p class="req-note">{{req_note}}</p>
         <div class="send">
           <button class="btn" type="submit" data-sending="{{f_sending}}">{{f_send}}</button>
           <span>{{or_email}} <a href="mailto:info@propertyexpophuket.com">info@propertyexpophuket.com</a></span>
@@ -269,5 +272,9 @@
     </div>
   </div>
 </footer>
+<div class="dock" id="dock" hidden>
+  <a class="dock-a dock-primary" href="/property/earlybird">{{dock_visit}}</a>
+  <a class="dock-a" href="#exhibit">{{dock_exhibit}}</a>
+</div>
 </body>
 </html>

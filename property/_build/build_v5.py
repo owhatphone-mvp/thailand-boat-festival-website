@@ -33,6 +33,8 @@ EN.update(
   plan_alt='Plan of the hall from above: booth modules along both long walls, four open modules near the entrance, the lounge in the middle and the stage at the far end',
   plan_tip='Select a module to see where it sits.', mod='Module',
   m_wall='along the wall, facing the main aisle', m_open='open module near the entrance, low furniture',
+  dock_visit='Reserve your pass', dock_exhibit='Exhibit',
+  plan_swipe='Swipe the plan to see every booth.', req_note='* Required',
 )
 TH.update(
   skip='ข้ามไปยังเนื้อหา', fk_preload='thai',
@@ -53,6 +55,8 @@ TH.update(
   plan_alt='ผังฮอลล์มุมบน: บูธเรียงตามผนังยาวสองฝั่ง โมดูลเปิดสี่โมดูลใกล้ทางเข้า เลานจ์กลางฮอลล์ และเวทีท้ายฮอลล์',
   plan_tip='เลือกโมดูลเพื่อดูตำแหน่ง', mod='โมดูล',
   m_wall='ริมผนัง หันหน้าเข้าทางเดินหลัก', m_open='โมดูลเปิดใกล้ทางเข้า เฟอร์นิเจอร์เตี้ย',
+  dock_visit='สำรองสิทธิ์เข้างาน', dock_exhibit='ออกบูธ',
+  plan_swipe='เลื่อนผังเพื่อดูบูธทั้งหมด', req_note='* จำเป็นต้องกรอก',
 )
 
 # Luxury register (โอ 15 Oct 2026: no "free" — entry is by registration; frame as a place reserved, not a giveaway)
@@ -121,7 +125,7 @@ TH.update(
 )
 
 import re
-NOBREAK = ['คอนโด', 'เรซิเดนซ์', 'เอเจนซี่', 'เอเจนต์', 'วิลล่า', 'เลานจ์', 'โมดูล', 'ฮอลล์', 'มารีน่า', 'ไฮซีซั่น', 'ทอล์ก', 'แบรนด์', 'ดีไซน์', 'โบรกเกอร์', 'พาร์ทเนอร์', 'เรือยอชท์', 'ทุกวัน', 'มกราคม', 'พฤศจิกายน', 'ลงทะเบียน', 'ผังงาน', 'จัดงาน', 'โครงการ', 'ผู้พัฒนา', 'ประเทศ', 'ที่ปรึกษา', 'เมื่อประกาศ', 'นำเสนอ']
+NOBREAK = ['คอนโด', 'เรซิเดนซ์', 'เอเจนซี่', 'เอเจนต์', 'วิลล่า', 'เลานจ์', 'โมดูล', 'ฮอลล์', 'มารีน่า', 'ไฮซีซั่น', 'ทอล์ก', 'แบรนด์', 'ดีไซน์', 'โบรกเกอร์', 'พาร์ทเนอร์', 'เรือยอชท์', 'ทุกวัน', 'มกราคม', 'พฤศจิกายน', 'ลงทะเบียน', 'ผังงาน', 'จัดงาน', 'โครงการ', 'ผู้พัฒนา', 'ประเทศ', 'ที่ปรึกษา', 'เมื่อประกาศ', 'นำเสนอ', 'เดินรอบเดียวครบ', 'สำรองสิทธิ์', 'เข้างาน']
 def keep_words(html):
     head, sep, body = html.partition('<body>')
     parts = re.split(r'(<script\b.*?</script>|<[^>]+>)', body, flags=re.S)
