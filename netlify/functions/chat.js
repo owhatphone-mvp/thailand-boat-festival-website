@@ -28,6 +28,30 @@ const BRAND_KEYWORDS = {
     'seaplane': 'events/phuket-property-expo-2027.md',
     'phuket property': 'events/phuket-property-expo-2027.md',
     'อสังหาภูเก็ต': 'events/phuket-property-expo-2027.md',
+    'property': 'events/phuket-property-expo-2027.md',
+    'residence': 'events/phuket-property-expo-2027.md',
+    'apartment': 'events/phuket-property-expo-2027.md',
+    'land plot': 'events/phuket-property-expo-2027.md',
+    'ที่ดิน': 'events/phuket-property-expo-2027.md',
+    'บ้านพักตากอากาศ': 'events/phuket-property-expo-2027.md',
+    'บ้านเดี่ยว': 'events/phuket-property-expo-2027.md',
+    'ซื้อบ้าน': 'events/phuket-property-expo-2027.md',
+    'ลงทุนอสังหา': 'events/phuket-property-expo-2027.md',
+    'недвижимост': 'events/phuket-property-expo-2027.md',
+    'вилл': 'events/phuket-property-expo-2027.md',
+    'кондо': 'events/phuket-property-expo-2027.md',
+    'апартамент': 'events/phuket-property-expo-2027.md',
+    '房产': 'events/phuket-property-expo-2027.md',
+    '房地产': 'events/phuket-property-expo-2027.md',
+    '地产': 'events/phuket-property-expo-2027.md',
+    '别墅': 'events/phuket-property-expo-2027.md',
+    '公寓': 'events/phuket-property-expo-2027.md',
+    '不動産': 'events/phuket-property-expo-2027.md',
+    'ヴィラ': 'events/phuket-property-expo-2027.md',
+    'コンドミニアム': 'events/phuket-property-expo-2027.md',
+    '부동산': 'events/phuket-property-expo-2027.md',
+    '빌라': 'events/phuket-property-expo-2027.md',
+    '콘도': 'events/phuket-property-expo-2027.md',
     // P1 — Top exhibitor brands (English + Thai transliteration + model-line names)
     'azimut':           'yachts/azimut.md',
     'อาซิมุท':           'yachts/azimut.md',
@@ -996,7 +1020,7 @@ Hard rule: NEVER say "I need to consult the team" before emitting the lead.
   - Never volunteer his name or contact details unless the user brings him up first.
 - 2027: 50+ boats (more space than 2026). Highlights beside the yachts: supercars, luxury cars, premium coastal property and luxury lifestyle brands, plus a Marine Gear & Service zone (marine equipment, electronics, services) on land. There is NO seafood market at TBF 2027.
 - **Atmosphere to sell:** TBF is a night-marina experience — the festival opens from 14:00 and comes alive after dark, with 50+ yachts lit up along the docks, a lively marina in the cool of the evening, away from the daytime heat. Never frame it as a casual stroll to look at boats.
-- **Phuket Property Expo 2027 (งานอสังหาภูเก็ต 2027), 1st edition** — the luxury property show inside Thailand Boat Festival, in the air-conditioned White House hall at Boat Lagoon. Same dates, 14–17 January 2027, **open 13:00–19:00 daily** (the festival itself is 14:00–21:00). Hosted by M Vision PCL, co-organised with Dr. Phongthon Tharachai (PP Richer is Better). 52 booths for Phuket's luxury villas, branded residences, condominiums, property agencies and property services. Details: https://thailandboatfestival.com/property · registration: https://thailandboatfestival.com/property/earlybird (Early Bird complimentary until 30 November 2026). **One registration, through either event, admits to both.** Exhibitor booth rates are "on request" — never quote a property booth price; capture the lead (company, project, booth interest, contact). In Thai call it "งานอสังหาภูเก็ต 2027"; never use the internal abbreviation "PPX" with guests; never say "first in Thailand". For property enquiries the team's property contact is handled by the team — still collect the lead rather than giving out emails.
+- **Phuket Property Expo 2027 (งานอสังหาภูเก็ต 2027), 1st edition** — the luxury property show inside Thailand Boat Festival, in the air-conditioned White House hall at Boat Lagoon. Same dates, 14–17 January 2027, **open 13:00–19:00 daily** (the festival itself is 14:00–21:00). Hosted by M Vision PCL, co-organised with Dr. Phongthon Tharachai (PP Richer is Better). 52 booths for Phuket's luxury villas, branded residences, condominiums, property agencies and property services. Details: https://thailandboatfestival.com/property · registration: https://thailandboatfestival.com/property/earlybird (Early Bird complimentary until 30 November 2026). **One registration, through either event, admits to both.** Exhibitor booth rates are "on request" — never quote a property booth price; capture the lead (company, project, booth interest, contact). In Thai call it "งานอสังหาภูเก็ต 2027"; never use the internal abbreviation "PPX" with guests; never say "first in Thailand". For property enquiries collect the lead (name, email, what they are looking for); if they ask for an email, give info@propertyexpophuket.com. Sand has no listings or prices for individual projects or areas: never recommend, rank or price specific projects beyond the confirmed exhibitors, and never estimate prices; invite them to meet the developers at the expo.
 
 **Track record:**
 - 1st edition: Yacht Haven Marina, Phuket

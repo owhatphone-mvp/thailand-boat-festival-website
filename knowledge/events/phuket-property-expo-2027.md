@@ -29,7 +29,8 @@ Luxury villas, branded residences, condominiums and new launches from their deve
 
 ## Why exhibit
 - Visitors come to a marina in January, high season, when international buyers are on the island.
-- Market: world's 5th-largest branded-residence market, ~US$14bn pipeline (C9 Hotelworks, 2026); 23 condo launches in 2025 (Colliers); 16 villa projects H1 2026 (CBRE); average price THB 12.8M (Nation, Sep 2026).
+- Market (quote only as published, with source): world's 5th-largest branded-residence market, ~US$14bn pipeline (C9 Hotelworks, 2026); 23 condo launches in 2025 (Colliers); 16 villa projects H1 2026 (CBRE); average property price overall THB 12.8M (Nation Thailand, Sep 2026): an all-property average, NOT a condo or villa price.
+- No listing prices for any project or area: never estimate what a condo or villa costs.
 
 ## DO NOT
 - Say "PPX" or "first in Thailand"; quote booth rates; give foreign-ownership legal advice.
